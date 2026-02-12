@@ -1,37 +1,57 @@
 # Backlog
 
-## Open Questions — Phase 1 (Blocking)
+Open questions and parked ideas, organized by layer.
 
-These need answers before we can finalize the concept architecture.
+---
 
-### Character & Tone
-- [ ] **Q1: Character ages / relationship dynamic** — Are the Maven and Skeptic peers (high schoolers? college students?) or is there an age gap (mentor/mentee)? This shapes voice for everything.
-- [ ] **Q2: Nature of the Skeptic's skepticism** — Tech-savvy but burned by AI specifically (tried it, was disappointed, wrote it off)? Or more broadly skeptical of tech hype?
-- [ ] **Q3: Tone calibration** — Spectrum from *The Martian* (funny, technically rigorous, adult voice) to *Percy Jackson* (lighter, younger, faster pace). Where do we land?
-- [ ] **Q4: Time travel mechanic** — Literal (sci-fi, they actually travel back) or metaphorical (sitting somewhere arguing, pulling up memories)?
+## Layer 1 — Timeline (Phase 1)
 
-### Scope & Format
-- [ ] **Q5: Length target** — ~10K words (long short story/zine), ~30K (novella), or ~60K+ (short novel)?
-- [ ] **Q6: Format** — Pure prose? Graphic novel? Hybrid (prose with illustrated panels at key moments)?
-- [ ] **Q7: Distribution intent** — Open publish (blog/PDF)? Sell? Conference giveaway? Shapes tone and polish.
+- [ ] How many epochs are there? Initial guess ~12, but research will decide.
+- [ ] Where are the clean break points — model releases, feature launches, or cultural moments?
+- [ ] What are the most iconic failure anecdotes per epoch?
+- [ ] Should epochs be defined by model releases, by capability thresholds, or by what a user could actually do?
+- [ ] How granular should the Anthropic/Claude timeline be vs. the OpenAI timeline? (Both matter, but Claude is the destination)
 
-### Content
-- [ ] **Q8: Brand names or abstracted?** — Early eras are naturally OpenAI-centric. Ending is Claude-focused. Use real brand names throughout, or abstract them?
-- [ ] **Q9: Task examples for final third** — Confirm the vibe: teenager running an Etsy shop, planning a school event, building a personal project — knowledge work that parallels adult work. What resonates?
-- [ ] **Q10: Temporal anchor** — Write to a specific snapshot of what exists today? Or slightly abstracted/forward-looking?
+## Layer 2 — Primitives (Phase 2)
 
-## Open Questions — Phase 2+ (Not Yet Blocking)
+- [ ] What's the right level of abstraction? Too granular = unusable. Too abstract = meaningless.
+- [ ] How do we distinguish model primitives from harness primitives? (e.g., "reasoning" is model; "file system access" is harness)
+- [ ] Are there primitives that are ONLY valuable in combination? (e.g., file access + persistent instructions = alignment)
+- [ ] What primitives are still missing or immature today? (Honest about current limits)
 
-- [ ] How many discrete eras? Initial instinct says 5-7 but research will inform this.
-- [ ] What are the iconic failure anecdotes for each era? Need to research.
-- [ ] Should the story reference specific prompts/outputs, or describe them narratively?
-- [ ] Is there a role for actual AI-generated artifacts in the text (showing what each era produced)?
-- [ ] Visual style if graphic novel / hybrid — realistic? Cartoon? Manga-influenced?
+## Layer 3 — Domain Translation (Phase 3)
+
+- [ ] Which 4-6 domains give us the best coverage and story potential?
+- [ ] Are there primitives that don't translate well outside software engineering?
+- [ ] What's the simplest domain that still shows the full power? (Strong candidate for story setting)
+
+## Layer 4 — Curriculum (Phase 4)
+
+- [ ] What's the right "hello world" for agentic AI for a non-developer?
+- [ ] How much can be taught through plot vs. explicit instruction?
+- [ ] Should the curriculum section use a single sustained project or multiple smaller tasks?
+- [ ] What's the emotional arc of learning? (Confusion → small win → understanding → fluency → ownership)
+
+## Layer 5 — Story (Phase 5)
+
+_These were our original Phase 1 questions. They're still valid, but they're presentation-layer decisions that should wait until the content layers are solid._
+
+- [ ] Character ages and relationship dynamic (peers? mentor/mentee?)
+- [ ] Nature of the Skeptic's skepticism (burned by AI specifically? broader tech skeptic?)
+- [ ] Tone calibration (The Martian ↔ Percy Jackson spectrum)
+- [ ] Time travel mechanic (literal sci-fi or metaphorical?)
+- [ ] Length target (~10K / ~30K / ~60K+ words)
+- [ ] Format (prose / graphic novel / hybrid)
+- [ ] Distribution intent (open publish / sell / conference)
+- [ ] Brand names or abstracted?
+- [ ] Temporal anchor (snapshot of today vs. slightly forward-looking)
 
 ## Parked Ideas
 
 _Ideas that came up but we're not ready to evaluate yet._
 
-- The robot in the story that embodies Claude Code — does it have a name? A personality arc?
-- Could the eras be framed as "levels" the characters progress through (game metaphor)?
-- Could there be a recurring task that gets attempted in each era, showing how the same problem gets better/worse tooling over time?
+- The robot embodying Claude Code — name? personality arc?
+- Eras as "levels" the characters progress through (game metaphor)
+- A recurring task attempted in each era, showing same problem with evolving tooling
+- Role for actual AI-generated artifacts in the text (showing what each era produced)
+- Could the story reference specific prompts/outputs, or describe them narratively?
