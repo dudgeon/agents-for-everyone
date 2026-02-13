@@ -85,6 +85,54 @@ assets/                       — Visual references, illustrations
 - **Timeline research is independent work.** Claude does this via web research, user validates.
 - **Primitives, domains, curriculum, and story require collaboration.** Don't finalize without user input.
 
+## Research Quality Standards
+
+Every research artifact in this project must meet these standards. Do NOT write summary-level content when detail is needed downstream.
+
+### Source URLs are mandatory
+- Every factual claim must include a source URL inline or in a `### Sources` section per entry.
+- Prefer primary sources (OpenAI blog, Anthropic blog, official changelogs) over secondhand reporting.
+- When using web search, **persist the URLs in the output file immediately** — do not summarize and discard.
+
+### Specificity over generality
+- BAD: "GPT-3.5 hallucinated frequently"
+- GOOD: "When asked to cite legal cases, GPT-3.5 invented 'Gonzalez v. United States' with a fabricated citation and ruling ([source](url)). A lawyer submitted AI-generated briefs containing 6 fictitious cases to federal court in June 2023 ([source](url))."
+- BAD: "Improved reasoning capabilities"
+- GOOD: "Scored 86.4% on MMLU (vs 70% for GPT-3.5). Could solve multi-step word problems that previously required chain-of-thought prompting. Still failed at problems requiring spatial reasoning or counting ([source](url))."
+
+### Vivid, story-ready examples
+- For each capability and failure, capture at least one **concrete, specific, memorable example** that could be used in dialog or narration.
+- Failures should be dramatic or comedic enough to resonate with the Skeptic character.
+- Successes should be genuinely impressive enough to give the Maven something real to point to.
+
+### Template for timeline entries
+Every timeline event should follow this structure:
+
+```markdown
+### [Date] — [Event name] [ecosystem tags] [model/harness tags]
+
+**What shipped**: [Specific description]
+**Source(s)**: [URL(s)]
+
+**What worked well (with examples)**:
+- [Specific task]: [Specific outcome or benchmark] ([source](url))
+
+**What failed or was unreliable (with examples)**:
+- [Specific task]: [Specific failure mode, ideally vivid/memorable] ([source](url))
+
+**Harness vs. model**: [Was this a model improvement, tooling improvement, or both?]
+**Cultural context**: [How was this perceived? Media reaction? User sentiment?]
+**Skeptic's take**: [What would an informed skeptic say about this?]
+**Maven's take**: [What's genuinely new/valuable here?]
+```
+
+### When doing web research
+- Do multiple searches per topic — don't rely on one query.
+- Fetch primary source pages (blog posts, changelogs) not just search result summaries.
+- When a search result looks valuable, use WebFetch to get the full content and extract specifics.
+- Capture quotes from commentators verbatim with attribution.
+- If a source is paywalled or inaccessible, note it explicitly and ask the user if they can scrape it.
+
 ## Current Phase
 
 Phase 1 — Timeline Research. See docs/roadmap.md for details.
