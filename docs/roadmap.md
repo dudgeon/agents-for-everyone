@@ -6,7 +6,7 @@ This is a long-lived document. It describes the full arc of this project across 
 
 ## Phase 1 — Timeline Research (Layer 1) ← CURRENT
 
-**Status**: Not started
+**Status**: In progress — raw timeline complete, awaiting epoch clustering
 **Mode**: Independent research by Claude, validated by user
 **Goal**: Build a canonical, factual timeline of AI assistant tooling from Nov 2022 to present.
 
@@ -169,4 +169,10 @@ Each epoch file should contain:
 - User corrected approach: build bottom-up, not top-down
 - Infrastructure restructured to reflect the 5-layer stack
 - Roadmap rewritten as a long-lived, multi-phase plan
-- Ready to begin Phase 1 (timeline research)
+- Timeline research completed: unified chronological timeline in docs/layer-1-timeline/overview.md
+  - 4 research agents (OpenAI, Anthropic, agentic ecosystem, commentators) + supplemental web research
+  - Sources: OpenAI blog, Anthropic blog, Every.to Vibe Check series, Mollick, Willison
+  - ~80 events spanning Nov 2022 — Feb 2026
+  - Includes meta-timeline events from Mollick (jagged frontier, Co-Intelligence), Willison (agent definition, lethal trifecta), and Every.to Vibe Check series
+  - 6 recurring themes identified for epoch clustering
+- **Next**: User reviews timeline, we cluster into epochs together
