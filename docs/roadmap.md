@@ -176,3 +176,20 @@ Each epoch file should contain:
   - Includes meta-timeline events from Mollick (jagged frontier, Co-Intelligence), Willison (agent definition, lethal trifecta), and Every.to Vibe Check series
   - 6 recurring themes identified for epoch clustering
 - **Next**: User reviews timeline, we cluster into epochs together
+
+### 2026-02-12 — Session 2
+- Continued Phase 1 timeline research enrichment
+- Used Chrome browser MCP to fetch OpenAI primary sources (403 on WebFetch)
+- Added 9 detailed research entries to docs/layer-1-timeline/research-notes.md:
+  - GPT-4 (Mar 2023): Bar exam benchmarks, predictable scaling, limitations
+  - Function calling (Jun 2023): THE harness breakthrough — natural language to API calls
+  - Claude 3 family (Mar 2024): Three-tier model, 200K context, near-perfect recall
+  - Claude 3.5 Sonnet (Jun 2024): Mid-tier beats top-tier, Artifacts, price/perf inflection
+  - OpenAI DevDay (Nov 2023): GPT-4 Turbo, Assistants API, Code Interpreter
+  - GPT-4o (May 2024): Omni model, multimodal, free tier, "Her" controversy
+  - o1 (Sep 2024): Chain-of-thought reasoning, STRAWBERRY cipher
+  - o3/o4-mini (Apr 2025): Agentic tool use, thinking with images, Codex CLI
+  - GPT-5 (Aug 2025): Unified system, hallucination reduction, safe completions
+- Total detailed entries in research-notes.md: ~21 (up from ~12)
+- **Still needed**: ChatGPT launch, Code Interpreter standalone, Claude Code, Cursor/Devin entries
+- **Next**: Continue enriching, then user reviews for epoch clustering
