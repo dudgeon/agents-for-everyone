@@ -4,6 +4,131 @@ _This file contains the rich, source-linked detail that backs up the overview ti
 
 ---
 
+## GPT-4 Launch (Mar 14, 2023) [OAI] [MODEL]
+
+**What shipped**: GPT-4 — large multimodal model (text + image input, text output). First model to pass the Bar Exam (90th percentile vs GPT-3.5's 10th percentile). 8K and 32K context versions. API with waitlist.
+
+**Source**: [OpenAI: GPT-4](https://openai.com/index/gpt-4-research/)
+
+**What worked well (with examples)**:
+- **Bar Exam**: Score of 298/400, ~90th percentile — vs GPT-3.5's 213/400, ~10th percentile
+- **LSAT**: 163 (~88th percentile) vs GPT-3.5's 149 (~40th percentile)
+- **Biology Olympiad (USABO)**: 87/150, 99th-100th percentile
+- **SAT Math**: 700/800 (~89th percentile)
+- **HumanEval coding**: 67% (0-shot) vs GPT-3.5's 48.1%
+- **MMLU**: 86.4% (5-shot), outperforming all prior SOTA
+- **Multilingual**: Outperformed GPT-3.5's English performance in 24 of 26 languages tested, including low-resource languages like Latvian, Welsh, and Swahili
+- **Steerability**: System messages let developers customize AI personality/behavior — Socratic tutor example showed model maintaining character even under pressure
+- **Safety**: 82% reduction in disallowed content responses vs GPT-3.5; 40% higher on internal adversarial factuality evals
+- **Predictable scaling**: Successfully predicted GPT-4's final loss from 10,000x smaller models — "our first large model whose training performance we were able to accurately predict ahead of time"
+
+**What failed or was unreliable (with examples)**:
+- **Still hallucinates**: Announcement explicitly states "it still is not fully reliable (it 'hallucinates' facts and makes reasoning errors)"
+- **Confidently wrong**: "Can be confidently wrong in its predictions, not taking care to double-check work"
+- **Calibration hurt by RLHF**: Pre-trained model was well-calibrated (predicted confidence matched accuracy); post-training with RLHF "hurts the calibration quite a bit"
+- **Jailbreaks**: "there still exist 'jailbreaks'" — system messages acknowledged as "the easiest way to jailbreak the current model"
+- **Codeforces**: Only 392 Elo, below 5th percentile — competitive coding remained weak
+- **Security vulnerabilities**: Can "introduce security vulnerabilities into code it produces"
+- **Vision delayed**: Image input was "research preview and not publicly available" at launch
+- **Capacity constrained**: API behind waitlist; "expect to be severely capacity constrained"
+
+**Harness vs. model**: MODEL — This was primarily a model leap (bigger, smarter, multimodal). The system message for steerability was a minor harness innovation. No tool use, no agents, no persistent memory.
+
+**Cultural context**: The "GPT-4 moment" — when the world realized AI could pass professional exams. Triggered both excitement and fear. Led directly to the Italian ban, the open letter calling for a 6-month pause, and the beginning of AI regulation discussions.
+
+**Skeptic's take**: "It passes the Bar Exam but can't reliably code a FizzBuzz without introducing security vulnerabilities. It's confidently wrong and they admit the safety training made it worse at knowing when it's wrong. And they won't even show us the images feature yet."
+
+**Maven's take**: "The exam scores are impressive but the real story is predictable scaling — they predicted performance from 10,000x smaller models. That means they know what's coming next. And putting it behind a waitlist was responsible, even if frustrating."
+
+---
+
+## Function Calling — The Harness Breakthrough (Jun 13, 2023) [OAI] [HARNESS]
+
+**What shipped**: Function calling capability for GPT-4 and GPT-3.5 Turbo. Models can detect when a function needs to be called and output structured JSON with arguments. Also: GPT-3.5 Turbo 16K context, 75% embedding price cut, 25% input price cut.
+
+**Source**: [OpenAI: Function calling and other API updates](https://openai.com/index/function-calling-and-other-api-updates/)
+
+**What worked well (with examples)**:
+- **Structured output from natural language**: "Email Anya to see if she wants to get coffee next Friday" → `send_email(to: string, body: string)` ([source](https://openai.com/index/function-calling-and-other-api-updates/))
+- **Natural language to API calls**: "Who are my top ten customers this month?" → `get_customers_by_revenue(start_date, end_date, limit)` — or even SQL queries
+- **Structured data extraction**: Define `extract_people_data(people: [{name, birthday, location}])` → extracts all people from a Wikipedia article
+- **Weather example**: 3-step flow — model outputs function call JSON → developer calls external API → response sent back to model for summarization
+- **JSON Schema integration**: Functions described via JSON Schema, model outputs conformant JSON
+
+**What failed or was unreliable (with examples)**:
+- **Security risk acknowledged**: "A proof-of-concept exploit illustrates how untrusted data from a tool's output can instruct the model to perform unintended actions" — early prompt injection via tools
+- **Only single function per call**: Parallel function calling didn't come until DevDay (Nov 2023)
+- **Reliability**: Function calling accuracy was imperfect; improved significantly with gpt-4-0613 but still required careful prompt engineering
+
+**Harness vs. model**: HARNESS — This is the single most important harness innovation in the entire timeline. Function calling transformed LLMs from text generators into tool users. It enabled every subsequent development: plugins, agents, MCP, Claude Code. The model itself didn't change fundamentally — what changed was HOW it could interact with the world.
+
+**Cultural context**: Quietly revolutionary. Less viral than ChatGPT launch or GPT-4, but arguably more consequential. This is where "chatbot" started becoming "tool user." ChatGPT Plugins had launched in March but were limited to OpenAI's ecosystem; function calling democratized tool use to any developer.
+
+**Skeptic's take**: "Great, so now the AI can call functions. And they're already admitting there's a proof-of-concept exploit for it. We're giving AI the ability to act in the world before we've solved the trust problem."
+
+**Maven's take**: "This is THE turning point. Before function calling, AI could only generate text. After function calling, AI can DO things — check weather, query databases, send emails. Every agent framework, every tool-using AI, everything we're building now traces back to this moment. The security concern they flagged is real, but the capability unlock is enormous."
+
+---
+
+## Claude 3 Model Family (Mar 4, 2024) [ANT] [MODEL]
+
+**What shipped**: Three-model family — Claude 3 Haiku (fast/cheap), Claude 3 Sonnet (balanced), Claude 3 Opus (most intelligent). Vision capabilities. 200K context window (accepting inputs exceeding 1M tokens). API launched in 159 countries.
+
+**Source**: [Anthropic: Introducing the next generation of Claude](https://www.anthropic.com/news/claude-3-family)
+
+**What worked well (with examples)**:
+- **Opus benchmarks**: Outperformed competitors on MMLU (undergraduate knowledge), GPQA (graduate reasoning), and GSM8K (mathematics)
+- **Near-perfect recall**: 99%+ accuracy on "Needle in a Haystack" evaluations across 200K context
+- **Accuracy improvement**: Opus showed "twofold improvement in accuracy" on challenging open-ended questions vs Claude 2
+- **Speed**: Sonnet 2x faster than previous Claude versions at higher intelligence
+- **Reduced refusals**: "Significantly less likely to refuse to answer prompts" — better contextual understanding of intent
+- **Vision**: New multimodal capabilities for images, charts, technical diagrams, PDFs, flowcharts
+- **Tiered pricing**: Haiku at $0.25/$1.25 per million tokens made Claude accessible for high-volume use cases
+
+**What failed or was unreliable (with examples)**:
+- **Opus pricing**: $15/$75 per million tokens — expensive for production use
+- **Vision limitations**: Not as strong as GPT-4V on some benchmarks
+- **Opus vs GPT-4**: While competitive, Opus didn't clearly dominate GPT-4 on all benchmarks — more of a parity moment than a leap
+
+**Harness vs. model**: MODEL — This was Anthropic's model-tier play: three sizes for different use cases. No significant harness innovations (tool use came later).
+
+**Cultural context**: Anthropic's coming-out party as a serious competitor. The three-tier model structure (Haiku/Sonnet/Opus) gave developers real choice. The 159-country API launch was a distribution moment.
+
+**Skeptic's take**: "Another model that beats benchmarks. But can I trust it more than the others? They say it refuses less — is that actually better for safety?"
+
+**Maven's take**: "The three-tier structure is smart engineering — Haiku for speed, Opus for quality, Sonnet for balance. The near-perfect needle-in-haystack recall at 200K context is quietly game-changing for document analysis. And reduced refusals means the model is actually more useful, not less safe."
+
+---
+
+## Claude 3.5 Sonnet — The Benchmark Killer (Jun 21, 2024) [ANT] [MODEL]
+
+**What shipped**: Claude 3.5 Sonnet — mid-tier model that outperformed Claude 3 Opus (and GPT-4o) on most benchmarks at 2x the speed and 1/5th the price. Artifacts feature for collaborative workspace. 200K context, $3/$15 per million tokens.
+
+**Source**: [Anthropic: Claude 3.5 Sonnet](https://www.anthropic.com/news/claude-3-5-sonnet)
+
+**What worked well (with examples)**:
+- **Coding**: "Solved 64% of problems, outperforming Claude 3 Opus which solved 38%" on internal coding evaluation
+- **Benchmarks**: Set "new industry benchmarks for graduate-level reasoning (GPQA), undergraduate-level knowledge (MMLU), and coding proficiency (HumanEval)"
+- **Speed + intelligence**: 2x speed of Claude 3 Opus with superior intelligence — the mid-tier model became the best model
+- **Vision**: Surpassed Claude 3 Opus on standard vision benchmarks; excels at interpreting charts, transcribing text from imperfect images
+- **Artifacts**: New collaborative workspace feature — users could view, edit, and build upon Claude-generated code snippets, text, and website designs alongside conversations
+- **Price/performance**: $3/$15 per million tokens (same as Sonnet 3) while beating Opus ($15/$75)
+
+**What failed or was unreliable (with examples)**:
+- **Still ASL-2**: Despite massive capability jump, safety classification unchanged — raised questions about whether the safety framework was keeping pace
+- **Artifacts rough**: Initial artifacts feature was limited in scope
+- **Context usage**: 200K context available but effective use at full length still had quality degradation
+
+**Harness vs. model**: Primarily MODEL (the intelligence leap), but Artifacts was a significant HARNESS innovation — moving from chat to collaborative workspace.
+
+**Cultural context**: This was the moment Claude became a serious daily-driver for developers. A mid-tier model beating the top-tier model at 1/5th the price is the kind of value proposition that changes adoption patterns. The Artifacts feature hinted at Anthropic's vision for AI as collaborator, not just chatbot.
+
+**Skeptic's take**: "OK, the smaller model is now better than the bigger model? That's either impressive engineering or it means the bigger model was never that good. And they're charging me 5x less? Something doesn't add up."
+
+**Maven's take**: "This is the price/performance inflection point. When the mid-tier model beats everyone including your own top tier, and costs 1/5th as much, adoption explodes. Artifacts is also interesting — it's the first time a major AI company said 'the chat interface isn't enough, let's build a workspace.' That's a harness insight."
+
+---
+
 ## Iconic Failure: Mata v. Avianca — Lawyer submits ChatGPT-hallucinated cases to court (May-Jun 2023)
 
 **What happened**: Lawyer Steven A. Schwartz used ChatGPT to research case law for a personal injury lawsuit (Mata v. Avianca, Inc.). ChatGPT fabricated six legal cases with realistic-sounding names: "Martinez v. Delta Air Lines," "Zicherman v. Korean Air Lines," "Varghese v. China Southern Airlines" — complete with fabricated citations, quotations, and internal reasoning. Schwartz submitted these in a legal brief signed by his colleague Peter LoDuca.
