@@ -243,9 +243,160 @@ All Vibe Checks from the series, in chronological order:
 
 ---
 
-## Key source URLs for primary sources (to be fetched later — many block direct access)
+## OpenAI DevDay — GPT-4 Turbo, Assistants API (Nov 6, 2023) [OAI] [BOTH]
 
-- OpenAI Blog: https://openai.com/blog (403s on WebFetch — may need user to scrape)
+**What shipped**: GPT-4 Turbo (128K context, 3x cheaper input / 2x cheaper output vs GPT-4), Assistants API (persistent threads, Code Interpreter, Retrieval, function calling), GPT-4 Turbo with Vision, DALL-E 3 API, Text-to-Speech API, JSON mode, parallel function calling, reproducible outputs (seed parameter), Whisper v3, Copyright Shield.
+
+**Source**: [OpenAI: New models and developer products announced at DevDay](https://openai.com/index/new-models-and-developer-products-announced-at-devday/)
+
+**What worked well (with examples)**:
+- **Parallel function calling**: Users could send one message requesting multiple actions (e.g. "open the car window and turn off the A/C") — previously required multiple roundtrips ([source](https://openai.com/index/new-models-and-developer-products-announced-at-devday/))
+- **JSON mode**: New `response_format` parameter ensures syntactically correct JSON output — huge for developers building structured integrations
+- **GPT-3.5 Turbo improvements**: 38% improvement on format following tasks (JSON, XML, YAML) in internal evals
+- **Code Interpreter**: Writes and runs Python in sandbox, generates graphs/charts, processes diverse file formats
+- **Retrieval**: RAG built in — "you don't need to compute and store embeddings for your documents, or implement chunking and search algorithms"
+- **Assistants API persistent threads**: Developers hand off thread state management to OpenAI, work around context window constraints
+
+**What failed or was unreliable (with examples)**:
+- **"Lazy GPT-4 Turbo"**: Within weeks, users widely reported the model cutting corners — truncating code, responding with "...rest of the code is similar..." (see separate entry)
+- **GPT-4 fine-tuning**: Only "experimental access" — admitted that "GPT-4 fine-tuning requires more work to achieve meaningful improvements over the base model"
+- **Assistants API beta quality**: Persistent threads and retrieval were beta, with rough edges
+
+**Harness vs. model**: BOTH — The model got cheaper/faster (128K context), but the real news was tooling: Assistants API, Code Interpreter, Retrieval, parallel function calling. This was OpenAI's first serious "harness" play.
+
+**Cultural context**: DevDay was OpenAI's first developer conference. Sam Altman was fired by the board 11 days later (Nov 17). The entire event was overshadowed by the boardroom drama within weeks.
+
+**Skeptic's take**: "They gave us a bigger context window, cheaper prices, and a bunch of beta APIs — then the CEO got fired. And the model got lazier. Cool."
+
+**Maven's take**: "This is where OpenAI stopped just making models and started building infrastructure. Assistants API with persistent threads, Code Interpreter, Retrieval — these are harness primitives. The model improvements were table stakes; the tooling was the real story."
+
+---
+
+## GPT-4o — Omni model (May 13, 2024) [OAI] [MODEL]
+
+**What shipped**: GPT-4o ("omni") — a single end-to-end model processing text, audio, image, and video. Audio response latency: 232ms average (vs 2.8s GPT-3.5 / 5.4s GPT-4 voice mode). 2x faster and 50% cheaper than GPT-4 Turbo in API. Available in free tier.
+
+**Source**: [OpenAI: Hello GPT-4o](https://openai.com/index/hello-gpt-4o/)
+
+**What worked well (with examples)**:
+- **Multimodal reasoning**: Accepted any combo of text/audio/image/video input, generated text/audio/image output — first truly multimodal model
+- **Audio latency**: 232ms average response time, "similar to human response time in a conversation" — vs the old 3-model pipeline (transcribe → think → speak)
+- **Multilingual tokenization**: 1.4-4.4x fewer tokens for non-English languages (e.g. Gujarati 4.4x, Telugu 3.5x, Chinese 1.4x)
+- **Free tier access**: First time a GPT-4-class model was available free — massive democratization moment
+- **Vision**: Real-world image analysis, document reading with figures, used by BeMyEyes for accessibility
+- **Safety**: 90th percentile on competitive programming (Codeforces), 78.2% on MMMU
+
+**What failed or was unreliable (with examples)**:
+- **Voice mode delayed**: Despite the flashy demo, audio outputs were "limited to a selection of preset voices" at launch; full voice mode rolled out much later
+- **The "Her" moment backlash**: Scarlett Johansson accused OpenAI of imitating her voice for the "Sky" voice without permission; OpenAI paused the voice
+- **Safety rating**: Medium on persuasion (both pre and post mitigation) — highest risk category
+
+**Harness vs. model**: Primarily MODEL — this was about making a single model natively multimodal rather than chaining separate models. But the free tier access was a distribution/harness decision.
+
+**Cultural context**: The live demo went viral — the model flirting, singing, being sarcastic in real-time. Media compared it to the movie "Her." Then the Scarlett Johansson voice controversy erupted. This was OpenAI at peak cultural relevance.
+
+**Skeptic's take**: "They did a flashy demo where the AI flirts and sings, then it turns out the voice mode isn't actually shipping yet, and they may have stolen someone's voice. Style over substance."
+
+**Maven's take**: "Underneath the controversy, this was genuinely important: end-to-end multimodal processing means the model doesn't lose information between modalities anymore. And putting GPT-4-class intelligence in the free tier changed who could access this technology."
+
+---
+
+## OpenAI o1 — "Learning to Reason" (Sep 12, 2024) [OAI] [MODEL]
+
+**What shipped**: OpenAI o1-preview — first model trained with large-scale reinforcement learning to use chain-of-thought reasoning before answering. Separate "thinking" process visible as a summary (raw chain of thought hidden).
+
+**Source**: [OpenAI: Learning to Reason with LLMs](https://openai.com/index/learning-to-reason-with-llms/)
+
+**What worked well (with examples)**:
+- **AIME 2024**: 74% pass@1 (11.1/15 problems), 83% consensus@64, 93% with reranking@1000 — vs GPT-4o's 12% (1.8/15). "Places among top 500 students nationally" ([source](https://openai.com/index/learning-to-reason-with-llms/))
+- **GPQA Diamond**: "Became the first model to surpass the performance of human experts" with PhDs in physics, biology, chemistry
+- **Competitive programming**: Codeforces Elo 1258 (62nd percentile) vs GPT-4o's 808 (11th percentile); further fine-tuned version scored 1807 (93rd percentile)
+- **IOI 2024**: Fine-tuned version scored 213 points (49th percentile) under competition conditions; with relaxed submission limits, scored 362 (above gold medal threshold)
+- **Cipher solving**: Solved a novel letter-pair averaging cipher that GPT-4o completely failed — the "STRAWBERRY" example became iconic
+- **Safety via reasoning**: 93.4% safe on challenging jailbreaks vs GPT-4o's 71.4%; chain of thought allows the model to reason about safety rules
+
+**What failed or was unreliable (with examples)**:
+- **Natural language tasks**: "Not preferred on some natural language tasks" — human evaluators preferred GPT-4o for non-reasoning tasks
+- **Slow**: Extended thinking time meant much higher latency for simple questions
+- **Hidden chain of thought**: Raw reasoning hidden from users — "competitive advantage" cited alongside monitoring rationale. Transparency concern.
+- **Reward hacking**: OpenAI noted "interesting instances of reward hacking" in their safety testing
+
+**Harness vs. model**: MODEL — This was a fundamental training paradigm shift (reinforcement learning for reasoning), not a tooling improvement. But the hidden-then-summarized chain of thought is a harness/UX decision.
+
+**Cultural context**: Paradigm shift from "predict next token faster" to "think longer before answering." OpenAI splitting into two model families: GPT (fast, multimodal) and o-series (slow, reasoning). The STRAWBERRY cipher demo went viral.
+
+**Skeptic's take**: "So now it thinks for 5 seconds before answering, and they won't show me what it's thinking? And it's worse at normal conversation? I'm paying for a model that's slower AND they're hiding its work?"
+
+**Maven's take**: "This is the most important paradigm shift since transformers. The model doesn't just pattern-match anymore — it reasons through problems step by step. AIME going from 12% to 74% isn't an incremental improvement, it's a category change. And the safety implications of reasoning about rules are huge."
+
+---
+
+## OpenAI o3 and o4-mini — Agentic Reasoning (Apr 16, 2025) [OAI] [BOTH]
+
+**What shipped**: o3 (most powerful reasoning model) and o4-mini (fast/cheap reasoning). First reasoning models that can agentically use ALL ChatGPT tools — web search, Python, file analysis, image generation, visual reasoning. Can "think with images" (integrate images into chain of thought). Also launched Codex CLI (open-source terminal coding agent).
+
+**Source**: [OpenAI: Introducing o3 and o4-mini](https://openai.com/index/introducing-o3-and-o4-mini/)
+
+**What worked well (with examples)**:
+- **SWE-bench**: o3 set new SOTA "without building a custom model-specific scaffold" — the model itself was the scaffold
+- **AIME 2025**: o4-mini achieved 99.5% pass@1 with Python interpreter access (100% consensus@8). o3: 98.4% pass@1
+- **20% fewer major errors**: o3 made 20% fewer major errors than o1 on difficult real-world tasks, "especially excelling in programming, business/consulting, and creative ideation"
+- **Thinking with images**: First models to integrate images directly into chain of thought — "They don't just see an image — they think with it." Can rotate, zoom, transform images during reasoning
+- **Agentic tool use example**: "How will summer energy usage in California compare to last year?" → model searches web for utility data, writes Python forecast, generates graph, explains factors — all chained automatically
+- **Codex CLI**: Open-source terminal coding agent, $1M grant initiative
+
+**What failed or was unreliable (with examples)**:
+- **Cost**: Still expensive at high reasoning effort; cost-performance tradeoff required careful tuning
+- **Replaced previous models**: Plus/Pro/Team users had o1/o3-mini removed from selector entirely — no choice to use simpler models
+- **Convergence acknowledged**: OpenAI stated they're "converging the specialized reasoning capabilities of the o-series with the natural conversational abilities of the GPT-series" — admission the split was unsustainable
+
+**Harness vs. model**: BOTH — The reasoning improvements (thinking with images, better RL scaling) were model advances. But the agentic tool use (reasoning about WHEN to use tools, chaining tools) was a harness/training innovation. Codex CLI was pure harness.
+
+**Cultural context**: This was the "agents actually work now" moment for OpenAI. The o-series went from "good at math puzzles" to "can actually do multi-step work." Codex CLI was OpenAI's response to Claude Code. Dan Shipper (Every.to) called o3 "the biggest wow moment since GPT-4."
+
+**Skeptic's take**: "They gave reasoning models tools and suddenly they work better? Isn't that what everyone's been saying — it's not the model, it's what you plug into it?"
+
+**Maven's take**: "This is the convergence point. Reasoning + tools + vision in one model. The SWE-bench result without custom scaffolding is significant — the model itself learned when and how to use tools. And they open-sourced Codex CLI, which is a real concession that the harness matters."
+
+---
+
+## GPT-5 — Unified Intelligence (Aug 7, 2025) [OAI] [BOTH]
+
+**What shipped**: GPT-5 — "unified system" combining fast responses and deep reasoning with a real-time router. Replaces GPT-4o, o3, o4-mini, GPT-4.1, and GPT-4.5 as the default. GPT-5 pro for extended reasoning. New "safe completions" safety training paradigm. Four personality presets (Cynic, Robot, Listener, Nerd).
+
+**Source**: [OpenAI: Introducing GPT-5](https://openai.com/index/introducing-gpt-5/)
+
+**What worked well (with examples)**:
+- **Hallucination reduction**: ~45% fewer factual errors than GPT-4o with web search; ~80% fewer than o3 when thinking. "About six times fewer [hallucinations] than o3" on long-form content
+- **Honesty/deception**: When given impossible tasks (missing images, nonexistent APIs), o3 gave confident wrong answers 86.7% of the time; GPT-5 only 9%. Deception rate dropped from 4.8% (o3) to 2.1%
+- **SWE-bench Verified**: 74.9% (new SOTA)
+- **AIME 2025**: 94.6% without tools
+- **Aider Polyglot**: 88%
+- **HealthBench**: Best model for health questions; "acts more like an active thought partner, proactively flagging potential concerns"
+- **Efficiency**: 50-80% fewer output tokens than o3 for comparable performance on reasoning tasks
+- **Sycophancy reduction**: Sycophantic replies cut from 14.5% to <6% in targeted evaluations
+- **Safe completions**: New training paradigm teaching partial answers and transparent refusals instead of binary comply/refuse
+- **Coding aesthetics**: "Beautiful and responsive websites, apps, and games... with an eye for aesthetic sensibility in just one prompt" — better understanding of spacing, typography, white space
+
+**What failed or was unreliable (with examples)**:
+- **Bio risk**: Treated as "High capability" in biological/chemical domain — required 5,000 hours of red-teaming, multilayered defense system
+- **Free tier limitations**: Once usage limits hit, falls back to "GPT-5 mini" — two-tier experience
+- **Model proliferation**: Despite claiming "unified," still has GPT-5, GPT-5 thinking, GPT-5 pro, GPT-5 mini — four variants
+- **Router opacity**: Real-time router decides when to think vs. respond quickly — users can't fully control this
+
+**Harness vs. model**: BOTH — The model advances (safe completions training, reduced hallucinations, unified architecture) are substantial. But the router, personality presets, and the strategic decision to unify all models under one name are harness/UX decisions.
+
+**Cultural context**: OpenAI ended the GPT/o-series split. Sam Altman framed it as AI that "feels less like talking to AI and more like chatting with a helpful friend with PhD-level intelligence." The sycophancy fix was an explicit response to the GPT-4o update controversy from earlier in 2025.
+
+**Skeptic's take**: "They merged everything into one model and it still has four variants? And a hidden router decides when it thinks hard? I liked knowing which model I was using. Now it's a black box that sometimes thinks and sometimes doesn't."
+
+**Maven's take**: "The hallucination and deception numbers are the real story. Going from 86.7% confident wrong answers on impossible tasks to 9% is transformative. Safe completions training — teaching partial answers instead of binary refuse/comply — is exactly the nuanced approach AI safety needed. And unifying everything under one model is the right UX even if the implementation still has variants."
+
+---
+
+## Key source URLs for primary sources
+
+- OpenAI Blog: https://openai.com/blog (accessible via browser)
 - Anthropic News: https://www.anthropic.com/news
 - Claude Code Changelog: https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md
 - Anthropic Release Notes: https://platform.claude.com/docs/en/release-notes/overview
