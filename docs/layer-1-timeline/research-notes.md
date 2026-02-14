@@ -4,6 +4,72 @@ _This file contains the rich, source-linked detail that backs up the overview ti
 
 ---
 
+## ChatGPT Launch — "A Research Preview" (Nov 30, 2022) [OAI] [HARNESS]
+
+**What shipped**: ChatGPT — a conversational interface on top of GPT-3.5, fine-tuned with RLHF. Released as a free "research preview." OpenAI's announcement was six sentences long.
+
+**Sources**:
+- [OpenAI: Introducing ChatGPT](https://openai.com/index/chatgpt/)
+- [History.com: ChatGPT is released to the public](https://www.history.com/this-day-in-history/november-30/chatgpt-released-openai)
+- [Cisco: How ChatGPT changed almost everything](https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2024/m12/how-chatgpt-changed-well-almost-everything.html)
+
+**What worked well (with examples)**:
+- **Conversational format**: Could answer follow-up questions, admit mistakes, challenge incorrect premises, reject inappropriate requests
+- **Accessibility**: Free to try, no API key needed, no technical knowledge required
+- **Adoption speed**: 1 million users within 5 days (per Sam Altman). Fastest consumer app adoption in history at the time
+- **RLHF**: "Substantial reductions in harmful and untruthful outputs" vs raw GPT-3.5
+
+**What failed or was unreliable (with examples)**:
+- **Hallucinations**: Confidently generated plausible-sounding but false information
+- **Knowledge cutoff**: Trained on data through early 2022, couldn't answer about recent events
+- **No tool use**: Could only generate text — couldn't search the web, run code, or interact with anything
+- **No memory**: Each conversation was independent, no persistence between sessions
+- **Inconsistent quality**: Answers varied dramatically based on prompt phrasing
+
+**Harness vs. model**: HARNESS — The model (GPT-3.5) was not new; it had existed for months. What was new was the chat interface, the RLHF training, and the decision to make it free. ChatGPT was a *harness* innovation that made an existing model accessible to everyone. This is the original proof of the project's core thesis: the harness matters more than the model.
+
+**Cultural context**: The announcement that started everything. Six sentences from OpenAI became the biggest technology story of the decade. The understated launch ("research preview") contrasted with the explosive adoption. Teachers panicked about cheating. Media oscillated between utopian and apocalyptic framing. The conversation about AI shifted from "interesting research" to "this changes everything."
+
+**Skeptic's take**: "It's a fancy autocomplete that confidently makes things up. People are treating it like it's intelligent because it speaks in complete sentences. This is going to end badly."
+
+**Maven's take**: "The model isn't even the story — GPT-3.5 existed before ChatGPT. What changed is that someone wrapped it in a chat interface and made it free. The HARNESS is the innovation. A million people in five days. This is the moment AI became everyone's concern."
+
+---
+
+## Claude 3.7 Sonnet & Claude Code Launch (Feb 24, 2025) [ANT] [BOTH]
+
+**What shipped**: Claude 3.7 Sonnet — "first hybrid reasoning model on the market" with extended thinking. Claude Code — agentic command-line coding tool in limited research preview. Extended thinking lets users set a token "budget" (up to 128K tokens) for step-by-step reasoning.
+
+**Sources**:
+- [Anthropic: Claude 3.7 Sonnet](https://www.anthropic.com/news/claude-3-7-sonnet)
+- [Every.to Vibe Check: Claude 3.7 Sonnet and Claude Code](https://every.to/vibe-check/vibe-check-claude-3-7-sonnet-and-claude-code)
+
+**What worked well (with examples)**:
+- **SWE-bench Verified**: 63.7% without scaffolding; 70.3% with additional compute
+- **TAU-bench**: Top performance on complex real-world agent tasks
+- **Claude Code single-pass**: "Completed tasks in a single pass that would normally take 45+ minutes of manual work"
+- **Integrated reasoning**: Rather than a separate reasoning model (like o1), reasoning is a built-in capability you can toggle. "Reasoning should be an integrated capability of frontier models rather than a separate model entirely"
+- **Extended thinking budget**: Developers can set token budget for thinking, balancing speed vs. quality
+- **Reduced refusals**: "More nuanced distinctions between harmful and benign requests, reducing unnecessary refusals by 45%"
+- **Claude Code capabilities**: Search/read code, edit files, write/run tests, commit/push to GitHub, execute CLI tools
+- **Customer validation**: Cursor: "best-in-class for real-world coding tasks." Cognition: superior at "planning code changes and handling full-stack updates." Replit: "build sophisticated web apps and dashboards from scratch"
+
+**What failed or was unreliable (with examples)**:
+- **Claude Code limited preview**: Only available to limited set of users initially
+- **Cost concerns**: Every.to noted ~$0.25/problem for Claude Code — expensive for casual use
+- **Too eager on existing code**: Every.to: "too eager to help" on existing projects — "requires significant boundary-setting"
+- **Hallucinations without docs**: Struggles without documentation access → hallucinations
+
+**Harness vs. model**: BOTH — Claude 3.7 Sonnet's extended thinking was a MODEL innovation. Claude Code was a pure HARNESS innovation — a terminal-based agentic coding tool. The key insight from Every.to: "Claude Code outperforms Cursor using the same model due to superior prompting and scaffolding." **The harness matters more than the model.**
+
+**Cultural context**: This was Anthropic's "tools in a loop" moment. Claude Code was the first major AI company shipping an agentic coding tool built on their own model. The Every.to Vibe Check called it "better than anything I have used on the agent front" — and crucially noted the harness advantage over competitors using the same model.
+
+**Skeptic's take**: "A coding agent that costs a quarter per problem and needs extensive babysitting on existing projects? And it hallucinates without docs? This is a tool for developers, not normal people."
+
+**Maven's take**: "The Every.to finding is the whole thesis: Claude Code beats Cursor with the SAME MODEL because the harness is better. And extended thinking isn't a separate model — it's a mode. That's the right architecture. The terminal interface is limiting but it's the foundation everything else builds on."
+
+---
+
 ## GPT-4 Launch (Mar 14, 2023) [OAI] [MODEL]
 
 **What shipped**: GPT-4 — large multimodal model (text + image input, text output). First model to pass the Bar Exam (90th percentile vs GPT-3.5's 10th percentile). 8K and 32K context versions. API with waitlist.
