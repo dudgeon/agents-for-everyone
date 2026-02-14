@@ -68,11 +68,21 @@ docs/
     plot-arc.md               — Narrative structure
     tone-guide.md             — Style and voice decisions
 
-  research/                   — Raw research notes (feeds layer 1)
+  research/                   — Raw research dumps (feeds layer 1)
+    session-N-topic.md        — Full agent output per research batch
 
 drafts/                       — Story drafts (Phase 6+)
 assets/                       — Visual references, illustrations
 ```
+
+## Session Start Protocol
+
+Every new session should begin with:
+1. Read `docs/roadmap.md` for current phase and session log
+2. Read `docs/backlog.md` for open questions
+3. Read `docs/decisions.md` for recent decisions
+4. Skim `docs/layer-1-timeline/research-notes.md` headings to recall coverage
+5. Check `memory/MEMORY.md` for cross-session context
 
 ## Working Conventions
 
@@ -84,6 +94,7 @@ assets/                       — Visual references, illustrations
 - **Ask, don't assume.** This project requires the user's creative judgment. When in doubt, ask.
 - **Timeline research is independent work.** Claude does this via web research, user validates.
 - **Primitives, domains, curriculum, and story require collaboration.** Don't finalize without user input.
+- **Check research balance.** This is a book about agents and harnesses, not foundation models. Before considering any research phase complete, verify coverage isn't skewed toward model releases at the expense of tooling, harness, and ecosystem events. When in doubt, ask: "Would the Skeptic and Maven have something to say about this?" If an event shaped how people USE AI (not just how smart the AI is), it belongs in the timeline.
 
 ## Research Quality Standards
 
@@ -93,6 +104,11 @@ Every research artifact in this project must meet these standards. Do NOT write 
 - Every factual claim must include a source URL inline or in a `### Sources` section per entry.
 - Prefer primary sources (OpenAI blog, Anthropic blog, official changelogs) over secondhand reporting.
 - When using web search, **persist the URLs in the output file immediately** — do not summarize and discard.
+
+### Persist raw research material
+- **Storage is cheaper than time and tokens.** When research agents return results, persist the full output to `docs/research/session-N-topic.md` BEFORE synthesizing into entries. This preserves URLs, details, and context that may be needed later without re-researching.
+- Raw research files should include: all source URLs found, key quotes, data points, and anything that didn't make the final entry but might be useful downstream.
+- Never discard research output. If an agent returned it, save it.
 
 ### Specificity over generality
 - BAD: "GPT-3.5 hallucinated frequently"
@@ -126,12 +142,27 @@ Every timeline event should follow this structure:
 **Maven's take**: [What's genuinely new/valuable here?]
 ```
 
+### Template for arc entries (multi-event topics)
+When a topic spans multiple events and the *narrative thread* is the story (e.g., Copilot's autocomplete→agent evolution, OpenAI's three failed platform plays), write a single arc entry covering the full chronology rather than fragmenting across separate event entries. Arc entries should have:
+- **Complete chronology** with dates
+- **The narrative thread** — what was learned/changed at each stage
+- **Where this arc lands today**
+- All source URLs for every stage
+
 ### When doing web research
 - Do multiple searches per topic — don't rely on one query.
 - Fetch primary source pages (blog posts, changelogs) not just search result summaries.
 - When a search result looks valuable, use WebFetch to get the full content and extract specifics.
 - Capture quotes from commentators verbatim with attribution.
 - If a source is paywalled or inaccessible, note it explicitly and ask the user if they can scrape it.
+- When a topic spans multiple events (e.g., "the evolution of GitHub Copilot"), research the full arc in one pass rather than individual events in isolation.
+
+## Technical Access Notes
+
+- OpenAI blog (openai.com) returns 403 via WebFetch — use Chrome MCP browser tools instead
+- Anthropic blog (anthropic.com) works via WebFetch
+- Medium articles often return 403 — note and use alternative sources
+- General-purpose subagents CAN perform web searches independently
 
 ## Current Phase
 
