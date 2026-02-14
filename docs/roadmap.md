@@ -4,9 +4,9 @@ This is a long-lived document. It describes the full arc of this project across 
 
 ---
 
-## Phase 1 — Timeline Research (Layer 1) ← CURRENT
+## Phase 1 — Timeline Research (Layer 1) ← CURRENT (parallel with Phase 4 rough draft)
 
-**Status**: In progress — raw timeline complete, awaiting epoch clustering
+**Status**: In progress — raw timeline complete (37 entries, 1,008 lines), awaiting epoch clustering. Epoch clustering blocked on rough curriculum (see Decision 001).
 **Mode**: Independent research by Claude, validated by user
 **Goal**: Build a canonical, factual timeline of AI assistant tooling from Nov 2022 to present.
 
@@ -94,9 +94,9 @@ Each epoch file should contain:
 
 ---
 
-## Phase 4 — Curriculum Design (Layer 4)
+## Phase 4 — Curriculum Design (Layer 4) ← ROUGH DRAFT IN PARALLEL
 
-**Status**: Not started
+**Status**: Roughing out in parallel with Phase 1 epoch clustering (see Decision 001)
 **Mode**: Collaborative
 **Goal**: Design the learning progression — what a reader needs to understand, in what order, to become effective with agentic AI.
 
@@ -213,5 +213,9 @@ Each epoch file should contain:
   - "Vibe Coding" to "Agentic Engineering" meta entry (Karpathy terminology arc)
 - Enriched existing AutoGPT entry with founders, GitHub stars data, cultural significance
 - research-notes.md grew from 598 to 1,008 lines (~37 total detailed entries)
-- **Still needed**: User clarification on "ralph loops" and "openclaw"
-- **Next**: User reviews full timeline, we cluster into epochs together
+- **Still needed**: User clarification on "ralph loops" and "openclaw" (added to backlog)
+- Session retro: added research balance check, raw material persistence, arc entry template to CLAUDE.md
+- Created 3 skills: /session-start, /coverage-check, /retro
+- Persisted raw research agent output to docs/research/ (4 files, 715 lines, all source URLs preserved)
+- **Decision 001**: Rough out curriculum (Layer 4) in parallel with epoch clustering — know the destination before shaping the journey
+- **Next**: Rough draft of curriculum progression, then use it to inform epoch clustering

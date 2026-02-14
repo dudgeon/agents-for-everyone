@@ -11,6 +11,7 @@ Open questions and parked ideas, organized by layer.
 - [ ] What are the most iconic failure anecdotes per epoch?
 - [ ] Should epochs be defined by model releases, by capability thresholds, or by what a user could actually do?
 - [ ] How granular should the Anthropic/Claude timeline be vs. the OpenAI timeline? (Both matter, but Claude is the destination)
+- [ ] Research "ralph loops" and "openclaw" — user mentioned as topics to cover, needs clarification on what these refer to
 
 ## Layer 2 — Primitives (Phase 2)
 
