@@ -55,3 +55,4 @@ _Ideas that came up but we're not ready to evaluate yet._
 - A recurring task attempted in each era, showing same problem with evolving tooling
 - Role for actual AI-generated artifacts in the text (showing what each era produced)
 - Could the story reference specific prompts/outputs, or describe them narratively?
+- **Appendix: The fine-tuning dead end** — A chapter (or appendix) making the case that fine-tuning is a dead end for most users, and that the application layer (CLAUDE.md, skills, instructions, MCP) paired with ever-evolving frontier models is the more viable path for alignment, skills development, and personalization. The argument: fine-tuning locks you to a frozen model snapshot, requires expensive data curation, and falls behind with every new model release — while the application layer travels with you across model upgrades, is editable in plain English, and compounds over time. This connects to the harness-over-model thesis at the heart of the book.

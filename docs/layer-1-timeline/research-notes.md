@@ -231,19 +231,32 @@ _This file contains the rich, source-linked detail that backs up the overview ti
 
 ---
 
-## Iconic Failure: AutoGPT / BabyAGI — Agents that couldn't (Mar-Apr 2023)
+## Iconic Failure / Cultural Moment: AutoGPT / BabyAGI — The First Agent Hype Cycle (Mar-Apr 2023) [ECO] [HARNESS]
 
-**What happened**: AutoGPT (GitHub, Mar 30) and BabyAGI (Yohei Nakajima, Mar 28) promised autonomous multi-step agents using GPT-4. Massive viral hype. Fortune called BabyAGI "taking Silicon Valley by storm." Andrej Karpathy called it "the next frontier of prompt engineering."
+**What happened**: AutoGPT (Toran Bruce Richards, Mar 30) and BabyAGI (Yohei Nakajima, Mar 28) promised autonomous multi-step agents using GPT-4. The first wave of "agent" hype in the AI era.
 
-**Reality**: Tom's Hardware headline: "Auto-GPT and BabyAGI Are AI's New Hotness, But They Suck Right Now." Agents assumed powers they didn't have, made up information, got stuck in infinite loops, contradicted instructions. GPT-3.5 was dramatically worse than GPT-4 as the brain. By late 2023, AutoGPT team removed external vector DB support — turns out agents didn't generate enough facts to need it.
+**BabyAGI**: A Python script of ~140 lines. Architecture: execution agent completes a task → task-creation agent generates follow-ups → prioritization agent reorders the list. Task/result pairs stored as vectors in Pinecone. Nakajima, a venture capitalist, was inspired by the #HustleGPT movement (people using ChatGPT as a "co-founder"). 18,000+ GitHub stars.
 
-**Story value**: The first "agent hype cycle." Promise was real but execution was years premature. Sets up the Maven's argument: "The vision was right, the tooling wasn't ready." The Skeptic: "I saw this movie before. It didn't work."
+**AutoGPT**: Built by Toran Bruce Richards (video game company Significant Gravitas Ltd.). Wrapped GPT-4 in a loop: set goals → create tasks → execute → evaluate → iterate. Logan Kilpatrick (then at OpenAI) called it "the fastest growing GitHub repo in history, eclipsing decade-old open source projects in 2 weeks." Reached **100,000 stars** by late April. **174,000+ stars** total — **#1 GitHub repository of 2023**. Significant Gravitas raised **$12 million** in October 2023.
+
+**Why it didn't work**: Infinite loops (users reported it getting stuck for entire nights). Memory limitations — unaware of what it had already done, repeatedly attempting the same subtask. Andrej Karpathy attributed this to "the finite context window." Never asked clarifying questions. API cost hemorrhaging — running GPT-4 in loops burned through credits with little to show. Tom's Hardware headline: "Auto-GPT and BabyAGI Are AI's New Hotness, But They Suck Right Now." By late 2023, AutoGPT team removed external vector DB support — agents didn't generate enough facts to need it.
+
+**Cultural significance**: This was the moment the word **"agent"** entered mainstream AI discourse. Fortune called BabyAGI "taking Silicon Valley by storm." Karpathy called it "the next frontier of prompt engineering." The concepts of AI planning, tool use, and autonomous execution became tangible to millions — even though the implementations were fragile. AutoGPT set the template every subsequent coding agent would follow: give an LLM tools, let it plan, let it act.
+
+**Story value**: The first "agent hype cycle." Promise was real but execution was years premature. Sets up the Maven's argument: "The vision was right, the tooling wasn't ready." The Skeptic: "I saw this movie before. It didn't work." The 18-month gap between AutoGPT's hype (Mar 2023) and working agents (late 2024-2025) is the central tension of the book.
+
+**Skeptic's take**: "174,000 stars for software that gets stuck in infinite loops all night. The GitHub star count IS the product. Nobody is actually using this to do real work."
+
+**Maven's take**: "AutoGPT was right about everything except timing. Tools in a loop, autonomous execution, goal decomposition — that's exactly what Claude Code and Cursor do now. The difference is the models got good enough and the harnesses got smart enough. AutoGPT was a prophecy, not a product."
 
 **Sources**:
+- [AutoGPT Wikipedia](https://en.wikipedia.org/wiki/AutoGPT)
+- [Logan Kilpatrick tweet on AutoGPT growth](https://x.com/OfficialLoganK/status/1647757809654562816)
 - [Tom's Hardware: Auto-GPT and BabyAGI Are AI's New Hotness, But They Suck Right Now](https://www.tomshardware.com/news/autonomous-agents-new-big-thing)
 - [Fortune: BabyAGI and AutoGPT](https://fortune.com/2023/04/15/babyagi-autogpt-openai-gpt-4-autonomous-assistant-agi/)
+- [Jina AI: Auto-GPT Unmasked — Hype, Hard Truths, Production Pitfalls](https://jina.ai/news/auto-gpt-unmasked-hype-hard-truths-production-pitfalls/)
+- [Birth of BabyAGI — Yohei Nakajima](https://yoheinakajima.com/birth-of-babyagi/)
 - [VentureBeat: As AI agents like Auto-GPT speed up the race](https://venturebeat.com/ai/as-ai-agents-like-auto-gpt-speed-up-generative-ai-race-we-all-need-to-buckle-up-the-ai-beat)
-- [Medium: Agentic AI: AutoGPT, BabyAGI — Substance or Hype?](https://medium.com/@roseserene/agentic-ai-autogpt-babyagi-and-autonomous-llm-agents-substance-or-hype-8fa5a14ee265)
 
 ---
 
@@ -585,14 +598,411 @@ All Vibe Checks from the series, in chronological order:
 
 ---
 
+## GitHub Copilot — From Autocomplete to Agent (Jun 2021 → Present) [ECO] [HARNESS]
+
+**What shipped**: The full arc of GitHub Copilot — the product that proved AI coding tools were a real market, then struggled to keep up as the market outgrew autocomplete.
+
+**Sources**:
+- [GitHub Copilot Wikipedia](https://en.wikipedia.org/wiki/GitHub_Copilot)
+- [VS Code Blog: Introducing Copilot Agent Mode](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode)
+- [GitHub Newsroom: Coding Agent for Copilot](https://github.com/newsroom/press-releases/coding-agent-for-github-copilot)
+- [TechCrunch: GitHub Copilot crosses 20M users](https://techcrunch.com/2025/07/30/github-copilot-crosses-20-million-all-time-users/)
+- [CIO Dive: Copilot subscriber count and revenue growth](https://www.ciodive.com/news/github-copilot-subscriber-count-revenue-growth/706201/)
+
+**Complete chronology**:
+- **Jun 29, 2021**: Copilot announced; technical preview begins. Powered by OpenAI Codex (GPT-3-derived). VS Code only. Pure autocomplete — inline code suggestions.
+- **Oct 2021**: Expanded to JetBrains and Neovim
+- **Mar 2022**: Visual Studio 2022 support added
+- **Jun 21, 2022**: **General availability** — $10/month or $100/year. The first mass-market AI coding tool.
+- **Feb 2023**: Copilot for Business ($19/user/month)
+- **Dec 2023**: **Copilot Chat** GA — integrated natural language chat, not just autocomplete. First step beyond line completion.
+- **Feb 2024**: **Copilot Enterprise** GA ($39/user/month) — customizable to private codebases
+- **Apr 2024**: **Copilot Workspace** technical preview — natural language task-to-code environment. Users describe what they want; Copilot creates a plan, implements it.
+- **Oct 2024**: Multi-model support announced — Claude 3.5 Sonnet and Gemini alongside GPT models. GitHub Spark also announced.
+- **Feb 2025**: **Agent Mode** previewed in VS Code — autonomous multi-step coding. Copilot can now identify subtasks, edit multiple files, run terminal commands, and iterate on errors autonomously.
+- **May 2025 (Microsoft Build)**: Asynchronous **Coding Agent** — assign a GitHub issue to Copilot and it spins up a secure dev environment via GitHub Actions, pushes commits to a draft PR. Excels at "low-to-medium complexity tasks in well-tested codebases." Agent mode expanded to JetBrains, Eclipse, Xcode. Copilot Chat in VS Code open-sourced.
+- **Mid-2025**: **"Project Padawan"** — fully autonomous agent handling entire GitHub issues independently
+- **Jul 2025**: Crossed **20 million all-time users**
+
+**Market position**: $2B+ ARR. 42% market share in AI coding assistants. 90% of Fortune 100. 50K+ enterprise organizations. Satya Nadella said in 2024 that Copilot was already a larger business than all of GitHub was when Microsoft acquired it in 2018 ($7.5B).
+
+**The arc**: Autocomplete (2021-2022) → Chat (2023) → Workspace/planning (2024) → Agent mode (2025). Each step gave the AI more autonomy and scope. But by the time Copilot reached agent mode, purpose-built agents (Claude Code, Cursor, Devin) had already defined the category. Copilot's advantage is distribution (every GitHub user); its disadvantage is that it was designed as a plugin, not as an agent-native tool.
+
+**Harness vs. model**: HARNESS — Copilot is the canonical example of harness evolution. The underlying models changed (Codex → GPT-3.5 → GPT-4 → multi-model), but the product evolution was about HOW the model was deployed: autocomplete → chat → agent. Same models, radically different user experience.
+
+**Skeptic's take**: "Copilot proved that autocomplete is useful, but that's table stakes now. They're racing to add agent mode two years after Claude Code and Cursor already defined what coding agents look like. Microsoft's advantage is distribution, not innovation."
+
+**Maven's take**: "The Copilot arc IS the book's thesis in miniature. Same models, but the harness evolved from autocomplete to chat to agent, and each step unlocked dramatically more capability. And the multi-model announcement — letting users choose Claude or Gemini as the backend — proves the harness is model-agnostic. The wrapper matters more than what's inside."
+
+---
+
+## ChatGPT Plugins — The First Platform Play (Mar 23, 2023) [OAI] [HARNESS]
+
+**What shipped**: OpenAI's first attempt at giving ChatGPT tool use — third-party integrations allowing ChatGPT to browse the web, run code, and connect to external services. Framed as an "App Store moment for AI."
+
+**Sources**:
+- [OpenAI: ChatGPT plugins](https://openai.com/index/chatgpt-plugins/)
+- [TechCrunch: OpenAI connects ChatGPT to the internet](https://techcrunch.com/2023/03/23/openai-connects-chatgpt-to-the-internet/)
+- [Your Everyday AI: ChatGPT Is Killing Off Plugins](https://www.youreverydayai.com/chatgpt-is-killing-off-plugins-what-it-means/)
+- [Medium: Why ChatGPT Plugins Failed But MCP Is Winning](https://bhavyansh001.medium.com/why-chatgpt-plugins-failed-but-mcp-is-winning-real-reasons-mcp-deepdive-02-abb9619b8c55)
+
+**Launch partners**: Expedia, FiscalNote, Instacart, KAYAK, Klarna, Milo, OpenTable, Shopify, Slack, Speak, Wolfram, Zapier.
+
+**At peak**: ~1,000 plugins available.
+
+**Why they failed**:
+1. **Discovery problem**: No effective curation, ranking, or recommendation. Users couldn't find useful plugins.
+2. **Wrong abstraction**: Bolted external capabilities onto AI like browser extensions — but AI tools don't work like browsers.
+3. **Proprietary lock-in**: Only worked with ChatGPT. No interoperability with other AI tools.
+4. **Limited adoption**: Plugin selection and activation process was cumbersome.
+5. **Reliability**: Model often failed to correctly invoke plugins or misinterpreted outputs.
+
+**Discontinuation**:
+- **Nov 6, 2023**: At DevDay, GPTs and GPT Actions announced as replacement
+- **Mar 19, 2024**: No new plugin conversations allowed
+- **Apr 9, 2024**: All plugin-based chats shut down permanently
+
+**Harness vs. model**: HARNESS — Pure harness experiment. The model didn't change; the question was how to give it tools. The answer was wrong (proprietary platform), and Anthropic's MCP later showed the right answer (open protocol).
+
+**Cultural context**: The "platform play" dream. Everyone compared it to Apple's App Store. But plugins proved that tool use for LLMs requires deeper architectural thinking than bolting on API calls. A key failure that directly informed later successes.
+
+**Skeptic's take**: "They launched a plugin store, it flopped, they killed it, and now they're trying GPTs instead. How many times do they need to fail at this before admitting that 'ChatGPT as platform' doesn't work?"
+
+**Maven's take**: "Plugins failed for the right reasons — they taught the industry that AI tool use needs to be open (not proprietary), embedded (not bolted on), and standardized (not ad hoc). MCP succeeded everywhere plugins failed. The failure was necessary."
+
+---
+
+## Custom GPTs & GPT Store — The "App Store for AI" That Wasn't (Nov 2023 / Jan 2024) [OAI] [HARNESS]
+
+**What shipped**: Custom GPTs — no-code custom AI creations announced at DevDay (Nov 6, 2023). GPT Store launched Jan 10, 2024.
+
+**Sources**:
+- [OpenAI: Introducing the GPT Store](https://openai.com/index/introducing-the-gpt-store/)
+- [TechCrunch: OpenAI's GPT Store delayed to 2024 following leadership chaos](https://techcrunch.com/2023/12/01/openais-gpt-store-delayed-to-2024-following-leadership-chaos/)
+- [TechCrunch: OpenAI's chatbot store is filling up with spam](https://techcrunch.com/2024/03/20/openais-chatbot-store-is-filling-up-with-spam/)
+- [ArXiv: Assessing Prompt Injection Risks in 200+ Custom GPTs](https://arxiv.org/html/2311.11538v2)
+- [OpenAI Developer Forum: Is revenue sharing dead?](https://community.openai.com/t/is-revenue-sharing-dead-q1-2024-long-over-no-revenue-sharing-news/804196)
+
+**The DevDay demo**: Sam Altman built a "Startup Mentor" GPT on stage in ~3 minutes — uploaded a lecture, typed instructions, done. No code. The implicit promise: if the CEO can do this in three minutes, imagine what you can build.
+
+**Three building blocks**: Instructions (custom system prompts), Expanded Knowledge (up to 20 uploaded files as RAG), Actions (third-party API calls via OpenAPI specs). Plus built-in tools: Code Interpreter, DALL-E, web browsing.
+
+**The board crisis delay**: 11 days after DevDay, the board fired Altman (Nov 17). GPT Store delayed from Nov 2023 to Jan 2024. The centerpiece of Altman's vision was the first casualty of the chaos.
+
+**GPT Store launch (Jan 10, 2024)**: 3 million+ custom GPTs created. Only ~159,000 made it into the public store — **95% attrition**. Categories: Top Picks, DALL-E, Writing, Productivity, Research, Programming, Education, Lifestyle.
+
+**What went wrong**:
+1. **"Prompt wrapper" problem**: Most GPTs were thin wrappers — a custom system prompt with uploaded files. No defensible moat. Anyone could replicate a GPT by copying its instructions.
+2. **Security catastrophe**: Researchers tested 200+ GPTs and found **97.2% success rate extracting system prompts** and **100% success rate leaking uploaded knowledge files**. Even GPTs with "never share this" instructions were compromised. This fundamentally undermined commercial viability.
+3. **Spam and IP infringement**: Store filled with Disney/Marvel/Star Wars IP infringements, celebrity impersonation GPTs (Elon Musk, Trump, Obama), "AI girlfriend" bots violating policies, academic cheating tools.
+4. **Revenue sharing mirage**: Promised for Q1 2024. Deadline passed. Forum threads titled "Is revenue sharing dead?" accumulated hundreds of replies. When a limited program emerged, most builders earned nothing.
+5. **Discovery problem**: Search and browsing experience widely criticized as inadequate.
+
+**Harness vs. model**: HARNESS — GPTs were a harness innovation (no-code AI customization). The model didn't change; the question was whether wrapping it in a "store" metaphor would create an ecosystem. It didn't.
+
+**Skeptic's take**: "3 million GPTs created, 97% of them can have their secrets stolen, the store is full of IP-infringing spam, and the revenue sharing they promised never materialized. This is what happens when you try to build an App Store out of saved prompts."
+
+**Maven's take**: "GPTs proved two things: (1) people desperately want to customize AI, and (2) a centralized store is the wrong distribution model. The GPT Store tried to be the App Store for AI and failed. MCP later succeeded by being the opposite — not a store, but a protocol. Not proprietary, but open."
+
+---
+
+## Google Gems — The Pragmatic Approach (Aug 28, 2024) [ECO] [HARNESS]
+
+**What shipped**: Custom versions of Google Gemini. Users write instructions (up to 15,000 tokens), name their Gem, chat with it on demand. Initially for Gemini Advanced/Business/Enterprise subscribers; later free for all users.
+
+**Sources**:
+- [Google Blog: Google Gemini update August 2024](https://blog.google/products-and-platforms/products/gemini/google-gemini-update-august-2024/)
+- [Tom's Guide: Google Gemini Gems now available to all users](https://www.tomsguide.com/ai/google-gemini-gems-now-available-to-all-users-without-a-subscription)
+- [Launchcodex: Gemini Gems vs. Custom GPTs](https://launchcodex.com/blog/llms-ai-agents-tools/gemini-gems-vs-custom-gpts/)
+
+**Key differences from GPTs**:
+- **Google Workspace integration**: Gems tap directly into Drive, Docs, Gmail, Sheets, Slides. Real-time file access. Can be invoked from within Workspace apps via Gemini side panel.
+- **No marketplace**: No Gem Store. Can't share or discover others' Gems. Personal customization only.
+- **Smaller knowledge base**: 10 uploaded files vs GPTs' 20
+- **Free access**: Available to all Google users 18+ for free
+
+**Harness vs. model**: HARNESS — Same Gemini model, but with persistent custom instructions. Google deliberately didn't attempt the "App Store" vision. Gems are personal productivity tools embedded in the Workspace ecosystem.
+
+**Cultural context**: Google learned from OpenAI's GPT Store struggles. Rather than trying to build a marketplace, they built a personal customization tool deeply integrated with the Google ecosystem people already use. Less ambitious, more practical.
+
+**Skeptic's take**: "At least Google was honest about what this is — a way to save your favorite prompts. No marketplace, no revenue sharing promises, no delusions of grandeur."
+
+**Maven's take**: "Gems are boring in the best way. They solve a real problem — reducing repetitive prompting in daily work tools — without pretending to be a platform. The Workspace integration is the differentiator GPTs never had."
+
+---
+
+## OpenAI Assistants API → Responses API — The Arc of "AI Tool Use" (Nov 2023 → Mar 2025) [OAI] [HARNESS]
+
+**What shipped**: OpenAI's three iterations of developer infrastructure for building AI-powered applications with tool use.
+
+**Sources**:
+- [OpenAI: New Tools for Building Agents](https://openai.com/index/new-tools-for-building-agents/)
+- [OpenAI Migration Guide: Assistants to Responses](https://platform.openai.com/docs/guides/migrate-to-responses)
+- [VentureBeat: OpenAI Leader Admits Confusion About Responses API](https://venturebeat.com/dev/openai-leader-admits-way-too-much-confusion-about-responses-api-posts-thread)
+- [Amit Kothari: Assistants API Review](https://amitkoth.com/openai-assistants-api-review/)
+- [OpenAI Developer Forum: Assistants API Deprecation](https://community.openai.com/t/assistants-api-beta-deprecation-august-26-2026-sunset/1354666)
+
+**Phase 1 — Assistants API v1 (Nov 6, 2023, DevDay)**:
+- Bundled Code Interpreter, Retrieval (RAG), Function Calling into a managed backend
+- Persistent Threads — state lived on OpenAI's servers
+- **Promise**: Developers could offload AI assistant infrastructure to OpenAI
+- **Reality**: Opaque state management ("guessing what the thread contains"), unpredictable costs (re-processed full conversations), no streaming in v1, limited control
+- **Never left beta** in its entire lifespan
+
+**Phase 2 — Assistants API v2 (Apr 2024)**:
+- Retrieval renamed to File Search with Vector Store API
+- 10,000 files per assistant (up from v1 limits)
+- Streaming support added
+- **Still didn't fix** the fundamental architectural complaints — server-side state, opaque debugging, cost unpredictability
+
+**Phase 3 — Responses API + Agents SDK (Mar 11, 2025)**:
+- **Stateless by default** — flipped the entire model. No more server-side threads.
+- Simpler mental model: send input, get output. No polling, no run objects.
+- Built-in tools: web search, file search, computer use, code interpreter, image generation, **MCP support**
+- Open-source **Agents SDK** for Python
+- Optional statefulness via Conversations API
+- **Assistants API deprecated Aug 26, 2025**, sunset Aug 26, 2026
+
+**The meta-narrative**: Three attempts at the same problem. v1: "Let us handle everything" (developers hated losing control). v2: "Let us handle everything better" (still hated it). Responses API: "You own the state" (finally right). Then OpenAI adopted Anthropic's MCP, implicitly admitting their proprietary tool-use approaches lost to the open standard.
+
+**Harness vs. model**: HARNESS — All three iterations were about how developers build with models, not about the models themselves. The progression from managed state to developer-owned state is a pure harness lesson.
+
+**Skeptic's take**: "Three tries to get developer APIs right, and the third one basically admits the first two were wrong. The Assistants API was in beta for two years and never made it out. That's not iteration, that's flailing."
+
+**Maven's take**: "The arc is instructive. OpenAI learned that developers want primitives, not platforms. They want to own their state, not hand it to a vendor. And they learned that open standards (MCP) beat proprietary protocols. Every failure taught them something, and the Responses API is genuinely well-designed."
+
+---
+
+## Devin — "First AI Software Engineer" and the Agent Hype Reckoning (Mar 2024) [ECO] [HARNESS]
+
+**What shipped**: Cognition Labs emerged from stealth on March 12, 2024 with Devin — a fully autonomous AI software engineer with browser, code editor, and shell in a sandboxed environment. Users type natural language; Devin plans, codes, debugs, tests, and deploys.
+
+**Sources**:
+- [Cognition Labs: Introducing Devin](https://cognition.ai/blog/introducing-devin)
+- [Answer.AI: Thoughts On A Month With Devin](https://www.answer.ai/posts/2025-01-08-devin.html)
+- [The Register: First AI software engineer is bad at its job](https://www.theregister.com/2025/01/23/ai_developer_devin_poor_reviews/)
+- [YourStory: Devin AI claims exposed](https://yourstory.com/2024/04/debunking-devin-ai-software-engineering-claims-exposed)
+- [CNBC: Cognition $10.2B valuation](https://www.cnbc.com/2025/09/08/cognition-valued-at-10point2-billion-two-months-after-windsurf-.html)
+
+**Founders**: Scott Wu, Steven Hao, Walden Yan — all IOI gold medalists. Scott Wu placed first in IOI 2014 with three golds. Founded August 2023.
+
+**The demo**: Devin creating an interactive Game of Life website, fixing a bug in the sympy Python library, completing freelance jobs on Upwork, passing engineering interviews.
+
+**SWE-bench claim**: 13.86% of real-world GitHub issues resolved end-to-end, unassisted. Previous SOTA: 1.96% unassisted. A 7x improvement.
+
+**The backlash**: Carl Brown ("Internet of Bugs" YouTube channel) debunked the Upwork demo in April 2024. Key findings: the Upwork client asked for setup instructions (documentation), not code; Devin misunderstood and wrote code instead. A file Devin "heroically debugged" didn't exist in the original repo — Devin had created it, then fixed its own error. Devin spent 6+ hours; Brown replicated the actual customer request in ~30 minutes. The original Upwork client corroborated Brown's analysis in their own video.
+
+**Independent evaluation (Jan 2025)**: Answer.AI (Jeremy Howard's lab) tested 20 real-world tasks. Results: **14 failures, 3 successes, 3 inconclusive** — a 15% success rate. They "couldn't discern any pattern to predict which tasks would work." In one case Devin spent over a day hallucinating non-existent features of a deployment platform.
+
+**Funding frenzy**: Series A (Mar 2024): $21M at $350M. One month later: $175M at **$2B** — from $350M to $2B in a single month, for a 6-month-old company.
+
+**GA and recovery**: GA December 2024 at $500/month. Devin 2.0 (Apr 2025): 96% price cut to $20/month minimum. Cognition acquired Windsurf (Jul 2025). $400M round at $10.2B valuation (Sep 2025).
+
+**Harness vs. model**: HARNESS — Devin was a harness play (autonomous agent architecture around existing models). The demo was about what the harness could do, not what the model could do. The failure was also a harness failure — the scaffolding wasn't reliable enough.
+
+**Story value**: The ultimate "hype vs. reality" cautionary tale. The vision was right (autonomous coding agents), the timing was wrong (models and harnesses weren't ready), and the claims were inflated. But the funding and eventual recovery show the market believed in the direction even when the product wasn't there yet.
+
+**Skeptic's take**: "First AI software engineer? It fails 85% of the time, the demo was debunked, and they went from $350M to $2B in a month on a product that didn't work. This is peak AI hype — the valuation is the product."
+
+**Maven's take**: "Devin's failure is the most instructive story in AI agents. The vision was 100% correct — a fully autonomous coding agent that plans, codes, debugs, and deploys. The execution was premature. But SWE-bench went from 1.96% to 13.86% to 50%+ in 18 months. Devin was right about the destination, just too early to the party."
+
+---
+
+## Cursor — The AI-Native IDE (2023 → Present) [ECO] [HARNESS]
+
+**What shipped**: An AI-first code editor (VS Code fork) that became the fastest-scaling SaaS company in history.
+
+**Sources**:
+- [Anysphere Wikipedia](https://en.wikipedia.org/wiki/Anysphere)
+- [CNBC: Cursor $2.3B round at $29.3B valuation](https://www.cnbc.com/2025/11/13/cursor-ai-startup-funding-round-valuation.html)
+- [Contrary Research: Anysphere](https://research.contrary.com/company/anysphere)
+- [SaaStr: Cursor hit $1B ARR in 17 months](https://www.saastr.com/cursor-hit-1b-arr-in-17-months-the-fastest-b2b-to-scale-ever-and-its-not-even-close/)
+- [Lenny's Newsletter: The Rise of Cursor](https://www.lennysnewsletter.com/p/the-rise-of-cursor-michael-truell)
+
+**Founders**: Michael Truell (CEO), Sualeh Asif, Arvid Lunnemark, Aman Sanger — all MIT CSAIL. Founded 2022 as Anysphere.
+
+**Revenue ramp (possibly fastest SaaS ever)**:
+- End of 2023: 30K daily active users
+- Jan 2025: **$100M ARR** — with zero marketing spend
+- Jun 2025: **$500M ARR**
+- Nov 2025: **$1B ARR** — reached in ~24 months from launch
+
+**Funding**: Seed $8M (Oct 2023, OpenAI Startup Fund) → Series A $60M at $400M (Aug 2024, a16z/Thrive) → Series B $105M at $2.6B (Dec 2024, Thrive) → Series C $900M at $9.9B (Jun 2025) → **Series D $2.3B at $29.3B** (Nov 2025, Accel/Coatue). Strategic investors include Google, Nvidia, Stripe founders, GitHub founders.
+
+**Key features**:
+- **Tab completion**: Predicts entire code blocks. Unlike Copilot (which adds at cursor), Cursor Tab can modify, add, or delete multiple lines. Uses a proprietary lightweight model for speed.
+- **Agent Mode (Nov 2024)**: Autonomous multi-step coding. AI edits files, runs terminal commands, makes coordinated cross-project edits.
+- **Background Agents**: Cloud-based environments that clone repos, complete tasks in parallel, create PRs. Pro feature.
+- **BugBot (Jun 2025, Cursor 1.0)**: Automated code review on GitHub PRs
+- **Composer (Oct 2025, Cursor 2.0)**: Proprietary mixture-of-experts coding model. ~250 tokens/sec (4x faster than comparable models). Up to 8 agents in parallel.
+- **Supermaven acquisition (Nov 2024)**: Acquired AI code completion startup ($12M raised, 35K users) for faster completions.
+
+**What makes it different from Copilot**: Cursor is not a plugin bolted onto an existing editor. It's a standalone IDE where AI is woven into the core. Everything — chat, code generation, refactoring, debugging — is redesigned around AI. Copilot augments; Cursor reimagines.
+
+**Harness vs. model**: HARNESS — Cursor uses Claude, GPT-4, and other models interchangeably. The value is entirely in the harness — the IDE integration, the agent architecture, the Tab model, the context management. Same models as competitors, dramatically different experience.
+
+**Cultural context**: Andrej Karpathy coined "vibe coding" in February 2025 specifically referencing Cursor + Claude Sonnet — describing a style where developers describe intent and let AI write code. By late 2025 he updated the term to "agentic engineering," acknowledging it had become the professional default.
+
+**Skeptic's take**: "$29.3B for a VS Code fork? With zero marketing spend? Either this is the most capital-efficient company ever built or we're in another bubble. And they use other companies' models — what happens when OpenAI or Anthropic build the same thing?"
+
+**Maven's take**: "Cursor is the single strongest proof that the harness matters more than the model. They use Claude, GPT-4, whatever — and they're worth $29.3B. Not because of a proprietary model, but because of how they wrap models in an IDE. $1B ARR with zero marketing. The product is so good it sells itself."
+
+---
+
+## Windsurf & The IDE Agent Wars (Nov 2024 → Jul 2025) [ECO] [HARNESS]
+
+**What shipped**: Windsurf Editor — "the first agentic IDE" by Codeium, featuring Cascade, a flow-based AI system combining copilot and agent behaviors.
+
+**Sources**:
+- [Maginative: Codeium launches Windsurf Editor](https://www.maginative.com/article/codeium-launches-windsurf-editor-an-agentic-integrated-development-environment/)
+- [Contrary Research: Windsurf](https://research.contrary.com/company/windsurf)
+- [CNBC: Cognition acquires Windsurf](https://www.cnbc.com/2025/07/14/cognition-to-buy-ai-startup-windsurf-days-after-google-poached-ceo.html)
+- [TechCrunch: Cognition acquires Windsurf](https://techcrunch.com/2025/07/14/cognition-maker-of-the-ai-coding-agent-devin-acquires-windsurf/)
+
+**Origins**: Founded 2021 as Exafunction (GPU optimization) by MIT grads Varun Mohan and Douglas Chen. Pivoted to AI coding tools, rebranded to Codeium (2022). $150M Series C at $1.25B (Aug 2024). Windsurf Editor launched Nov 2024. 10,000 users within two days. Full rebrand to Windsurf Apr 2025.
+
+**Cascade**: Windsurf's core differentiator. Tracks everything — edits, terminal commands, conversation history, clipboard, linter output — to infer developer intent. Built-in planning agent continuously refines long-term plans while a selected model handles short-term actions. The "Flow" paradigm combines copilot (reactive suggestions) and agent (proactive autonomous action) into a single system.
+
+**The 72-hour acquisition saga (Jul 2025)**: One of AI's most dramatic corporate episodes:
+1. OpenAI's **$3 billion acquisition offer** expires
+2. **Google swoops in** — $2.4B "reverse acquihire" of CEO Varun Mohan, co-founder Douglas Chen, and research leaders into DeepMind's Gemini coding team
+3. **Cognition (Devin) acquires the remainder** — IP, product, trademark, brand, ~250 employees, **$82M ARR**, 350+ enterprise customers. From first call (Friday evening) to signed deal (Monday morning).
+4. Post-acquisition: Cognition's ARR more than doubled. By Sep 2025, Cognition raised $400M at $10.2B valuation.
+
+**Harness vs. model**: HARNESS — Windsurf, like Cursor, derives its value entirely from the harness. The "Flow" paradigm is an architectural insight about how to blend copilot and agent behaviors.
+
+**Story value**: The Windsurf saga is a microcosm of the AI coding agent market: three tech giants fighting over one startup's technology and talent in 72 hours. It illustrates the frenzy around AI harness innovation.
+
+**Skeptic's take**: "Three companies fought over a VS Code fork in a weekend. OpenAI offered $3 billion, Google poached the founders, and Cognition — whose own product fails 85% of the time — bought the leftovers. This is peak bubble behavior."
+
+**Maven's take**: "The Windsurf saga proves that AI coding tools aren't about the model — they're about the harness. Google didn't hire the Windsurf team for their model; they hired them for their understanding of how to wrap models in an IDE. And Cognition didn't buy Windsurf for the brand; they bought the harness architecture and the enterprise customers."
+
+---
+
+## OpenAI Codex — The 2025 Coding Agent (Apr-May 2025) [OAI] [HARNESS]
+
+**What shipped**: A fully autonomous cloud-based coding agent (NOT the 2021 Codex model, which was a GPT-3 derivative for code completion, deprecated March 2023).
+
+**Sources**:
+- [OpenAI: Introducing Codex](https://openai.com/index/introducing-codex/)
+- [OpenAI: Introducing the Codex App](https://openai.com/index/introducing-the-codex-app/)
+- [TechCrunch: OpenAI Debuts Codex CLI](https://techcrunch.com/2025/04/16/openai-debuts-codex-cli-an-open-source-coding-tool-for-terminals/)
+- [Builder.io: Codex vs Claude Code](https://www.builder.io/blog/codex-vs-claude-code)
+
+**Codex CLI (Apr 16, 2025)**: Open-source terminal coding agent. Apache 2.0 license. Built in Rust. Full-screen terminal UI, progress tracking, web search, MCP support. Install via npm or brew. OpenAI also announced $1M grant initiative for Codex CLI.
+
+**Codex Cloud Agent (May 16, 2025)**: Research preview of the cloud-based agent. Powered by **codex-1**, a specialized variant of o3 fine-tuned with RLHF for software engineering. Available to ChatGPT Plus users from Jun 3, 2025.
+- Operates in a **secure, isolated cloud container** with **internet disabled**
+- Can only interact with code explicitly provided via GitHub repos
+- Multiple agents work in parallel on independent tasks
+- Writes features, fixes bugs, runs tests, proposes PRs
+- Iteratively runs tests until they pass
+
+**Codex Desktop App (Feb 2, 2026)**: Native macOS app for managing multiple AI coding agents simultaneously. Agents run in separate threads by project. Built-in worktree support for concurrent work on same repo. Automations with cloud-based triggers. Skills system.
+
+**Model evolution**: codex-1 (o3 fine-tune) → GPT-5.2-Codex ("most advanced agentic coding model") → GPT-5.3-Codex-Spark (1000+ tokens/sec, real-time)
+
+**Codex vs. Claude Code**: Different philosophies:
+- **Claude Code**: Developer-in-the-loop, local-first. "Senior developer" metaphor — thorough, educational, transparent.
+- **Codex**: Autonomous delegation, cloud-based. "Scripting-proficient intern" metaphor — fast, minimal, opaque.
+- Claude Code excels at complex single-task reasoning; Codex excels at parallel task delegation.
+
+**Harness vs. model**: BOTH — codex-1 is a model fine-tuned specifically for agentic coding (MODEL), but the cloud sandbox architecture, parallel execution, and CLI tooling are HARNESS innovations.
+
+**Skeptic's take**: "OpenAI's answer to Claude Code is a cloud sandbox where the AI can't access the internet. So it's more isolated, more opaque, and you can't watch it work? How is this better than a terminal agent I can see?"
+
+**Maven's take**: "The sandbox architecture is the interesting bet. By isolating Codex from the internet, OpenAI is solving the security problem differently than Claude Code. And parallel execution — spinning up multiple Codex agents on independent tasks — is genuinely powerful for large codebases. The CLI being open-source and Rust-based is also a good sign."
+
+---
+
+## Claude Code — The Full Evolution (Feb 2025 → Present) [ANT] [HARNESS]
+
+_Note: This entry expands on the Claude 3.7 Sonnet / Claude Code launch entry above, covering the full feature evolution post-launch._
+
+**What this represents**: Claude Code is the central product of this book's thesis — that the harness matters more than the model. The same Claude model performs dramatically differently in Claude Code vs. a basic chat interface.
+
+**Sources**:
+- [Anthropic: Claude 3.7 Sonnet](https://www.anthropic.com/news/claude-3-7-sonnet)
+- [Anthropic: Enabling Claude Code to work more autonomously](https://www.anthropic.com/news/enabling-claude-code-to-work-more-autonomously)
+- [Anthropic Engineering: Effective Harnesses for Long-Running Agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
+- [SemiAnalysis: Claude Code is the Inflection Point](https://newsletter.semianalysis.com/p/claude-code-is-the-inflection-point)
+- [TechCrunch: Anthropic brings Claude Code to the web](https://techcrunch.com/2025/10/20/anthropic-brings-claude-code-to-the-web/)
+- [Claude Code Docs](https://code.claude.com/docs/en/overview)
+- [OfficeChai: Boris Cherny on horse and harness](https://officechai.com/ai/claude-is-like-the-horse-and-claude-code-is-the-harness-anthropics-boris-cherny/)
+
+**Feature timeline**:
+- **Feb 24, 2025**: Launch as research preview alongside Claude 3.7 Sonnet. Terminal-based. Can search/read code, edit files, write/run tests, commit/push to GitHub.
+- **Feb 2025 (from launch)**: **CLAUDE.md files** — persistent project instructions loaded into every conversation. Hierarchy: root, parent directories, home folder, child directories. The `/init` command auto-generates one.
+- **Apr 2, 2025 (v0.2.31)**: **Slash commands** — `.claude/commands/review.md` creates `/review`-style commands. MCP integration already present.
+- **May 22, 2025**: **General availability** at "Code with Claude" conference. Claude Code SDK (later Agent SDK) announced. Claude Opus 4 launched (72.5% SWE-bench).
+- **Jun-Jul 2025**: **Hooks** — user-defined shell commands executing at specific lifecycle points. "If this, then that" for your coding assistant. Turn polite prompt suggestions into guaranteed, deterministic actions.
+- **Jul 6, 2025**: **115,000 developers**, processing 195 million lines of code per week. ~$130M annualized revenue.
+- **Jul 24, 2025 (v1.0.60)**: **Subagents** — each runs in its own context window with custom system prompt and tool access. Parallel, sequential, and background dispatch patterns.
+- **Sep 29, 2025**: **Claude Code 2.0** + Claude Sonnet 4.5 (77.2% SWE-bench). VS Code extension (beta). **Checkpoints** (automatic state saves, rewind with Esc-Esc). SDK renamed to **Claude Agent SDK**. JetBrains support.
+- **Oct 16, 2025 (v2.0.20)**: **Skills** — evolution of slash commands. SKILL.md files, YAML frontmatter, subagent execution, dynamic context injection. Follows the Agent Skills open standard.
+- **Oct 20, 2025**: **Claude Code on the web** (claude.ai/code). Asynchronous coding agent with sandboxed environments. "Teleport" feature copies chat + edited files to local CLI.
+- **Nov 24, 2025**: Claude Opus 4.5 launched (80.9% SWE-bench). Auto-compaction at 95% context window.
+- **Jan 7-9, 2026**: **Skills 2.0** — merge of slash commands into skills system.
+- **Feb 5, 2026**: Claude Opus 4.6. **Agent Teams** — multi-agent collaboration where teammates share findings and coordinate independently (vs. subagents which report to a parent). **4% of all public GitHub commits** authored by Claude Code (~135,000 commits/day), projected 20%+ by end of 2026. ~$2.5B annualized revenue.
+
+**The horse and harness**: Boris Cherny, Claude Code's creator: "An AI model like Claude is the horse, and a coding assistant like Claude Code is the harness." Two critical factors: (1) sufficient model capability and (2) adequate scaffolding/harnessing. Both must be excellent simultaneously.
+
+**Adoption metrics**:
+- 67% increase in PRs merged per engineer per day at Anthropic
+- 70-90% of code written with Claude Code assistance internally
+- Anthropic CPO Mike Krieger (Feb 2026): "For most products at Anthropic it's effectively 100 percent just Claude writing."
+- Amodei clarification: "if Claude is writing 90% of the code, what that means usually is that you need just as many software engineers"
+
+**Harness architecture** (from Anthropic's engineering blog):
+1. Context compaction — auto-summarization at 95% capacity, effectively unbounded sessions
+2. CLAUDE.md — persistent project instructions
+3. Three-phase workflow — gather context, take action, verify results
+4. Hooks — deterministic automation
+5. Subagents — specialized workers with own context/permissions
+6. Checkpoints — automatic state saves
+7. MCP — standardized tool integration
+- Their practices "drew inspiration from knowing what effective software engineers do every day"
+- Proof of concept: agent teams produced a **100,000-line C compiler** that can build Linux 6.9 on x86, ARM, and RISC-V
+
+**Harness vs. model**: HARNESS — This is the definitive harness story. Every feature in the timeline is a harness innovation (CLAUDE.md, skills, hooks, subagents, checkpoints, compaction, agent teams). The model improved too (3.7 Sonnet → Opus 4 → Sonnet 4.5 → Opus 4.5 → Opus 4.6), but the harness is what made the model useful.
+
+---
+
+## The "Vibe Coding" to "Agentic Engineering" Arc (Feb 2025 → Late 2025) [META] [HARNESS]
+
+**What happened**: A terminology evolution that tracks the maturation of the entire coding agent field in a single year.
+
+**Sources**:
+- [Vibe Coding Wikipedia](https://en.wikipedia.org/wiki/Vibe_coding)
+- [The New Stack: Vibe Coding is Passe](https://thenewstack.io/vibe-coding-is-passe/)
+
+**Feb 2025**: Andrej Karpathy (OpenAI co-founder, former Tesla AI director) coined **"vibe coding"** — describing a style where developers describe intent and let AI write code. He specifically referenced Cursor + Claude Sonnet. "You fully give in to the vibes, embrace exponentials, and forget that the code even exists."
+
+**Late 2025**: Karpathy updated his terminology to **"agentic engineering"** — acknowledging that AI agents writing code had become the professional default, not a novelty.
+
+**Story value**: The terminology shift from a playful joke ("vibe coding") to a professional category ("agentic engineering") in less than a year captures how quickly the field matured. What started as a meme became a job description.
+
+---
+
 ## Key source URLs for primary sources
 
 - OpenAI Blog: https://openai.com/blog (accessible via browser)
 - Anthropic News: https://www.anthropic.com/news
+- Anthropic Engineering Blog: https://www.anthropic.com/engineering
+- Claude Code Docs: https://code.claude.com/docs/en/overview
 - Claude Code Changelog: https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md
+- Claude Agent SDK: https://platform.claude.com/docs/en/agent-sdk/overview
 - Anthropic Release Notes: https://platform.claude.com/docs/en/release-notes/overview
 - Every.to Vibe Check series: https://every.to/vibe-check
 - Mollick's One Useful Thing: https://www.oneusefulthing.org
 - Willison's newsletter: https://simonw.substack.com
+- SemiAnalysis: https://newsletter.semianalysis.com
 - Claude Code Medium timeline: https://medium.com/@joe.njenga/claude-code-2025-summary-from-launch-to-beast-timeline-features-full-breakdown-45e5f3d8d5ff
 - Anthropic Claude Timeline (third-party): https://www.scriptbyai.com/anthropic-claude-timeline/
+- Cursor / Anysphere: https://www.cursor.com
+- GitHub Copilot: https://github.com/features/copilot
+- Cognition / Devin: https://cognition.ai
+- Windsurf: https://windsurf.com
+- OpenAI Codex: https://openai.com/index/introducing-codex/
+- OpenAI Responses API: https://platform.openai.com/docs/guides/responses-vs-chat-completions
+- MCP Specification: https://modelcontextprotocol.io

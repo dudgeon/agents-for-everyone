@@ -193,3 +193,25 @@ Each epoch file should contain:
 - Total detailed entries in research-notes.md: ~21 (up from ~12)
 - **Still needed**: ChatGPT launch, Code Interpreter standalone, Claude Code, Cursor/Devin entries
 - **Next**: Continue enriching, then user reviews for epoch clustering
+
+### 2026-02-12 — Session 3
+- **Critical user correction**: Timeline too focused on foundation models, needs much more on the application/agentic layer
+- User specifically requested: GPTs, Gems, OpenAI Agents API, Claude Code full evolution, Codex, Devin, Cursor, GitHub Copilot, AutoGPT enrichment
+- Added backlog item: Appendix on fine-tuning dead end vs. application layer approach
+- 5 parallel research agents gathered deep-sourced material on all requested topics
+- Added 11 new detailed research entries to docs/layer-1-timeline/research-notes.md:
+  - GitHub Copilot full chronology (Jun 2021 → present): autocomplete → chat → agent arc
+  - ChatGPT Plugins (Mar 2023): first platform play, why it failed, MCP contrast
+  - Custom GPTs & GPT Store (Nov 2023 / Jan 2024): 97% prompt leakage, revenue mirage, spam
+  - Google Gems (Aug 2024): the pragmatic personal-customization approach
+  - Assistants API → Responses API arc (Nov 2023 → Mar 2025): three iterations of OpenAI's tool-use infrastructure
+  - Devin (Mar 2024): "first AI software engineer", demo debunking, 15% success rate, $10.2B valuation
+  - Cursor (2023 → present): $29.3B valuation, $1B ARR, fastest-scaling SaaS ever
+  - Windsurf & IDE Agent Wars (Nov 2024 → Jul 2025): Cascade, the 72-hour acquisition saga
+  - OpenAI Codex 2025 (Apr-May 2025): CLI, cloud agent, desktop app, codex-1
+  - Claude Code full evolution (Feb 2025 → present): CLAUDE.md, skills, hooks, subagents, agent teams, $2.5B revenue
+  - "Vibe Coding" to "Agentic Engineering" meta entry (Karpathy terminology arc)
+- Enriched existing AutoGPT entry with founders, GitHub stars data, cultural significance
+- research-notes.md grew from 598 to 1,008 lines (~37 total detailed entries)
+- **Still needed**: User clarification on "ralph loops" and "openclaw"
+- **Next**: User reviews full timeline, we cluster into epochs together
