@@ -26,26 +26,34 @@ Open questions and parked ideas, organized by layer.
 - [ ] Are there primitives that don't translate well outside software engineering?
 - [ ] What's the simplest domain that still shows the full power? (Strong candidate for story setting)
 
-## Layer 4 — Curriculum (Phase 4)
+## Layer 4 — Curriculum / Book Structure (Phase 4)
 
-- [ ] What's the right "hello world" for agentic AI for a non-developer?
-- [ ] How much can be taught through plot vs. explicit instruction?
-- [ ] Should the curriculum section use a single sustained project or multiple smaller tasks?
-- [ ] What's the emotional arc of learning? (Confusion → small win → understanding → fluency → ownership)
+_Persuasive arc structure drafted (see `docs/layer-4-curriculum/structure.md` and Decision 002). These are the remaining open questions._
 
-## Layer 5 — Story (Phase 5)
+- [ ] What is the bold claim for Chapter 1? Must be specific, testable, and non-hypey. Current working version may be too generic.
+- [ ] Right balance of SWE vs. non-SWE examples in Section 3? Research skews SWE — need compelling non-SWE examples for each chapter.
+- [ ] Does the fine-tuning dead end fit as a Chapter 9 sidebar, or is it too inside-baseball for this audience?
+- [ ] What starter videos from ai-pm.cc should be offered in Section 4? (User will curate)
+- [ ] What should the "Getting Started" appendix cover? Minimal pointers vs. step-by-step setup guide?
+- [x] ~~What's the right "hello world" for agentic AI for a non-developer?~~ → Resolved: the book persuades, not teaches. The appendix handles practical getting-started.
+- [x] ~~How much can be taught through plot vs. explicit instruction?~~ → Resolved: each chapter has one concept, one panel, short body text. The panel IS the "plot."
+- [x] ~~Should the curriculum use a single sustained project or multiple smaller tasks?~~ → Resolved: not applicable — chapters are self-contained arguments, not project steps.
+- [x] ~~What's the emotional arc of learning?~~ → Resolved: doubt → curiosity → understanding → ownership, embodied by the Skeptic's evolution.
 
-_These were our original Phase 1 questions. They're still valid, but they're presentation-layer decisions that should wait until the content layers are solid._
+## Layer 5 — Character & Visual Design (Phase 5)
+
+_Many original questions resolved by the persuasive arc structure (Decision 002)._
 
 - [ ] Character ages and relationship dynamic (peers? mentor/mentee?)
 - [ ] Nature of the Skeptic's skepticism (burned by AI specifically? broader tech skeptic?)
 - [ ] Tone calibration (The Martian ↔ Percy Jackson spectrum)
-- [ ] Time travel mechanic (literal sci-fi or metaphorical?)
-- [ ] Length target (~10K / ~30K / ~60K+ words)
-- [ ] Format (prose / graphic novel / hybrid)
+- [ ] Visual style for panels (realistic? stylized? what art pipeline?)
 - [ ] Distribution intent (open publish / sell / conference)
 - [ ] Brand names or abstracted?
-- [ ] Temporal anchor (snapshot of today vs. slightly forward-looking)
+- [ ] Title — "Agents for Everyone" is the project name, may not be the book title
+- [x] ~~Time travel mechanic~~ → Resolved: no time travel. The arc is persuasive, not narrative-temporal.
+- [x] ~~Length target~~ → Resolved: ~10 short chapters (300-500 words each) + panels + appendix. Short and dense.
+- [x] ~~Format~~ → Resolved: illustrated chapters with graphic novel panels (Decision 002).
 
 ## Parked Ideas
 

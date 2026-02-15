@@ -38,112 +38,72 @@ Each epoch file should contain:
 
 ---
 
-## Phase 2 — Capability Primitives (Layer 2)
+## Phase 2 & 3 — Primitives & Domain Translation (Layers 2-3) → FOLDED INTO CHAPTERS
 
-**Status**: Not started
-**Mode**: Collaborative — Claude drafts, user refines
-**Goal**: Abstract the full set of things a contemporary knowledge worker can do with agentic AI (Claude Code + skills + instructions) into domain-agnostic primitives.
+**Status**: Absorbed into Phase 4 (see Decision 002)
+**What happened**: The persuasive arc structure means the primitives ARE the chapter topics in Section 3 (ordered for persuasion, not taxonomy). Domain translation is embedded as non-SWE examples within each chapter. These layers remain valid as intellectual frameworks but don't need standalone deliverables.
 
-### What this produces
-- `docs/layer-2-primitives/primitives.md` — A taxonomy of capabilities
-
-### Approach
-- Start from what's possible TODAY with the best available tools
-- Decompose into atomic primitives (e.g., "read and synthesize a set of local files", "maintain persistent instructions that shape behavior over time", "execute multi-step plans with tool use")
-- Tag each primitive with which timeline epochs it became possible
-- Distinguish between: primitives that require a model improvement vs. primitives that require tooling/harness changes
-
-### Key questions
-- What can a skilled Claude Code user do today that was impossible 2 years ago?
-- What are the primitives that feel like "magic" to someone who hasn't seen them?
-- Which primitives are most transformative for non-developers specifically?
-- What's the difference between what the MODEL can do vs. what the HARNESS enables?
-
-### Definition of done
-- A clean, finite list of primitives that feels complete and non-overlapping
-- Each primitive is defined clearly enough that we can translate it across domains
-- User agrees this captures the "full toolkit"
+### If we need standalone artifacts later
+- Layer 2 primitives can be extracted from the chapter map
+- Layer 3 domain mappings may become useful for the Appendix or a follow-on project
 
 ---
 
-## Phase 3 — Domain Translation (Layer 3)
+## Phase 4 — Curriculum & Book Structure (Layer 4) ← STRUCTURE DRAFTED
 
-**Status**: Not started
+**Status**: Persuasive arc structure drafted (see Decision 002). Chapter map defined with working headlines. Format spec locked. Ready for chapter-level refinement.
 **Mode**: Collaborative
-**Goal**: Map the primitives from Layer 2 across multiple knowledge work domains to show universality.
+**Goal**: Define the book's structure, persuasive arc, chapter map, and format — the blueprint that everything else serves.
 
 ### What this produces
-- `docs/layer-3-domains/domain-mappings.md` — Primitives × domains matrix
+- `docs/layer-4-curriculum/structure.md` — **THE** structural blueprint (arc, chapters, format, character dynamic)
 
-### Approach
-- Pick 4-6 representative domains spanning professional and accessible contexts
-  - e.g., product manager, doctor/clinician, plumber/trades, student/teenager, small business owner, researcher
-- For each primitive × domain intersection: what does this look like concretely?
-- Identify which primitives are universal vs. domain-specific
-- This work directly informs the story — the teenager tasks in the final third need to map cleanly to adult knowledge work
+### Structure (see Decision 002)
+The book is a 4-section persuasive arc, not a syllabus:
+1. **The Bold Claim** (1 chapter) — what's possible now
+2. **Why You're Right to Be Skeptical** (1-2 chapters) — validate past failures
+3. **What's Actually Different** (5-6 chapters) — the meat, with evidence
+4. **The Ask** (breaks from chapter format) — offers + asks
+5. **Appendix: Getting Started** — practical, self-serve, outside the arc
 
-### Key questions
-- Which domains make the best teaching vehicles for the story?
-- Are there primitives that only matter in some domains?
-- What's the simplest domain that still demonstrates the full power? (This may be the story's setting)
+Each chapter: headline sentence + graphic novel panel + 3-4 paragraphs + 3-4 sourced quotes.
+
+### Key open questions
+- What is the bold claim in Chapter 1? (Specific, testable, non-hypey)
+- Right balance of SWE vs. non-SWE examples?
+- Image panel style/approach?
+- Does the fine-tuning dead end fit as a Chapter 9 sidebar?
 
 ### Definition of done
-- Matrix is populated for all primitives × selected domains
-- User agrees the mappings feel authentic (not forced)
-- We've identified which domain(s) to use in the story
+- All chapter headlines finalized
+- Panel art direction defined for each chapter
+- Source quotes selected from research for each chapter
+- User approves full structure before drafting begins
 
 ---
 
-## Phase 4 — Curriculum Design (Layer 4) ← ROUGH DRAFT IN PARALLEL
-
-**Status**: Roughing out in parallel with Phase 1 epoch clustering (see Decision 001)
-**Mode**: Collaborative
-**Goal**: Design the learning progression — what a reader needs to understand, in what order, to become effective with agentic AI.
-
-### What this produces
-- `docs/layer-4-curriculum/progression.md` — Learning sequence with dependencies
-- `docs/layer-4-curriculum/tasks.md` — Concrete task designs for the story
-
-### Approach
-- Order the primitives into a learning progression (what builds on what?)
-- Design tasks that teach each primitive through doing, not lecturing
-- Tasks should be teenager-oriented knowledge work (not coding, not school cheating)
-- Each task should demonstrate a primitive in a way that makes an adult reader think "oh, I could use this for [my work]"
-- The progression should culminate in: understanding CLAUDE.md, skills, recursive self-improvement, and the nurturing metaphor
-
-### Key questions
-- What's the right "hello world" for agentic AI for a non-developer?
-- What order lets concepts build naturally?
-- How much can we teach through the story's plot vs. requiring explicit instruction?
-
-### Definition of done
-- A linear progression from "never used an agent" to "understands alignment through nurturing"
-- Task designs that are concrete, engaging, and non-coding
-- User agrees the curriculum is complete and well-sequenced
-
----
-
-## Phase 5 — Story Architecture (Layer 5)
+## Phase 5 — Character & Visual Design (Layer 5)
 
 **Status**: Not started
 **Mode**: Collaborative
-**Goal**: NOW design the presentation layer — characters, tone, plot arc, format, narrative integration.
+**Goal**: Design the Skeptic and Maven characters, panel art direction, and visual style for the illustrated chapter format.
 
 ### What this produces
-- `docs/layer-5-story/characters.md` — Finalized character profiles
-- `docs/layer-5-story/plot-arc.md` — Scene-by-scene outline
-- `docs/layer-5-story/tone-guide.md` — Voice and style guide
+- `docs/layer-5-story/characters.md` — Skeptic and Maven profiles, voice, visual design
+- `docs/layer-5-story/tone-guide.md` — Writing voice and visual style guide
+- Character reference sheets for image generation pipeline
 
 ### Approach
-- The timeline (Layer 1) gives us the plot of Act 1 (the skepticism arc)
-- The curriculum (Layer 4) gives us the plot of Act 2 (the learning arc)
-- Character design, tone, format, and narrative voice can now be chosen to SERVE the content, rather than driving it
-- All the presentation-layer questions we parked earlier (character ages, tone calibration, time travel mechanic, length, format, brand names, etc.) get answered here
+- Characters serve the persuasive arc (defined in Phase 4 structure doc)
+- Skeptic/Maven dynamic evolves through the arc: doubt → curiosity → engagement → ownership
+- Format is locked: illustrated chapters with graphic novel panels (see Decision 002)
+- Many original Layer 5 questions (time travel mechanic, length, prose vs. graphic novel) are now resolved by the structure decision
+- Remaining questions: character ages, visual design, tone calibration, brand names vs. abstracted
 
 ### Definition of done
-- Characters, tone, and format are locked
-- Scene-by-scene outline exists
-- User approves the story architecture before drafting begins
+- Skeptic and Maven characters fully designed (personality, visual, voice)
+- Art style locked with reference images
+- User approves before drafting begins
 
 ---
 
@@ -219,3 +179,16 @@ Each epoch file should contain:
 - Persisted raw research agent output to docs/research/ (4 files, 715 lines, all source URLs preserved)
 - **Decision 001**: Rough out curriculum (Layer 4) in parallel with epoch clustering — know the destination before shaping the journey
 - **Next**: Rough draft of curriculum progression, then use it to inform epoch clustering
+
+### 2026-02-15 — Session 5
+- Redesigned curriculum from syllabus to **persuasive arc** (Decision 002)
+- Defined 4-section structure: Bold Claim → Skepticism → What's Different → The Ask
+- Locked chapter format: headline sentence + graphic novel panel + 3-4 paragraphs + 3-4 sourced quotes
+- Mapped 10 chapters with working headlines across all sections
+- Defined Skeptic/Maven character evolution through the arc
+- Section 4 designed as asks/offers: starter videos, markdown/Git/GitHub, SWE-tool accessibility (spreadsheet analogy)
+- Decision 003: Section 4 asks/offers structure
+- Layers 2 (Primitives) and 3 (Domain Translation) folded into chapter content — no longer standalone phases
+- Roadmap and backlog updated to reflect new structure
+- Timeline research preserved as evidence base + potential independent artifact
+- **Next**: Refine chapter headlines, source selection per chapter, character/visual design
