@@ -164,6 +164,67 @@ When a topic spans multiple events and the *narrative thread* is the story (e.g.
 - Medium articles often return 403 — note and use alternative sources
 - General-purpose subagents CAN perform web searches independently
 
+## Image Generation
+
+### Infrastructure
+- **API**: Nano Banana (Gemini 2.5 Flash Image) and Nano Banana Pro (Gemini 3 Pro Image) via OpenRouter
+- **API key**: `.env` file (OPENROUTER_API_KEY) — never commit this
+- **CLI tool**: `python3 tools/generate_image.py "<prompt>" [options]`
+- **Cost tracker**: `python3 tools/image_costs.py` — shows cumulative spend
+- **Output dir**: `assets/generated/` — all images + CSV log
+- **Cost log**: `assets/generated/image-log.csv` — auto-updated per generation
+- **Image pipeline roadmap**: `docs/image-pipeline/roadmap.md`
+
+### Models & Costs
+| Model | CLI Flag | Cost/Image | Use For |
+|---|---|---|---|
+| Nano Banana (Flash) | `--model flash` | ~$0.039 | Iteration, exploration, drafts |
+| Nano Banana Pro | `--model pro` | ~$0.134 | Final/polished illustrations |
+
+### CLI Usage
+```bash
+# Basic generation
+python3 tools/generate_image.py "prompt" --model flash --name my-image
+
+# With character reference for consistency
+python3 tools/generate_image.py "prompt" --model flash --ref assets/characters/maya.png --name scene
+
+# With aspect ratio and resize
+python3 tools/generate_image.py "prompt" --aspect 16:9 --resize 1920x1080 --name wide-shot
+
+# Dry run (no API call)
+python3 tools/generate_image.py "prompt" --dry-run
+```
+
+### Character Consistency Workflow
+1. **Style guide** lives in `assets/style-guide/style-guide.md` — locked art style description
+2. **Character reference sheets** live in `assets/characters/<name>-ref-sheet.png`
+3. **Character bibles** (immutable trait descriptions) live in `docs/layer-5-story/characters.md`
+4. When generating a scene with a character, ALWAYS:
+   - Pass the reference sheet via `--ref assets/characters/<name>-ref-sheet.png`
+   - Include the character bible text block in the prompt (immutable traits first, scene-specific second)
+   - Include constraint: "Do not change face, facial features, skin tone, body shape, or identity"
+5. Generate 2-3 variations per scene and let the user pick
+
+### Cost Guardrails
+- **Always show cost estimate before generating** (model price x count)
+- **Always show cumulative spend after generating** (from image-log.csv)
+- For batch operations (>5 images), get explicit user approval with total cost estimate
+- Default to `flash` model unless user requests `pro`
+
+### Story File Image Spec Convention
+Image specifications are embedded inline in story chapter files using HTML comments:
+```markdown
+<!-- IMG
+id: ch03-maven-laptop
+characters: maven
+aspect: 16:9
+mood: warm, focused
+description: The Maven sits at a wooden desk, laptop open...
+-->
+```
+The batch pipeline (`/generate-chapter`) reads these specs and generates all images for a chapter.
+
 ## Current Phase
 
 Phase 1 — Timeline Research. See docs/roadmap.md for details.
