@@ -1,0 +1,2 @@
+timestamp,model,prompt,aspect_ratio,resize,filename,cost_usd,cumulative_usd,duration_sec,status
+2026-02-15T12:39:45+00:00,flash,"A friendly cartoon penguin wearing a graduation cap, reading a glowing book, watercolor style on white background",1:1,,test-penguin-20260215-073944.png,0.0390,0.0390,5.6,ok
