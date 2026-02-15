@@ -1006,3 +1006,194 @@ _Note: This entry expands on the Claude 3.7 Sonnet / Claude Code launch entry ab
 - OpenAI Codex: https://openai.com/index/introducing-codex/
 - OpenAI Responses API: https://platform.openai.com/docs/guides/responses-vs-chat-completions
 - MCP Specification: https://modelcontextprotocol.io
+
+---
+
+## Claude Code for Non-SWE Work — Anthropic's Own Teams (Jul 24, 2025) [ANT] [HARNESS]
+
+_Note: This entry supplements the Claude Code evolution entry above, focusing specifically on non-software-engineering use cases._
+
+**What shipped**: Anthropic published "How Anthropic Teams Use Claude Code" — a blog post revealing that non-engineering teams across the company had adopted Claude Code for work that had nothing to do with traditional software development.
+
+**Source(s)**:
+- [How Anthropic Teams Use Claude Code](https://claude.com/blog/how-anthropic-teams-use-claude-code)
+- [How Anthropic Uses Claude in Legal](https://claude.com/blog/how-anthropic-uses-claude-legal)
+- [How AI Is Transforming Work at Anthropic](https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic)
+
+**What worked well (with examples)**:
+- **Legal team**: Mark Pike, a product lawyer with NO coding background, built a self-service marketing review tool in Slack using Claude Code skills. Marketers paste content → Claude flags publicity rights concerns, overstated claims, and statistical accuracy problems. Review turnaround dropped from 2-3 days to 24 hours. ([source](https://claude.com/blog/how-anthropic-uses-claude-legal))
+- **Legal contract redlining**: Claude compares document versions in Google Docs/Office 365, highlights changes, recommends fallback language from the commercial playbook. "Saves us hours of manual comparison." ([source](https://claude.com/blog/how-anthropic-uses-claude-legal))
+- **Legal conflict-of-interest reviews**: Employees submit outside business activity forms → Claude analyzes against COI policy → sends recommendations via Slack to lawyers. Eliminates back-and-forth for routine cases. ([source](https://claude.com/blog/how-anthropic-uses-claude-legal))
+- **Growth Marketing team**: Built an agentic workflow that processes CSV files with hundreds of ads, identifies underperformers, generates new variations within strict character limits. Also built a Figma plugin generating up to 100 ad variations. Reduced hours of copy-pasting to "half a second per batch." ([source](https://claude.com/blog/how-anthropic-teams-use-claude-code))
+- **Non-technical employees**: Use Claude Code for debugging (51.5% of usage) and data science (12.7%). ([source](https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic))
+- **Data scientists**: Built entire React visualizations from scratch without JavaScript knowledge. ([source](https://claude.com/blog/how-anthropic-teams-use-claude-code))
+
+**What failed or was unreliable (with examples)**:
+- Mentorship erosion: "It's been sad that more junior people don't come to me with questions as often." ([source](https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic))
+- Learning trade-offs: "When producing output is so easy and fast, it gets harder and harder to actually take the time to learn something." ([source](https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic))
+- Career anxiety: "I feel optimistic in the short term but in the long term I think AI will end up doing everything and make me irrelevant." ([source](https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic))
+- Full delegation limited: Most employees can only "fully delegate" 0-20% of work to Claude.
+
+**Key statistics (from Anthropic's research paper)**:
+- Claude used in 59% of daily work (up from 28% one year prior)
+- 50% average productivity boost (up from 20%)
+- 27% of Claude-assisted work = tasks that wouldn't have been done otherwise
+- Human turns per Claude Code session decreased 33% (from 6.2 to 4.1)
+- Survey: 132 engineers/researchers, 53 interviews, 200,000 Claude Code transcripts
+
+**Harness vs. model**: HARNESS — The model was already available in the chat interface. What made these non-SWE workflows possible was the harness: skills (specialized instruction files for legal domains), MCP connections (Google Drive, Jira, Slack), file system access, and persistent instructions. Mark Pike's quote captures it: "I just typed a normal sentence, describing what I wanted. And it worked."
+
+**Cultural context**: This blog post was significant because it was Anthropic eating its own dog food — showing that Claude Code isn't just a coding tool. The legal team's transformation from "the department of no" into proactive partners was a vivid narrative of harness-enabled change.
+
+**Skeptic's take**: "Okay, so Anthropic's own employees use their own product. Surprise. And they can still only fully delegate 0-20% of their work? That's not the revolution people are selling."
+
+**Maven's take**: "The real story is Mark Pike. A lawyer with no coding background built legal review tools, contract redlining systems, and conflict-of-interest workflows — all in Claude Code. He's not coding. He's describing problems in natural language and the harness turns it into working systems. THAT is the paradigm shift."
+
+---
+
+## Claude Cowork Launch & The Plugin Selloff (Jan 12 – Feb 6, 2026) [ANT] [HARNESS]
+
+_Arc entry: Covers Cowork launch through the $285B SaaS selloff._
+
+**What shipped**: Claude Cowork — a desktop application (initially macOS, then Windows) that brings Claude Code's agentic capabilities to non-developers. Then, 18 days later, 11 open-source plugins that package domain expertise for specific job functions (legal, sales, finance, marketing, data, etc.). The legal plugin triggered what a Goldman Sachs trader called the "SaaSpocalypse" — a $285B software stock selloff.
+
+**Source(s)**:
+- [TechCrunch: Cowork launch](https://techcrunch.com/2026/01/12/anthropics-new-cowork-tool-offers-claude-code-without-the-code/)
+- [Fortune: Cowork threatens startups](https://fortune.com/2026/01/13/anthropic-claude-cowork-ai-agent-file-managing-threaten-startups/)
+- [Simon Willison: First impressions of Cowork](https://simonwillison.net/2026/Jan/12/claude-cowork/)
+- [GitHub: knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins)
+- [Nate's Newsletter: "200 lines of markdown"](https://natesnewsletter.substack.com/p/200-lines-of-markdown-just-triggered)
+- [Fortune: Opus 4.6 + selloff](https://fortune.com/2026/02/06/anthropic-claude-opus-4-6-stock-selloff-new-upgrade/)
+- [CNBC: SaaS selloff](https://www.cnbc.com/2026/02/06/ai-anthropic-tools-saas-software-stocks-selloff.html)
+- [TechCrunch: Cowork plugins](https://techcrunch.com/2026/01/30/anthropic-brings-agentic-plugins-to-cowork/)
+- [VentureBeat: Cowork on Windows](https://venturebeat.com/technology/anthropics-claude-cowork-finally-lands-on-windows-and-it-wants-to-automate)
+- [Cowork Help Center](https://support.claude.com/en/articles/13345190-getting-started-with-cowork)
+
+### The Cowork Launch (Jan 12, 2026)
+
+**What Cowork is**: A desktop application built into Claude Desktop that gives Claude access to specific folders on the user's computer. Users grant folder permissions, describe tasks in natural language, and Claude autonomously reads, edits, creates, and organizes files. Runs through Apple's VZVirtualMachine framework (custom Linux VM).
+
+**Positioning**: "Claude Code for the rest of your work" — explicitly designed for non-developers. Same underlying technology as Claude Code (tools in a loop, file system access), but with a GUI and automatic sandboxing.
+
+**Demo use cases**: Reorganizing downloaded files, converting receipt screenshots into expense spreadsheets, generating drafts from scattered desktop notes.
+
+**Critical detail**: Anthropic built Cowork in ~10 days, primarily using Claude Code itself (per Boris Cherny, head of Claude Code).
+
+**Rollout**:
+- Jan 12: Max subscribers (macOS)
+- Jan 16: Pro subscribers
+- Jan 23: Team and Enterprise
+- Feb 10: Windows
+
+**Simon Willison's review**: Tested on his blog-drafts folder. Cowork found 46 draft files, executed 44 website searches to verify publication status, identified three candidates closest to ready (including a 22,602-byte article "very close to ready"). Verdict: "a really smart product" that "unlocks significant existing Claude Code value for broader audiences." Concern: telling non-programmers to watch for prompt injection is unrealistic.
+
+### The Plugins (Jan 30, 2026)
+
+**What shipped**: 11 open-source plugins in the `anthropics/knowledge-work-plugins` GitHub repo. Each plugin bundles skills, slash commands, and MCP connectors for a specific job function:
+- **productivity** (Slack, Notion, Asana, Linear, Jira, Monday, ClickUp, M365)
+- **sales** (HubSpot, Close, Clay, ZoomInfo, Fireflies)
+- **customer-support** (Intercom, Guru)
+- **product-management** (Figma, Amplitude, Pendo)
+- **marketing** (Canva, Ahrefs, SimilarWeb, Klaviyo)
+- **legal** (Box, Egnyte)
+- **finance** (Snowflake, Databricks, BigQuery)
+- **data** (Snowflake, Hex, Amplitude)
+- **enterprise-search** (cross-tool search)
+- **bio-research** (PubMed, BioRender, bioRxiv, ClinicalTrials.gov, ChEMBL, Benchling)
+- **cowork-plugin-management** (meta-plugin for creating new plugins)
+
+**Plugin architecture**: Every plugin is the same structure — `plugin.json` manifest, `.mcp.json` for tool connections, `commands/` for slash commands, `skills/` for domain expertise. **"Every component is file-based — markdown and JSON, no code, no infrastructure, no build steps."**
+
+### The Selloff (Jan 30 – Feb 6, 2026)
+
+The legal plugin was the trigger. It contained ~200 lines of structured markdown: an NDA triage command that screens NDAs against 13 criteria and classifies them GREEN/YELLOW/RED, plus a contract review command that does clause-by-clause analysis with redline suggestions. Described as "first-year law school content dressed up with some clever workflow logic."
+
+**Market impact**:
+- Goldman Sachs basket of U.S. software stocks: -6% in a single session
+- Financial services sector: -7% at worst
+- Thomson Reuters: -18% (biggest single-day decline on record)
+- RELX/LexisNexis: -14%
+- Wolters Kluwer: -13%
+- LegalZoom: -20%
+- FactSet: -10%
+- Total estimated market cap destroyed: **~$285 billion**
+
+**Why it mattered**: For the first time, a foundation-model company packaged a complete workflow product (legal review) directly into its platform rather than selling API access to legal-tech vendors. The market confronted "a text file doing work that billion-dollar companies charge per-seat fees to access."
+
+**What worked well (with examples)**:
+- NDA triage: Screens against 13 criteria, classifies for routing, generates structured reports — work that would take a junior associate 30+ minutes per NDA
+- Contract review: Clause-by-clause analysis against org's negotiation playbook with specific redline language — work paralegals spend hours on
+- Plugin customization: Organizations can swap connectors, add company-specific terminology, adjust workflows — all by editing markdown files
+- Cross-functional: Same architecture serves legal, sales, finance, marketing, customer support, biology research
+
+**What failed or was unreliable (with examples)**:
+- Prompt injection: Willison flagged that Cowork's defenses can't guarantee safety against future attacks
+- No session persistence: Cowork work doesn't resume between app closings
+- No audit logs: Not suitable for regulated workloads requiring compliance trails
+- Security concerns: Tool operates on local files — potential for data exposure
+
+**Harness vs. model**: HARNESS — This is the ultimate proof point. The model (Claude Opus 4.6) was identical for everyone. The plugins were 200 lines of markdown. The VALUE was in the workflow design — the skills that encode domain expertise, the commands that structure multi-step processes, the connectors that wire Claude to existing tools. The harness IS the product.
+
+**Cultural context**: The $285B selloff was the market's "oh shit" moment about AI's impact on SaaS. It wasn't about AI being smarter — it was about AI workflows being packaged in markdown files that anyone could customize. The per-seat SaaS model, the business model that built a $1T+ software industry over two decades, suddenly looked vulnerable to structured text files.
+
+**Skeptic's take**: "Hold on — a markdown file with law school content and workflow logic cratered $285 billion in market cap? Either the market overreacted massively, or every SaaS company's moat was always thinner than they claimed. Probably both. And let's be honest — that plugin has a disclaimer saying 'this should be reviewed by qualified legal counsel.' It's not replacing lawyers. It's replacing the software lawyers use."
+
+**Maven's take**: "THIS. This is the entire thesis of the book. The model is the horse. The plugin is the harness. The harness is 200 lines of markdown. It connects to Box and Egnyte via MCP. It uses skills to encode legal domain expertise. It exposes slash commands that structure workflows. And it caused a $285 billion selloff. The harness. Matters. More. Than. The. Model."
+
+---
+
+## Claude Code for Non-SWE Tasks — Community Techniques & Proof Points [ECO] [HARNESS]
+
+_Aggregated from multiple sources documenting Claude Code usage outside traditional software engineering._
+
+**Source(s)**:
+- [Dept. of Product: Claude Code for Non-Engineering](https://departmentofproduct.substack.com/p/how-to-use-claude-code-for-non-engineering) (Dec 5, 2025)
+- [Prompt Warrior: 5 Powerful Claude Code Use Cases](https://www.thepromptwarrior.com/p/5-powerful-claude-code-use-cases-you-probably-didn-t-know-about-5826bfb7f5b8fdd8)
+- [IntuitionLabs: Claude Code in Life Sciences](https://intuitionlabs.ai/articles/claude-code-life-science-applications)
+
+### Documented Non-SWE Use Cases
+
+**Writing & Knowledge Management:**
+- Notion MCP integration synced locally with markdown files → Claude Code organizes, writes, and restructures notes in batch
+- Custom "writing assistant" subagents with tailored prompts for different content types (blog posts, tweets, long-form)
+- Described as "the best system I've found for using AI in my writing process" — advantage over chat is persistent file access and batch operations
+
+**Research & Data Analysis:**
+- Competitor analysis: single prompt → Claude searches web, processes results, creates comprehensive reports matching dedicated research tools
+- YouTube video metric analysis: Claude builds scraper using Google API, analyzes trends
+- CSV business data analysis: upload CSV → Claude writes and executes analysis code on the user's machine → actionable insights
+- Key differentiator vs. ChatGPT: "can actually write and execute code on your machine, making it possible to integrate easily with other workflows"
+
+**Video & Media:**
+- Programmatic video creation with Remotion (React-based video components) for marketing content
+- FFmpeg workflow automation: extracting audio, transcribing via Whisper API, editing clips, adjusting timing
+- "Claude Code handled the entire FFmpeg workflow and OpenAI API integration automatically"
+
+**Design & Prototyping:**
+- Screenshot designs from Dribbble → "Create 3 variations in HTML" → working prototypes in minutes
+- Presentation slides with Reveal.js
+- Interactive landing pages from reference images
+
+**Automation (replacing no-code tools):**
+- AI news bots that auto-scrape and summarize
+- Content schedulers that process and schedule social media
+- Customer feedback pipelines that generate reports
+- Morning email automation via GitHub Actions
+- "Unlike no-code tools, you're not limited by pre-built integrations"
+
+**Product Management (from Dept. of Product):**
+- PRD generation, Jira ticket creation
+- File organization and spreadsheet editing
+- SEO audits
+- Personal knowledge systems ("second brain")
+
+**Life Sciences:**
+- Claude for Life Sciences launched Oct 2025, customized for biomedical research
+- Claude for Healthcare launched Jan 2026 with HIPAA-ready enterprise tools and EHR connectors
+- Preclinical research: literature search, genomics analysis, target prioritization (via bio-research plugin)
+
+**Harness vs. model**: HARNESS — In every case, the value comes from what Claude Code provides that the chat interface doesn't: persistent file system access, ability to execute code locally, MCP integrations with existing tools, skills for domain expertise, subagents for specialized tasks. The model is the same in chat and in Claude Code. The harness makes the difference.
+
+**Skeptic's take**: "Most of these 'use cases' are still technically coding — Claude is writing Python scripts, building React apps, running FFmpeg commands. The user isn't coding, sure, but the AI is. Is this really 'non-SWE' or is it 'SWE with extra steps'?"
+
+**Maven's take**: "That's exactly the point! The user describes a PROBLEM ('analyze this CSV,' 'organize my notes,' 'triage this NDA') and Claude Code figures out the technical implementation. The harness translates intent into action. Whether code is involved under the hood is irrelevant to the user. From the plumber's perspective, she asked for her files organized and it happened. That's the paradigm shift."

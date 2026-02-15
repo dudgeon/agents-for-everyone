@@ -6,9 +6,15 @@ This is a long-lived document. It describes the full arc of this project across 
 
 ## Phase 1 — Timeline Research (Layer 1) ← CURRENT (parallel with Phase 4 rough draft)
 
-**Status**: In progress — raw timeline complete (37 entries, 1,008 lines), awaiting epoch clustering. Epoch clustering blocked on rough curriculum (see Decision 001).
+**Status**: In progress — raw timeline at ~40 entries, ~1,200 lines. Current-state non-SWE capability map added (Session 6). Epoch clustering blocked on rough curriculum (see Decision 001).
 **Mode**: Independent research by Claude, validated by user
-**Goal**: Build a canonical, factual timeline of AI assistant tooling from Nov 2022 to present.
+**Goal**: Build a canonical, factual timeline of AI assistant tooling from Nov 2022 to present AND a current-state capability map of proven non-SWE applications.
+
+### Research axes
+1. **Chronological timeline** — what shipped, when, what worked, what failed (overview.md + research-notes.md)
+2. **Current-state capability map** — what's possible TODAY for non-SWE users, organized by domain + technique (session-6-synthesis-nonswe-capability-map.md)
+
+The timeline tells the story of how we got here. The capability map documents where "here" is.
 
 ### What this produces
 - `docs/layer-1-timeline/overview.md` — A summary document with all epoch boundaries
@@ -192,3 +198,23 @@ Each chapter: headline sentence + graphic novel panel + 3-4 paragraphs + 3-4 sou
 - Roadmap and backlog updated to reflect new structure
 - Timeline research preserved as evidence base + potential independent artifact
 - **Next**: Refine chapter headlines, source selection per chapter, character/visual design
+
+### 2026-02-15 — Session 6
+- **Focus shift**: From timeline-only research to current-state non-SWE capabilities, applications, tools, and methods
+- Discovered and cross-referenced `home-brain/domains/professional-development/ai-pm/sources/` (31 sources, 29 knowledge entries)
+- Major findings:
+  - **Claude Cowork** (Jan 12, 2026): "Claude Code for the rest of your work" — same tech, GUI for non-devs, built in ~10 days
+  - **Cowork Plugins** (Jan 30, 2026): 11 open-source plugins for legal, sales, finance, marketing, data, etc.
+  - **$285B SaaS selloff**: Legal plugin (~200 lines of markdown) triggered "SaaSpocalypse" — Thomson Reuters -18%, LegalZoom -20%
+  - **Mark Pike**: Lawyer with no coding background built legal review systems using Claude Code skills + MCP
+  - **Teresa Torres**: Claude Code + Obsidian system for task management, research, "lazy prompting" via context libraries
+  - **Lenny Rachitsky**: 50 non-SWE use cases from 500+ reader submissions, "Tool Identity as Adoption Gate" thesis
+- Created 4 research files (3 raw, 1 synthesis):
+  - `docs/research/session-6-raw-nonswe-use-cases.md` — general non-SWE use cases
+  - `docs/research/session-6-raw-claudemd-patterns.md` — CLAUDE.md for non-code projects
+  - `docs/research/session-6-raw-cowork-timeline.md` — Cowork launch + plugins + selloff
+  - `docs/research/session-6-synthesis-nonswe-capability-map.md` — 5-layer capability stack, 10 domains, 8 techniques
+- Updated timeline: 3 new events in overview.md, 3 new entries in research-notes.md, 2 new recurring themes
+- Added Phase 1 "current-state capability map" as a second research axis alongside chronological timeline
+- Resolved "openclaw" backlog item (@mernit's filesystem-as-state architecture)
+- **Next**: User reviews capability map, continues chapter refinement

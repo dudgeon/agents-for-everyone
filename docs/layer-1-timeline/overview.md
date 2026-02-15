@@ -402,9 +402,30 @@ Confidence notes:
 ### Feb 5 — Claude Opus 4.6 [ANT] [MODEL]
 - Improved coding, more careful planning, longer agentic task sustain, 1M token context (beta).
 
-### ~Feb — Cowork [ANT] [HARNESS]
-- Claude Code's agentic capabilities brought to the Claude desktop app for knowledge work beyond coding. Runs locally in an isolated VM.
-- **The agent leaves the developer's terminal and enters general knowledge work.**
+### Jul 24, 2025 — Anthropic publishes "How Anthropic Teams Use Claude Code" — non-SWE proof points [ANT] [HARNESS]
+- Legal team (lawyer with no coding background) built: marketing review tool in Slack (2-3 day → 24hr turnaround), contract redlining, COI review workflow, privacy impact assessment pipeline
+- Growth Marketing: CSV ad processing + Figma plugin generating 100 ad variations ("half a second per batch")
+- Non-technical employees: 51.5% use Claude Code for debugging, 12.7% for data science
+- **Key quote**: "dissolves the boundary between technical and non-technical work, turning anyone who can describe a problem into someone who can build a solution"
+- Key techniques: Skills (domain-specific instruction files), MCP (Google Drive, Jira, Slack), human-in-the-loop approval
+- 59% of daily work at Anthropic uses Claude; 50% avg productivity boost; 27% = tasks that wouldn't have been done otherwise
+
+### Jan 12 — Claude Cowork launches (macOS research preview) [ANT] [HARNESS]
+- "Claude Code for the rest of your work" — same tech (tools in loop, file access), but GUI for non-developers
+- Users grant folder permissions → Claude reads, edits, creates, organizes files autonomously
+- Built in ~10 days using Claude Code itself (per Boris Cherny)
+- Demo use cases: file reorganization, receipt→expense spreadsheet, drafts from scattered notes
+- Willison review: found 46 draft files, ran 44 web searches to verify status, identified 3 publish candidates
+- Rollout: Max (Jan 12) → Pro (Jan 16) → Team/Enterprise (Jan 23) → Windows (Feb 10)
+
+### Jan 30 — Cowork plugins launch (11 open-source) → $285B SaaS selloff [ANT] [HARNESS]
+- 11 plugins: productivity, sales, customer-support, product-management, marketing, legal, finance, data, enterprise-search, bio-research, plugin-management
+- Architecture: markdown + JSON, no code — skills/ for domain expertise, commands/ for workflows, .mcp.json for tool connections
+- Legal plugin (~200 lines of markdown): NDA triage (13 criteria → GREEN/YELLOW/RED routing) + contract review (clause-by-clause + redlines)
+- **Market reaction**: Thomson Reuters -18%, RELX -14%, Wolters Kluwer -13%, LegalZoom -20%, FactSet -10%. ~$285B total destroyed.
+- Goldman Sachs trader coined "SaaSpocalypse"
+- **The thesis in action**: "a text file doing work that billion-dollar companies charge per-seat fees to access"
+- First time a foundation model company packaged complete workflow products (not just API) into its platform
 
 ### Feb — Claude for Excel (beta) [ANT] [HARNESS]
 - Pivot tables, charts, file uploads. Available to Max, Team, Enterprise.
@@ -426,3 +447,7 @@ When clustering into epochs, consider these patterns:
 5. **Democratization waves**: GPT-4 was expensive/restricted → GPT-4o made it free → reasoning models were restricted → o3-mini made them accessible → GPT-5 unified everything.
 
 6. **The trust problem**: Mollick's jagged frontier is the through-line. At every stage, users had to learn where the edges were. The Skeptic is right to be cautious — the edges keep moving.
+
+7. **The agent leaves the terminal**: Claude Code (Feb 2025, SWE-only) → Anthropic non-SWE teams (Jul 2025, legal/marketing/design) → Cowork (Jan 2026, everyone) → Plugins + selloff (Jan 30, 2026, every job function). The same harness architecture (skills, MCP, CLAUDE.md) scales from developer CLI to general knowledge work. The $285B selloff is the market's reckoning with this arc.
+
+8. **CLAUDE.md → Skills → Plugins**: Persistent instructions evolve from a single project file to reusable domain expertise to bundled role-specific packages — all still markdown and JSON. The most vivid proof that the harness matters more than the model: the legal plugin that cratered Thomson Reuters was ~200 lines of structured text.
