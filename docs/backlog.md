@@ -35,6 +35,7 @@ _Persuasive arc structure drafted (see `docs/layer-4-curriculum/structure.md` an
 - [ ] Does the fine-tuning dead end fit as a Chapter 9 sidebar, or is it too inside-baseball for this audience?
 - [ ] What starter videos from ai-pm.cc should be offered in Section 4? (User will curate)
 - [ ] What should the "Getting Started" appendix cover? Minimal pointers vs. step-by-step setup guide?
+- [ ] **"What Next" appendix content**: Read, enrich, and act on the appendix draft at `docs/layer-4-curriculum/appendix-what-next.md`. Expand the three points (rules, end effectors, SWE primitives) with examples from the book's domains. Connect to relevant chapters.
 - [x] ~~What's the right "hello world" for agentic AI for a non-developer?~~ → Resolved: the book persuades, not teaches. The appendix handles practical getting-started.
 - [x] ~~How much can be taught through plot vs. explicit instruction?~~ → Resolved: each chapter has one concept, one panel, short body text. The panel IS the "plot."
 - [x] ~~Should the curriculum use a single sustained project or multiple smaller tasks?~~ → Resolved: not applicable — chapters are self-contained arguments, not project steps.
