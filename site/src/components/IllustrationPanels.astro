@@ -35,10 +35,19 @@ const textureSvg = `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBo
               class="absolute inset-0 h-full w-full object-cover"
             />
           )}
-          <div class="relative z-10">
-            <h3 class="font-display text-lg font-bold text-foreground">{panel.label}</h3>
-            <p class="mt-1 text-sm leading-relaxed text-muted-foreground">{panel.description}</p>
-          </div>
+          {!panel.image && (
+            <div class="relative z-10">
+              <h3 class="font-display text-lg font-bold text-foreground">{panel.label}</h3>
+              <p class="mt-1 text-sm leading-relaxed text-muted-foreground">{panel.description}</p>
+            </div>
+          )}
+          {panel.image && panel.dialogue && (
+            <div class="relative z-10 max-w-[70%] self-start">
+              <div class="rounded-2xl bg-white/90 px-3 py-2 text-sm font-medium leading-snug text-gray-900 shadow-md backdrop-blur-sm">
+                {panel.dialogue}
+              </div>
+            </div>
+          )}
         </div>
       ))}
     </div>
@@ -62,10 +71,19 @@ const textureSvg = `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBo
                   class="absolute inset-0 h-full w-full object-cover"
                 />
               )}
+              {!panel.image && (
               <div class="relative z-10">
                 <h3 class="font-display text-base font-bold text-foreground">{panel.label}</h3>
                 <p class="mt-1 text-sm leading-relaxed text-muted-foreground">{panel.description}</p>
               </div>
+              )}
+              {panel.image && panel.dialogue && (
+                <div class="relative z-10 max-w-[70%] self-start">
+                  <div class="rounded-2xl bg-white/90 px-3 py-2 text-sm font-medium leading-snug text-gray-900 shadow-md backdrop-blur-sm">
+                    {panel.dialogue}
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>

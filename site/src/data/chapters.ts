@@ -9,6 +9,7 @@ export interface Panel {
   description: string;
   image?: string;
   gradient: "warm" | "cool" | "warm-accent" | "cool-accent";
+  dialogue?: string;
 }
 
 export interface ChapterData {
@@ -30,15 +31,17 @@ export const chapters: ChapterData[] = [
     panels: [
       {
         label: "Let me show you something",
-        description: "Maven opens a laptop toward the Skeptic, pointing at something on screen. She's leaning forward, eager to show rather than tell.",
-        image: "/images/ch01-bold-claim-frame-a-20260221-144505.png",
+        description: "Maven opens a laptop toward the Skeptic. She's leaning forward, eager to show rather than tell.",
+        image: "/images/ch01-bold-claim-frame-a-20260221-160942.png",
         gradient: "warm",
+        dialogue: "A lawyer. No coding. Weekend project. $285 billion evaporated.",
       },
       {
         label: "That's just a text file?",
-        description: "Skeptic leans slightly forward — still guarded, but pulled in by what he just saw. One hand shifts to his chin.",
-        image: "/images/ch01-bold-claim-frame-b-20260221-144505.png",
+        description: "Skeptic pulled in despite himself. One hand on his chin.",
+        image: "/images/ch01-bold-claim-frame-b-20260221-160942.png",
         gradient: "warm",
+        dialogue: "From a text file.",
       },
     ],
     body: [
@@ -68,20 +71,22 @@ export const chapters: ChapterData[] = [
   {
     id: "ch-2",
     number: 2,
-    title: "In 2023, AI was confidently wrong about everything — and the people selling it didn't seem to notice.",
+    title: "The 2023 version earned your skepticism. What you experienced was real — and so is what changed.",
     navLabel: "Earned Skepticism",
     panels: [
       {
-        label: "A lawyer submitted fake cases to a federal judge",
-        description: "Skeptic leans forward, hands open, recounting something that happened. Not angry — making a point he's made before, to someone who usually argues back.",
-        image: "/images/ch02-earned-skepticism-frame-a-20260221-144607.png",
+        label: "It invented court cases. With citations.",
+        description: "Skeptic leans forward, making a point he's made before, to someone who usually argues back.",
+        image: "/images/ch02-earned-skepticism-frame-a-20260221-161118.png",
         gradient: "cool",
+        dialogue: "It invented court cases. With citations. A lawyer submitted them to a judge.",
       },
       {
-        label: "You're right. That was bad.",
-        description: "Maven nods, not defending, not qualifying. Just agreeing. This is the moment Skeptic hasn't seen before — someone on the AI side who doesn't argue.",
-        image: "/images/ch02-earned-skepticism-frame-b-20260221-144607.png",
+        label: "Yeah. That was bad.",
+        description: "Maven nods — no defense, no qualification. The moment Skeptic hasn't seen before.",
+        image: "/images/ch02-earned-skepticism-frame-b-20260221-161118.png",
         gradient: "cool",
+        dialogue: "Yeah. That was bad. I'm not here to pretend it wasn't.",
       },
     ],
     body: [
@@ -115,16 +120,18 @@ export const chapters: ChapterData[] = [
     navLabel: "Hype Graveyard",
     panels: [
       {
-        label: "AutoGPT. 174,000 stars. Infinite loops all night.",
-        description: "Skeptic gestures toward a whiteboard listing AutoGPT, BabyAGI, Devin, ChatGPT Plugins — each with a large X. Not triumphant, making a fair point.",
-        image: "/images/ch03-hype-graveyard-frame-a-20260221-144655.png",
+        label: "AutoGPT. BabyAGI. Devin. Infinite loops.",
+        description: "Skeptic at the whiteboard listing failures. Not triumphant — making a fair point.",
+        image: "/images/ch03-hype-graveyard-frame-a-20260221-161216.png",
         gradient: "cool",
+        dialogue: "AutoGPT. BabyAGI. Devin. Infinite loops. Fifteen percent success rates.",
       },
       {
-        label: "I'm not going to defend any of that.",
-        description: "Maven spreads her hands, making no attempt to defend any of it. Honest concession. She's looking at the Skeptic, not the whiteboard.",
-        image: "/images/ch03-hype-graveyard-frame-b-20260221-144655.png",
+        label: "All correct.",
+        description: "Maven — honest concession, no defense.",
+        image: "/images/ch03-hype-graveyard-frame-b-20260221-161216.png",
         gradient: "cool",
+        dialogue: "All correct. Something actually changed this time.",
       },
     ],
     body: [
@@ -163,16 +170,18 @@ export const chapters: ChapterData[] = [
     navLabel: "The Loop",
     panels: [
       {
-        label: "What happens when it gets the first step wrong?",
-        description: "Skeptic points at Maven's loop diagram on the whiteboard — PLAN, ACT, OBSERVE, ADJUST. Maven holds the marker, turns to face him.",
-        image: "/images/ch04-the-loop-frame-a-20260221-144840.png",
+        label: "What happens when step one is wrong?",
+        description: "Skeptic points at the loop diagram. Maven holds the marker.",
+        image: "/images/ch04-the-loop-frame-a-20260221-161315.png",
         gradient: "warm-accent",
+        dialogue: "What happens when step one is wrong?",
       },
       {
-        label: "It reads the error. Then tries a different approach.",
-        description: "Maven taps the OBSERVE box on the whiteboard. She's not explaining so much as demonstrating — this is the key point.",
-        image: "/images/ch04-the-loop-frame-b-20260221-144840.png",
+        label: "It sees the error. Tries something else.",
+        description: "Maven taps the OBSERVE box — calm and precise.",
+        image: "/images/ch04-the-loop-frame-b-20260221-161315.png",
         gradient: "warm-accent",
+        dialogue: "It sees the error. Tries something else. Like you would.",
       },
     ],
     body: [
@@ -206,16 +215,18 @@ export const chapters: ChapterData[] = [
     navLabel: "Memory",
     panels: [
       {
-        label: "Wait — I'd have to explain my whole job to it?",
-        description: "Skeptic squints at a laptop screen showing a plain-English list of rules and preferences. His posture has opened up slightly — one hand on his knee.",
-        image: "/images/ch05-memory-frame-a-20260221-145013.png",
+        label: "So I have to re-explain myself every single day?",
+        description: "Skeptic leans toward the laptop screen, puzzled.",
+        image: "/images/ch05-memory-frame-a-20260221-161443.png",
         gradient: "cool-accent",
+        dialogue: "So I have to re-explain myself every single day?",
       },
       {
         label: "Once. Then it remembers.",
-        description: "Maven closes the laptop gently, making eye contact. Session ten is different from session one.",
-        image: "/images/ch05-memory-frame-b-20260221-145013.png",
+        description: "Maven closes the laptop — quiet certainty.",
+        image: "/images/ch05-memory-frame-b-20260221-161443.png",
         gradient: "cool-accent",
+        dialogue: "Once. Then it remembers. Session ten looks nothing like session one.",
       },
     ],
     body: [
@@ -250,14 +261,16 @@ export const chapters: ChapterData[] = [
       {
         label: "How do I know it's not just making things up again?",
         description: "Skeptic looks at an open laptop on the coffee table showing a file folder, then back at Maven skeptically. One eyebrow raised.",
-        image: "/images/ch06-grounding-frame-a-20260221-151017.png",
+        image: "/images/ch06-grounding-frame-a-20260221-161544.png",
         gradient: "warm-accent",
+        dialogue: "How do I know it's not just making things up again?",
       },
       {
         label: "Because it's reading your actual documents.",
         description: "Maven leans forward and points precisely at the file listing on the laptop screen. Her gesture is deliberate, not theatrical.",
-        image: "/images/ch06-grounding-frame-b-20260221-151017.png",
+        image: "/images/ch06-grounding-frame-b-20260221-161544.png",
         gradient: "warm-accent",
+        dialogue: "Because it's reading your actual documents.",
       },
     ],
     body: [
@@ -292,14 +305,16 @@ export const chapters: ChapterData[] = [
       {
         label: "That's just... English?",
         description: "Skeptic leans in to read a rules document Maven is holding — a printed list visible in large text. He's tilting his head, genuinely puzzled by what he's seeing.",
-        image: "/images/ch07-controls-frame-a-20260221-145231.png",
+        image: "/images/ch07-controls-frame-a-20260221-161708.png",
         gradient: "cool-accent",
+        dialogue: "This is just... English.",
       },
       {
         label: "You're not programming — you're setting expectations.",
         description: "Maven sets the document down on the table between them, tapping it once. Like you would with a smart new hire.",
-        image: "/images/ch07-controls-frame-b-20260221-145231.png",
+        image: "/images/ch07-controls-frame-b-20260221-161708.png",
         gradient: "cool-accent",
+        dialogue: "That's the whole point.",
       },
     ],
     body: [
@@ -334,14 +349,16 @@ export const chapters: ChapterData[] = [
       {
         label: "So I'd define the criteria upfront — then review what it produces.",
         description: "Skeptic stands at the whiteboard drawing a rough workflow diagram. He's thinking out loud, not asking for permission. The roles have reversed.",
-        image: "/images/ch08-architect-frame-a-20260221-145343.png",
+        image: "/images/ch08-architect-frame-a-20260221-161802.png",
         gradient: "warm-accent",
+        dialogue: "So I design the system. Review the output. Like a manager.",
       },
       {
         label: "Your job becomes designing the system and reviewing the work.",
         description: "Maven leans back in the chair, hands clasped, watching him work it out. She's not explaining anymore, just confirming.",
-        image: "/images/ch08-architect-frame-b-20260221-145343.png",
+        image: "/images/ch08-architect-frame-b-20260221-161802.png",
         gradient: "warm-accent",
+        dialogue: "Exactly. You stopped being the one doing the work.",
       },
     ],
     body: [
@@ -376,14 +393,16 @@ export const chapters: ChapterData[] = [
       {
         label: "The model is like the engine. But what makes it useful is all the other stuff.",
         description: "Skeptic taps the MODEL circle on the whiteboard, then sweeps his hand outward to gesture at all the surrounding components: MEMORY, TOOLS, RULES, LOOP, FILES.",
-        image: "/images/ch09-harness-frame-a-20260221-145446.png",
+        image: "/images/ch09-harness-frame-a-20260221-161855.png",
         gradient: "cool-accent",
+        dialogue: "The model is the engine. The other stuff is what makes it drive.",
       },
       {
         label: "Now you're getting it.",
         description: "Maven smiles — the first full smile of the book. She's not explaining anymore. Just confirming what he figured out himself.",
-        image: "/images/ch09-harness-frame-b-20260221-145446.png",
+        image: "/images/ch09-harness-frame-b-20260221-161855.png",
         gradient: "cool-accent",
+        dialogue: "Now you're getting it.",
       },
     ],
     body: [

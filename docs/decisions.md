@@ -60,3 +60,29 @@ Each decision follows this structure:
   2. **Disable model invocation on costly skills**: Considered disabling only for image generation skills (API costs), but those skills have built-in approval steps anyway.
   3. **All model-invocable** (chosen): Claude sees skill descriptions in context, recognizes when they're relevant, and invokes them — with the user approving the tool call before execution.
 - **Rationale**: A skill Claude can't see is a text file nobody reads. The value of skills is that Claude recognizes intent ("let's do a trial run") and invokes the right workflow. Tool-call approval provides the user control gate.
+
+---
+
+## 005 — Image generation: speech bubbles, frame variation, style anchoring (2026-02-21)
+
+- **Date**: 2026-02-21 (Session 8)
+- **Decision**: After reviewing draft-002 images:
+  1. **Speech bubbles in-image**: Dialogue should be rendered as speech bubbles inside generated frames, not as overlaid HTML text. The `IllustrationPanels.astro` component hides text overlay when an image is present.
+  2. **Frame composition**: Frame A = wider two-shot (both characters, establishing). Frame B = closer shot (medium close-up on the reacting character). This creates visual beat-to-beat contrast.
+  3. **Style consistency anchor**: When generating ch02–ch09, pass ch01-frame-a as an additional `--ref` alongside the character sheets. This gives the model a canonical visual baseline showing both characters in the established style, reducing cross-comic drift.
+  4. **Skeptic Ghibli alignment**: Skeptic character brief updated to more explicitly emphasize Ghibli-style rounded features and expressive eyes — must match Maven's art style exactly.
+- **Context**: User review of draft-002 panels found: (a) text overlay shows description rather than dialogue, (b) both frames too similar in composition, (c) Skeptic looks less Ghibli than Maven — "from different universes," (d) visual style drifts noticeably from ch01 to ch09.
+- **Rationale**: Style anchor approach (canonical frame as additional ref) is the most direct fix for cross-comic drift without requiring a dedicated "in-scene reference sheet" generation step. Frame composition variation (wide→close) creates emotional rhythm and makes the two-frame format feel like a panel sequence rather than two similar shots.
+
+---
+
+## 006 — Site copy: title, label, subtitle (2026-02-21)
+
+- **Date**: 2026-02-21 (Session 8)
+- **Decision**:
+  - Top label: "An Illustrated Story" → "Work in progress; illustrative"
+  - Main title: "The History of AI" → "Agents for Everyone"
+  - Subtitle: user delegated to Claude — chosen: "What actually changed between your last AI experiment and this morning."
+  - Ch02 headline revised: "In 2023, AI was confidently wrong about everything — and the people selling it didn't seem to notice." is too negative. Revised: "The 2023 version earned your skepticism. What you experienced was real — and so is what changed."
+- **Context**: Site was displaying placeholder copy from the initial Astro scaffold that didn't match the actual book. Ch02 headline read as a blanket indictment of AI rather than validating the reader's specific experience.
+- **Rationale**: The title should match the book name. The label signals work-in-progress without being apologetic. The subtitle frames the reader's specific experience (their last experiment) rather than making a general claim about AI history. Ch02 headline should validate skepticism without being gratuitously negative — the reader's experience was real, AND something changed.
