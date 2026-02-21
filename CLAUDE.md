@@ -44,45 +44,49 @@ Layer 1 — TIMELINE (data layer)
 ## Project Structure
 
 ```
+.claude/
+  skills/                       — Project skills (invoke with /skill-name)
+    <skill-name>/SKILL.md       — Each skill is a directory with SKILL.md entrypoint
+
 docs/
-  roadmap.md                  — Long-lived, multi-phase development plan
-  backlog.md                  — Open questions, tiered by layer
-  decisions.md                — Design decision log
+  roadmap.md                    — Long-lived, multi-phase development plan
+  backlog.md                    — Open questions, tiered by layer
+  decisions.md                  — Design decision log
 
-  layer-1-timeline/           — Canonical AI assistant timeline
-    overview.md               — Epoch boundaries, summary
-    epoch-NN-*.md             — One file per epoch (research-populated)
+  layer-1-timeline/             — Canonical AI assistant timeline
+    overview.md                 — Epoch boundaries, summary
+    research-notes.md           — Detailed entries with sources
+    epoch-NN-*.md               — One file per epoch (research-populated)
 
-  layer-2-primitives/         — Abstracted capability taxonomy
-    primitives.md             — What can agentic AI do today?
+  layer-2-primitives/           — Abstracted capability taxonomy
+    primitives.md               — What can agentic AI do today?
 
-  layer-3-domains/            — Domain translation mappings
-    domain-mappings.md        — Primitives × domains matrix
+  layer-3-domains/              — Domain translation mappings
+    domain-mappings.md          — Primitives × domains matrix
 
-  layer-4-curriculum/         — Learning progression design
-    progression.md            — Sequence, dependencies, scaffolding
-    tasks.md                  — Task designs for the story
+  layer-4-curriculum/           — Persuasive arc structure
+    structure.md                — Chapter map, format spec, character dynamic
 
-  layer-5-story/              — Presentation layer
-    characters.md             — Profiles, voice, arcs
-    plot-arc.md               — Narrative structure
-    tone-guide.md             — Style and voice decisions
+  layer-5-story/                — Presentation layer
+    characters.md               — Profiles, voice, arcs
+    writing-style-guide.md      — Living style guide (enriched each draft cycle)
+    plot-arc.md                 — Narrative structure
 
-  research/                   — Raw research dumps (feeds layer 1)
-    session-N-topic.md        — Full agent output per research batch
+  research/                     — Raw research dumps (feeds layer 1)
+    session-N-topic.md          — Full agent output per research batch
 
-drafts/                       — Story drafts (Phase 6+)
-assets/                       — Visual references, illustrations
+drafts/                         — Story drafts (timestamped folders)
+  draft-NNN-TIMESTAMP/          — One folder per draft run
+    draft.md                    — Draft with inline CriticMarkup self-review
+    user-feedback.md            — User's CriticMarkup annotations
+    takeaways.md                — Distilled feedback + actions
+
+assets/                         — Visual references, illustrations
 ```
 
-## Session Start Protocol
+## Skills
 
-Every new session should begin with:
-1. Read `docs/roadmap.md` for current phase and session log
-2. Read `docs/backlog.md` for open questions
-3. Read `docs/decisions.md` for recent decisions
-4. Skim `docs/layer-1-timeline/research-notes.md` headings to recall coverage
-5. Check `memory/MEMORY.md` for cross-session context
+Skills live in `.claude/skills/<name>/SKILL.md` with YAML frontmatter. They are auto-discovered — do not duplicate skill descriptions here. When creating new skills, always use this pattern.
 
 ## Working Conventions
 

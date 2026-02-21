@@ -1,3 +1,9 @@
+---
+name: generate-chapter
+description: Batch generate all images for a story chapter from inline IMG specs. Use when the user wants to generate all illustrations for a chapter at once.
+argument-hint: "[chapter-number or file-path]"
+---
+
 Generate all images for a story chapter using the batch pipeline.
 
 **Argument**: Chapter number or file path (e.g., `/generate-chapter 3` or `/generate-chapter drafts/chapter-03.md`)

@@ -1,4 +1,9 @@
-Generate an image using Nano Banana via OpenRouter. This is for one-off/exploratory generation — for batch chapter images, use /generate-chapter instead.
+---
+name: generate-image
+description: Generate a one-off image using Nano Banana via OpenRouter. For batch chapter images, use /generate-chapter instead. Use when the user wants to create, generate, or visualize an image.
+---
+
+Generate an image using Nano Banana via OpenRouter. This is for one-off/exploratory generation — for batch chapter images, use `/generate-chapter` instead.
 
 1. Ask the user what they want to generate. If they've already described it, proceed.
 

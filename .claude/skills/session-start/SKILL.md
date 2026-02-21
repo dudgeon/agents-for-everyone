@@ -1,3 +1,8 @@
+---
+name: session-start
+description: Load project context and present a status briefing at the start of a new session. Use when a new conversation begins or the user asks what we're working on.
+---
+
 Load project context for a new session. Read the following files and present a concise status briefing:
 
 1. Read `docs/roadmap.md` — identify current phase, last session's work, and stated next steps

@@ -218,3 +218,15 @@ Each chapter: headline sentence + graphic novel panel + 3-4 paragraphs + 3-4 sou
 - Added Phase 1 "current-state capability map" as a second research axis alongside chronological timeline
 - Resolved "openclaw" backlog item (@mernit's filesystem-as-state architecture)
 - **Next**: User reviews capability map, continues chapter refinement
+
+### 2026-02-15 — Session 7
+- First draft run: complete book draft (draft-001) with 9 chapters + Section 4 + Appendix placeholder
+- Self-reviewed draft with 10 inline CriticMarkup gap annotations
+- Established draft CI/CD process: `/draft-run` (build + self-review) → user feedback → `/draft-review` (distill + fix)
+- Created writing style guide stub at `docs/layer-5-story/writing-style-guide.md` — living document enriched each draft cycle
+- **Migrated all skills from legacy `.claude/commands/` to `.claude/skills/` with YAML frontmatter** (Decision 004)
+- Enabled model invocation on all 9 skills — removed `disable-model-invocation: true`
+- Removed redundant skills table and session-start protocol from CLAUDE.md (auto-discovered from frontmatter)
+- Removed empty `.claude/commands/` directory
+- Key learning: a skill with model invocation disabled is invisible to Claude and therefore useless
+- **Next**: User reviews draft-001 with CriticMarkup, then run `/draft-review` to process feedback and update system

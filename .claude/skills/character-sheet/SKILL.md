@@ -1,3 +1,8 @@
+---
+name: character-sheet
+description: Generate a character reference sheet for consistent illustration. Iterative and collaborative — expect multiple rounds. Use when the user wants to design or visualize a character.
+---
+
 Generate a character reference sheet for consistent illustration. This is an iterative, collaborative process — expect multiple rounds.
 
 1. **Get the character description.**

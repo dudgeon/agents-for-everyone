@@ -1,3 +1,8 @@
+---
+name: image-costs
+description: Show cumulative image generation spend from the cost log. Use when the user asks about image costs, budget, or spending.
+---
+
 Show the current image generation cost summary.
 
 Run: `python3 tools/image_costs.py`

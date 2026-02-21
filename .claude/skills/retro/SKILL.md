@@ -1,3 +1,8 @@
+---
+name: retro
+description: Run an end-of-session retrospective reviewing work done and proposing process improvements. Use when the user wraps up a session or asks to review what we accomplished.
+---
+
 Run an end-of-session retrospective. Review the work done in this session and propose process improvements.
 
 1. **What was accomplished**: Summarize the session's output (files changed, entries added, decisions made)
@@ -11,7 +16,7 @@ Run an end-of-session retrospective. Review the work done in this session and pr
 
 4. **Process improvements**: Propose specific changes to:
    - `CLAUDE.md` (new conventions, updated guidelines)
-   - Skills (new or modified slash commands)
+   - Skills (new or modified skills in `.claude/skills/`)
    - `memory/MEMORY.md` (cross-session context to persist)
    - `docs/roadmap.md` (session log entry)
 

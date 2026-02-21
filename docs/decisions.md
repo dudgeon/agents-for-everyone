@@ -47,3 +47,16 @@ Each decision follows this structure:
 - **Context**: The natural ending for a persuasive arc is a call to action. But "go try AI" is too vague and "here's a 10-step setup guide" belongs in an appendix. The user proposed a asks/offers frame that respects the reader: we're offering resources AND asking them to meet us halfway.
 - **Key framing**: The asks use the spreadsheet analogy — spreadsheets were built for financial analysts, but everyone uses them now. Markdown, Git, and developer-oriented AI tools are at the same inflection point. Tools like Claude Cowork exist for simpler use cases, but the power tools (Codex, VSCode + Claude Code) are where the real capability lives today.
 - **Rationale**: Ends the arc with agency, not homework. The reader chooses what to engage with.
+
+---
+
+## 004 — Skills use `.claude/skills/` pattern, model-invocable by default (2026-02-15)
+
+- **Date**: 2026-02-15 (Session 7)
+- **Decision**: All project skills use the `.claude/skills/<name>/SKILL.md` pattern with YAML frontmatter. Model invocation is enabled by default (no `disable-model-invocation: true`). Skill descriptions are auto-discovered — do not duplicate them in CLAUDE.md.
+- **Context**: Skills were initially created using the legacy `.claude/commands/` pattern without frontmatter, and all had model invocation disabled. User identified three problems: (1) wrong file pattern, (2) with model invocation disabled, Claude can't see or propose skills — making them invisible, (3) listing skills in CLAUDE.md duplicates what frontmatter descriptions already provide.
+- **Alternatives considered**:
+  1. **Keep `.claude/commands/`**: Still works, but misses frontmatter features and doesn't match current documentation.
+  2. **Disable model invocation on costly skills**: Considered disabling only for image generation skills (API costs), but those skills have built-in approval steps anyway.
+  3. **All model-invocable** (chosen): Claude sees skill descriptions in context, recognizes when they're relevant, and invokes them — with the user approving the tool call before execution.
+- **Rationale**: A skill Claude can't see is a text file nobody reads. The value of skills is that Claude recognizes intent ("let's do a trial run") and invokes the right workflow. Tool-call approval provides the user control gate.

@@ -1,3 +1,8 @@
+---
+name: coverage-check
+description: Analyze research coverage balance and identify gaps in timeline entries. Use when noticing potential research imbalances during draft runs or when preparing for new research.
+---
+
 Analyze the current state of research coverage and identify gaps or imbalances.
 
 Read `docs/layer-1-timeline/research-notes.md` and `docs/layer-1-timeline/overview.md`, then report:
