@@ -214,20 +214,53 @@ python3 tools/generate_image.py "prompt" --dry-run
 - **Always show cost estimate before generating** (model price x count)
 - **Always show cumulative spend after generating** (from image-log.csv)
 - For batch operations (>5 images), get explicit user approval with total cost estimate
-- Default to `flash` model unless user requests `pro`
+- Comics default to `pro` model (better frame-to-frame consistency); single images default to `flash`
 
 ### Story File Image Spec Convention
-Image specifications are embedded inline in story chapter files using HTML comments:
+
+Most panels are two-frame comics. Use `<!-- COMIC -->` for those; `<!-- IMG -->` for single illustrations only.
+
+**Two-frame comic (standard):**
 ```markdown
-<!-- IMG
-id: ch03-maven-laptop
-characters: maven
+<!-- COMIC
+id: ch01-bold-claim
+characters: maven, skeptic
 aspect: 16:9
-mood: warm, focused
-description: The Maven sits at a wooden desk, laptop open...
+render: carousel-mobile, side-by-side-desktop
+
+setting: Modern office. Maven stands at a whiteboard with a simple diagram. Warm overhead lighting.
+
+frame_a:
+  action: Maven at whiteboard mid-explanation, marker in hand.
+  expression_maven: confident, engaged
+  expression_skeptic: arms crossed, leaning slightly forward — skeptical but listening
+  dialogue: ["In January 2026, a lawyer with no coding background...", ""]
+
+frame_b:
+  action: Skeptic leans forward, pointing at the board. Maven nods.
+  expression_maven: amused, nodding
+  expression_skeptic: eyebrow raised, skeptical
+  dialogue: ["", "A text file did that?"]
 -->
 ```
-The batch pipeline (`/generate-chapter`) reads these specs and generates all images for a chapter.
+
+**Key conventions:**
+- `render: carousel-mobile, side-by-side-desktop` — required. The renderer uses this to lay out frames. Mobile: swipeable carousel, minimal chrome. Desktop/tablet: frames shown side by side.
+- `dialogue` is **metadata only** — frames are generated **without text**. Speech bubbles added in post.
+- Frames are separate files: `{id}-frame-a-{timestamp}.png` and `{id}-frame-b-{timestamp}.png`
+- `setting` block is **frozen** — identical across both frames. Only action/expression changes.
+- Generation order: frame A first → frame A output fed as visual reference into frame B prompt (same conversation session for visual memory continuity).
+
+**Single illustration (rare, no characters):**
+```markdown
+<!-- IMG
+id: ch09-thesis-diagram
+aspect: 16:9
+description: Whiteboard diagram: MODEL (circle) in center surrounded by MEMORY, TOOLS, RULES, LOOP, FILES. Clean, schematic.
+-->
+```
+
+The batch pipeline (`/generate-chapter`) reads both spec types and generates all images for a chapter.
 
 ## Current Phase
 

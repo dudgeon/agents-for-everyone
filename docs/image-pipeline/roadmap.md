@@ -83,33 +83,54 @@ CONSTRAINTS: Do not change face, facial features, skin tone, body shape, or iden
 
 ### What this produces
 - A documented convention for embedding image specs in the story master file
-- `tools/generate_chapter_images.py` — Batch pipeline script
+- `tools/generate_image.py --comic` — Comic frame generation (already built)
+- `/generate-chapter` skill — batch pipeline reading specs from story files
 - End-to-end test on a sample chapter
 
-### Image spec convention (proposed: inline HTML comments)
+### Frame format decision (resolved 2026-02-15)
+Each panel is a **two-frame comic** (`<!-- COMIC -->`), not a single image. Frames are separate files so the renderer can control layout. Rendering intent is encoded in the spec:
+- **Mobile**: swipeable carousel, minimal chrome
+- **Desktop/tablet**: two frames side by side
+
+Dialogue is metadata only — frames are generated **without text**. Speech bubbles added in post-production (avoids AI text unreliability across frames).
+
+### Image spec convention — COMIC (standard) and IMG (single illustration)
 ```markdown
-The Maven leaned forward, laptop screen reflecting in her glasses.
-
-<!-- IMG
-id: ch03-maven-laptop
-characters: maven
+<!-- COMIC
+id: ch03-the-loop
+characters: maven, skeptic
 aspect: 16:9
-mood: warm, focused, intimate
-description: The Maven sits at a wooden desk, laptop open, screen glow illuminating her face. She's leaning forward with interest, glasses reflecting the screen. Warm evening lighting, cozy room.
--->
+render: carousel-mobile, side-by-side-desktop
 
-"Look at this," she said, turning the screen toward Maya.
+setting: Modern office. Maven stands at a whiteboard. Warm overhead lighting.
+
+frame_a:
+  action: Maven draws a loop diagram on the whiteboard. Skeptic studies it.
+  expression_maven: focused, explanatory
+  expression_skeptic: curious, leaning forward
+  dialogue: ["Okay but what happens when it gets the first step wrong?", ""]
+
+frame_b:
+  action: Maven taps the "ADJUST" node on the diagram. Skeptic nods slowly.
+  expression_maven: confident, making a point
+  expression_skeptic: beginning to understand
+  dialogue: ["", "It reads the error message and tries a different approach. Like you would."]
+-->
 ```
 
 ### Pipeline behavior
-1. Parse story file for `<!-- IMG ... -->` blocks
-2. For each block:
-   - Load character bibles from `docs/layer-5-story/characters.md`
-   - Load style guide from `assets/style-guide/style-guide.md`
-   - Compose full prompt: style + character bible(s) + scene description + constraints
-   - Attach reference sheet(s) from `assets/characters/`
-3. Show cost estimate (count × model price) and wait for approval
-4. Generate all images, save to `assets/generated/chapters/ch-NN/`
+1. Parse story file for `<!-- COMIC -->` and `<!-- IMG -->` blocks
+2. For each **COMIC** block:
+   - Load character bibles (frozen, copy-pasted verbatim — never reworded)
+   - Load style guide (frozen)
+   - Extract `setting` block (frozen — identical in both frame prompts)
+   - **Generate frame A** with reference sheets attached
+   - **Generate frame B** in same conversation session, with frame A output as additional visual anchor
+   - Delta-prompt frame B: explicit "what changed" + "what must stay the same"
+   - Save as `{id}-frame-a-{timestamp}.png` and `{id}-frame-b-{timestamp}.png`
+3. For each **IMG** block: single-image generation (flash model)
+4. Show cost estimate before generating, wait for approval
+5. Log everything to `image-log.csv`
 5. Log everything to `image-log.csv`
 6. Report results: successes, failures, total cost
 
