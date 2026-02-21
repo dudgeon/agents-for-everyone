@@ -24,8 +24,43 @@ A draft run is NOT intended to produce final copy. It's a diagnostic tool that e
 7. Write a complete draft to `drafts/draft-NNN-YYYYMMDDTHHMMZ/draft.md`
    - NNN = zero-padded draft number, increment from last
    - Timestamp = UTC time of draft completion
-8. Each chapter must include: headline, `<!-- IMG -->` panel spec, body text (3-4 paragraphs), sources (3-4 with URLs)
+8. Each chapter must include: headline, `<!-- COMIC -->` panel spec, body text (3-4 paragraphs), sources (3-4 with URLs)
 9. Section 4 and Appendix follow their own formats per the structure doc
+
+### COMIC Spec Format
+
+Every chapter panel spec must use the `<!-- COMIC -->` block format — **not** the old `<!-- IMG -->` prose format:
+
+```markdown
+<!-- COMIC
+id: ch01-bold-claim
+characters: maven, skeptic
+aspect: 16:9
+render: carousel-mobile, side-by-side-desktop
+
+setting: [Frozen scene description — identical for both frames. Describe the physical space, lighting, and background in enough detail that an image generator can reproduce it exactly. This block is copy-pasted verbatim into both frame prompts.]
+
+frame_a:
+  action: [What is physically happening in frame A — gesture, body language, position]
+  expression_maven: [adjective, adjective]
+  expression_skeptic: [adjective, adjective]
+  dialogue: ["Maven's line", ""]
+
+frame_b:
+  action: [What changed from frame A — what shifted in the scene or between characters]
+  expression_maven: [adjective, adjective]
+  expression_skeptic: [adjective, adjective]
+  dialogue: ["", "Skeptic's line"]
+-->
+```
+
+**Rules:**
+- `setting` — frozen across both frames. Describes the shared visual context (room, lighting, props). Never put action here.
+- `frame_a` / `frame_b` — differ only in `action`, `expression_*`, and `dialogue`. The two frames form a single moment in two beats.
+- `dialogue` — metadata only (for reference). Not rendered as text overlay in the image.
+- `expression_*` — two comma-separated adjectives per character per frame (e.g., `skeptical, arms-crossed`).
+- One dialogue slot is always empty (`""`) — Maven speaks in frame A, Skeptic in frame B, or vice versa.
+- `id` — unique per comic. Convention: `ch{number}-{slug}` (e.g., `ch03-tool-call`).
 
 ### 2. Self-Review
 
@@ -46,6 +81,7 @@ See `/draft-review` for the full feedback processing workflow.
 - **Increment draft numbers.** Never overwrite a previous draft. Storage is cheap; context is expensive.
 - **Self-review is mandatory.** Annotate gaps inline with CriticMarkup before the user ever sees the draft.
 - **CriticMarkup is the testing language.** Both self-review and user feedback use this standard.
+- **Always use COMIC format for panel specs.** Never use the old prose `<!-- IMG -->` format in new drafts. The COMIC format is machine-readable (feeds `/generate-chapter` and `/build-site`) AND author-readable (forces explicit frame-by-frame thinking).
 
 ## Draft Folder Structure
 
@@ -74,3 +110,4 @@ drafts/
 ## Related Skills
 
 - **`/draft-review`** — Process user feedback, distill takeaways, and update the system. Run this after the user annotates the draft.
+- **`/build-site`** — Transform the draft into site data, build the Astro site, and push to trigger deploy. Reads COMIC specs from the draft to match images. Run after `/generate-chapter` when images are ready, or before to get a text-only build with gradient fallbacks.
