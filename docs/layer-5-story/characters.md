@@ -18,6 +18,24 @@ _Profiles to be developed in Phase 1. Placeholders below._
 
 **Arc**: Starts confident but is forced by the Skeptic to really defend their position. This makes their eventual argument stronger.
 
+### Character Bible (Visual — locked 2026-02-21)
+
+```
+MAVEN
+IMMUTABLE TRAITS: Warm medium-brown skin. Black hair, shoulder-length, usually
+  tucked behind one ear. Dark brown eyes. Round wire-frame glasses. Slight build,
+  average height. Resting expression: attentive and slightly amused.
+DEFAULT OUTFIT: Sage-green button-up shirt, high-waisted charcoal trousers,
+  simple gold stud earrings.
+ART STYLE: Studio Ghibli-inspired illustration. Clean expressive linework, warm
+  color wash. Fully saturated relative to background — pops off the muted office
+  setting.
+CONSTRAINTS: Do not change face, facial features, skin tone, body shape, or identity.
+```
+
+**Reference sheet**: `assets/characters/maven-ref-sheet.png`
+**Expressions locked**: neutral (attentive, slight smile), excited (eyes bright, leaning forward), skeptical (one eyebrow raised, listening carefully)
+
 ## The Skeptic
 
 **Name**: TBD
@@ -33,6 +51,24 @@ _Profiles to be developed in Phase 1. Placeholders below._
 - In Act 2, their skepticism transforms into careful, deliberate engagement
 
 **Arc**: From informed skeptic → reluctant acknowledger → genuinely invested learner
+
+### Character Bible (Visual — locked 2026-02-21)
+
+```
+SKEPTIC
+IMMUTABLE TRAITS: Light olive skin. Dark brown hair, short, slightly unkempt
+  (not messy — just not trying). Hazel eyes. No glasses. Medium build, slightly
+  taller than Maven. Resting expression: thoughtful, guarded, arms often crossed
+  or hands in pockets.
+DEFAULT OUTFIT: Plain navy crew-neck sweater, dark jeans, simple sneakers.
+  Smart casual — someone who stopped dressing up for meetings.
+ART STYLE: Studio Ghibli-inspired illustration. Clean expressive linework, warm
+  color wash. Fully saturated — warmer and darker tones than Maven for visual contrast.
+CONSTRAINTS: Do not change face, facial features, skin tone, body shape, or identity.
+```
+
+**Reference sheet**: `assets/characters/skeptic-ref-sheet.png`
+**Expressions locked**: neutral (guarded, arms crossed), skeptical (eyebrow raised, unconvinced), surprised (eyes wide, caught off guard)
 
 ## The Robot (Claude Code embodiment)
 
