@@ -87,8 +87,12 @@ Only include chapters that exist in the draft. Chapters without generated images
 ### 5. Build and verify
 
 ```bash
-cd site && npm run build
+cd site && /Users/geoffreydudgeon/.nvm/versions/node/v20.19.2/bin/node node_modules/.bin/astro build
 ```
+
+**Important**: Must run from inside `site/` directory (not project root with `--root site/`). Tailwind content paths (`./src/**`) resolve relative to CWD — running from project root causes Tailwind to find zero content files and fail on `@apply` directives.
+
+**Node version**: System default Node is 18.17.0 which fails Astro's ≥18.20.8 requirement. Use the explicit nvm Node 20 path above. GitHub Actions uses Node 20 (set in `.github/workflows/deploy-site.yml`) so CI is unaffected.
 
 If build fails, read the error, fix `chapters.ts`, and retry. Do not push a broken build.
 
