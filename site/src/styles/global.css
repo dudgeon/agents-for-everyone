@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 39 40% 96%;
+    --foreground: 25 30% 15%;
+
+    --card: 36 33% 93%;
+    --card-foreground: 25 30% 15%;
+
+    --popover: 39 40% 96%;
+    --popover-foreground: 25 30% 15%;
+
+    --primary: 25 45% 30%;
+    --primary-foreground: 39 40% 96%;
+
+    --secondary: 140 15% 75%;
+    --secondary-foreground: 25 30% 15%;
+
+    --muted: 36 25% 88%;
+    --muted-foreground: 25 15% 45%;
+
+    --accent: 15 55% 55%;
+    --accent-foreground: 39 40% 96%;
+
+    --border: 30 20% 82%;
+    --input: 30 20% 82%;
+    --ring: 25 45% 30%;
+
+    --radius: 0.5rem;
+
+    /* Story-specific tokens */
+    --chapter-title: 25 35% 20%;
+    --panel-warm: 30 40% 85%;
+    --panel-cool: 140 20% 82%;
+    --panel-border: 30 25% 70%;
+    --nav-bg: 39 40% 96% / 0.9;
+  }
+
+  .dark {
+    --background: 25 25% 10%;
+    --foreground: 36 25% 88%;
+
+    --card: 25 20% 14%;
+    --card-foreground: 36 25% 88%;
+
+    --popover: 25 25% 10%;
+    --popover-foreground: 36 25% 88%;
+
+    --primary: 36 33% 80%;
+    --primary-foreground: 25 25% 10%;
+
+    --secondary: 140 10% 25%;
+    --secondary-foreground: 36 25% 88%;
+
+    --muted: 25 15% 20%;
+    --muted-foreground: 30 15% 60%;
+
+    --accent: 15 45% 50%;
+    --accent-foreground: 36 25% 88%;
+
+    --border: 25 15% 22%;
+    --input: 25 15% 22%;
+    --ring: 36 33% 80%;
+
+    --chapter-title: 36 30% 85%;
+    --panel-warm: 25 20% 18%;
+    --panel-cool: 140 10% 18%;
+    --panel-border: 25 15% 30%;
+    --nav-bg: 25 25% 10% / 0.9;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Source Sans 3 Variable', 'Source Sans 3', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}

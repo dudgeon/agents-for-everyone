@@ -1,0 +1,30 @@
+---
+import type { ChapterData } from '@/data/chapters';
+
+interface Props {
+  chapters: ChapterData[];
+}
+
+const { chapters } = Astro.props;
+---
+<nav
+  id="chapter-nav"
+  class="fixed top-0 left-0 right-0 z-50 border-b border-border backdrop-blur-md"
+  style={{ backgroundColor: 'hsl(var(--nav-bg))' }}
+>
+  <div class="mx-auto flex max-w-4xl items-center justify-center gap-1 px-4 py-2 sm:gap-3 sm:py-3">
+    {chapters.map((ch) => (
+      <a
+        href={`#${ch.id}`}
+        data-chapter={ch.id}
+        class:list={[
+          'nav-pill rounded-full px-3 py-1.5 text-xs font-medium transition-all sm:px-4 sm:text-sm',
+          'text-muted-foreground hover:bg-muted hover:text-foreground',
+        ]}
+      >
+        <span class="hidden sm:inline">{ch.navLabel}</span>
+        <span class="sm:hidden">{ch.number}</span>
+      </a>
+    ))}
+  </div>
+</nav>

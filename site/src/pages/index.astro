@@ -1,0 +1,65 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ChapterNav from '@/components/ChapterNav.astro';
+import Chapter from '@/components/Chapter.astro';
+import { chapters } from '@/data/chapters';
+---
+<BaseLayout>
+  <ChapterNav chapters={chapters} />
+
+  {/* Hero */}
+  <header class="flex min-h-[50vh] flex-col items-center justify-center px-4 pt-16 text-center sm:min-h-[60vh]">
+    <p class="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-accent sm:text-sm">
+      An Illustrated Story
+    </p>
+    <h1 class="font-display text-4xl font-black leading-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+      The History of AI
+    </h1>
+    <p class="mt-4 max-w-md text-base leading-relaxed text-muted-foreground sm:mt-6 sm:max-w-lg sm:text-lg">
+      From ancient myths of bronze giants to machines that speak in paragraphs — a journey through the dreams, winters, and awakenings of artificial intelligence.
+    </p>
+    <div class="mt-8 h-px w-16 bg-accent/40 sm:mt-12" />
+  </header>
+
+  {/* Chapters */}
+  <main>
+    {chapters.map((ch) => (
+      <Chapter chapter={ch} />
+    ))}
+  </main>
+
+  {/* Footer */}
+  <footer class="border-t border-border/50 py-12 text-center">
+    <p class="font-display text-lg italic text-muted-foreground">
+      "The question is not whether machines can think, but what we mean when we say we do."
+    </p>
+    <p class="mt-4 text-xs text-muted-foreground/60">
+      Agents for Everyone &middot; 2026
+    </p>
+  </footer>
+
+  {/* IntersectionObserver for active chapter tracking */}
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting);
+        if (visible.length > 0) {
+          const best = visible.reduce((a, b) =>
+            a.intersectionRatio > b.intersectionRatio ? a : b
+          );
+          document.querySelectorAll('.nav-pill').forEach((pill) => {
+            const el = pill as HTMLElement;
+            const isActive = el.dataset.chapter === best.target.id;
+            el.classList.toggle('bg-primary', isActive);
+            el.classList.toggle('text-primary-foreground', isActive);
+            el.classList.toggle('shadow-sm', isActive);
+            el.classList.toggle('text-muted-foreground', !isActive);
+          });
+        }
+      },
+      { threshold: [0.1, 0.3, 0.5], rootMargin: '-10% 0px -40% 0px' }
+    );
+
+    document.querySelectorAll('section[id^="ch-"]').forEach((el) => observer.observe(el));
+  </script>
+</BaseLayout>
