@@ -1,13 +1,7 @@
-timestamp,model,prompt,aspect_ratio,resize,filename,cost_usd,cumulative_usd,duration_sec,status
-2026-02-15T12:39:45+00:00,flash,"A friendly cartoon penguin wearing a graduation cap, reading a glowing book, watercolor style on white background",1:1,,test-penguin-20260215-073944.png,0.0390,0.0390,5.6,ok
+timestamp,model,comic_id,frame,prompt,aspect_ratio,filename,cost_usd,cumulative_usd,duration_sec,status
+2026-02-15T12:39:45+00:00,flash,,,A friendly cartoon penguin wearing a graduation cap reading a glowing book watercolor style on white background,1:1,test-penguin-20260215-073944.png,0.0390,0.0390,5.6,ok
 2026-02-21T19:00:56+00:00,flash,,,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel with detailed backgrounds. Clean linework. Soft natural lighting — diffused, golden-hour warmth. Watercolor-adjacent co",16:9,style-ref-office-001-20260221-140055.png,0.0390,0.0780,6.1,ok
 2026-02-21T19:06:23+00:00,flash,,,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel with detailed backgrounds. Clean linework. Soft natural lighting — diffused, golden-hour warmth. Watercolor-adjacent co",16:9,style-ref-office-002-20260221-140623.png,0.0390,0.0780,7.5,ok
-2026-02-21T19:07:20+00:00,flash,,,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel. Clean linework. Soft natural lighting.
-
-Scene: Empty modern open-plan office, mid-afternoon light streaming through la",16:9,style-ref-office-003-20260221-140720.png,0.0390,0.0780,5.7,ok
-2026-02-21T19:09:01+00:00,pro,,,"Character reference sheet for Maven.
-
-MAVEN — IMMUTABLE TRAITS: Warm medium-brown skin. Black hair, shoulder-length, usually tucked behind one ear. Dark brown eyes. Round wire-frame glasses. Slight bu",16:9,maven-ref-sheet-001-20260221-140901.png,0.1340,0.1730,32.6,ok
-2026-02-21T19:10:35+00:00,pro,,,"Character reference sheet for Skeptic.
-
-SKEPTIC — IMMUTABLE TRAITS: Light olive skin. Dark brown hair, short, slightly unkempt (not messy — just not trying). Hazel eyes. No glasses. Medium build, slig",16:9,skeptic-ref-sheet-001-20260221-141034.png,0.1340,0.1730,17.3,ok
+2026-02-21T19:07:20+00:00,flash,,,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel. Clean linework. Soft natural lighting.",16:9,style-ref-office-003-20260221-140720.png,0.0390,0.0780,5.7,ok
+2026-02-21T19:09:01+00:00,pro,,,"Character reference sheet for Maven. MAVEN — IMMUTABLE TRAITS: Warm medium-brown skin. Black hair, shoulder-length, usually tucked behind one ear. Dark brown eyes. Round wire-frame glasses.",16:9,maven-ref-sheet-001-20260221-140901.png,0.1340,0.1730,32.6,ok
+2026-02-21T19:10:35+00:00,pro,,,"Character reference sheet for Skeptic. SKEPTIC — IMMUTABLE TRAITS: Light olive skin. Dark brown hair, short, slightly unkempt. Hazel eyes. No glasses. Medium build.",16:9,skeptic-ref-sheet-001-20260221-141034.png,0.1340,0.1730,17.3,ok
