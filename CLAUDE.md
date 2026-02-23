@@ -44,6 +44,8 @@ Layer 1 — TIMELINE (data layer)
 ## Project Structure
 
 ```
+story-seed.md                   — Creative DNA for the active story package (primary input)
+
 .claude/
   skills/                       — Project skills (invoke with /skill-name)
     <skill-name>/SKILL.md       — Each skill is a directory with SKILL.md entrypoint
@@ -52,41 +54,76 @@ docs/
   roadmap.md                    — Long-lived, multi-phase development plan
   backlog.md                    — Open questions, tiered by layer
   decisions.md                  — Design decision log
+  story-packages.md             — How the story versioning system works
 
-  layer-1-timeline/             — Canonical AI assistant timeline
+  layer-1-timeline/             — Canonical AI assistant timeline (SHARED across packages)
     overview.md                 — Epoch boundaries, summary
     research-notes.md           — Detailed entries with sources
     epoch-NN-*.md               — One file per epoch (research-populated)
 
-  layer-2-primitives/           — Abstracted capability taxonomy
+  layer-2-primitives/           — Abstracted capability taxonomy (SHARED)
     primitives.md               — What can agentic AI do today?
 
-  layer-3-domains/              — Domain translation mappings
+  layer-3-domains/              — Domain translation mappings (SHARED)
     domain-mappings.md          — Primitives × domains matrix
 
-  layer-4-curriculum/           — Persuasive arc structure
+  layer-4-curriculum/           — Persuasive arc structure (PER-PACKAGE — derived from seed)
     structure.md                — Chapter map, format spec, character dynamic
 
-  layer-5-story/                — Presentation layer
-    characters.md               — Profiles, voice, arcs
+  layer-5-story/                — Presentation layer (PER-PACKAGE — derived from seed)
+    characters.md               — Profiles, voice, arcs (SHARED — visual bibles)
     writing-style-guide.md      — Living style guide (enriched each draft cycle)
     plot-arc.md                 — Narrative structure
 
-  research/                     — Raw research dumps (feeds layer 1)
+  research/                     — Raw research dumps (SHARED — feeds layer 1)
     session-N-topic.md          — Full agent output per research batch
 
-drafts/                         — Story drafts (timestamped folders)
+drafts/                         — Story drafts (PER-PACKAGE — timestamped folders)
   draft-NNN-TIMESTAMP/          — One folder per draft run
     draft.md                    — Draft with inline CriticMarkup self-review
     user-feedback.md            — User's CriticMarkup annotations
     takeaways.md                — Distilled feedback + actions
 
 assets/                         — Visual references, illustrations
+  characters/                   — Character reference sheets (SHARED)
+  generated/                    — Generated images (PER-PACKAGE)
 ```
 
 ## Skills
 
 Skills live in `.claude/skills/<name>/SKILL.md` with YAML frontmatter. They are auto-discovered — do not duplicate skill descriptions here. When creating new skills, always use this pattern.
+
+## Story Packages (Arc Versioning)
+
+The project supports multiple candidate story arcs. Each story package is a git branch containing a complete story version — seed, structure, drafts, and generated assets — sharing the same research foundation and character designs.
+
+### How It Works
+
+- **`story-seed.md`** at the project root is the primary creative input. It captures the arc framing, chapter map, character dynamic, tone, and thematic threads. The user crafts this; everything else is generated from it.
+- **Story branches** are named `story/<name>` (e.g., `story/v1-persuasive-arc`). Each branch holds one complete story package.
+- **`master` branch** holds shared infrastructure: layers 1-3 (research), character designs, skills, tools, and this file. Story branches fork from master.
+- **Characters are shared** across all packages. Visual bibles and reference sheets come from master. Only the character *dynamic* (how they interact) varies per seed.
+- **Research is shared** across all packages. Layers 1-3 come from master.
+- **Drafts and generated images are per-package.** Each story branch has its own draft history and assets.
+
+### Managing Story Packages
+
+Use `/story-arc-version` to manage packages:
+- `/story-arc-version list` — show all story branches
+- `/story-arc-version create <name>` — fork a new story package from master
+- `/story-arc-version switch <name>` — switch to an existing package
+- `/story-arc-version info` — show current package status
+- `/story-arc-version sync-infra` — merge latest infrastructure from master
+- `/story-arc-version extract-seed` — generate seed from existing files
+
+### Typical Workflow
+
+1. `/story-arc-version create my-new-idea` — creates branch, provides seed template
+2. Edit `story-seed.md` with new arc/framing
+3. (Optionally) update `docs/layer-4-curriculum/structure.md` to match
+4. `/draft-run` — generates draft from the seed
+5. Review, iterate, generate images, publish
+6. `/story-arc-version switch v1-persuasive-arc` — switch back to compare
 
 ## Working Conventions
 

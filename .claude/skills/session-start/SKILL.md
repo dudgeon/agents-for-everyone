@@ -5,13 +5,17 @@ description: Load project context and present a status briefing at the start of 
 
 Load project context for a new session. Read the following files and present a concise status briefing:
 
-1. Read `docs/roadmap.md` — identify current phase, last session's work, and stated next steps
-2. Read `docs/backlog.md` — note any open questions relevant to the current phase
-3. Read `docs/decisions.md` — note any recent decisions
-4. Scan the headings of `docs/layer-1-timeline/research-notes.md` — summarize what's covered and what's missing
-5. Read `memory/MEMORY.md` — check for cross-session context
+1. Check current git branch name (`git branch --show-current`)
+2. If on a `story/*` branch, read `story-seed.md` for the active story package's framing
+3. Read `docs/roadmap.md` — identify current phase, last session's work, and stated next steps
+4. Read `docs/backlog.md` — note any open questions relevant to the current phase
+5. Read `docs/decisions.md` — note any recent decisions
+6. Scan the headings of `docs/layer-1-timeline/research-notes.md` — summarize what's covered and what's missing
+7. Read `memory/MEMORY.md` — check for cross-session context
+8. List available story packages: `git branch --list 'story/*'`
 
 Present the briefing as:
+- **Story package**: [current branch name + seed framing summary, or "not on a story branch" with list of available packages]
 - **Current phase**: [phase name and status]
 - **Last session**: [what was done, in 2-3 bullets]
 - **Next steps**: [what the roadmap says is next]

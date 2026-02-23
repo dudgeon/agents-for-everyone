@@ -15,13 +15,14 @@ A draft run is NOT intended to produce final copy. It's a diagnostic tool that e
 
 ### 1. Build
 
-1. Read `docs/layer-4-curriculum/structure.md` for the chapter map, format spec, and character dynamic
-2. Read `docs/layer-1-timeline/research-notes.md` for source material
-3. Read `docs/research/session-6-synthesis-nonswe-capability-map.md` for non-SWE examples
-4. Read `docs/layer-1-timeline/overview.md` for chronological context
-5. Read `docs/layer-5-story/writing-style-guide.md` for voice, tone, and style rules
-6. Read `docs/layer-5-story/characters.md` for character profiles (when available)
-7. Write a complete draft to `drafts/draft-NNN-YYYYMMDDTHHMMZ/draft.md`
+1. Read `story-seed.md` for the story's creative DNA — core framing, arc structure, chapter map, character dynamic, tone, and thematic threads. This is the primary creative input.
+2. Read `docs/layer-4-curriculum/structure.md` for the detailed chapter map, format spec, and character dynamic
+3. Read `docs/layer-1-timeline/research-notes.md` for source material
+4. Read `docs/research/session-6-synthesis-nonswe-capability-map.md` for non-SWE examples
+5. Read `docs/layer-1-timeline/overview.md` for chronological context
+6. Read `docs/layer-5-story/writing-style-guide.md` for voice, tone, and style rules
+7. Read `docs/layer-5-story/characters.md` for character profiles (when available)
+8. Write a complete draft to `drafts/draft-NNN-YYYYMMDDTHHMMZ/draft.md`
    - NNN = zero-padded draft number, increment from last
    - Timestamp = UTC time of draft completion
 8. Each chapter must include: headline, `<!-- COMIC -->` panel spec, body text (3-4 paragraphs), sources (3-4 with URLs)
@@ -98,6 +99,7 @@ drafts/
 ## Files Involved
 
 - **Input (read before writing)**:
+  - `story-seed.md` — creative DNA: framing, arc, chapter map, character dynamic, presentation metadata
   - `docs/layer-4-curriculum/structure.md` — chapter map, format spec, character dynamic
   - `docs/layer-1-timeline/research-notes.md` — source material
   - `docs/research/session-6-synthesis-nonswe-capability-map.md` — non-SWE examples

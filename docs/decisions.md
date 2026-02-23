@@ -86,3 +86,18 @@ Each decision follows this structure:
   - Ch02 headline revised: "In 2023, AI was confidently wrong about everything — and the people selling it didn't seem to notice." is too negative. Revised: "The 2023 version earned your skepticism. What you experienced was real — and so is what changed."
 - **Context**: Site was displaying placeholder copy from the initial Astro scaffold that didn't match the actual book. Ch02 headline read as a blanket indictment of AI rather than validating the reader's specific experience.
 - **Rationale**: The title should match the book name. The label signals work-in-progress without being apologetic. The subtitle frames the reader's specific experience (their last experiment) rather than making a general claim about AI history. Ch02 headline should validate skepticism without being gratuitously negative — the reader's experience was real, AND something changed.
+
+---
+
+## 007 — Story arc versioning via git branches + story-seed.md (2026-02-23)
+
+- **Date**: 2026-02-23
+- **Decision**: Story arc versions ("story packages") are managed as git branches named `story/<name>`. Each package has a `story-seed.md` file at the project root that serves as the primary creative input — the arc framing, chapter map, character dynamic, tone, and thematic threads. The `master` branch holds shared infrastructure (layers 1-3, characters, skills, tools). Story branches fork from master and can merge infrastructure updates.
+- **Context**: The user wants to trial multiple candidate story arcs with different framings while keeping the same characters and research foundation. Need to be able to fork, generate a complete story + images, compare candidates, and switch between versions.
+- **Alternatives considered**:
+  1. **Directory-based versioning** (`story-packages/v1/`, `story-packages/v2/`): Everything visible at once, but duplicates large assets, requires custom "activate" tooling, and existing skills would need refactoring to read from variable paths.
+  2. **Tag-based snapshots**: Simple but no ongoing divergent development per version.
+  3. **Git branches** (chosen): Clean switching, full history, existing skills work unchanged (same file paths, different branch determines content), natural fork/merge semantics.
+- **Rationale**: Branches are the simplest approach that lets existing skills (`/draft-run`, `/build-site`, `/generate-chapter`) work without modification — they read from the same paths, and the branch determines which content is there. The `story-seed.md` file makes the creative DNA portable and diffable. Infrastructure sync is handled by merging master into story branches when needed.
+- **New skill**: `/story-arc-version` — manages the lifecycle (list, create, switch, info, sync-infra, extract-seed).
+- **Impact on workflow**: `/draft-run` now reads `story-seed.md` first as primary creative input. `/session-start` now shows which story package is active.
