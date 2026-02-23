@@ -208,13 +208,14 @@ When a topic spans multiple events and the *narrative thread* is the story (e.g.
 ## Image Generation
 
 ### Infrastructure
-- **API**: Nano Banana (Gemini 2.5 Flash Image) and Nano Banana Pro (Gemini 3 Pro Image) via OpenRouter
-- **API key**: `.env` file (OPENROUTER_API_KEY) — never commit this
+- **Backends**: Native Gemini SDK (default) or OpenRouter proxy (legacy/fallback)
+- **API keys**: `.env` file — `GEMINI_API_KEY` (primary), `OPENROUTER_API_KEY` (legacy) — never commit
 - **CLI tool**: `python3 tools/generate_image.py "<prompt>" [options]`
 - **Cost tracker**: `python3 tools/image_costs.py` — shows cumulative spend
 - **Output dir**: `assets/generated/` — all images + CSV log
 - **Cost log**: `assets/generated/image-log.csv` — auto-updated per generation
 - **Image pipeline roadmap**: `docs/image-pipeline/roadmap.md`
+- **Dependencies**: `requirements.txt` — `google-genai`, `requests`, `Pillow`
 
 ### Models & Costs
 | Model | CLI Flag | Cost/Image | Use For |
@@ -224,14 +225,20 @@ When a topic spans multiple events and the *narrative thread* is the story (e.g.
 
 ### CLI Usage
 ```bash
-# Basic generation
+# Basic generation (uses Gemini backend by default)
 python3 tools/generate_image.py "prompt" --model flash --name my-image
 
 # With character reference for consistency
 python3 tools/generate_image.py "prompt" --model flash --ref assets/characters/maya.png --name scene
 
-# With aspect ratio and resize
-python3 tools/generate_image.py "prompt" --aspect 16:9 --resize 1920x1080 --name wide-shot
+# With aspect ratio and resolution (Gemini backend sends natively via ImageConfig)
+python3 tools/generate_image.py "prompt" --aspect 16:9 --resolution 2K --name wide-shot
+
+# Edit an existing image (Gemini backend only)
+python3 tools/generate_image.py --edit assets/generated/some-image.png "Add a hat" --model flash
+
+# OpenRouter fallback (legacy)
+python3 tools/generate_image.py "prompt" --backend openrouter --model flash --name my-image
 
 # Dry run (no API call)
 python3 tools/generate_image.py "prompt" --dry-run
@@ -286,7 +293,7 @@ frame_b:
 - `dialogue` is **metadata only** — frames are generated **without text**. Speech bubbles added in post.
 - Frames are separate files: `{id}-frame-a-{timestamp}.png` and `{id}-frame-b-{timestamp}.png`
 - `setting` block is **frozen** — identical across both frames. Only action/expression changes.
-- Generation order: frame A first → frame A output fed as visual reference into frame B prompt (same conversation session for visual memory continuity).
+- Generation order: frame A first → frame B in same session. With Gemini backend (default), uses native chat session that preserves thought signatures for character consistency. With OpenRouter, manually reconstructs conversation history.
 
 **Single illustration (rare, no characters):**
 ```markdown

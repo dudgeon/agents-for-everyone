@@ -70,14 +70,35 @@ CONSTRAINTS: Do not change face, facial features, skin tone, body shape, or iden
 **Reference sheet**: `assets/characters/skeptic-ref-sheet.png`
 **Expressions locked**: neutral (guarded, arms crossed), skeptical (eyebrow raised, unconvinced), surprised (eyes wide, caught off guard)
 
-## The Robot (Claude Code embodiment)
+## Claw'd (Claude Code embodiment)
 
-**Name**: TBD
-**Personality**: TBD
+**Name**: Claw'd
+**Personality**: Curious, earnest, quietly helpful. Observes more than it speaks. Carries a small notebook everywhere and takes diligent notes. Not a showoff — it earns trust through steady, reliable presence.
 
 **Role in story**: Appears in the present-day framing. Is the thing the Maven is trying to show the Skeptic. May or may not be present during the "time travel" through eras.
 
 **Key quality**: Something you nurture and develop. Not a finished product — a relationship.
+
+### Character Bible (Visual — locked 2026-02-22)
+
+```
+CLAW'D
+IMMUTABLE TRAITS: Small (knee-height), boxy terracotta/coral-orange body with
+  soft rounded corners. Wider than tall — like a slightly squished box. Four
+  short stubby legs. Two small dark square eyes set close together — simple and
+  minimal, like pixel art rendered in warm hand-drawn style. No mouth. Small
+  leaf-shaped sprout on top of its head. Friendly, curious, non-threatening.
+DEFAULT OUTFIT: Carries a small leather-bound notebook and tiny pencil.
+  No clothing — the terracotta body IS the character.
+ART STYLE: Studio Ghibli-inspired illustration. Clean expressive linework, warm
+  watercolor wash. Warm terracotta/coral-orange tones. Should feel handmade and
+  approachable, never mechanical or cold.
+CONSTRAINTS: Do not change body shape, proportions, eye style, or color palette.
+  The sprout, notebook, and stubby legs are identity markers — always include them.
+```
+
+**Reference sheet**: `assets/characters/clawd-ref-sheet.png`
+**Expressions locked**: neutral (attentive, eyes forward), curious (slight head tilt, notebook open), satisfied (subtle warmth — no mouth, so conveyed through posture and eye squint)
 
 ## Open Character Questions
 

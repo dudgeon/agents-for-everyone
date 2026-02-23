@@ -30,15 +30,21 @@ Generate a character reference sheet for consistent illustration. This is an ite
    Clean white background. Consistent [art style].
    Label each view.
    ```
-   Use `--model pro` (higher quality matters for reference sheets) and `--aspect 16:9`:
+   Use `--model pro` (higher quality matters for reference sheets) and `--aspect 16:9`.
+   Use `--resolution 2K` for higher detail (Gemini backend):
    ```
-   python3 tools/generate_image.py "<prompt>" --model pro --aspect 16:9 --name <name>-ref-sheet
+   python3 tools/generate_image.py "<prompt>" --model pro --aspect 16:9 --resolution 2K --name <name>-ref-sheet
    ```
+   Add `--backend openrouter` only if explicitly requested by the user.
 
 5. **Show the result** (read the output file) and show cost.
 
 6. **Iterate.** Ask: approve, adjust traits, or regenerate?
    - If adjusting: update the prompt, regenerate
+   - If minor fix needed: use `--edit` mode to tweak without regenerating:
+     ```
+     python3 tools/generate_image.py --edit <image-path> "<edit prompt>" --model pro
+     ```
    - If approved: suggest saving to `assets/characters/<name>-ref-sheet.png` and updating `docs/layer-5-story/characters.md` with the character bible block
 
 7. **Optionally generate an expression sheet** with more emotional range if the user wants one.

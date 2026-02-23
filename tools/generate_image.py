@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Nano Banana image generation via OpenRouter.
+Image generation via native Gemini SDK (default) or OpenRouter proxy.
 
 Single image:
     python tools/generate_image.py "prompt" --model flash --aspect 16:9 --name my-image
@@ -15,6 +15,13 @@ Comic (two frames, sequential session):
         --ref assets/characters/skeptic-ref-sheet.png \\
         --model pro
 
+Edit existing image:
+    python tools/generate_image.py --edit assets/generated/some-image.png "Add a hat"
+
+Backends:
+    gemini      = Native Gemini SDK (default) — multi-turn chat, native aspect ratio, labeled refs
+    openrouter  = OpenRouter proxy (legacy) — for non-Gemini models or fallback
+
 Models:
     flash  = Nano Banana (Gemini 2.5 Flash Image)  ~$0.039/image
     pro    = Nano Banana Pro (Gemini 3 Pro Image)  ~$0.134/image
@@ -22,6 +29,7 @@ Models:
 Single images → assets/generated/<name>-<timestamp>.png
 Comic frames  → assets/generated/<id>-frame-a-<timestamp>.png
                 assets/generated/<id>-frame-b-<timestamp>.png
+Edited images → assets/generated/<name>-edit-<timestamp>.png
 Costs logged  → assets/generated/image-log.csv
 """
 
@@ -30,6 +38,7 @@ from __future__ import annotations
 import argparse
 import base64
 import csv
+import io
 import json
 import os
 import sys
@@ -39,6 +48,27 @@ from pathlib import Path
 
 import requests
 from PIL import Image
+
+# Gemini SDK — imported lazily to avoid hard failure if not installed
+_genai = None
+_genai_types = None
+_genai_errors = None
+
+
+def _ensure_genai():
+    """Lazy-import the google-genai SDK."""
+    global _genai, _genai_types, _genai_errors
+    if _genai is None:
+        try:
+            from google import genai
+            from google.genai import types, errors
+            _genai = genai
+            _genai_types = types
+            _genai_errors = errors
+        except ImportError:
+            print("ERROR: google-genai package not installed. Run: pip install google-genai")
+            sys.exit(1)
+
 
 # ---------------------------------------------------------------------------
 # Config
@@ -51,18 +81,28 @@ LOG_PATH = OUTPUT_DIR / "image-log.csv"
 
 MODELS = {
     "flash": {
-        "id": "google/gemini-2.5-flash-image",
+        "openrouter_id": "google/gemini-2.5-flash-image",
+        "gemini_id": "gemini-2.5-flash-image",
         "cost_per_image": 0.039,
         "label": "Nano Banana (Flash)",
     },
     "pro": {
-        "id": "google/gemini-3-pro-image-preview",
+        "openrouter_id": "google/gemini-3-pro-image-preview",
+        "gemini_id": "gemini-3-pro-image-preview",
         "cost_per_image": 0.134,
         "label": "Nano Banana Pro",
     },
 }
 
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
+
+# CSV log columns (backend added — backward-compatible with old logs)
+LOG_COLUMNS = [
+    "timestamp", "model", "backend", "comic_id", "frame", "prompt",
+    "aspect_ratio", "filename", "cost_usd", "cumulative_usd",
+    "duration_sec", "status",
+]
+
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -77,11 +117,20 @@ def load_env():
                 os.environ.setdefault(key.strip(), val.strip())
 
 
-def get_api_key():
+def get_openrouter_key() -> str:
     load_env()
     key = os.environ.get("OPENROUTER_API_KEY")
     if not key:
         print("ERROR: OPENROUTER_API_KEY not found in environment or .env")
+        sys.exit(1)
+    return key
+
+
+def get_gemini_key() -> str:
+    load_env()
+    key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
+    if not key:
+        print("ERROR: GEMINI_API_KEY not found in environment or .env")
         sys.exit(1)
     return key
 
@@ -96,12 +145,37 @@ def ensure_log():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     if not LOG_PATH.exists():
         with open(LOG_PATH, "w", newline="") as f:
-            writer = csv.writer(f)
-            writer.writerow([
-                "timestamp", "model", "comic_id", "frame", "prompt",
-                "aspect_ratio", "filename", "cost_usd", "cumulative_usd",
-                "duration_sec", "status",
-            ])
+            csv.writer(f).writerow(LOG_COLUMNS)
+    else:
+        # Migrate old CSV: add 'backend' column if missing
+        with open(LOG_PATH, "r") as f:
+            reader = csv.reader(f)
+            header = next(reader, None)
+        if header and "backend" not in header:
+            _migrate_log_add_backend()
+
+
+def _migrate_log_add_backend():
+    """One-time migration: insert 'backend' column after 'model' in existing CSV."""
+    rows = []
+    with open(LOG_PATH, "r") as f:
+        reader = csv.reader(f)
+        old_header = next(reader)
+        for row in reader:
+            rows.append(row)
+
+    # Insert 'backend' at position 2 (after 'model')
+    model_idx = old_header.index("model") if "model" in old_header else 1
+    new_header = old_header[:model_idx + 1] + ["backend"] + old_header[model_idx + 1:]
+
+    with open(LOG_PATH, "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(new_header)
+        for row in rows:
+            # Insert empty backend for old rows
+            new_row = row[:model_idx + 1] + [""] + row[model_idx + 1:]
+            writer.writerow(new_row)
+    print(f"  [Log migration] Added 'backend' column to {LOG_PATH.name}")
 
 
 def get_cumulative_cost() -> float:
@@ -109,8 +183,7 @@ def get_cumulative_cost() -> float:
         return 0.0
     total = 0.0
     with open(LOG_PATH, "r") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
+        for row in csv.DictReader(f):
             try:
                 total += float(row["cost_usd"])
             except (ValueError, KeyError):
@@ -120,20 +193,20 @@ def get_cumulative_cost() -> float:
 
 def log_generation(model: str, prompt: str, aspect: str, filename: str,
                    cost: float, duration: float, status: str,
-                   comic_id: str = "", frame: str = ""):
+                   comic_id: str = "", frame: str = "",
+                   backend: str = "gemini") -> float:
     cumulative = get_cumulative_cost() + cost
     with open(LOG_PATH, "a", newline="") as f:
-        writer = csv.writer(f)
-        writer.writerow([
+        csv.writer(f).writerow([
             datetime.now(timezone.utc).isoformat(timespec="seconds"),
-            model, comic_id, frame, prompt[:200], aspect, filename,
+            model, backend, comic_id, frame, prompt[:200], aspect, filename,
             f"{cost:.4f}", f"{cumulative:.4f}", f"{duration:.1f}", status,
         ])
     return cumulative
 
 
 def encode_image_file(path: str | Path) -> dict:
-    """Encode an image file as a base64 data URL content part."""
+    """Encode an image file as a base64 data URL content part (OpenRouter format)."""
     ref_file = Path(path)
     if not ref_file.exists():
         raise FileNotFoundError(f"Image not found: {path}")
@@ -147,16 +220,16 @@ def encode_image_file(path: str | Path) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Core API call — messages-based (supports single-turn and multi-turn)
+# OpenRouter backend (legacy)
 # ---------------------------------------------------------------------------
 
-def _call_api(messages: list, model_key: str) -> dict:
+def _call_openrouter(messages: list, model_key: str) -> dict:
     """Send a messages array to OpenRouter. Returns {raw, duration} or {error, duration}."""
-    api_key = get_api_key()
+    api_key = get_openrouter_key()
     model_info = MODELS[model_key]
 
     payload = {
-        "model": model_info["id"],
+        "model": model_info["openrouter_id"],
         "modalities": ["image", "text"],
         "messages": messages,
     }
@@ -178,8 +251,8 @@ def _call_api(messages: list, model_key: str) -> dict:
     return {"raw": resp.json(), "duration": duration}
 
 
-def _build_user_message(prompt: str, reference_images: list[str] | None = None) -> dict:
-    """Build a user message dict, optionally with reference images as content parts."""
+def _build_openrouter_message(prompt: str, reference_images: list[str] | None = None) -> dict:
+    """Build a user message dict for OpenRouter, optionally with reference images."""
     if reference_images:
         parts = []
         for ref_path in reference_images:
@@ -189,8 +262,8 @@ def _build_user_message(prompt: str, reference_images: list[str] | None = None) 
     return {"role": "user", "content": prompt}
 
 
-def _extract_image_and_text(result: dict) -> tuple[str | None, str | None]:
-    """Extract base64 image and text from an API result dict."""
+def _extract_openrouter_image(result: dict) -> tuple[str | None, str | None]:
+    """Extract base64 image and text from an OpenRouter result dict."""
     raw = result.get("raw", {})
     choices = raw.get("choices", [])
     if not choices:
@@ -203,7 +276,6 @@ def _extract_image_and_text(result: dict) -> tuple[str | None, str | None]:
     def from_data_url(url: str) -> str | None:
         return url.split(",", 1)[-1] if url.startswith("data:") else None
 
-    # OpenRouter format: message.images[]
     for img_data in message.get("images", []) or raw.get("images", []):
         if image_b64:
             break
@@ -217,7 +289,6 @@ def _extract_image_and_text(result: dict) -> tuple[str | None, str | None]:
         elif isinstance(img_data, str):
             image_b64 = from_data_url(img_data) or img_data
 
-    # Fallback: content as array of parts
     if not image_b64 and isinstance(message.get("content"), list):
         for part in message["content"]:
             if isinstance(part, dict):
@@ -229,22 +300,101 @@ def _extract_image_and_text(result: dict) -> tuple[str | None, str | None]:
     return image_b64, text
 
 
-def _build_assistant_message_with_image(result: dict, image_b64: str) -> dict:
-    """
-    Reconstruct an assistant message to continue a multi-turn conversation.
-    Attaches the generated image so the next turn has visual context of frame A.
-    """
+def _build_openrouter_assistant_with_image(result: dict, image_b64: str) -> dict:
+    """Reconstruct an assistant message with the generated image for multi-turn."""
     text = result.get("raw", {}).get("choices", [{}])[0].get("message", {}).get("content", "")
     return {
         "role": "assistant",
         "content": [
             {"type": "text", "text": text or ""},
-            {
-                "type": "image_url",
-                "image_url": {"url": f"data:image/png;base64,{image_b64}"},
-            },
+            {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{image_b64}"}},
         ],
     }
+
+
+# ---------------------------------------------------------------------------
+# Gemini backend (native SDK)
+# ---------------------------------------------------------------------------
+
+def _get_gemini_client():
+    """Create and return a Gemini SDK client."""
+    _ensure_genai()
+    api_key = get_gemini_key()
+    return _genai.Client(api_key=api_key)
+
+
+def _build_gemini_contents(prompt: str, reference_images: list[str] | None = None) -> list:
+    """Build a contents array with interleaved reference images and labels."""
+    contents = []
+    if reference_images:
+        for ref_path in reference_images:
+            ref_file = Path(ref_path)
+            if not ref_file.exists():
+                raise FileNotFoundError(f"Image not found: {ref_path}")
+            contents.append(Image.open(ref_file))
+            # Derive a readable name from the filename
+            name = ref_file.stem.replace("-ref-sheet", "").replace("-", " ").title()
+            contents.append(f"Above is the {name} reference. Match this character exactly.")
+    contents.append(prompt)
+    return contents
+
+
+def _make_gemini_config(aspect: str = "1:1", resolution: str | None = None,
+                        system_prompt: str | None = None,
+                        use_system_instructions: bool = False):
+    """Build a GenerateContentConfig for the Gemini SDK."""
+    _ensure_genai()
+
+    image_kwargs = {"aspect_ratio": aspect}
+    if resolution:
+        image_kwargs["image_size"] = resolution
+
+    config_kwargs = {
+        "response_modalities": ["TEXT", "IMAGE"],
+        "image_config": _genai_types.ImageConfig(**image_kwargs),
+    }
+
+    if use_system_instructions and system_prompt:
+        config_kwargs["system_instruction"] = system_prompt
+
+    return _genai_types.GenerateContentConfig(**config_kwargs)
+
+
+def _call_gemini(contents: list, model_key: str, config) -> dict:
+    """Single-turn generation via native Gemini SDK."""
+    client = _get_gemini_client()
+    model_info = MODELS[model_key]
+
+    start = time.time()
+    try:
+        response = client.models.generate_content(
+            model=model_info["gemini_id"],
+            contents=contents,
+            config=config,
+        )
+        duration = time.time() - start
+        return {"raw": response, "duration": duration}
+    except Exception as e:
+        duration = time.time() - start
+        return {"error": str(e), "duration": duration}
+
+
+def _extract_gemini_image(response) -> tuple[str | None, str | None]:
+    """Extract base64-encoded image and text from a Gemini SDK response."""
+    text_parts = []
+    image_b64 = None
+    for part in response.parts:
+        if part.text is not None:
+            text_parts.append(part.text)
+        elif part.inline_data is not None:
+            # Use raw bytes from inline_data, then re-encode via PIL to ensure PNG
+            raw_bytes = part.inline_data.data
+            pil_img = Image.open(io.BytesIO(raw_bytes))
+            buf = io.BytesIO()
+            pil_img.save(buf, "PNG")
+            image_b64 = base64.b64encode(buf.getvalue()).decode()
+    text = "\n".join(text_parts) if text_parts else None
+    return image_b64, text
 
 
 # ---------------------------------------------------------------------------
@@ -254,13 +404,29 @@ def _build_assistant_message_with_image(result: dict, image_b64: str) -> dict:
 def generate_image(prompt: str, model_key: str = "flash",
                    aspect: str = "1:1",
                    system_prompt: str | None = None,
-                   reference_images: list[str] | None = None) -> dict:
+                   reference_images: list[str] | None = None,
+                   backend: str = "gemini",
+                   resolution: str | None = None,
+                   use_system_instructions: bool = False) -> dict:
     """Single-image generation. Returns {raw, duration} or {error, duration}."""
-    messages = []
-    if system_prompt:
-        messages.append({"role": "system", "content": system_prompt})
-    messages.append(_build_user_message(prompt, reference_images))
-    return _call_api(messages, model_key)
+    if backend == "gemini":
+        config = _make_gemini_config(
+            aspect=aspect,
+            resolution=resolution,
+            system_prompt=system_prompt,
+            use_system_instructions=use_system_instructions,
+        )
+        contents = _build_gemini_contents(prompt, reference_images)
+        # If system prompt provided but not using system_instructions, prepend to prompt
+        if system_prompt and not use_system_instructions:
+            contents[-1] = f"{system_prompt}\n\n{contents[-1]}"
+        return _call_gemini(contents, model_key, config)
+    else:
+        messages = []
+        if system_prompt:
+            messages.append({"role": "system", "content": system_prompt})
+        messages.append(_build_openrouter_message(prompt, reference_images))
+        return _call_openrouter(messages, model_key)
 
 
 def generate_comic_frames(
@@ -273,26 +439,181 @@ def generate_comic_frames(
     model_key: str = "pro",
     aspect: str = "16:9",
     reference_images: list[str] | None = None,
+    backend: str = "gemini",
+    resolution: str | None = None,
+    use_system_instructions: bool = False,
 ) -> dict:
     """
     Generate two comic frames sequentially in a linked conversation session.
 
-    Frame A is generated first. Frame A's output image is then attached as a
-    visual reference when generating Frame B — so the model sees exactly what
-    it produced and can maintain character appearance, setting, and lighting.
-
-    Returns:
-        {
-          "frame_a": {"image_b64": ..., "path": ..., "duration": ...},
-          "frame_b": {"image_b64": ..., "path": ..., "duration": ...},
-          "error": "..." (only if failed),
-        }
+    With the Gemini backend, uses native chat sessions that preserve thought
+    signatures for character consistency. With OpenRouter, manually reconstructs
+    conversation history.
     """
+    if backend == "gemini":
+        return _generate_comic_gemini(
+            comic_id, setting, frame_a_desc, frame_b_desc,
+            style_block, character_blocks, model_key, aspect,
+            reference_images, resolution, use_system_instructions,
+        )
+    else:
+        return _generate_comic_openrouter(
+            comic_id, setting, frame_a_desc, frame_b_desc,
+            style_block, character_blocks, model_key, aspect,
+            reference_images,
+        )
+
+
+def _generate_comic_gemini(
+    comic_id, setting, frame_a_desc, frame_b_desc,
+    style_block, character_blocks, model_key, aspect,
+    reference_images, resolution, use_system_instructions,
+) -> dict:
+    """Generate comic frames using native Gemini chat session."""
+    _ensure_genai()
+    client = _get_gemini_client()
     model_info = MODELS[model_key]
     timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
     ensure_log()
 
-    # --- Frozen blocks (identical across both frames) ---
+    # --- Build config ---
+    image_kwargs = {"aspect_ratio": aspect}
+    if resolution:
+        image_kwargs["image_size"] = resolution
+
+    config_kwargs = {
+        "response_modalities": ["TEXT", "IMAGE"],
+        "image_config": _genai_types.ImageConfig(**image_kwargs),
+    }
+
+    # Move frozen blocks to system instructions if enabled
+    if use_system_instructions and (style_block or character_blocks):
+        sys_parts = []
+        if style_block:
+            sys_parts.append(style_block)
+        if character_blocks:
+            sys_parts.append(character_blocks)
+        sys_parts.append(
+            "CONSTRAINTS: Do not change any character's face, facial features, "
+            "skin tone, body shape, or identity. Maintain identical art style, "
+            "color palette, and lighting across frames."
+        )
+        config_kwargs["system_instruction"] = "\n\n".join(sys_parts)
+
+    chat = client.chats.create(
+        model=model_info["gemini_id"],
+        config=_genai_types.GenerateContentConfig(**config_kwargs),
+    )
+
+    # --- Build frozen preamble (included in user message unless using system instructions) ---
+    if use_system_instructions:
+        frozen_preamble = f"SETTING (identical in both frames): {setting}"
+    else:
+        frozen_preamble = f"""{style_block}
+
+{character_blocks}
+
+SETTING (identical in both frames): {setting}
+
+CONSTRAINTS: Do not change any character's face, facial features, skin tone, body shape, or identity. Maintain identical art style, color palette, and lighting across frames. Frames are part of a continuous two-panel comic sequence."""
+
+    # --- Frame A ---
+    frame_a_prompt = f"""{frozen_preamble}
+
+FRAME A of 2: {frame_a_desc}
+
+Generate Frame A as a clean illustration panel. No speech bubbles or text — dialogue will be added in post-production."""
+
+    # Build Frame A contents with interleaved refs
+    frame_a_contents = []
+    if reference_images:
+        for ref_path in reference_images:
+            ref_file = Path(ref_path)
+            if not ref_file.exists():
+                raise FileNotFoundError(f"Image not found: {ref_path}")
+            frame_a_contents.append(Image.open(ref_file))
+            name = ref_file.stem.replace("-ref-sheet", "").replace("-", " ").title()
+            frame_a_contents.append(f"Above is the {name} reference. Match this character exactly.")
+    frame_a_contents.append(frame_a_prompt)
+
+    print(f"  [Frame A] Generating...")
+    start = time.time()
+    try:
+        response_a = chat.send_message(frame_a_contents)
+    except Exception as e:
+        return {"error": f"Frame A failed: {e}"}
+    duration_a = time.time() - start
+
+    frame_a_b64, _ = _extract_gemini_image(response_a)
+    if not frame_a_b64:
+        return {"error": "Frame A: no image in response"}
+
+    frame_a_name = f"{comic_id}-frame-a-{timestamp}"
+    frame_a_path = _save_frame(frame_a_b64, frame_a_name)
+    print(f"  [Frame A] Saved: {frame_a_path}")
+
+    log_generation(
+        model=model_key, prompt=frame_a_prompt, aspect=aspect,
+        filename=frame_a_path.name, cost=model_info["cost_per_image"],
+        duration=duration_a, status="ok",
+        comic_id=comic_id, frame="a", backend="gemini",
+    )
+
+    # --- Frame B — conversation context carries character identity ---
+    frame_b_prompt = f"""{frozen_preamble}
+
+FRAME B of 2 (continuing directly from Frame A):
+{frame_b_desc}
+
+WHAT MUST STAY THE SAME: characters' faces and bodies, the setting, the lighting, the art style.
+
+Generate Frame B as a clean illustration panel. No speech bubbles or text."""
+
+    print(f"  [Frame B] Generating (with conversation context from Frame A)...")
+    start = time.time()
+    try:
+        response_b = chat.send_message(frame_b_prompt)
+    except Exception as e:
+        return {
+            "frame_a": {"image_b64": frame_a_b64, "path": frame_a_path, "duration": duration_a},
+            "error": f"Frame B failed: {e}",
+        }
+    duration_b = time.time() - start
+
+    frame_b_b64, _ = _extract_gemini_image(response_b)
+    if not frame_b_b64:
+        return {
+            "frame_a": {"image_b64": frame_a_b64, "path": frame_a_path, "duration": duration_a},
+            "error": "Frame B: no image in response",
+        }
+
+    frame_b_name = f"{comic_id}-frame-b-{timestamp}"
+    frame_b_path = _save_frame(frame_b_b64, frame_b_name)
+    print(f"  [Frame B] Saved: {frame_b_path}")
+
+    log_generation(
+        model=model_key, prompt=frame_b_prompt, aspect=aspect,
+        filename=frame_b_path.name, cost=model_info["cost_per_image"],
+        duration=duration_b, status="ok",
+        comic_id=comic_id, frame="b", backend="gemini",
+    )
+
+    return {
+        "frame_a": {"image_b64": frame_a_b64, "path": frame_a_path, "duration": duration_a},
+        "frame_b": {"image_b64": frame_b_b64, "path": frame_b_path, "duration": duration_b},
+    }
+
+
+def _generate_comic_openrouter(
+    comic_id, setting, frame_a_desc, frame_b_desc,
+    style_block, character_blocks, model_key, aspect,
+    reference_images,
+) -> dict:
+    """Generate comic frames using OpenRouter (legacy manual conversation reconstruction)."""
+    model_info = MODELS[model_key]
+    timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+    ensure_log()
+
     frozen_preamble = f"""{style_block}
 
 {character_blocks}
@@ -310,16 +631,14 @@ Generate Frame A as a clean illustration panel. No speech bubbles or text — di
 
     print(f"  [Frame A] Generating...")
     frame_a_result = generate_image(
-        prompt=frame_a_prompt,
-        model_key=model_key,
-        aspect=aspect,
-        reference_images=reference_images,
+        prompt=frame_a_prompt, model_key=model_key, aspect=aspect,
+        reference_images=reference_images, backend="openrouter",
     )
 
     if "error" in frame_a_result:
         return {"error": f"Frame A failed: {frame_a_result['error']}"}
 
-    frame_a_b64, frame_a_text = _extract_image_and_text(frame_a_result)
+    frame_a_b64, _ = _extract_openrouter_image(frame_a_result)
     if not frame_a_b64:
         return {"error": "Frame A: no image in response"}
 
@@ -331,38 +650,32 @@ Generate Frame A as a clean illustration panel. No speech bubbles or text — di
         model=model_key, prompt=frame_a_prompt, aspect=aspect,
         filename=frame_a_path.name, cost=model_info["cost_per_image"],
         duration=frame_a_result["duration"], status="ok",
-        comic_id=comic_id, frame="a",
+        comic_id=comic_id, frame="a", backend="openrouter",
     )
 
-    # --- Frame B — multi-turn: conversation history includes frame A ---
-    # Build the conversation history so the model sees frame A as its own prior output
-    frame_a_message = _build_user_message(frame_a_prompt, reference_images)
-    frame_a_assistant = _build_assistant_message_with_image(frame_a_result, frame_a_b64)
+    # --- Frame B — manual multi-turn ---
+    frame_a_message = _build_openrouter_message(frame_a_prompt, reference_images)
+    frame_a_assistant = _build_openrouter_assistant_with_image(frame_a_result, frame_a_b64)
 
-    # Frame B user message: attach frame A as explicit visual reference too
     frame_b_prompt = f"""{frozen_preamble}
 
 FRAME B of 2 (continuing directly from Frame A):
 {frame_b_desc}
 
-WHAT CHANGED from Frame A: {_delta(frame_a_desc, frame_b_desc)}
+WHAT CHANGED from Frame A: {frame_b_desc}
 WHAT MUST STAY THE SAME: characters' faces and bodies, the setting, the lighting, the art style.
 
 The previous image (Frame A) is attached as visual reference. Match it exactly for all unchanged elements.
 
 Generate Frame B as a clean illustration panel. No speech bubbles or text."""
 
-    # Frame B references: all original refs + frame A output image
     frame_b_refs = list(reference_images or []) + [str(frame_a_path)]
-
-    frame_b_user_message = _build_user_message(frame_b_prompt, frame_b_refs)
-
-    # Send with full conversation history from frame A turn
+    frame_b_user_message = _build_openrouter_message(frame_b_prompt, frame_b_refs)
     frame_b_messages = [frame_a_message, frame_a_assistant, frame_b_user_message]
 
     print(f"  [Frame B] Generating (with Frame A as visual anchor)...")
     start = time.time()
-    frame_b_result = _call_api(frame_b_messages, model_key)
+    frame_b_result = _call_openrouter(frame_b_messages, model_key)
     duration = time.time() - start
 
     if "error" in frame_b_result:
@@ -371,7 +684,7 @@ Generate Frame B as a clean illustration panel. No speech bubbles or text."""
             "error": f"Frame B failed: {frame_b_result['error']}",
         }
 
-    frame_b_b64, _ = _extract_image_and_text(frame_b_result)
+    frame_b_b64, _ = _extract_openrouter_image(frame_b_result)
     if not frame_b_b64:
         return {
             "frame_a": {"image_b64": frame_a_b64, "path": frame_a_path, "duration": frame_a_result["duration"]},
@@ -386,7 +699,7 @@ Generate Frame B as a clean illustration panel. No speech bubbles or text."""
         model=model_key, prompt=frame_b_prompt, aspect=aspect,
         filename=frame_b_path.name, cost=model_info["cost_per_image"],
         duration=frame_b_result["duration"], status="ok",
-        comic_id=comic_id, frame="b",
+        comic_id=comic_id, frame="b", backend="openrouter",
     )
 
     return {
@@ -395,15 +708,68 @@ Generate Frame B as a clean illustration panel. No speech bubbles or text."""
     }
 
 
-def _delta(frame_a: str, frame_b: str) -> str:
-    """Simple heuristic: return frame_b description as the delta (what changed)."""
-    # In practice the caller passes specific descriptions; this surfaces it clearly.
-    return frame_b
+# ---------------------------------------------------------------------------
+# Image editing (Gemini only)
+# ---------------------------------------------------------------------------
 
+def edit_image(image_path: str, edit_prompt: str, model_key: str = "pro",
+               aspect: str | None = None, resolution: str | None = None) -> dict:
+    """
+    Edit an existing image using native Gemini SDK.
+
+    Sends the image + edit prompt to the model and returns the modified image.
+    Returns {raw, duration, image_b64} or {error, duration}.
+    """
+    _ensure_genai()
+    client = _get_gemini_client()
+    model_info = MODELS[model_key]
+
+    img_path = Path(image_path)
+    if not img_path.exists():
+        return {"error": f"Image not found: {image_path}", "duration": 0}
+
+    pil_img = Image.open(img_path)
+    contents = [pil_img, edit_prompt]
+
+    image_kwargs = {}
+    if aspect:
+        image_kwargs["aspect_ratio"] = aspect
+    if resolution:
+        image_kwargs["image_size"] = resolution
+
+    config_kwargs = {
+        "response_modalities": ["TEXT", "IMAGE"],
+    }
+    if image_kwargs:
+        config_kwargs["image_config"] = _genai_types.ImageConfig(**image_kwargs)
+
+    config = _genai_types.GenerateContentConfig(**config_kwargs)
+
+    start = time.time()
+    try:
+        response = client.models.generate_content(
+            model=model_info["gemini_id"],
+            contents=contents,
+            config=config,
+        )
+        duration = time.time() - start
+    except Exception as e:
+        duration = time.time() - start
+        return {"error": str(e), "duration": duration}
+
+    image_b64, text = _extract_gemini_image(response)
+    if not image_b64:
+        return {"error": "No image in edit response", "duration": duration}
+
+    return {"raw": response, "duration": duration, "image_b64": image_b64, "text": text}
+
+
+# ---------------------------------------------------------------------------
+# Image processing helpers
+# ---------------------------------------------------------------------------
 
 def _save_frame(image_b64: str, name: str) -> Path:
     """Decode and save a PNG frame. Returns the saved path."""
-    import io
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     filepath = OUTPUT_DIR / f"{name}.png"
     img_bytes = base64.b64decode(image_b64)
@@ -412,12 +778,7 @@ def _save_frame(image_b64: str, name: str) -> Path:
     return filepath
 
 
-# ---------------------------------------------------------------------------
-# Image processing (single image)
-# ---------------------------------------------------------------------------
-
 def save_and_resize(image_b64: str, name: str, resize: str | None = None) -> Path:
-    import io
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
     filename = f"{name}-{timestamp}.png"
@@ -444,20 +805,26 @@ def save_and_resize(image_b64: str, name: str, resize: str | None = None) -> Pat
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Generate images via Nano Banana / OpenRouter",
+        description="Generate images via native Gemini SDK or OpenRouter",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
 
-    # Subcommand-style via mutually exclusive group
+    # Mode selection (mutually exclusive)
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--comic", metavar="COMIC_ID",
                       help="Generate a two-frame comic (use with --frame-a, --frame-b, --setting)")
+    mode.add_argument("--edit", metavar="IMAGE_PATH",
+                      help="Edit an existing image (Gemini backend only)")
 
-    parser.add_argument("prompt", nargs="?", help="Image prompt (single-image mode)")
+    parser.add_argument("prompt", nargs="?", help="Image prompt (single-image mode) or edit prompt (--edit mode)")
     parser.add_argument("--model", choices=["flash", "pro"], default="flash",
                         help="Model: flash (~$0.04/img) or pro (~$0.13/img)")
+    parser.add_argument("--backend", choices=["gemini", "openrouter"], default="gemini",
+                        help="Backend: gemini (default, native SDK) or openrouter (legacy)")
     parser.add_argument("--aspect", default="1:1",
                         help="Aspect ratio (1:1, 16:9, 9:16, 3:2, etc.)")
+    parser.add_argument("--resolution", choices=["1K", "2K", "4K"], default=None,
+                        help="Image resolution (Gemini backend only)")
     parser.add_argument("--name", default=None,
                         help="Output filename prefix (single-image mode)")
     parser.add_argument("--resize", default=None,
@@ -465,7 +832,9 @@ def main():
     parser.add_argument("--ref", action="append", default=None,
                         help="Reference image path(s) — repeatable")
     parser.add_argument("--system", default=None,
-                        help="System prompt (single-image mode)")
+                        help="System prompt")
+    parser.add_argument("--use-system-instructions", action="store_true",
+                        help="Pass --system as Gemini system_instruction (experimental)")
     parser.add_argument("--dry-run", action="store_true",
                         help="Show what would be sent without calling the API")
 
@@ -482,19 +851,84 @@ def main():
                         help="[Comic] Character description block")
 
     args = parser.parse_args()
-
     model_info = MODELS[args.model]
+    backend = args.backend
+
+    # ---- EDIT MODE ----
+    if args.edit:
+        if backend == "openrouter":
+            print("ERROR: --edit mode requires the Gemini backend (--backend gemini)")
+            sys.exit(1)
+        if not args.prompt:
+            parser.error("An edit prompt is required in --edit mode")
+
+        print(f"Mode:     Edit")
+        print(f"Model:    {model_info['label']}")
+        print(f"Backend:  {backend}")
+        print(f"Source:   {args.edit}")
+        print(f"Prompt:   {args.prompt[:100]}...")
+        print(f"Cost:     ~${model_info['cost_per_image']:.3f}")
+        print()
+
+        if args.dry_run:
+            print("[DRY RUN] No API call made.")
+            return
+
+        ensure_log()
+        print("Editing...")
+
+        result = edit_image(
+            image_path=args.edit,
+            edit_prompt=args.prompt,
+            model_key=args.model,
+            aspect=args.aspect if args.aspect != "1:1" else None,
+            resolution=args.resolution,
+        )
+
+        if "error" in result:
+            print(f"ERROR: {result['error']}")
+            log_generation(
+                model=args.model, prompt=args.prompt, aspect=args.aspect,
+                filename="", cost=0, duration=result.get("duration", 0),
+                status=f"error: {result['error'][:100]}",
+                frame="edit", backend=backend,
+            )
+            sys.exit(1)
+
+        if result.get("text"):
+            print(f"  Model said: {result['text'][:200]}")
+
+        # Save edited image
+        source_stem = Path(args.edit).stem
+        edit_name = f"{source_stem}-edit"
+        filepath = save_and_resize(result["image_b64"], edit_name, args.resize)
+
+        cumulative = log_generation(
+            model=args.model, prompt=args.prompt, aspect=args.aspect,
+            filename=filepath.name, cost=model_info["cost_per_image"],
+            duration=result["duration"], status="ok",
+            frame="edit", backend=backend,
+        )
+
+        print()
+        print(f"  Cost this edit:   ${model_info['cost_per_image']:.3f}")
+        print(f"  Cumulative spend: ${cumulative:.3f}")
+        print("  Done!")
+        return
 
     # ---- COMIC MODE ----
     if args.comic:
         comic_id = args.comic
         cost_estimate = model_info["cost_per_image"] * 2
-        print(f"Mode:   Comic ({comic_id})")
-        print(f"Model:  {model_info['label']}")
-        print(f"Frames: 2  →  estimated cost ~${cost_estimate:.3f}")
-        print(f"Aspect: {args.aspect}")
+        print(f"Mode:    Comic ({comic_id})")
+        print(f"Model:   {model_info['label']}")
+        print(f"Backend: {backend}")
+        print(f"Frames:  2  →  estimated cost ~${cost_estimate:.3f}")
+        print(f"Aspect:  {args.aspect}")
+        if args.resolution:
+            print(f"Resolution: {args.resolution}")
         if args.ref:
-            print(f"Refs:   {len(args.ref)} reference image(s)")
+            print(f"Refs:    {len(args.ref)} reference image(s)")
         print()
 
         if not args.frame_a or not args.frame_b:
@@ -517,6 +951,9 @@ def main():
             model_key=args.model,
             aspect=args.aspect,
             reference_images=args.ref,
+            backend=backend,
+            resolution=args.resolution,
+            use_system_instructions=args.use_system_instructions,
         )
 
         if "error" in result and "frame_a" not in result:
@@ -537,16 +974,19 @@ def main():
 
     # ---- SINGLE IMAGE MODE ----
     if not args.prompt:
-        parser.error("A prompt is required in single-image mode (or use --comic)")
+        parser.error("A prompt is required in single-image mode (or use --comic / --edit)")
 
     name = args.name or slugify(args.prompt)
 
-    print(f"Model:  {model_info['label']} ({model_info['id']})")
-    print(f"Cost:   ~${model_info['cost_per_image']:.3f}/image")
-    print(f"Prompt: {args.prompt[:100]}...")
-    print(f"Aspect: {args.aspect}")
+    print(f"Model:   {model_info['label']}")
+    print(f"Backend: {backend}")
+    print(f"Cost:    ~${model_info['cost_per_image']:.3f}/image")
+    print(f"Prompt:  {args.prompt[:100]}...")
+    print(f"Aspect:  {args.aspect}")
+    if args.resolution:
+        print(f"Resolution: {args.resolution}")
     if args.ref:
-        print(f"Refs:   {len(args.ref)} reference image(s)")
+        print(f"Refs:    {len(args.ref)} reference image(s)")
     print()
 
     if args.dry_run:
@@ -562,6 +1002,9 @@ def main():
         aspect=args.aspect,
         system_prompt=args.system,
         reference_images=args.ref,
+        backend=backend,
+        resolution=args.resolution,
+        use_system_instructions=args.use_system_instructions,
     )
 
     if "error" in result:
@@ -570,19 +1013,26 @@ def main():
             model=args.model, prompt=args.prompt, aspect=args.aspect,
             filename="", cost=0, duration=result["duration"],
             status=f"error: {result['error'][:100]}",
+            backend=backend,
         )
         sys.exit(1)
 
-    image_b64, text = _extract_image_and_text(result)
+    # Extract image based on backend
+    if backend == "gemini":
+        image_b64, text = _extract_gemini_image(result["raw"])
+    else:
+        image_b64, text = _extract_openrouter_image(result)
 
     if not image_b64:
         print("ERROR: No image in response.")
-        print("Raw (first 1000 chars):")
-        print(json.dumps(result.get("raw", {}), indent=2)[:1000])
+        if backend == "openrouter":
+            print("Raw (first 1000 chars):")
+            print(json.dumps(result.get("raw", {}), indent=2)[:1000])
         log_generation(
             model=args.model, prompt=args.prompt, aspect=args.aspect,
             filename="", cost=0, duration=result["duration"],
             status="error: no image in response",
+            backend=backend,
         )
         sys.exit(1)
 
@@ -595,6 +1045,7 @@ def main():
         model=args.model, prompt=args.prompt, aspect=args.aspect,
         filename=filepath.name, cost=model_info["cost_per_image"],
         duration=result["duration"], status="ok",
+        backend=backend,
     )
 
     print()
