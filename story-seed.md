@@ -1,6 +1,6 @@
-# Story Seed — v1: Persuasive Arc
+# Story Seed — Lawyer GPT vs Lawyer Skill Opening
 
-_Package: `story/v1-persuasive-arc`_
+_Package: `story/lawyer-gpt-vs-lawyer-skill-opening`_
 _Created: 2026-02-15_
 _Status: active_
 
