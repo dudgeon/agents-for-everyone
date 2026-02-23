@@ -9,10 +9,10 @@ Transform the current story draft into the site's data model, verify the build, 
 
 ## Site Stack
 
-- **Framework**: Astro (static), `site/src/data/chapters.ts` is the source of truth
+- **Framework**: Astro (static), `site/src/data/chapters.ts` and `site/src/data/site-meta.ts` are the sources of truth
 - **Deploy**: GitHub Actions triggers automatically on push to `main` when `site/**` changes
 - **Live URL**: https://agents-for-everyone.ai-pm.cc
-- **Interface**: See `site/src/data/chapters.ts` for `ChapterData`, `Panel`, and `Source` types
+- **Interface**: See `site/src/data/chapters.ts` for `ChapterData`, `Panel`, and `Source` types; see `site/src/data/site-meta.ts` for `SiteMeta`
 
 ## Process
 
@@ -76,7 +76,36 @@ background: ...
 ```
 Treat as a COMIC block producing two panels. Use `maven_says` + `skeptic_says` as the frame descriptions. Look for `{id}-frame-a-*.png` and `{id}-frame-b-*.png`.
 
-### 4. Write chapters.ts
+### 4. Write site-meta.ts
+
+Read `story-seed.md` and extract the `## Presentation` section. Write `site/src/data/site-meta.ts` with the `SiteMeta` interface and exported `siteMeta` object:
+
+```typescript
+export interface SiteMeta {
+  title: string;
+  subtitle: string;
+  label: string;
+  metaDescription: string;
+  footerQuote: string;
+}
+
+export const siteMeta: SiteMeta = {
+  title: "...",
+  subtitle: "...",
+  label: "...",
+  metaDescription: "...",
+  footerQuote: "...",
+};
+```
+
+Map the seed's Presentation fields:
+- **Title** → `title`
+- **Subtitle** → `subtitle`
+- **Label** → `label`
+- **Meta description** → `metaDescription`
+- **Footer quote** → `footerQuote`
+
+### 5. Write chapters.ts
 
 Write the full `site/src/data/chapters.ts` file with:
 - All interfaces preserved exactly (copy from the current file if they haven't changed)
@@ -84,7 +113,7 @@ Write the full `site/src/data/chapters.ts` file with:
 
 Only include chapters that exist in the draft. Chapters without generated images render with gradient fallbacks — this is intentional so partial builds work.
 
-### 5. Build and verify
+### 6. Build and verify
 
 ```bash
 cd site && /Users/geoffreydudgeon/.nvm/versions/node/v20.19.2/bin/node node_modules/.bin/astro build
@@ -96,10 +125,10 @@ cd site && /Users/geoffreydudgeon/.nvm/versions/node/v20.19.2/bin/node node_modu
 
 If build fails, read the error, fix `chapters.ts`, and retry. Do not push a broken build.
 
-### 6. Push to deploy
+### 7. Push to deploy
 
 ```bash
-git add site/src/data/chapters.ts site/dist
+git add site/src/data/chapters.ts site/src/data/site-meta.ts site/dist
 git commit -m "Build site from draft-NNN"
 git push
 ```

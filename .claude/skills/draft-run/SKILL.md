@@ -99,6 +99,7 @@ drafts/
 ## Files Involved
 
 - **Input (read before writing)**:
+  - `story-seed.md` — creative DNA: framing, arc, chapter map, character dynamic, presentation metadata
   - `docs/layer-4-curriculum/structure.md` — chapter map, format spec, character dynamic
   - `docs/layer-1-timeline/research-notes.md` — source material
   - `docs/research/session-6-synthesis-nonswe-capability-map.md` — non-SWE examples

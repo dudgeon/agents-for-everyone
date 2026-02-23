@@ -73,6 +73,16 @@ _Status: candidate_
 
 [What we're asking the reader to do]
 
+## Presentation
+
+Site and publishing metadata — flows through `/build-site` into the live site.
+
+- **Title**: [Site/book title]
+- **Subtitle**: [One-line hook beneath the title]
+- **Label**: [Short status/category label above the title]
+- **Meta description**: [SEO/social description]
+- **Footer quote**: [Closing quote for the site footer]
+
 ## Differentiation Notes
 
 [What makes this version different from other candidates? What hypothesis is being tested?]

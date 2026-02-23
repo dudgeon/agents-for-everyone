@@ -100,6 +100,16 @@ The thesis chapter. A 2025 model in a 2022 chat box is still a chat box. A 2023 
 - Learn markdown (it's formatting, not programming)
 - Learn Git/GitHub (think Dropbox that gives your agent access to your files)
 
+## Presentation
+
+Site and publishing metadata — flows through `/build-site` into the live site.
+
+- **Title**: Agents for Everyone
+- **Subtitle**: What actually changed between your last AI experiment and this morning.
+- **Label**: Work in progress; illustrative
+- **Meta description**: An illustrated argument that resets your priors about AI — from "fancy autocomplete" to configurable, persistent coworker.
+- **Footer quote**: "The question is not whether machines can think, but what we mean when we say we do."
+
 ## Differentiation Notes
 
 This is the original framing — the "persuasive arc" approach. It's structured as a linear argument that mirrors the reader's journey from skepticism to understanding. The organizing principle is rhetorical: validate doubt, then systematically address it.
