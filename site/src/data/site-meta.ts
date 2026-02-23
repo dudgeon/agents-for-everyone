@@ -8,8 +8,8 @@ export interface SiteMeta {
 
 export const siteMeta: SiteMeta = {
   title: "Agents for Everyone",
-  subtitle: "What actually changed between your last AI experiment and this morning.",
+  subtitle: "What's in the box — and what you need to know to use it.",
   label: "Work in progress; illustrative",
-  metaDescription: "An illustrated argument that resets your priors about AI — from \"fancy autocomplete\" to configurable, persistent coworker.",
+  metaDescription: "Three people, a box, and an honest conversation about what AI agents actually mean for the rest of us.",
   footerQuote: "The question is not whether machines can think, but what we mean when we say we do.",
 };

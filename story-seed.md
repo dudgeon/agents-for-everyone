@@ -1,115 +1,128 @@
-# Story Seed — Lawyer GPT vs Lawyer Skill Opening
+# Story Seed — Agent Unboxing
 
-_Package: `story/lawyer-gpt-vs-lawyer-skill-opening`_
-_Created: 2026-02-15_
-_Status: active_
+_Package: `story/agent-unboxing`_
+_Created: 2026-02-23_
+_Status: candidate_
 
 ---
 
 ## Core Framing
 
-This story is a **persuasion device** — a short, illustrated argument that resets the reader's priors about AI from "fancy autocomplete" to "configurable, persistent, tool-using coworker."
+This story is a **practical conversation** — not a persuasive argument, but a working discussion between three people at different points on the AI adoption curve. The question isn't "is AI real?" but "what does this actually mean for how I do my job?"
 
-The strategy: don't fight the reader's skepticism — validate it, then walk them through what's concretely different now. The book earns its argument by honestly naming past failures before showing present capabilities. The central thesis is **harness > model** — the step-function change isn't smarter AI, it's the tooling around it.
+Maven arrives carrying a box. Literally. Inside is Claw'd — the physical embodiment of agentic AI. The story is an unboxing: what's in the box, what it can do, and what you need to learn to make it useful. The metaphor is tangible and grounded. This isn't a pitch — it's a show-and-tell.
+
+The central argument: **coding agents aren't just for coders.** The same primitives that make agents powerful for software engineering — file access, persistent rules, tool use, iterative loops — are directly applicable to product management and other knowledge work. But you have to meet them halfway: learn the tools, invest in context, and rethink what parts of your job are yours vs. delegatable.
 
 ## Arc Structure
 
-Four sections that mirror the reader's own journey: doubt → curiosity → understanding → ownership.
+Four phases that mirror a real conversation's natural progression:
 
-### Section 1 — The Bold Claim (1 chapter)
-State what's now possible. Specific and confident enough to earn attention, not so grandiose it triggers the hype reflex.
+### Phase 1 — "The Agents Are Here" (10%)
+Maven arrives excited, carrying the box. Skeptic pushes back hard — he's heard this before, he doesn't code, this isn't for him. Quick, energetic, establishes the tension. Claw'd is still in the box.
 
-### Section 2 — Why You're Right to Be Skeptical (1-2 chapters)
-Name the past promises that sound similar and explain concretely why they fell short. Validates the audience, builds credibility, and sets up the dimensions along which the new thing is different.
+### Phase 2 — "Where I Am Today" (20%)
+Emery enters. The conversation shifts from debate to something more productive — comparing notes. Emery describes their current AI toolkit: Gemini as a search replacement, a writing assistant, a desktop full of saved prompts, a weekend experiment with Lovable. They're not skeptical — they're **stuck**. They can feel there's more, but don't know how to get there. Maven validates this and names what's missing: the gap between chatbots and agents.
 
-### Section 3 — What's Actually Different This Time (5-6 chapters)
-Walk through the breakthroughs, mapped directly to the shortcomings in Section 2. Concrete demos, examples, before/afters. The audience leaves feeling the gap between old and new is real, not marketed.
+### Phase 3 — "What's in the Box" (60%)
+The unboxing. Maven opens the box — Claw'd emerges. Maven walks through the agent primitives one by one, using PM-relevant examples throughout the product development lifecycle. This is the meat of the story. Skeptic asks occasional sharp questions but gradually fades as Emery and Maven get deeper into practical territory. Each primitive directly addresses a limitation Emery named in Phase 2.
 
-### Section 4 — The Ask (breaks from chapter format)
-The audience is largely won over. Name what you're inviting them to do and what you're offering. Keep it short.
-
-### Appendix — Getting Started
-Practical, actionable, self-serve. Lives outside the persuasive arc.
+### Phase 4 — "Getting Started" (10%)
+Maven and Emery talk about the on-ramp. Not "go learn to code" — but the adjacent skills that unlock agentic workflows: markdown fluency, GitHub basics, building context into project repos, experimenting in safe spaces. The box is empty now; Claw'd is out, notebook open, ready to work.
 
 ## Chapter Map
 
-**Ch 1: A well-configured AI assistant today can do in minutes what used to take you hours — and it gets better every time you use it.**
-Opening pitch. One vivid before/after example. Name the gap between the reader's mental model and reality.
+**Ch 1: "You have to see what's in this box."**
+Maven arrives with the box, buzzing with excitement. Skeptic is unimpressed — he's seen AI hype before. He doesn't code, so coding agents are irrelevant. Maven insists this is different: the box isn't about code.
 
-**Ch 2: In 2023, AI was confidently wrong about everything — and the people selling it didn't seem to notice.**
-Validate the skepticism. ChatGPT hallucinations, Mata v. Avianca, "it just makes things up."
+**Ch 2: "I tried AI. It was fine."**
+Emery enters. They use Gemini daily — as a search engine, a writing helper, a brainstorming partner. They tried Lovable on a weekend. They have a text file of prompts on their desktop. But it all feels... disconnected. Copy-paste workflows. No memory. No real integration with their actual work.
 
-**Ch 3: We've heard "this time it's different" before — remember AutoGPT?**
-The hype cycle. AutoGPT, BabyAGI, Devin claims, ChatGPT plugins.
+**Ch 3: "So what's the difference between a chatbot and an agent?"**
+Maven names the gap. A chatbot answers questions in a window. An agent operates in your world — your files, your tools, your rules. Maven opens the box. Claw'd emerges. The agentic loop: plan, act, observe, adjust — not one-shot autocomplete.
 
-**Ch 4: AI doesn't just answer anymore — it plans, tries, checks, and adjusts.**
-The agentic loop. The structural difference between one-shot autocomplete and plan/act/observe/adjust.
+**Ch 4: "It works with your actual files — not a chat window."**
+First primitive: **files and context**. Maven shows how agents read your project repo, your docs, your specs — not a pasted snippet in a chat box. Emery's prompt-file-on-the-desktop becomes a CLAUDE.md that the agent reads automatically. The agent knows your project because it lives in your project.
 
-**Ch 5: It remembers who you are and how you work.**
-Persistent context. CLAUDE.md, system prompts, instruction files that accumulate over time.
+**Ch 5: "You teach it how you work — and it remembers."**
+Second primitive: **rules and skills**. The agent isn't a blank slate every conversation. You build up instructions, style guides, workflows — and they persist. Like training a smart new hire who actually retains what you told them. Emery: "So it's like... onboarding documentation, but the documentation actually gets read?"
 
-**Ch 6: It can look things up and work with your actual files.**
-Grounding and tool use. Web search, file system access, MCP connections to real data.
+**Ch 6: "It doesn't just answer — it does things."**
+Third primitive: **tools and actions**. The agent can search the web, query databases, run scripts, connect to APIs, update files. Not just "here's what I think" — "here's what I did." Maven shows PM examples: pulling usage data, cross-referencing specs against requirements, drafting release notes from commit history.
 
-**Ch 7: You have real controls — not code, but rules and skills that shape how it works.**
-The control surface. Rules, skills, hooks, guardrails — training a smart new hire, not writing code.
+**Ch 7: "Show me what this looks like for a PM."**
+Maven walks through agent-assisted product work across the lifecycle: discovery research synthesis, PRD drafting grounded in customer data, spec review against acceptance criteria, competitive analysis, stakeholder update generation. Not hypothetical — real workflows, real before/afters.
 
-**Ch 8: You're not typing prompts — you're directing work.**
-Role shift. The human becomes architect/reviewer. The skill isn't "write a good prompt" — it's "delegate effectively."
+**Ch 8: "Your dev team is about to move a lot faster."**
+Fourth primitive: **fitting into agentic engineering teams**. The SWE side of the house is already using agents to turn intent into code faster. PMs who can express intent clearly — in markdown, in structured repos, with good context — become force multipliers. PMs who can't become bottlenecks. This isn't about coding — it's about being legible to the system.
 
-**Ch 9: The real unlock isn't a smarter brain — it's everything around it.**
-The thesis chapter. A 2025 model in a 2022 chat box is still a chat box. A 2023 model in a 2025 harness is a coworker.
-
-**Section 4 — The Ask:**
-- Offers: Curated starter videos, templates/starter packs for non-SWE domains
-- Asks: Learn markdown, learn Git/GitHub, get comfortable with SWE-adjacent tools
-
-**Appendix:** Practical setup guide (scope TBD).
+**Ch 9: "Okay — how do I actually start?"**
+The on-ramp. Maven and Emery lay out the practical steps: learn markdown (it's formatting, not programming), get comfortable with GitHub (think shared Dropbox that agents can also use), bring context into your repos (READMEs, decision logs, project structure), experiment with agents on low-stakes tasks, identify the drudgery in your job that's ripe for delegation. Claw'd sits nearby, notebook open, ready.
 
 ## Character Dynamic
 
-- **Skeptic** voices the reader's doubt, resistance, and bad experiences. Asks what the reader is thinking.
-- **Maven** has the answers but earns them through honesty, not hype. Acknowledges failures before claiming progress.
+### Three-way dynamic
+- **Maven** is the guide — excited but honest, never dismissive
+- **Skeptic** is the wall — resistant, informed, gradually irrelevant (not won over — just left behind by a conversation that moved past his objections)
+- **Emery** is the audience — curious, practical, already partway there, needs a bridge from "I use AI sometimes" to "I work with an agent"
+- **Claw'd** is the artifact — silent, present, embodying the concepts Maven describes
 
-### Evolution Through the Arc
-- **Section 2**: Skeptic leads. Maven listens, validates, agrees.
-- **Early Section 3 (Ch 4-6)**: Classic Q&A. Skeptic asks, Maven responds.
-- **Late Section 3 (Ch 7-9)**: Skeptic starts engaging as problem-solver. "So how would I..."
-- **Section 4**: Skeptic/Maven distinction blurs. Both address the reader.
+### Evolution
+- **Phase 1**: Maven vs. Skeptic. Classic debate. Skeptic dominates with objections.
+- **Phase 2**: Emery enters, changes the energy. The conversation becomes collaborative, not adversarial. Skeptic still interjects but is no longer the center.
+- **Phase 3**: Maven + Emery in deep practical discussion. Skeptic asks an occasional sharp question (useful ones — "but what about hallucinations?") but is increasingly quiet.
+- **Phase 4**: Maven + Emery only. Skeptic is present but silent. The conversation has moved past debate into action.
+
+### Key relationship notes
+- Maven **affirms** Emery's existing experiments — their chatbot usage isn't wrong, it's just the starting point
+- Maven never talks down to Skeptic — just doesn't chase him when the conversation moves on
+- Emery's questions are the reader's questions — practical, specific, grounded in real work
+- Claw'd doesn't speak but reacts physically — tilts head, opens notebook, scribbles notes — reinforcing concepts visually
 
 ## Thematic Threads
 
-1. **Harness > Model** — The tooling around the model matters more than raw intelligence
-2. **Trust is Earned** — The Skeptic's distrust is rational; overcome with evidence, not persuasion
-3. **Alignment Through Investment** — Agentic tools get better the more you invest in shaping them
-4. **The File System is the Interface** — Chat bubbles → file-system-native work is a paradigm shift
-5. **Failure is Informative** — Each era's failures point to what the next era needs to solve
+1. **The box is a metaphor** — agents are tangible, deliverable, unboxable. Not vaporware. Not "someday." Right now, in this box.
+2. **Meet it halfway** — the agent is powerful but not magic. You have to invest in context, structure, and literacy. The payoff is proportional to the investment.
+3. **Not just for coders** — the primitives are domain-agnostic. File access, rules, tools, loops — these help anyone who does structured knowledge work.
+4. **Chatbot ≠ agent** — the copy-paste, one-shot, no-memory paradigm is what people are stuck on. The shift is structural, not just "smarter AI."
+5. **Drudgery is the signal** — the parts of your job you hate doing are the parts most ready for agent assistance.
+6. **Legibility is a skill** — expressing your work clearly in structured formats (markdown, repos, decision logs) makes you effective with both human and AI collaborators.
 
 ## Tone & Voice
 
-- Accessible to a high schooler, resonant for adult knowledge workers
-- Dialog feels like real conversation, not a lecture
-- Skeptic is never a strawman — voices genuine, informed doubt
-- Maven never hypes — acknowledges limitations honestly
-- Short, dense chapters (~300-500 words body text each)
-- Sources ground every chapter in evidence, not opinion
+- **Conversational, not pedagogical.** This reads like overhearing three smart people talk, not a lecture.
+- **Practical over theoretical.** Every concept gets a "here's what that looks like on a Tuesday" example.
+- **Emery's voice is the anchor.** Their reactions calibrate the reader's experience — if Emery is confused, the reader should be too; if Emery gets excited, it's earned.
+- **Skeptic is dry, not hostile.** His best lines are deadpan observations that are genuinely funny.
+- **Maven's energy is infectious but grounded.** Excitement backed by specifics.
+- **Accessible to a high schooler, resonant for a PM.** No jargon without immediate context.
+- **Short chapters.** 400-600 words body text. Dense, not padded.
 
 ## The Ask (Section 4)
 
-- Get comfortable with tools you thought were "just for engineers" — like we all got comfortable with spreadsheets
-- Learn markdown (it's formatting, not programming)
-- Learn Git/GitHub (think Dropbox that gives your agent access to your files)
+Embedded in Chapter 9. The ask is practical and incremental:
+- **Learn markdown.** It's formatting, not programming. Your agent reads it natively.
+- **Get on GitHub.** Not to code — to have a shared workspace that agents can also access.
+- **Build context into your repos.** READMEs, decision logs, onboarding docs — these help humans AND agents.
+- **Experiment safely.** Try an agent (like Claude Code) on a low-stakes task. Learn its edges.
+- **Audit your drudgery.** Which recurring tasks drain you? Those are your first candidates.
 
 ## Presentation
 
 Site and publishing metadata — flows through `/build-site` into the live site.
 
 - **Title**: Agents for Everyone
-- **Subtitle**: What actually changed between your last AI experiment and this morning.
+- **Subtitle**: What's in the box — and what you need to know to use it.
 - **Label**: Work in progress; illustrative
-- **Meta description**: An illustrated argument that resets your priors about AI — from "fancy autocomplete" to configurable, persistent coworker.
+- **Meta description**: Three people, a box, and an honest conversation about what AI agents actually mean for the rest of us.
 - **Footer quote**: "The question is not whether machines can think, but what we mean when we say we do."
 
 ## Differentiation Notes
 
-This is the original framing — the "persuasive arc" approach. It's structured as a linear argument that mirrors the reader's journey from skepticism to understanding. The organizing principle is rhetorical: validate doubt, then systematically address it.
+**vs. the persuasive arc (v1):** The original version was structured as a linear argument — validate skepticism, then systematically address it. This version is structured as a **conversation** with three distinct viewpoints. Key differences:
+
+- **Three characters instead of two.** Emery is the audience surrogate — someone already using AI but stuck at the chatbot paradigm. This is more specific and relatable than a generic "skeptic → believer" arc.
+- **Skeptic fades rather than converts.** More realistic and more interesting. Some people aren't persuadable in one conversation — and that's fine. The story moves on with the people who are ready.
+- **The box/unboxing metaphor** makes the abstract tangible. Claw'd literally emerges from it.
+- **PM-specific examples** throughout, not generic knowledge work. Anchored in a real job with real workflows.
+- **Hypothesis being tested:** Does a three-character dynamic with a practical audience surrogate land better than a two-character debate? Does showing someone "stuck at chatbots" resonate more than showing someone hostile to AI?

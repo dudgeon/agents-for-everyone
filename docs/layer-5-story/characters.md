@@ -100,9 +100,55 @@ CONSTRAINTS: Do not change body shape, proportions, eye style, or color palette.
 **Reference sheet**: `assets/characters/clawd-ref-sheet.png`
 **Expressions locked**: neutral (attentive, eyes forward), curious (slight head tilt, notebook open), satisfied (subtle warmth — no mouth, so conveyed through posture and eye squint)
 
+## Emery (The Practitioner)
+
+**Name**: Emery
+**Age**: TBD (mid-20s to early 30s — early-career PM energy)
+**Pronouns**: they/them
+**Background**: Working product manager. Not a developer, not anti-tech. Uses the tools available to them — Jira, Confluence, Google Slides, Gemini chat. Tried vibe coding with Lovable on a weekend. Has a text file of saved prompts on their desktop. Represents the massive middle ground: people who use AI *some* but are stuck at the chatbot paradigm.
+
+**Core trait**: Practical and curious, but limited by what they've been exposed to. Not skeptical — **stuck.** They can feel there's more available but haven't found the bridge from "I paste into a chat box" to "I work with an agent."
+
+**Voice notes**:
+- Asks the questions the reader is thinking — specific, grounded in real work
+- Gets genuinely excited when something clicks — "Wait, so it just... reads my project folder?"
+- Not afraid to say "I don't know what that is" — asks Maven to explain without embarrassment
+- Self-aware about their limitations — "I know my prompt file is janky, but it works... kind of"
+
+**Arc**: From "I use AI sometimes" → "I see what I've been missing" → "I know what I need to learn next." Not a full convert by the end — but clearly on a trajectory.
+
+**Relationship to others**:
+- With Maven: collaborative, receptive. Maven affirms Emery's existing experiments rather than dismissing them.
+- With Skeptic: sympathetic but not aligned. Emery understands Skeptic's hesitation but isn't interested in debating whether AI is real — they want to know how to use it better.
+- With Claw'd: curious, a little delighted. The first to interact with Claw'd directly.
+
+### Character Bible (Visual — locked 2026-02-23)
+
+```
+EMERY
+IMMUTABLE TRAITS: Warm golden-brown skin. Dark brown hair in a short undercut —
+  buzzed on the sides with longer wavy texture on top that falls slightly to one
+  side. Brown eyes. No glasses. Lean build, average height (between Maven and
+  Skeptic). Resting expression: attentive, open, slightly curious. Nonbinary
+  presentation — androgynous but natural, not stylized.
+DEFAULT OUTFIT: Fitted heather-gray crewneck tee under an open muted-teal cardigan
+  with small lightning bolt logo on left chest. Dark chinos, clean white sneakers.
+  Carries a plain digital tablet (dark case, no pen attached). Stylus tucked behind
+  right ear — signature accessory.
+ART STYLE: Studio Ghibli-inspired illustration. Clean expressive linework, warm
+  color wash. Fully saturated — muted teal/gray palette sits between Maven's warm
+  sage-green and Skeptic's cool navy for visual contrast.
+CONSTRAINTS: Do not change face, facial features, skin tone, body shape, or identity.
+  The tablet, stylus-behind-ear, and lightning bolt logo are identity markers —
+  always include them.
+```
+
+**Reference sheet**: `assets/characters/emery-ref-sheet.png`
+**Expressions locked**: neutral (attentive, open), curious (leaning in, eyes wide), excited (the "aha" moment), uncertain (brow slightly furrowed, thinking)
+
 ## Open Character Questions
 
-- Relationship between Maven and Skeptic (friends? siblings? classmates?)
+- Relationship between Maven and Skeptic (friends? colleagues? acquaintances?)
 - Ages — peers or mentor/mentee?
-- Does the robot have a name and personality, or is it more of a tool?
-- Any other characters? (e.g., someone who represents the "I use AI to cheat" antipattern?)
+- Emery's visual design — what should they look like? (see character sheet steps below)
+- Does the Skeptic-fading-into-background dynamic work visually in comics? May need to test.

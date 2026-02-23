@@ -123,3 +123,70 @@ SETTING (identical in both frames): Simple room, white walls
 
 CONSTRAINTS: Do not change any character's face, facial features, ",16:9,test-comic-frame-b-20260222-205550.png,0.0390,9.0050,7.7,ok
 2026-02-23T01:56:22+00:00,flash,gemini,,edit,Add a tiny blue party hat on the cat's head. Keep everything else identical.,1:1,test-gemini-v2-20260222-205532-edit-20260222-205622.png,0.0390,9.0440,7.2,ok
+2026-02-23T16:07:39+00:00,pro,gemini,,,"Character reference sheet for Emery.
+
+EMERY
+IMMUTABLE TRAITS: Warm golden-brown skin. Dark brown hair, short textured cut — slightly longer on top, tapered sides. Modern but not extreme. Brown eyes. N",16:9,emery-ref-sheet-20260223-110739.png,0.1340,9.1780,18.1,ok
+2026-02-23T16:09:03+00:00,pro,gemini,,,"Four characters standing together in a modern office setting. Warm overhead lighting. Studio Ghibli-inspired illustration with clean expressive linework and warm color wash.
+
+From left to right:
+
+1. M",16:9,test-all-four-characters-20260223-110903.png,0.1340,9.3120,38.2,ok
+2026-02-23T17:26:09+00:00,pro,gemini,,,"Character reference sheet for Emery.
+
+EMERY
+IMMUTABLE TRAITS: Warm golden-brown skin. Dark brown hair in a short undercut — buzzed on the sides with longer wavy texture on top that falls slightly to o",16:9,emery-ref-sheet-v2-20260223-122609.png,0.1340,9.4460,18.3,ok
+2026-02-23T17:37:49+00:00,pro,gemini,ch01-the-box,a,"Studio Ghibli-inspired illustration. Clean expressive linework, warm color wash. Fully saturated relative to background — characters pop off the muted office setting.
+
+MAVEN: Warm medium-brown skin. B",16:9,ch01-the-box-frame-a-20260223-123727.png,0.1340,9.5800,21.8,ok
+2026-02-23T17:38:08+00:00,pro,gemini,ch01-the-box,b,"Studio Ghibli-inspired illustration. Clean expressive linework, warm color wash. Fully saturated relative to background — characters pop off the muted office setting.
+
+MAVEN: Warm medium-brown skin. B",16:9,ch01-the-box-frame-b-20260223-123727.png,0.1340,9.7140,19.0,ok
+2026-02-23T17:38:53+00:00,pro,gemini,ch02-emery-enters,a,"Studio Ghibli-inspired illustration. Clean expressive linework, warm color wash. Fully saturated relative to background.
+
+MAVEN: Warm medium-brown skin. Black hair, shoulder-length, tucked behind one ",16:9,ch02-emery-enters-frame-a-20260223-123822.png,0.1340,9.8480,30.5,ok
+2026-02-23T17:39:11+00:00,pro,gemini,ch02-emery-enters,b,"Studio Ghibli-inspired illustration. Clean expressive linework, warm color wash. Fully saturated relative to background.
+
+MAVEN: Warm medium-brown skin. Black hair, shoulder-length, tucked behind one ",16:9,ch02-emery-enters-frame-b-20260223-123822.png,0.1340,9.9820,18.0,ok
+2026-02-23T17:39:47+00:00,pro,gemini,ch03-the-unboxing,a,"Studio Ghibli-inspired illustration. Clean expressive linework, warm color wash. Fully saturated.
+
+MAVEN: Warm medium-brown skin. Black hair, shoulder-length, tucked behind one ear. Round wire-frame g",16:9,ch03-the-unboxing-frame-a-20260223-123928.png,0.1340,10.1160,19.1,ok
+2026-02-23T17:40:06+00:00,pro,gemini,ch03-the-unboxing,b,"Studio Ghibli-inspired illustration. Clean expressive linework, warm color wash. Fully saturated.
+
+MAVEN: Warm medium-brown skin. Black hair, shoulder-length, tucked behind one ear. Round wire-frame g",16:9,ch03-the-unboxing-frame-b-20260223-123928.png,0.1340,10.2500,19.2,ok
+2026-02-23T17:40:42+00:00,pro,gemini,ch04-files-context,a,"Studio Ghibli-inspired illustration. Clean expressive linework, warm color wash. Fully saturated.
+
+MAVEN: Warm medium-brown skin. Black hair, shoulder-length, tucked behind one ear. Round wire-frame g",16:9,ch04-files-context-frame-a-20260223-124019.png,0.1340,10.3840,22.6,ok
+2026-02-23T17:41:04+00:00,pro,gemini,ch04-files-context,b,"Studio Ghibli-inspired illustration. Clean expressive linework, warm color wash. Fully saturated.
+
+MAVEN: Warm medium-brown skin. Black hair, shoulder-length, tucked behind one ear. Round wire-frame g",16:9,ch04-files-context-frame-b-20260223-124019.png,0.1340,10.5180,21.6,ok
+2026-02-23T17:41:33+00:00,pro,gemini,ch05-rules-skills,a,"Studio Ghibli-inspired illustration. Clean expressive linework, warm color wash. Fully saturated.
+
+MAVEN: Warm medium-brown skin. Black hair, shoulder-length, tucked behind one ear. Round wire-frame g",16:9,ch05-rules-skills-frame-a-20260223-124115.png,0.1340,10.6520,18.0,ok
+2026-02-23T17:41:59+00:00,pro,gemini,ch05-rules-skills,b,"Studio Ghibli-inspired illustration. Clean expressive linework, warm color wash. Fully saturated.
+
+MAVEN: Warm medium-brown skin. Black hair, shoulder-length, tucked behind one ear. Round wire-frame g",16:9,ch05-rules-skills-frame-b-20260223-124115.png,0.1340,10.7860,25.6,ok
+2026-02-23T17:42:36+00:00,pro,gemini,ch06-tools-actions,a,"Studio Ghibli-inspired illustration. Clean expressive linework, warm color wash. Fully saturated.
+
+MAVEN: Warm medium-brown skin. Black hair, shoulder-length, tucked behind one ear. Round wire-frame g",16:9,ch06-tools-actions-frame-a-20260223-124209.png,0.1340,10.9200,26.2,ok
+2026-02-23T17:43:00+00:00,pro,gemini,ch06-tools-actions,b,"Studio Ghibli-inspired illustration. Clean expressive linework, warm color wash. Fully saturated.
+
+MAVEN: Warm medium-brown skin. Black hair, shoulder-length, tucked behind one ear. Round wire-frame g",16:9,ch06-tools-actions-frame-b-20260223-124209.png,0.1340,11.0540,24.3,ok
+2026-02-23T17:43:41+00:00,pro,gemini,ch07-pm-lifecycle,a,"Studio Ghibli-inspired illustration. Clean expressive linework, warm color wash. Fully saturated.
+
+MAVEN: Warm medium-brown skin. Black hair, shoulder-length, tucked behind one ear. Round wire-frame g",16:9,ch07-pm-lifecycle-frame-a-20260223-124316.png,0.1340,11.1880,25.0,ok
+2026-02-23T17:44:06+00:00,pro,gemini,ch07-pm-lifecycle,b,"Studio Ghibli-inspired illustration. Clean expressive linework, warm color wash. Fully saturated.
+
+MAVEN: Warm medium-brown skin. Black hair, shoulder-length, tucked behind one ear. Round wire-frame g",16:9,ch07-pm-lifecycle-frame-b-20260223-124316.png,0.1340,11.3220,24.5,ok
+2026-02-23T17:44:38+00:00,pro,gemini,ch08-agentic-teams,a,"Studio Ghibli-inspired illustration. Clean expressive linework, warm color wash. Fully saturated.
+
+MAVEN: Warm medium-brown skin. Black hair, shoulder-length, tucked behind one ear. Round wire-frame g",16:9,ch08-agentic-teams-frame-a-20260223-124418.png,0.1340,11.4560,20.2,ok
+2026-02-23T17:44:58+00:00,pro,gemini,ch08-agentic-teams,b,"Studio Ghibli-inspired illustration. Clean expressive linework, warm color wash. Fully saturated.
+
+MAVEN: Warm medium-brown skin. Black hair, shoulder-length, tucked behind one ear. Round wire-frame g",16:9,ch08-agentic-teams-frame-b-20260223-124418.png,0.1340,11.5900,19.3,ok
+2026-02-23T17:45:29+00:00,pro,gemini,ch09-getting-started,a,"Studio Ghibli-inspired illustration. Clean expressive linework, warm color wash. Fully saturated. Warm late-afternoon golden light.
+
+MAVEN: Warm medium-brown skin. Black hair, shoulder-length, tucked ",16:9,ch09-getting-started-frame-a-20260223-124510.png,0.1340,11.7240,19.1,ok
+2026-02-23T17:45:50+00:00,pro,gemini,ch09-getting-started,b,"Studio Ghibli-inspired illustration. Clean expressive linework, warm color wash. Fully saturated. Warm late-afternoon golden light.
+
+MAVEN: Warm medium-brown skin. Black hair, shoulder-length, tucked ",16:9,ch09-getting-started-frame-b-20260223-124510.png,0.1340,11.8580,20.3,ok
