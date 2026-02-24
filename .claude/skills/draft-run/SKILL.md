@@ -70,6 +70,17 @@ frame_b:
 3. Place annotations at the point in the text where the problem is felt, not in a separate section
 4. Target 5-10 gap annotations per draft run — fewer means you aren't looking hard enough
 
+**Mandatory self-review checklist** — flag any of these as gaps if found:
+
+- [ ] Is "harness" defined conversationally before first use in body text? (See style guide for suggested framing.)
+- [ ] Do Declan's failure examples name the failure MODE (not just the product release)? "ChatGPT in 2023" is not a failure — "hallucinating citations confidently" is.
+- [ ] Does Ch8 cover BOTH PM intent dimensions — quality (clear specs) AND throughput (PMs can now produce intent faster, teams wait on PMs)?
+- [ ] Does Emery's voice include specific named frustrations, not neutral product descriptions?
+- [ ] Do practical advice sections (Ch9) include "the agent can help" notes where applicable?
+- [ ] Do folder paths use trailing slashes (`docs/` not `/docs`)?
+- [ ] Are all technical terms the target reader might not know (harness, context, MCP, primitive) introduced conversationally before being used freely?
+- [ ] Does the COMIC spec for each frame describe exactly what visual props appear and which character holds/shows them? (Prevents image generation from guessing wrong.)
+
 ## What Happens Next
 
 The user reads the draft, annotates with CriticMarkup, and uploads feedback to the draft folder. Then run `/draft-review` to distill all feedback and update the system.

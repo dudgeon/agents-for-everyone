@@ -58,11 +58,19 @@ _Many original questions resolved by the persuasive arc structure (Decision 002)
 
 ## Defects
 
-- [ ] **[DEFECT] Character consistency — massive issues across all chapters.** Characters (Maven, Declan, Emery, Claw'd) look different panel-to-panel and chapter-to-chapter. Root cause under investigation (separate research agent assigned). Likely culprits: reference sheet quality, character bible completeness, prompt engineering in the frozen preamble. Block on next art pass until resolved.
+- [ ] **[DEFECT] Character consistency — massive issues across all chapters.** Characters (Maven, Declan, Emery, Claw'd) look different panel-to-panel and chapter-to-chapter. Specific failures observed in draft-004: Maven appears with wrong skin tone (looks Asian, not medium-brown), Maven's glasses disappear between frames, Claw'd rendered as a kitten rather than a boxy terracotta creature, Emery drifts visually. Additional artifact: frame_b Ch3 contained two images. Root cause under investigation (separate research agent assigned). Likely culprits: reference sheet quality, character bible completeness, prompt engineering in the frozen preamble. Block on next art pass until resolved.
+
+- [ ] **[DEFECT] Ch1 frame_b COMIC spec issue — box shows Maven not Claw'd.** The Ch1 frame_b spec says "Maven has set the box on the table" but the image generated showed Maven on the box rather than Claw'd. The spec needs to explicitly state that the box face panel shows Claw'd (not Maven). Fix in COMIC spec for next image generation pass.
+
+- [ ] **[SITE BUG] Title cut off by top nav bar on desktop.** The page title ("Agents for Everyone") is being clipped by the sticky nav at the top of the page. Needs CSS fix in the hero section to account for nav height.
+
+- [ ] **[SITE BUG] Subtitle needs rewriting.** Current subtitle "what's in the box — and what you need to know about it" no longer makes sense given the direction of draft-004 (agents, not the box, are the focus). Replace with an optimistic call to action.
 
 ## Pre-Run Checklist
 
 - [ ] **Remove footer quote before next draft run / build-site.** The current quote — _"The question is not whether machines can think, but what we mean when we say we do."_ — is a placeholder and needs to be replaced with something that fits the agent-unboxing story arc. Remove from `story-seed.md` (Presentation → Footer quote) and `site/src/data/site-meta.ts` (footerQuote). Either write a new one or leave blank until the right line surfaces from the story.
+
+- [ ] **Replace Ch1 burned example: "ChatGPT Enterprise in 2023"** — The reader doesn't know what went wrong. Replace with a specific failure mode: early-2023 vintage models hallucinating citations, statistics, and facts confidently. The Mata v. Avianca case is already in Ch1 sources — can be worked in here instead.
 
 ## Parked Ideas
 
