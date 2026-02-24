@@ -33,7 +33,7 @@ jobs:
           python-version: '3.12'
 
       - name: Package portable release
-        run: python3 tools/package_release.py --version ${{ github.ref_name }}
+        run: python3 tools/package_release.py --version ${GITHUB_REF_NAME#v}
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
