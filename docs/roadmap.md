@@ -4,9 +4,9 @@ This is a long-lived document. It describes the full arc of this project across 
 
 ---
 
-## Phase 1 — Timeline Research (Layer 1) ← CURRENT (parallel with Phase 4 rough draft)
+## Phase 1 — Timeline Research (Layer 1) ← PAUSED (sufficient for current draft)
 
-**Status**: In progress — raw timeline at ~40 entries, ~1,200 lines. Current-state non-SWE capability map added (Session 6). Epoch clustering blocked on rough curriculum (see Decision 001).
+**Status**: Paused — raw timeline at ~40 entries, ~1,200 lines. Current-state non-SWE capability map added (Session 6). Sufficient to support active draft; epoch clustering and enrichment can resume after story arc stabilizes.
 **Mode**: Independent research by Claude, validated by user
 **Goal**: Build a canonical, factual timeline of AI assistant tooling from Nov 2022 to present AND a current-state capability map of proven non-SWE applications.
 
@@ -90,7 +90,7 @@ Each chapter: headline sentence + graphic novel panel + 3-4 paragraphs + 3-4 sou
 
 ## Phase 5 — Character & Visual Design (Layer 5)
 
-**Status**: Not started
+**Status**: Complete — 4 characters designed, visual bibles locked, reference sheets generated
 **Mode**: Collaborative
 **Goal**: Design the Declan and Maven characters, panel art direction, and visual style for the illustrated chapter format.
 
@@ -115,7 +115,7 @@ Each chapter: headline sentence + graphic novel panel + 3-4 paragraphs + 3-4 sou
 
 ## Phase 6 — Drafting
 
-**Status**: Not started
+**Status**: In Progress — Draft 004 live at agents-for-everyone.ai-pm.cc. Draft CI/CD cycle established: `/draft-run` → user CriticMarkup → `/draft-review` → pipeline update → repeat.
 **Mode**: Iterative — Claude drafts sections, user reviews and redirects
 **Goal**: Write the actual story.
 
@@ -230,3 +230,44 @@ Each chapter: headline sentence + graphic novel panel + 3-4 paragraphs + 3-4 sou
 - Removed empty `.claude/commands/` directory
 - Key learning: a skill with model invocation disabled is invisible to Claude and therefore useless
 - **Next**: User reviews draft-001 with CriticMarkup, then run `/draft-review` to process feedback and update system
+
+### 2026-02-21 — Session 8
+- **Character design complete**: Visual bibles + reference sheets generated for all 4 characters — Maven, Declan, Emery, Claw'd
+  - Multi-angle ref packs: `ref-sheet`, `ref-face`, `ref-34` per human character; `ref-sheet` + `ref-34` for Claw'd
+  - Gemini native SDK image pipeline established (replaces OpenRouter legacy)
+  - Character consistency via chat sessions that preserve thought signatures across frames
+- Draft-002 run + first image pass across all 9 chapters
+- Second image pass with style anchoring: canonical frame A passed as additional `--ref` across ch02–ch09
+- Site deployed with draft-002 images (16xxxx timestamps)
+- **Decision 005**: Frame composition (wide two-shot → close-up), style consistency anchor, Declan Ghibli alignment
+- **Decision 006**: Site copy — title "Agents for Everyone", label "Work in progress; illustrative", subtitle updated
+- Site built: Astro static site, GitHub Actions auto-deploy on `site/**` push
+- **Next**: User reviews draft-002 images, then writing feedback pass
+
+### 2026-02-23 — Session 9
+- **Story arc versioning system** established (Decision 007): git branches `story/<name>`, `story-seed.md` as primary creative input, `/story-arc-version` skill for lifecycle management
+- **Renamed "Skeptic" → "Declan"** across entire repo: story files, character sheets, research headers, skills, backlog, decisions, CLAUDE.md
+  - File rename: `assets/characters/skeptic-ref-sheet.png` → `assets/characters/declan-ref-sheet.png`
+- **Draft-003**: Added Emery as third character (PM persona, the reader's stand-in); full 9-chapter draft + Emery throughout
+- **Epilogue scaffolded**: `variant: "epilogue"` on `ChapterData`, dark inverted `Chapter.astro` rendering, byline with HTML links via `set:html`, nav IntersectionObserver updated
+- **Hero section spacing fix**: Replaced `min-h-[50vh]` + `justify-center` with fixed `pb-10 pt-8` padding
+- **Writing edits**: Ch1 (calmer opening, burn list trim), Ch2 (removed explicit age/openness correlation), Ch7 (cut Monday-Friday scene-setting), Ch9 (trim Claw'd appearance focus)
+- Images generated for draft-003 (185xxx-191xxx timestamps); site built + deployed
+- Draft-004 started: Ch1 image generated at 224227, then session interrupted
+- **Next**: Complete draft-004 image generation run
+
+### 2026-02-23 — Session 10
+- **Completed draft-004 image run**: Generated Ch2–Ch9 via batch script (`/tmp/gen_chapters_2_9.py`)
+  - All 9 chapters: ch01 224227, ch02 225214, ch03 225320, ch04 225419, ch05 225526, ch06 225625, ch07 225727, ch08 225815, ch09 225921
+- Copied 18 images to `site/public/images/`, updated all image paths in `chapters.ts`, built and deployed
+- **Processed draft-004 CriticMarkup user feedback** — extracted systemic pipeline rules:
+  1. Define "harness" conversationally before first use in body text
+  2. Folder path notation: trailing slashes (`docs/` not `/docs`)
+  3. Emery voice: specific named frustrations, not neutral product summaries
+  4. "The agent can help" empowerment pattern in practical advice sections
+  5. Ch8 PM intent has two dimensions: quality (clear specs) AND throughput (PMs produce intent faster)
+- **Writing style guide fully populated** (`docs/layer-5-story/writing-style-guide.md`) — replaces placeholder stubs
+- **Draft-run skill updated** (`.claude/skills/draft-run/SKILL.md`) — mandatory 8-item self-review checklist added
+- Backlog updated: character consistency defects (Maven skin/glasses, Claw'd as kitten, Emery drift, double-image), two site bugs, pre-run content check
+- Docs updated: memory, roadmap, decisions
+- **Next**: User reviews draft-004 on live site; next draft-005 run will apply individual text edits + benefit from pipeline rules

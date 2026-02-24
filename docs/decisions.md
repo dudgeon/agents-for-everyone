@@ -74,6 +74,8 @@ Each decision follows this structure:
 - **Context**: User review of draft-002 panels found: (a) text overlay shows description rather than dialogue, (b) both frames too similar in composition, (c) Declan looks less Ghibli than Maven — "from different universes," (d) visual style drifts noticeably from ch01 to ch09.
 - **Rationale**: Style anchor approach (canonical frame as additional ref) is the most direct fix for cross-comic drift without requiring a dedicated "in-scene reference sheet" generation step. Frame composition variation (wide→close) creates emotional rhythm and makes the two-frame format feel like a panel sequence rather than two similar shots.
 
+**⚠ CORRECTION (2026-02-23, Session 10)**: Item 1 above is wrong. Speech bubbles are **NOT** rendered in-image. The actual implementation uses HTML overlay: `dialogue?: string` field on the `Panel` interface in `chapters.ts`, rendered as text overlay in `IllustrationPanels.astro`. When an image is present, the overlay sits on top — it does not disappear. The COMIC spec `dialogue` field is metadata for authoring and HTML rendering, and frames are generated **without** text. Speech bubbles are an HTML layer, not image content.
+
 ---
 
 ## 006 — Site copy: title, label, subtitle (2026-02-21)
