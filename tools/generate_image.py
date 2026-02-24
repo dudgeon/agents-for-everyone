@@ -442,6 +442,7 @@ def generate_comic_frames(
     backend: str = "gemini",
     resolution: str | None = None,
     use_system_instructions: bool = False,
+    use_warmup: bool = True,
 ) -> dict:
     """
     Generate two comic frames sequentially in a linked conversation session.
@@ -455,6 +456,7 @@ def generate_comic_frames(
             comic_id, setting, frame_a_desc, frame_b_desc,
             style_block, character_blocks, model_key, aspect,
             reference_images, resolution, use_system_instructions,
+            use_warmup=use_warmup,
         )
     else:
         return _generate_comic_openrouter(
@@ -468,6 +470,7 @@ def _generate_comic_gemini(
     comic_id, setting, frame_a_desc, frame_b_desc,
     style_block, character_blocks, model_key, aspect,
     reference_images, resolution, use_system_instructions,
+    use_warmup=True,
 ) -> dict:
     """Generate comic frames using native Gemini chat session."""
     _ensure_genai()
@@ -505,6 +508,30 @@ def _generate_comic_gemini(
         config=_genai_types.GenerateContentConfig(**config_kwargs),
     )
 
+    # --- Warmup turn: prime the model's character representation before generation ---
+    # Sends refs + "memorize" instruction as a separate turn. Frame A then sends
+    # only the generation prompt without re-sending refs. Matches research-agent approach.
+    refs_sent_in_warmup = False
+    if use_warmup and reference_images:
+        warmup_contents = []
+        for ref_path in reference_images:
+            ref_file = Path(ref_path)
+            if not ref_file.exists():
+                raise FileNotFoundError(f"Image not found: {ref_path}")
+            warmup_contents.append(Image.open(ref_file))
+            name = ref_file.stem.replace("-ref-sheet", "").replace("-ref-", " ").replace("-", " ").title()
+            warmup_contents.append(f"Above is the {name} reference.")
+        warmup_contents.append(
+            "Study these character references carefully. "
+            "Do not generate an image yet — just acknowledge that you have memorized the visual references."
+        )
+        print(f"  [Warmup] Priming character memory ({len(reference_images)} ref(s))...")
+        try:
+            chat.send_message(warmup_contents)
+            refs_sent_in_warmup = True
+        except Exception as e:
+            print(f"  [Warmup] Warning: warmup turn failed ({e}). Refs will be included in Frame A.")
+
     # --- Build frozen preamble (included in user message unless using system instructions) ---
     if use_system_instructions:
         frozen_preamble = f"SETTING (identical in both frames): {setting}"
@@ -524,15 +551,15 @@ FRAME A of 2: {frame_a_desc}
 
 Generate Frame A as a clean illustration panel. No speech bubbles or text — dialogue will be added in post-production."""
 
-    # Build Frame A contents with interleaved refs
+    # Build Frame A contents. If warmup turn already sent refs, skip re-sending them.
     frame_a_contents = []
-    if reference_images:
+    if reference_images and not refs_sent_in_warmup:
         for ref_path in reference_images:
             ref_file = Path(ref_path)
             if not ref_file.exists():
                 raise FileNotFoundError(f"Image not found: {ref_path}")
             frame_a_contents.append(Image.open(ref_file))
-            name = ref_file.stem.replace("-ref-sheet", "").replace("-", " ").title()
+            name = ref_file.stem.replace("-ref-sheet", "").replace("-ref-", " ").replace("-", " ").title()
             frame_a_contents.append(f"Above is the {name} reference. Match this character exactly.")
     frame_a_contents.append(frame_a_prompt)
 
@@ -559,12 +586,9 @@ Generate Frame A as a clean illustration panel. No speech bubbles or text — di
         comic_id=comic_id, frame="a", backend="gemini",
     )
 
-    # --- Frame B — trust the chat session; do NOT repeat frozen preamble ---
-    frame_b_prompt = f"""Now generate Frame B of 2, continuing directly from Frame A.
-Use the SAME characters — identical appearance, identical clothing, identical art style.
-Do not re-interpret any character designs from the preamble.
-
-SETTING (unchanged): {setting}
+    # --- Frame B — minimal continuation; fully trust the chat session ---
+    frame_b_prompt = f"""Now generate Frame B of 2.
+Use the SAME characters — identical appearance, identical clothing, identical art style. Do not re-interpret any character designs.
 
 FRAME B: {frame_b_desc}
 
@@ -836,6 +860,8 @@ def main():
                         help="System prompt")
     parser.add_argument("--use-system-instructions", action="store_true",
                         help="Pass --system as Gemini system_instruction (experimental)")
+    parser.add_argument("--skip-warmup", action="store_true",
+                        help="[Comic] Skip the warmup turn that primes character memory (faster but less consistent)")
     parser.add_argument("--dry-run", action="store_true",
                         help="Show what would be sent without calling the API")
 
@@ -955,6 +981,7 @@ def main():
             backend=backend,
             resolution=args.resolution,
             use_system_instructions=args.use_system_instructions,
+            use_warmup=not args.skip_warmup,
         )
 
         if "error" in result and "frame_a" not in result:

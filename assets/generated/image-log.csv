@@ -234,3 +234,55 @@ Do not re-interpret any character designs from the",16:9,ch05-rules-skills-frame
 2026-02-24T00:12:11+00:00,pro,gemini,ch09-getting-started,b,"Now generate Frame B of 2, continuing directly from Frame A.
 Use the SAME characters — identical appearance, identical clothing, identical art style.
 Do not re-interpret any character designs from the",16:9,ch09-getting-started-frame-b-20260223-191127.png,0.1340,14.8060,21.2,ok
+2026-02-24T02:51:32+00:00,pro,gemini,,,"Studio Ghibli illustration — close-up face and shoulders portrait of Maven. She has warm medium-brown skin, black shoulder-length hair tucked behind one ear, dark brown eyes, round wire-frame glasses ",1:1,maven-ref-face-20260223-215131.png,0.1340,14.9400,16.7,ok
+2026-02-24T02:51:58+00:00,pro,gemini,,,"Studio Ghibli illustration — 3/4 angle upper-body portrait of Maven. Slightly turned to the right. Show full outfit: sage-green button-up shirt, high-waisted charcoal trousers, simple gold stud earrin",1:1,maven-ref-34-20260223-215158.png,0.1340,15.0740,17.4,ok
+2026-02-24T02:52:22+00:00,pro,gemini,,,"Studio Ghibli illustration — close-up face and shoulders portrait of Declan. He has light olive skin, short dark brown hair (slightly unkempt, not styled), hazel eyes. NO glasses — never add glasses. ",1:1,declan-ref-face-20260223-215222.png,0.1340,15.2080,15.6,ok
+2026-02-24T02:52:52+00:00,pro,gemini,,,"Studio Ghibli illustration — 3/4 angle upper-body portrait of Declan. Slightly turned left. Full outfit: plain navy crew-neck sweater, dark jeans. Light olive skin, short dark brown hair (slightly unk",1:1,declan-ref-34-20260223-215252.png,0.1340,15.3420,18.2,ok
+2026-02-24T02:53:20+00:00,pro,gemini,,,"Studio Ghibli illustration — close-up face and shoulders portrait of Emery. They have warm golden-brown skin, short undercut hairstyle (buzzed sides with longer wavy texture on top), brown eyes. NO gl",1:1,emery-ref-face-20260223-215320.png,0.1340,15.4760,17.8,ok
+2026-02-24T02:53:46+00:00,pro,gemini,,,Studio Ghibli illustration — 3/4 angle upper-body portrait of Emery. Slightly turned. Full outfit: fitted heather-gray crewneck tee under an open muted-teal cardigan with small lightning bolt logo on ,1:1,emery-ref-34-20260223-215346.png,0.1340,15.6100,17.4,ok
+2026-02-24T02:54:15+00:00,pro,gemini,,,Studio Ghibli illustration — slightly angled 3/4 front view of Claw'd. Small (knee-height) BOXY terracotta/coral-orange body with soft rounded corners — wider than tall. Four short STUBBY legs (NOT lo,1:1,clawd-ref-34-20260223-215415.png,0.1340,15.7440,17.5,ok
+2026-02-24T03:43:04+00:00,pro,gemini,ch01-the-box,a,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel with detailed backgrounds. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hou",16:9,ch01-the-box-frame-a-20260223-224227.png,0.1340,15.8780,27.2,ok
+2026-02-24T03:43:27+00:00,pro,gemini,ch01-the-box,b,"Now generate Frame B of 2.
+Use the SAME characters — identical appearance, identical clothing, identical art style. Do not re-interpret any character designs.
+
+FRAME B: Maven has set the box on the ta",16:9,ch01-the-box-frame-b-20260223-224227.png,0.1340,16.0120,22.8,ok
+2026-02-24T03:52:59+00:00,pro,gemini,ch02-emery-enters,a,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel with detailed backgrounds. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hou",16:9,ch02-emery-enters-frame-a-20260223-225214.png,0.1340,16.1460,29.0,ok
+2026-02-24T03:53:19+00:00,pro,gemini,ch02-emery-enters,b,"Now generate Frame B of 2.
+Use the SAME characters — identical appearance, identical clothing, identical art style. Do not re-interpret any character designs.
+
+FRAME B: Emery shrugs casually, one hand",16:9,ch02-emery-enters-frame-b-20260223-225214.png,0.1340,16.2800,20.5,ok
+2026-02-24T03:53:54+00:00,pro,gemini,ch03-the-unboxing,a,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel with detailed backgrounds. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hou",16:9,ch03-the-unboxing-frame-a-20260223-225320.png,0.1340,16.4140,19.1,ok
+2026-02-24T03:54:18+00:00,pro,gemini,ch03-the-unboxing,b,"Now generate Frame B of 2.
+Use the SAME characters — identical appearance, identical clothing, identical art style. Do not re-interpret any character designs.
+
+FRAME B: Claw'd sits at the center of th",16:9,ch03-the-unboxing-frame-b-20260223-225320.png,0.1340,16.5480,23.8,ok
+2026-02-24T03:54:59+00:00,pro,gemini,ch04-files-context,a,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel with detailed backgrounds. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hou",16:9,ch04-files-context-frame-a-20260223-225419.png,0.1340,16.6820,23.5,ok
+2026-02-24T03:55:26+00:00,pro,gemini,ch04-files-context,b,"Now generate Frame B of 2.
+Use the SAME characters — identical appearance, identical clothing, identical art style. Do not re-interpret any character designs.
+
+FRAME B: Emery looks down at their table",16:9,ch04-files-context-frame-b-20260223-225419.png,0.1340,16.8160,26.1,ok
+2026-02-24T03:56:00+00:00,pro,gemini,ch05-rules-skills,a,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel with detailed backgrounds. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hou",16:9,ch05-rules-skills-frame-a-20260223-225526.png,0.1340,16.9500,18.9,ok
+2026-02-24T03:56:24+00:00,pro,gemini,ch05-rules-skills,b,"Now generate Frame B of 2.
+Use the SAME characters — identical appearance, identical clothing, identical art style. Do not re-interpret any character designs.
+
+FRAME B: Emery looks up from their table",16:9,ch05-rules-skills-frame-b-20260223-225526.png,0.1340,17.0840,24.3,ok
+2026-02-24T03:57:01+00:00,pro,gemini,ch06-tools-actions,a,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel with detailed backgrounds. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hou",16:9,ch06-tools-actions-frame-a-20260223-225625.png,0.1340,17.2180,25.7,ok
+2026-02-24T03:57:27+00:00,pro,gemini,ch06-tools-actions,b,"Now generate Frame B of 2.
+Use the SAME characters — identical appearance, identical clothing, identical art style. Do not re-interpret any character designs.
+
+FRAME B: Emery turns to look at Maven di",16:9,ch06-tools-actions-frame-b-20260223-225625.png,0.1340,17.3520,25.4,ok
+2026-02-24T03:57:56+00:00,pro,gemini,ch07-pm-lifecycle,a,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel with detailed backgrounds. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hou",16:9,ch07-pm-lifecycle-frame-a-20260223-225727.png,0.1340,17.4860,19.2,ok
+2026-02-24T03:58:14+00:00,pro,gemini,ch07-pm-lifecycle,b,"Now generate Frame B of 2.
+Use the SAME characters — identical appearance, identical clothing, identical art style. Do not re-interpret any character designs.
+
+FRAME B: Emery stops sketching and looks",16:9,ch07-pm-lifecycle-frame-b-20260223-225727.png,0.1340,17.6200,18.2,ok
+2026-02-24T03:58:56+00:00,pro,gemini,ch08-agentic-teams,a,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel with detailed backgrounds. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hou",16:9,ch08-agentic-teams-frame-a-20260223-225815.png,0.1340,17.7540,24.5,ok
+2026-02-24T03:59:20+00:00,pro,gemini,ch08-agentic-teams,b,"Now generate Frame B of 2.
+Use the SAME characters — identical appearance, identical clothing, identical art style. Do not re-interpret any character designs.
+
+FRAME B: Declan speaks up for the first ",16:9,ch08-agentic-teams-frame-b-20260223-225815.png,0.1340,17.8880,24.4,ok
+2026-02-24T03:59:53+00:00,pro,gemini,ch09-getting-started,a,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel with detailed backgrounds. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hou",16:9,ch09-getting-started-frame-a-20260223-225921.png,0.1340,18.0220,22.3,ok
+2026-02-24T04:00:15+00:00,pro,gemini,ch09-getting-started,b,"Now generate Frame B of 2.
+Use the SAME characters — identical appearance, identical clothing, identical art style. Do not re-interpret any character designs.
+
+FRAME B: Claw'd hops closer to Emery on ",16:9,ch09-getting-started-frame-b-20260223-225921.png,0.1340,18.1560,22.1,ok

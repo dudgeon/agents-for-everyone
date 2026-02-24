@@ -55,7 +55,7 @@ CONSTRAINTS: Do not change face, facial features, skin tone, body shape, or iden
 ### Character Bible (Visual — locked 2026-02-21)
 
 ```
-SKEPTIC
+DECLAN
 IMMUTABLE TRAITS: Light olive skin (NOT pale, NOT tan). Dark brown hair, short,
   slightly unkempt — not messy, just not trying (NOT styled, NOT slicked, NOT
   long). Hazel eyes. No glasses (NEVER add glasses). Medium build, slightly
