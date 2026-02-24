@@ -112,18 +112,39 @@ const textureSvg = `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBo
     if (!track || dots.length === 0) return;
 
     let active = 0;
+    const total = dots.length;
+
+    function goTo(index: number) {
+      active = Math.max(0, Math.min(index, total - 1));
+      track.style.transform = `translateX(-${active * 100}%)`;
+      dots.forEach((d, j) => {
+        d.classList.toggle('w-6', j === active);
+        d.classList.toggle('bg-accent', j === active);
+        d.classList.toggle('w-2', j !== active);
+        d.classList.toggle('bg-border', j !== active);
+      });
+    }
 
     dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        active = i;
-        track.style.transform = `translateX(-${active * 100}%)`;
-        dots.forEach((d, j) => {
-          d.classList.toggle('w-6', j === active);
-          d.classList.toggle('bg-accent', j === active);
-          d.classList.toggle('w-2', j !== active);
-          d.classList.toggle('bg-border', j !== active);
-        });
-      });
+      dot.addEventListener('click', () => goTo(i));
     });
+
+    // Touch swipe support
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    track.addEventListener('touchstart', (e: TouchEvent) => {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e: TouchEvent) => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      // Only trigger if horizontal swipe dominates and exceeds threshold
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+        goTo(dx < 0 ? active + 1 : active - 1);
+      }
+    }, { passive: true });
   });
 </script>
