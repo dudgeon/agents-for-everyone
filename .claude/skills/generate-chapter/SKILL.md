@@ -69,7 +69,16 @@ python3 tools/generate_image.py --comic <id> \
   --ref assets/characters/<char2>-ref-sheet.png
 ```
 
-The Gemini backend (default) uses a native chat session — the model's conversation context carries character identity and thought signatures from Frame A to Frame B automatically. This produces better cross-frame consistency than the OpenRouter backend.
+The Gemini backend (default) uses a native chat session — the model's conversation context carries character identity and thought signatures from Frame A to Frame B automatically. The tool sends the FULL preamble (style + characters + setting + constraints + refs) ONLY for Frame A. Frame B receives a SHORT continuation prompt — just the scene change + "Use the SAME characters." This prevents the model from re-interpreting character designs and causing drift.
+
+**Character consistency protocol:**
+When building the `--characters` block, always copy the character bible text VERBATIM from `docs/layer-5-story/characters.md`, including all negative constraints (the "NOT" and "NEVER" phrases). Do not abbreviate or rephrase the bible — the negative constraints are critical for preventing character drift.
+
+Only include `--ref` for characters actually present in the scene (check the COMIC spec's `characters:` field). Available ref sheets:
+- `assets/characters/maven-ref-sheet.png`
+- `assets/characters/declan-ref-sheet.png`
+- `assets/characters/clawd-ref-sheet.png`
+- `assets/characters/emery-ref-sheet.png`
 
 Add `--backend openrouter` only if explicitly requested by the user.
 

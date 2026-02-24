@@ -20,6 +20,8 @@ export interface ChapterData {
   panels: Panel[];
   body: string[];
   sources: Source[];
+  variant?: "standard" | "epilogue";
+  byline?: string;
 }
 
 export const chapters: ChapterData[] = [
@@ -27,29 +29,29 @@ export const chapters: ChapterData[] = [
     id: "ch-1",
     number: 1,
     title: "\"You have to see what's in this box.\"",
-    navLabel: "The Box",
+    navLabel: "Agents Arrive",
     panels: [
       {
         label: "Maven arrives with the box",
-        description: "Maven stands beside a large cardboard box on the communal table, one hand on the lid, leaning forward with excitement. Skeptic sits across, coffee in hand, leaning back.",
-        image: "/images/ch01-the-box-frame-a-20260223-123727.png",
+        description: "Maven stands beside a large cardboard box on the communal table, one hand on the lid, leaning forward with excitement. Declan sits across, coffee in hand, leaning back.",
+        image: "/images/ch01-the-box-frame-a-20260223-185816.png",
         gradient: "warm",
         dialogue: "You need to stop what you're doing and look at this.",
       },
       {
-        label: "Skeptic braces himself",
-        description: "Skeptic gestures dismissively with his coffee. Maven's hand tightens on the box lid, undeterred.",
-        image: "/images/ch01-the-box-frame-b-20260223-123727.png",
+        label: "Declan braces himself",
+        description: "Declan gestures dismissively with his coffee. Maven's hand tightens on the box lid, undeterred.",
+        image: "/images/ch01-the-box-frame-b-20260223-185816.png",
         gradient: "warm",
         dialogue: "If this is another AI demo, I'm going back to my Jira board.",
       },
     ],
     body: [
-      "Maven has never been shy about new tools, but today she's practically vibrating. She walks into the office kitchen carrying a cardboard box, sets it on the communal table with a deliberate thunk, and locks eyes with Skeptic across his laptop screen.",
+      "Maven has never been shy about new tools, but something about today is different. She walks into the office kitchen carrying a cardboard box, sets it on the communal table with a deliberate thunk. Declan is across the table, barely glancing up from his laptop.",
       "\"Coding agents,\" she says. \"But not for coding.\"",
-      "Skeptic doesn't look up. He's a product manager, same as Maven, and he's been a product manager long enough to have sat through the last three waves of \"this changes everything.\" He watched his company buy a ChatGPT Enterprise license in 2023. He watched his team try AutoGPT and lose a weekend to infinite loops. He heard about Devin, the \"first AI software engineer,\" and watched the benchmarks quietly reveal it failed 85% of the time.",
+      "Declan doesn't look up. He's a product manager, same as Maven, and he's sat through enough waves of \"this changes everything\" to have stopped counting. ChatGPT Enterprise in 2023. AutoGPT eating a whole weekend to infinite loops. Devin — the \"first AI software engineer\" — that quietly failed 85% of real-world tests.",
       "\"I don't code,\" he says. \"I write PRDs. I wrangle stakeholders. I sit in meetings about meetings. If your magic box needs a terminal, I'm not interested.\"",
-      "Maven opens her mouth to argue, then stops herself. She knows Skeptic well enough to know that arguing won't work. He's not uninformed — he's informed and burned. The distinction matters.",
+      "Maven doesn't argue. He's not uninformed — he's informed and burned. The distinction matters.",
       "\"Just — hold that thought for five minutes,\" she says. \"Someone else is coming.\"",
     ],
     sources: [
@@ -84,22 +86,22 @@ export const chapters: ChapterData[] = [
       {
         label: "Emery joins the conversation",
         description: "Emery walks in with tablet tucked under arm, teal cardigan, sits down and glances curiously at the glowing box. Maven welcomes them.",
-        image: "/images/ch02-emery-enters-frame-a-20260223-123822.png",
+        image: "/images/ch02-emery-enters-frame-a-20260223-185918.png",
         gradient: "cool",
         dialogue: "Perfect timing. Tell him how you use AI.",
       },
       {
         label: "Emery describes their setup",
         description: "Emery shrugs casually, one hand on their tablet, comfortable and self-aware.",
-        image: "/images/ch02-emery-enters-frame-b-20260223-123822.png",
+        image: "/images/ch02-emery-enters-frame-b-20260223-185918.png",
         gradient: "cool",
         dialogue: "I mean, I use Gemini? Like, every day. It's basically replaced Google for me.",
       },
     ],
     body: [
-      "Emery is a PM on the platform team. They're younger than Skeptic, more comfortable with new tools, and less interested in debating whether AI is real. They use it. It's fine.",
+      "Emery is a PM on the platform team. They use AI. It's fine.",
       "They describe their current setup: Gemini for quick questions instead of search. A writing assistant for first drafts of customer-facing docs. A text file on their desktop — \"prompts.txt\" — with their twenty most-used prompts, organized by task. On a recent weekend, they tried Lovable to prototype a feature tracker app. It almost worked.",
-      "\"The thing is,\" Emery says, \"it's all... disconnected. I copy-paste my context into a chat window every time. It doesn't know my project. It doesn't remember what I told it yesterday. I have to re-explain who our users are every single conversation.\"",
+      "\"The thing is,\" Emery says, \"it's all disconnected. I copy-paste context into a chat window every time. It doesn't know my project, doesn't remember yesterday. Last week I pasted our PRD into Gemini for the third time and it still asked me what our target audience was.\"",
       "Maven nods. \"That's exactly right.\"",
       "\"And I heard about coding agents — Claude Code, Cursor, whatever. But I don't code. So I figured that's a developer thing.\"",
       "Maven's hand drifts back to the box on the table.",
@@ -136,28 +138,27 @@ export const chapters: ChapterData[] = [
     panels: [
       {
         label: "Maven opens the box",
-        description: "Maven lifts the box lid. Warm light spills out. Claw'd is visible inside — a small boxy terracotta creature. Emery's eyes go wide. Skeptic freezes mid-sip.",
-        image: "/images/ch03-the-unboxing-frame-a-20260223-123928.png",
+        description: "Maven lifts the box lid. Warm light spills out. Claw'd is visible inside — a small boxy terracotta creature. Emery's eyes go wide. Declan freezes mid-sip.",
+        image: "/images/ch03-the-unboxing-frame-a-20260223-190023.png",
         gradient: "warm",
         dialogue: "A chatbot answers questions in a window. An agent operates in your world.",
       },
       {
         label: "Claw'd emerges",
         description: "Claw'd has climbed out of the box and sits on the table, notebook open, looking up at the three humans. Emery reaches toward it.",
-        image: "/images/ch03-the-unboxing-frame-b-20260223-123928.png",
+        image: "/images/ch03-the-unboxing-frame-b-20260223-190023.png",
         gradient: "warm",
         dialogue: "It has a notebook?",
       },
     ],
     body: [
-      "Maven lifts the lid. Inside is something small and warm-colored — a boxy terracotta creature with dark square eyes, a tiny sprout on its head, and a leather-bound notebook clasped in stubby hands. It blinks, looks around, and climbs out onto the table.",
+      "Maven lifts the lid. Something small and warm-colored climbs out onto the table, notebook open.",
       "\"A chatbot,\" Maven says, \"is a text box. You type a question, it types an answer. It doesn't know your files, it can't use your tools, and it forgets everything the moment you close the tab.\"",
-      "She gestures at the creature now sitting on the table, notebook open.",
-      "\"An agent is different. It can read your project folder. It can search the web. It can connect to your tools — Jira, Slack, Google Drive. It follows rules you write for it. And it doesn't just answer — it plans, tries something, checks if it worked, and adjusts. Like a junior teammate who actually listens.\"",
+      "\"An agent is different. It reads your project folder. It connects to your tools — Jira, Slack, Google Drive. It follows rules you write for it. And it doesn't just answer — it plans, tries something, checks if it worked, and adjusts. Like a junior teammate who actually listens.\"",
       "Emery gets it immediately. \"So instead of pasting my PRD into a chat window...\"",
       "\"The agent reads your PRD directly. It reads your CLAUDE.md — that's basically an instruction file that tells it who you are, what your project is, how you like things done. It reads your whole repo.\"",
-      "Skeptic sets down his coffee. \"Plan, try, check, adjust. That's what AutoGPT promised. It got stuck in loops.\"",
-      "\"AutoGPT was the right idea two years early,\" Maven says. \"The models weren't good enough and the harness wasn't smart enough. Both of those things changed.\"",
+      "Declan sets down his coffee. \"Plan, try, check, adjust. That's what AutoGPT promised. It got stuck in loops.\"",
+      "\"AutoGPT was the right idea two years early,\" Maven says. \"The models weren't good enough and the harness wasn't smart enough. Models learned to recognize when they were stuck. The harness learned to checkpoint progress, compact context, and ask for help instead of looping.\"",
     ],
     sources: [
       {
@@ -191,14 +192,14 @@ export const chapters: ChapterData[] = [
       {
         label: "Maven shows the project folder",
         description: "Maven points at a laptop showing a file explorer with project folders. Claw'd flips through its notebook. Emery leans in, aha moment dawning.",
-        image: "/images/ch04-files-context-frame-a-20260223-124019.png",
+        image: "/images/ch04-files-context-frame-a-20260223-190354.png",
         gradient: "warm-accent",
         dialogue: "See this file? CLAUDE.md. The agent reads it every time you start a session.",
       },
       {
         label: "Emery makes the connection",
         description: "Emery looks from their tablet to the screen, the lightbulb moment hitting — their prompts.txt could be the instruction file.",
-        image: "/images/ch04-files-context-frame-b-20260223-124019.png",
+        image: "/images/ch04-files-context-frame-b-20260223-190354.png",
         gradient: "warm-accent",
         dialogue: "Wait — so my prompts.txt on the desktop... that could just BE the instruction file? And it would read it automatically?",
       },
@@ -210,7 +211,7 @@ export const chapters: ChapterData[] = [
       "Emery stares. \"And it... just reads my files?\"",
       "\"All of them. Your specs, your meeting notes, your decision log. It doesn't need you to paste anything. It lives in your project.\"",
       "This is the first primitive: filesystem access. The agent doesn't operate in a chat window — it operates in your project folder. It reads what's there. It creates new files. It updates existing ones. The difference between describing your kitchen over the phone and letting the chef walk in.",
-      "Skeptic, from behind them: \"So it reads everything. Including the stuff that's wrong?\"",
+      "Declan, from behind them: \"So it reads everything. Including the stuff that's wrong?\"",
       "Maven: \"Yes. Which is why the files matter. Garbage context, garbage output. But here's the thing — investing in good project documentation now helps your human teammates AND the agent. It's the same investment paying off twice.\"",
     ],
     sources: [
@@ -245,14 +246,14 @@ export const chapters: ChapterData[] = [
       {
         label: "Maven explains skill files",
         description: "Closer view of the table. Maven points at a skill definition on the laptop. Claw'd looks up attentively. Emery sketches on their tablet with stylus.",
-        image: "/images/ch05-rules-skills-frame-a-20260223-124115.png",
+        image: "/images/ch05-rules-skills-frame-a-20260223-191027.png",
         gradient: "cool-accent",
         dialogue: "This is a skill file. It tells the agent exactly how to do a specific task — your format, your criteria, your workflow.",
       },
       {
         label: "Emery connects the dots",
         description: "Emery looks up from their tablet with an excited expression, something clicking into place.",
-        image: "/images/ch05-rules-skills-frame-b-20260223-124115.png",
+        image: "/images/ch05-rules-skills-frame-b-20260223-191027.png",
         gradient: "cool-accent",
         dialogue: "So it's like onboarding documentation... but the documentation actually gets read?",
       },
@@ -264,7 +265,7 @@ export const chapters: ChapterData[] = [
       "\"It's like onboarding a new hire,\" Emery says slowly, \"except they actually retain what you told them.\"",
       "\"Exactly. And it compounds. You correct the agent on something — say, the way you prefer acceptance criteria written — and you update the skill file. Next time, it gets it right. The correction persists.\"",
       "Hilary Gridley, a product exec at WHOOP, took this further. She reverse-engineered her own judgment by feeding before/after examples of her slide feedback to a custom GPT, then told it \"be 100 times more specific.\" The result was a \"Deck Doctor\" that evaluates presentations using HER standards — consistently, at scale, without her reviewing every deck.",
-      "Skeptic, from the background: \"So you're encoding your preferences in text files and hoping the AI follows them?\"",
+      "Declan, from the background: \"So you're encoding your preferences in text files and hoping the AI follows them?\"",
       "Maven: \"Not hoping. Testing. You run it, review the output, adjust the instructions. Same way you'd manage anyone.\"",
     ],
     sources: [
@@ -299,14 +300,14 @@ export const chapters: ChapterData[] = [
       {
         label: "The agent did the work",
         description: "The laptop shows terminal output with completed actions. Claw'd's notebook is full of checkmarks. Emery reads the output, impressed.",
-        image: "/images/ch06-tools-actions-frame-a-20260223-124209.png",
+        image: "/images/ch06-tools-actions-frame-a-20260223-190558.png",
         gradient: "warm-accent",
         dialogue: "It didn't just tell me what to do. It did it. Searched the web, pulled the data, updated the ticket, wrote the summary.",
       },
       {
         label: "Emery recalibrates",
         description: "Emery turns to look at Maven directly, something shifting in how they think about this.",
-        image: "/images/ch06-tools-actions-frame-b-20260223-124209.png",
+        image: "/images/ch06-tools-actions-frame-b-20260223-190558.png",
         gradient: "warm-accent",
         dialogue: "That's... not what I thought this was.",
       },
@@ -317,7 +318,7 @@ export const chapters: ChapterData[] = [
       "The agent reads the CSV files. It writes and runs an analysis script. It searches the backlog folder for related issues. It produces a markdown summary with three feature recommendations, each grounded in specific data points and linked to existing tickets.",
       "\"It didn't give me a suggestion,\" Maven says. \"It did the work.\"",
       "This is the third primitive: tool use and actions. Through MCP — think of it as USB ports for AI, letting you plug your existing tools in — agents can connect to Jira, Slack, Google Drive, databases, web search, APIs. The agent doesn't just generate text. It queries, updates, creates, and organizes.",
-      "Skeptic, now closer to the group than before: \"And when it does something wrong? When it updates the wrong ticket?\"",
+      "Declan, now closer to the group than before: \"And when it does something wrong? When it updates the wrong ticket?\"",
       "Maven: \"You review before it acts. Most agents have approval gates — they show you what they're about to do and wait for a thumbs up. Same as reviewing a junior's PR.\"",
     ],
     sources: [
@@ -352,28 +353,27 @@ export const chapters: ChapterData[] = [
       {
         label: "Maven lists PM use cases",
         description: "Maven counts on her fingers listing use cases. Claw'd follows along flipping notebook pages. Emery sketches a workflow diagram on their tablet.",
-        image: "/images/ch07-pm-lifecycle-frame-a-20260223-124316.png",
+        image: "/images/ch07-pm-lifecycle-frame-a-20260223-190655.png",
         gradient: "cool-accent",
         dialogue: "Discovery research synthesis. PRD drafting grounded in customer data. Spec review against acceptance criteria. Competitive analysis. Stakeholder updates.",
       },
       {
         label: "Emery recognizes their workflow",
         description: "Emery stops sketching and looks up, connecting the use cases to their own weekly routine.",
-        image: "/images/ch07-pm-lifecycle-frame-b-20260223-124316.png",
+        image: "/images/ch07-pm-lifecycle-frame-b-20260223-190655.png",
         gradient: "cool-accent",
         dialogue: "Half my week is synthesizing information that already exists in four different places. That's what this does?",
       },
     ],
     body: [
-      "Emery's week looks like this: Monday, synthesize customer interview notes into themes. Tuesday, update the PRD with findings. Wednesday, review engineering specs against acceptance criteria — by hand, in a Google Doc, switching between three tabs. Thursday, compile a stakeholder update from Jira, Slack, and the sprint retro notes. Friday, write release notes by reading through the week's pull requests.",
-      "Every one of these tasks is structured information synthesis. Take data from here, apply judgment, produce output there. This is exactly what agents do.",
+      "Emery's calendar is mostly synthesis: customer notes into themes, specs against acceptance criteria, Jira and Slack into a stakeholder update. Structured information taken from here, filtered through judgment, produced over there. This is exactly what agents do.",
       "\"Discovery,\" Maven says. \"Your agent reads every customer call transcript in the /calls folder, identifies recurring themes, and produces a summary with supporting quotes and links to the original files.\"",
       "\"PRD drafting. The agent reads your product brief, your research summary, your existing PRD template in the skills folder, and produces a first draft that follows YOUR format, grounded in YOUR data.\"",
       "\"Spec review. The agent reads the engineering spec and your acceptance criteria, identifies gaps — missing edge cases, untested scenarios, ambiguous requirements — and flags them with specific questions.\"",
       "Emery has stopped sketching. They're doing math in their head.",
       "\"The cross-referencing alone,\" they say. \"That's half my time. Checking the spec against the PRD against the acceptance criteria against what customers actually said.\"",
       "\"And the agent does it in minutes because it can hold all those files in context simultaneously. You can't. No human can keep six documents in their head at once.\"",
-      "Skeptic, from his chair: \"How good is it, actually? You're describing perfection.\"",
+      "Declan, from his chair: \"How good is it, actually? You're describing perfection.\"",
       "Maven: \"It's not perfect. It misses things. It gets confused by ambiguity. That's why you review the output. But it takes the job from 'synthesize six documents from scratch' to 'review and refine one summary.' That's a different job. A faster one.\"",
     ],
     sources: [
@@ -407,24 +407,24 @@ export const chapters: ChapterData[] = [
     panels: [
       {
         label: "Maven at the whiteboard",
-        description: "Maven taps a flow chart on the whiteboard showing PM intent → Structured context → Agent → Code → Review. Skeptic has uncrossed his arms.",
-        image: "/images/ch08-agentic-teams-frame-a-20260223-124418.png",
+        description: "Maven taps a flow chart on the whiteboard showing PM intent → Structured context → Agent → Code → Review. Declan has uncrossed his arms.",
+        image: "/images/ch08-agentic-teams-frame-a-20260223-190808.png",
         gradient: "warm-accent",
         dialogue: "Your dev team is already using agents. The question is whether you're giving them what they need — or becoming the bottleneck.",
       },
       {
-        label: "Skeptic engages",
-        description: "Skeptic speaks up for the first time in chapters — not objecting, but thinking through a real problem.",
-        image: "/images/ch08-agentic-teams-frame-b-20260223-124418.png",
+        label: "Declan engages",
+        description: "Declan speaks up for the first time in chapters — not objecting, but thinking through a real problem.",
+        image: "/images/ch08-agentic-teams-frame-b-20260223-190808.png",
         gradient: "warm-accent",
         dialogue: "So if engineering is using agents to turn specs into code faster... and the specs are unclear... the agent just builds the wrong thing faster.",
       },
     ],
     body: [
       "This chapter isn't about the PM using agents. It's about the PM's team using agents — and what that means for how PMs work.",
-      "Andrej Karpathy coined \"vibe coding\" in February 2025 — developers describe intent and let AI write code. By late 2025, he updated it to \"agentic engineering.\" What started as a meme became the default. At Anthropic, Claude Code writes 70-90% of code with human review. Their CPO said that for most products, \"it's effectively 100 percent just Claude writing.\" Amodei clarified: \"if Claude is writing 90% of the code, what that means usually is that you need just as many software engineers.\"",
+      "Andrej Karpathy coined \"vibe coding\" in February 2025 — developers describe intent and let AI write code. By late 2025, he updated it to \"agentic engineering.\" At Anthropic, Claude Code writes 70-90% of code with human review. Their CPO said that for most products, \"it's effectively 100 percent just Claude writing\" — but Amodei was clear: you still need just as many engineers.",
       "For a PM, this changes the math. If agents can turn a clear spec into a working feature in hours instead of days, then the quality of the spec is the rate-limiting factor. Ambiguous requirements don't just slow down developers — they slow down agents who follow them literally.",
-      "Skeptic speaks up, and for the first time, he's not objecting. He's thinking.",
+      "Declan speaks up, and for the first time, he's not objecting. He's thinking.",
       "\"So if the agent builds from my spec,\" he says, \"and the spec is vague... it doesn't push back like a developer would. It just builds the wrong thing, confidently and quickly.\"",
       "\"Yes,\" Maven says. \"Which means writing clear, structured specs isn't just good practice anymore. It's an input to a system. Your PRD, your acceptance criteria, your decision log — these are machine-readable now. Agents read them.\"",
       "This is the fourth primitive: legibility. PMs who express intent clearly — in markdown, in structured repos, with good context — become force multipliers. PMs who write ambiguous requirements in unstructured wikis become the bottleneck in an increasingly fast pipeline.",
@@ -461,31 +461,30 @@ export const chapters: ChapterData[] = [
     panels: [
       {
         label: "Emery makes a plan",
-        description: "Emery has their tablet in hand, listing action items. Maven sits back, relaxed, letting Emery lead. Claw'd watches attentively. Skeptic's chair is empty.",
-        image: "/images/ch09-getting-started-frame-a-20260223-124510.png",
+        description: "Emery has their tablet in hand, listing action items. Maven sits back, relaxed, letting Emery lead. Claw'd watches attentively. Declan's chair is empty.",
+        image: "/images/ch09-getting-started-frame-a-20260223-191127.png",
         gradient: "cool",
         dialogue: "Okay. Markdown. GitHub. A project folder with a CLAUDE.md. Start with the drudgery.",
       },
       {
         label: "Claw'd shares its notes",
         description: "Claw'd hops closer to Emery and holds up its notebook with neat notes. Emery smiles warmly at it. Late afternoon light.",
-        image: "/images/ch09-getting-started-frame-b-20260223-124510.png",
+        image: "/images/ch09-getting-started-frame-b-20260223-191127.png",
         gradient: "cool",
         dialogue: "It gets better the more you invest in it. The context, the skills, the corrections — they compound.",
       },
     ],
     body: [
-      "The box is empty. Skeptic's chair is empty too — he left quietly somewhere around Chapter 7, unconverted but no longer arguing. The conversation moved past him.",
+      "The box is empty. Declan's chair is empty too — he left quietly somewhere around Chapter 7, unconverted but no longer arguing. The conversation moved past him.",
       "Emery has their tablet out, making a list.",
       "\"Here's what I'd actually tell you to do,\" Maven says.",
       "Learn markdown. It's formatting, not programming. Bold, headers, bullet points, links — you probably use most of it already in Slack. Markdown is how agents read and write. It's the native language of project files, skills, and documentation.",
       "Get on GitHub. Not to code — to have a shared workspace that agents can also access. Think of it as Dropbox where every change is tracked and every collaborator — human or AI — can see the full history.",
       "Build context into your repos. Write a README for your project. Start a decision log. Add a CLAUDE.md with your preferences and conventions. This investment pays off twice: once for your human teammates, once for the agent.",
-      "Experiment safely. Pick a low-stakes task — a weekly status update, a competitive analysis, an FAQ draft. Try it with an agent. See where it succeeds and where it fails. Learn the edges.",
-      "Audit your drudgery. Which recurring tasks drain you? The ones that are structured, repetitive, and information-heavy are your first candidates.",
-      "Emery looks at the creature on the table. It holds up its notebook, pages full of neat notes from the entire conversation.",
+      "Experiment safely. Pick a low-stakes task — a weekly status update, a competitive analysis, an FAQ draft. Try it with an agent. AI is unpredictably good and unpredictably bad — you can't guess where the edges are. You have to discover them empirically.",
+      "Audit your drudgery. Which recurring tasks drain you? The ones that are structured, repetitive, and information-heavy are your first candidates. Not the creative strategy work — the synthesis and cross-referencing that consumes your Tuesday afternoons.",
       "\"Does it really get better over time?\"",
-      "Maven: \"Every correction you make, every skill you write, every piece of context you add — it compounds. The agent a month from now is better than the agent today, because YOU invested in it. That's the real unlock. Not a smarter model. A better-configured one.\"",
+      "Maven: \"Every correction, every skill, every piece of context compounds. In a month the agent is better — not because the model changed, but because you did. That's the real unlock.\"",
     ],
     sources: [
       {
@@ -509,5 +508,20 @@ export const chapters: ChapterData[] = [
         url: "https://officechai.com/ai/claude-is-like-the-horse-and-claude-code-is-the-harness-anthropics-boris-cherny/",
       },
     ],
+  },
+  {
+    id: "epilogue",
+    number: 10,
+    title: "Epilogue",
+    navLabel: "Epilogue",
+    variant: "epilogue",
+    byline: "Geoff Dudgeon + Claude",
+    panels: [],
+    body: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+    ],
+    sources: [],
   },
 ];

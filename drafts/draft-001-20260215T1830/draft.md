@@ -10,12 +10,12 @@ _Trial run: 2026-02-15. Purpose: expose gaps in project structure. Not intended 
 
 <!-- IMG
 id: ch01-bold-claim
-characters: maven, skeptic
+characters: maven, declan
 aspect: 16:9
 mood: confident, intriguing
-panel_direction: Maven is standing at a whiteboard, drawing a simple diagram. Skeptic sits nearby in an office chair, arms crossed but leaning forward slightly — intrigued despite themselves.
+panel_direction: Maven is standing at a whiteboard, drawing a simple diagram. Declan sits nearby in an office chair, arms crossed but leaning forward slightly — intrigued despite themselves.
 maven_says: "In January 2026, a lawyer at Anthropic — no coding background — built a legal review system using plain English instructions. When they open-sourced it, software stocks dropped $285 billion in a week."
-skeptic_says: "A text file did that?"
+declan_says: "A text file did that?"
 background: A modern office. On the whiteboard behind the Maven, a simple sketch: a document icon with an arrow pointing to a dollar sign with a downward trend line.
 -->
 
@@ -48,16 +48,16 @@ This book is about why that happened — and what it means for your work.
 
 <!-- IMG
 id: ch02-skepticism-earned
-characters: skeptic, maven
+characters: declan, maven
 aspect: 16:9
 mood: frustrated, validating
-panel_direction: Skeptic is animated, counting off on their fingers. Maven sits across from them at a coffee shop table, nodding — not defending, not arguing. A newspaper or tablet between them shows a headline about AI.
-skeptic_says: "A lawyer submitted fake cases to a federal judge because ChatGPT made them up. The AI didn't just get it wrong — it invented six court cases with full citations. And the lawyer said he didn't think it COULD fabricate things."
+panel_direction: Declan is animated, counting off on their fingers. Maven sits across from them at a coffee shop table, nodding — not defending, not arguing. A newspaper or tablet between them shows a headline about AI.
+declan_says: "A lawyer submitted fake cases to a federal judge because ChatGPT made them up. The AI didn't just get it wrong — it invented six court cases with full citations. And the lawyer said he didn't think it COULD fabricate things."
 maven_says: "You're right. That was bad. And it wasn't a fluke."
 background: Coffee shop. Warm lighting. The dynamic is two people having an honest conversation, not a debate.
 -->
 
-{>>GAP-03 (character voice): The Skeptic's dialog here is functional but generic. Without a character profile (age, profession, what specifically burned them on AI, speech patterns), this reads like "generic skeptical person." Need at least a basic voice profile for both characters.<<}
+{>>GAP-03 (character voice): The Declan's dialog here is functional but generic. Without a character profile (age, profession, what specifically burned them on AI, speech patterns), this reads like "generic skeptical person." Need at least a basic voice profile for both characters.<<}
 
 If you tried AI in 2023 and walked away unimpressed — or worse, burned — you were paying attention.
 
@@ -84,11 +84,11 @@ By December, OpenAI's most advanced model had a different problem: it got lazier
 
 <!-- IMG
 id: ch03-hype-graveyard
-characters: skeptic, maven
+characters: declan, maven
 aspect: 16:9
 mood: wry, honest
-panel_direction: Skeptic is sitting back, arms behind head, grinning — they're enjoying this part. Maven leans forward, hands up in a "fair point" gesture. Between them, perhaps on a screen or board, a list or graveyard of failed promises.
-skeptic_says: "AutoGPT got 174,000 GitHub stars and was the number one repository of 2023. It also got stuck in infinite loops all night. Then there was Devin, the 'first AI software engineer' — 85% failure rate."
+panel_direction: Declan is sitting back, arms behind head, grinning — they're enjoying this part. Maven leans forward, hands up in a "fair point" gesture. Between them, perhaps on a screen or board, a list or graveyard of failed promises.
+declan_says: "AutoGPT got 174,000 GitHub stars and was the number one repository of 2023. It also got stuck in infinite loops all night. Then there was Devin, the 'first AI software engineer' — 85% failure rate."
 maven_says: "I'm not going to defend any of that. The vision was right. The execution was a disaster."
 background: Same coffee shop. Maybe a whiteboard or screen behind them listing: AutoGPT, BabyAGI, ChatGPT Plugins, GPT Store, Devin — each with a small X or skull icon.
 -->
@@ -125,11 +125,11 @@ So when someone says "AI agents are different now," your skepticism isn't cynici
 
 <!-- IMG
 id: ch04-the-loop
-characters: skeptic, maven
+characters: declan, maven
 aspect: 16:9
 mood: curious, explanatory
-panel_direction: Maven is at a whiteboard drawing a loop diagram: PLAN → ACT → OBSERVE → ADJUST → (back to PLAN). Skeptic leans forward in their chair, studying the diagram. The dynamic has shifted — Skeptic is curious, not dismissive.
-skeptic_says: "Okay but what happens when it gets the first step wrong?"
+panel_direction: Maven is at a whiteboard drawing a loop diagram: PLAN → ACT → OBSERVE → ADJUST → (back to PLAN). Declan leans forward in their chair, studying the diagram. The dynamic has shifted — Declan is curious, not dismissive.
+declan_says: "Okay but what happens when it gets the first step wrong?"
 maven_says: "It reads the error message and tries a different approach. Like you would."
 background: Office or workshop. The loop diagram is central to the composition. Maybe show a small "before" sketch to one side: a simple arrow from INPUT → OUTPUT (the old model).
 -->
@@ -161,11 +161,11 @@ The loop is also the answer to the AutoGPT failure from the last chapter. AutoGP
 
 <!-- IMG
 id: ch05-memory
-characters: skeptic, maven
+characters: declan, maven
 aspect: 16:9
 mood: surprised, warm
-panel_direction: Maven shows Skeptic a screen or document — a CLAUDE.md file or project instruction document. Skeptic peers at it with genuine surprise. The file should have visible text (even if not fully legible) showing things like "When I say 'format this,' use AP style" or "Always check with legal before publishing."
-skeptic_says: "Wait — I'd have to explain my whole job to it?"
+panel_direction: Maven shows Declan a screen or document — a CLAUDE.md file or project instruction document. Declan peers at it with genuine surprise. The file should have visible text (even if not fully legible) showing things like "When I say 'format this,' use AP style" or "Always check with legal before publishing."
+declan_says: "Wait — I'd have to explain my whole job to it?"
 maven_says: "Once. And then it remembers. Every session after that starts where you left off."
 background: Same setting. The screen/document is the focal point. Maybe show a stack of previous conversations fading behind the current one, to convey persistence.
 -->
@@ -195,11 +195,11 @@ This is the compounding effect. Every correction you make, every preference you 
 
 <!-- IMG
 id: ch06-grounding
-characters: skeptic, maven
+characters: declan, maven
 aspect: 16:9
 mood: revelatory, practical
-panel_direction: Split composition. Left side shows the "old way": a person copy-pasting text from a document into a chat window. Right side shows the "new way": the AI reading directly from a folder of files on a desk/computer. Maven gestures toward the right side. Skeptic looks at the contrast.
-skeptic_says: "How do I know it's not just making things up again?"
+panel_direction: Split composition. Left side shows the "old way": a person copy-pasting text from a document into a chat window. Right side shows the "new way": the AI reading directly from a folder of files on a desk/computer. Maven gestures toward the right side. Declan looks at the contrast.
+declan_says: "How do I know it's not just making things up again?"
 maven_says: "Because this time it's reading your actual documents — not guessing from memory."
 background: The split composition should make the before/after visceral. Left side is cramped, manual, tedious. Right side is clean and direct.
 -->
@@ -231,11 +231,11 @@ Derek DeHart, a product manager, connected Claude Code to Fireflies (call transc
 
 <!-- IMG
 id: ch07-controls
-characters: skeptic, maven
+characters: declan, maven
 aspect: 16:9
 mood: surprised, empowered
-panel_direction: Maven holds up or displays a document/screen showing a skill or rule — written in plain English. Skeptic reads it, eyes widening. The rule should be legible enough to see it's natural language, not code.
-skeptic_says: "That's just... English?"
+panel_direction: Maven holds up or displays a document/screen showing a skill or rule — written in plain English. Declan reads it, eyes widening. The rule should be legible enough to see it's natural language, not code.
+declan_says: "That's just... English?"
 maven_says: "That's the point. 'Always check with me before sending externally.' 'When I say format this, use our house style.' You're not programming — you're setting expectations."
 background: The document/screen should be prominent. Perhaps show a small snippet: "## Rules\n- Never send without approval\n- Use AP style for all public content\n- Flag any contract over $50K"
 -->
@@ -270,13 +270,13 @@ The key insight: you're not programming. You're setting expectations, the way yo
 
 <!-- IMG
 id: ch08-architect
-characters: skeptic, maven
+characters: declan, maven
 aspect: 16:9
 mood: engaged, collaborative
-panel_direction: The dynamic has shifted. Skeptic is leaning forward now, engaged, thinking through implications. They're sketching something — a workflow diagram, an idea, a plan. Maven watches, contributing but not leading. The Skeptic is becoming the architect.
-skeptic_says: "So I'd set up the rules for how my team reviews proposals, define the checklist... and then I'd just review what it produces? Like managing someone?"
+panel_direction: The dynamic has shifted. Declan is leaning forward now, engaged, thinking through implications. They're sketching something — a workflow diagram, an idea, a plan. Maven watches, contributing but not leading. The Declan is becoming the architect.
+declan_says: "So I'd set up the rules for how my team reviews proposals, define the checklist... and then I'd just review what it produces? Like managing someone?"
 maven_says: "Exactly like managing someone. Your job becomes reviewing plans and catching edge cases — not doing the mechanical work."
-background: The Skeptic's engagement is the story. They should look like someone who's starting to see how this fits their own work.
+background: The Declan's engagement is the story. They should look like someone who's starting to see how this fits their own work.
 -->
 
 "Prompt engineering" was a 2023 skill — the art of phrasing your request just right to get a useful response from a chatbot. It mattered because you had one shot. The quality of the output depended on the quality of your input sentence.
@@ -308,11 +308,11 @@ Andrej Karpathy, co-founder of OpenAI, captured the shift in terminology. In Feb
 
 <!-- IMG
 id: ch09-thesis
-characters: skeptic, maven
+characters: declan, maven
 aspect: 16:9
 mood: click-moment, collaborative
-panel_direction: The Skeptic has fully turned. They're at the whiteboard now, drawing or extending a diagram. Maven is behind them, hands in pockets, watching with satisfaction. The Skeptic is the one explaining now — the student has become the teacher. The diagram shows: MODEL (circle) in the center, surrounded by: MEMORY, TOOLS, RULES, LOOP, FILES — the harness components.
-skeptic_says: "So the model is like the engine, but what makes it useful is the steering wheel, the GPS, the mirrors, the road... A 2025 engine in a 2022 chassis is still just a better car that can't go anywhere."
+panel_direction: The Declan has fully turned. They're at the whiteboard now, drawing or extending a diagram. Maven is behind them, hands in pockets, watching with satisfaction. The Declan is the one explaining now — the student has become the teacher. The diagram shows: MODEL (circle) in the center, surrounded by: MEMORY, TOOLS, RULES, LOOP, FILES — the harness components.
+declan_says: "So the model is like the engine, but what makes it useful is the steering wheel, the GPS, the mirrors, the road... A 2025 engine in a 2022 chassis is still just a better car that can't go anywhere."
 maven_says: "Now you're getting it."
 background: Bright. Energized. The whiteboard diagram is the hero of the shot. The relationship between the characters has fundamentally shifted — they're peers now.
 -->

@@ -43,7 +43,7 @@ Mood: Earnest, lived-in, warm. The world of this book is optimistic but not utop
 *(Populated when character reference sheets are generated)*
 
 - **Maven** (woman): Medium-brown skin, shoulder-length black hair (tucked behind ear), round wire-frame glasses, slight build. Sage shirt, charcoal trousers. Fully saturated — pops off muted background. Ref: `assets/characters/maven-ref-sheet.png`
-- **Skeptic** (man): Light olive skin, short dark brown hair (slightly unkempt), hazel eyes, no glasses, medium build. Navy sweater, dark jeans. Warmer/darker tones than Maven. Ref: `assets/characters/skeptic-ref-sheet.png`
+- **Declan** (man): Light olive skin, short dark brown hair (slightly unkempt), hazel eyes, no glasses, medium build. Navy sweater, dark jeans. Warmer/darker tones than Maven. Ref: `assets/characters/declan-ref-sheet.png`
 
 ---
 

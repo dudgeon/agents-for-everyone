@@ -559,13 +559,14 @@ Generate Frame A as a clean illustration panel. No speech bubbles or text — di
         comic_id=comic_id, frame="a", backend="gemini",
     )
 
-    # --- Frame B — conversation context carries character identity ---
-    frame_b_prompt = f"""{frozen_preamble}
+    # --- Frame B — trust the chat session; do NOT repeat frozen preamble ---
+    frame_b_prompt = f"""Now generate Frame B of 2, continuing directly from Frame A.
+Use the SAME characters — identical appearance, identical clothing, identical art style.
+Do not re-interpret any character designs from the preamble.
 
-FRAME B of 2 (continuing directly from Frame A):
-{frame_b_desc}
+SETTING (unchanged): {setting}
 
-WHAT MUST STAY THE SAME: characters' faces and bodies, the setting, the lighting, the art style.
+FRAME B: {frame_b_desc}
 
 Generate Frame B as a clean illustration panel. No speech bubbles or text."""
 

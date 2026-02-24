@@ -11,34 +11,34 @@ _Status: First draft of new story package_
 
 <!-- COMIC
 id: ch01-the-box
-characters: maven, skeptic, clawd
+characters: maven, declan, clawd
 aspect: 16:9
 render: carousel-mobile, side-by-side-desktop
 
-setting: Modern open-plan office kitchen/lounge area. A communal table with laptops and coffee mugs. Warm overhead pendant lights. A large cardboard box sits on the table, lid slightly ajar, with a faint warm glow coming from inside. Maven stands beside it, one hand on the box. Skeptic sits at the table across from her.
+setting: Modern open-plan office kitchen/lounge area. A communal table with laptops and coffee mugs. Warm overhead pendant lights. A large cardboard box sits on the table, lid slightly ajar, with a faint warm glow coming from inside. Maven stands beside it, one hand on the box. Declan sits at the table across from her.
 
 frame_a:
-  action: Maven stands beside the box, one hand resting on the lid, leaning forward with visible excitement. Skeptic sits at the table, coffee in hand, leaning back in his chair with arms loosely crossed.
+  action: Maven stands beside the box, one hand resting on the lid, leaning forward with visible excitement. Declan sits at the table, coffee in hand, leaning back in his chair with arms loosely crossed.
   expression_maven: excited, barely-contained energy
-  expression_skeptic: unimpressed, bracing himself
+  expression_declan: unimpressed, bracing himself
   dialogue: ["You need to stop what you're doing and look at this.", ""]
 
 frame_b:
-  action: Skeptic gestures dismissively with his coffee hand, not moving from his chair. Maven's hand tightens on the box lid, undeterred.
+  action: Declan gestures dismissively with his coffee hand, not moving from his chair. Maven's hand tightens on the box lid, undeterred.
   expression_maven: determined, amused
-  expression_skeptic: dry, eyebrow raised
+  expression_declan: dry, eyebrow raised
   dialogue: ["", "If this is another AI demo, I'm going back to my Jira board."]
 -->
 
-Maven has never been shy about new tools, but today she's practically vibrating. She walks into the office kitchen carrying a cardboard box, sets it on the communal table with a deliberate thunk, and locks eyes with Skeptic across his laptop screen.
+Maven has never been shy about new tools, but something about today is different. She walks into the office kitchen carrying a cardboard box, sets it on the communal table with a deliberate thunk. Declan is across the table, barely glancing up from his laptop.
 
 "Coding agents," she says. "But not for coding."
 
-Skeptic doesn't look up. He's a product manager, same as Maven, and he's been a product manager long enough to have sat through the last three waves of "this changes everything." He watched his company buy a ChatGPT Enterprise license in 2023. He watched his team try AutoGPT and lose a weekend to infinite loops. He heard about Devin, the "first AI software engineer," and watched the benchmarks quietly reveal it failed 85% of the time.
+Declan doesn't look up. He's a product manager, same as Maven, and he's sat through enough waves of "this changes everything" to have stopped counting. ChatGPT Enterprise in 2023. AutoGPT eating a whole weekend to infinite loops. Devin — the "first AI software engineer" — that quietly failed 85% of real-world tests.
 
-"I don't code," he says. "I write PRDs. I wrangle stakeholders. I sit in meetings about meetings. If your magic box needs a terminal, I'm not interested." {>>GAP-01 (voice): Skeptic's dismissal could be sharper — this reads a bit generic. Need a specific bad experience he can reference, like the time the team spent a sprint on an AI-generated spec that was plausible but completely wrong.<<}
+"I don't code," he says. "I write PRDs. I wrangle stakeholders. I sit in meetings about meetings. Last quarter my team spent a sprint building from an AI-generated spec that was plausible and completely wrong. If your magic box needs a terminal, I'm not interested."
 
-Maven opens her mouth to argue, then stops herself. She knows Skeptic well enough to know that arguing won't work. He's not uninformed — he's informed and burned. The distinction matters.
+Maven doesn't argue. He's not uninformed — he's informed and burned.
 
 "Just — hold that thought for five minutes," she says. "Someone else is coming."
 
@@ -58,31 +58,31 @@ Maven opens her mouth to argue, then stops herself. She knows Skeptic well enoug
 
 <!-- COMIC
 id: ch02-emery-enters
-characters: maven, skeptic, emery
+characters: maven, declan, emery
 aspect: 16:9
 render: carousel-mobile, side-by-side-desktop
 
-setting: Same office kitchen/lounge. The box still sits on the table, lid ajar with a faint glow. Maven stands beside it. Skeptic still seated. Emery has just walked in, tablet tucked under one arm, stylus behind their ear, teal cardigan over a gray tee.
+setting: Same office kitchen/lounge. The box still sits on the table, lid ajar with a faint glow. Maven stands beside it. Declan still seated. Emery has just walked in, tablet tucked under one arm, stylus behind their ear, teal cardigan over a gray tee.
 
 frame_a:
-  action: Emery pulls out a chair and sits down, placing their tablet on the table. They glance at the box curiously. Maven turns to greet them warmly. Skeptic watches with mild interest.
+  action: Emery pulls out a chair and sits down, placing their tablet on the table. They glance at the box curiously. Maven turns to greet them warmly. Declan watches with mild interest.
   expression_maven: welcoming, gesturing Emery in
   expression_emery: curious, glancing at the box
-  expression_skeptic: neutral, observing
+  expression_declan: neutral, observing
   dialogue: ["Perfect timing. Tell him how you use AI.", ""]
 
 frame_b:
   action: Emery shrugs casually, one hand on their tablet. They're comfortable, not defensive.
   expression_emery: self-aware, slightly amused
-  expression_skeptic: leaning forward slightly, interested despite himself
+  expression_declan: leaning forward slightly, interested despite himself
   dialogue: ["", "I mean, I use Gemini? Like, every day. It's basically replaced Google for me."]
 -->
 
-Emery is a PM on the platform team. They're younger than Skeptic, more comfortable with new tools, and less interested in debating whether AI is real. They use it. It's fine.
+Emery is a PM on the platform team. They use AI. It's fine.
 
 They describe their current setup: Gemini for quick questions instead of search. A writing assistant for first drafts of customer-facing docs. A text file on their desktop — "prompts.txt" — with their twenty most-used prompts, organized by task. On a recent weekend, they tried Lovable to prototype a feature tracker app. It almost worked.
 
-"The thing is," Emery says, "it's all... disconnected. I copy-paste my context into a chat window every time. It doesn't know my project. It doesn't remember what I told it yesterday. I have to re-explain who our users are every single conversation." {>>GAP-02 (specificity): Emery's pain points need one more concrete, vivid example. Something like: "Last week I pasted our PRD into Gemini for the third time and it still asked me what our target audience was."<<}
+"The thing is," Emery says, "it's all disconnected. I copy-paste context into a chat window every time. It doesn't know my project. It doesn't remember yesterday. Last week I pasted our PRD into Gemini for the third time and it still asked me what our target audience was."
 
 Maven nods. "That's exactly right."
 
@@ -108,42 +108,40 @@ Maven's hand drifts back to the box on the table.
 
 <!-- COMIC
 id: ch03-the-unboxing
-characters: maven, skeptic, emery, clawd
+characters: maven, declan, emery, clawd
 aspect: 16:9
 render: carousel-mobile, side-by-side-desktop
 
-setting: Same office kitchen/lounge. Maven has her hands on the box lid. Emery leans forward in their chair. Skeptic watches from across the table. The warm glow from inside the box is brighter now.
+setting: Same office kitchen/lounge. Maven has her hands on the box lid. Emery leans forward in their chair. Declan watches from across the table. The warm glow from inside the box is brighter now.
 
 frame_a:
-  action: Maven lifts the box lid. Warm light spills out. Claw'd is visible inside — a small boxy terracotta creature with dark square eyes, a leaf sprout on its head, and a tiny notebook. Emery's eyes go wide. Skeptic's coffee cup freezes halfway to his mouth.
+  action: Maven lifts the box lid. Warm light spills out. Claw'd is visible inside — a small boxy terracotta creature with dark square eyes, a leaf sprout on its head, and a tiny notebook. Emery's eyes go wide. Declan's coffee cup freezes halfway to his mouth.
   expression_maven: proud, presenting
   expression_emery: delighted, eyes wide
-  expression_skeptic: caught off guard, frozen mid-sip
+  expression_declan: caught off guard, frozen mid-sip
   dialogue: ["A chatbot answers questions in a window. An agent operates in your world.", ""]
 
 frame_b:
   action: Claw'd has climbed out of the box and sits on the table, notebook open, tiny pencil in hand, looking up at the three humans. Emery reaches a hand toward it instinctively. Maven gestures at Claw'd.
   expression_maven: warm, gesturing at Claw'd
   expression_emery: reaching out, curious
-  expression_skeptic: skeptical but looking at Claw'd
+  expression_declan: skeptical but looking at Claw'd
   dialogue: ["", "It has a notebook?"]
 -->
 
-Maven lifts the lid. Inside is something small and warm-colored — a boxy terracotta creature with dark square eyes, a tiny sprout on its head, and a leather-bound notebook clasped in stubby hands. It blinks, looks around, and climbs out onto the table.
+Maven lifts the lid. Something small and warm-colored climbs out onto the table, notebook open.
 
 "A chatbot," Maven says, "is a text box. You type a question, it types an answer. It doesn't know your files, it can't use your tools, and it forgets everything the moment you close the tab."
 
-She gestures at the creature now sitting on the table, notebook open.
-
-"An agent is different. It can read your project folder. It can search the web. It can connect to your tools — Jira, Slack, Google Drive. It follows rules you write for it. And it doesn't just answer — it plans, tries something, checks if it worked, and adjusts. Like a junior teammate who actually listens."
+"An agent is different. It reads your project folder. It connects to your tools — Jira, Slack, Google Drive. It follows rules you write for it. And it doesn't just answer — it plans, tries something, checks if it worked, and adjusts. Like a junior teammate who actually listens."
 
 Emery gets it immediately. "So instead of pasting my PRD into a chat window..."
 
-"The agent reads your PRD directly. It reads your CLAUDE.md — that's basically an instruction file that tells it who you are, what your project is, how you like things done. It reads your whole repo."
+"The agent reads your PRD directly. It reads your CLAUDE.md — a persistent instruction file that tells it who you are, what your project is, how you like things done. Your whole repo is its context."
 
-Skeptic sets down his coffee. "Plan, try, check, adjust. That's what AutoGPT promised. It got stuck in loops." {>>GAP-03 (counter-argument): Maven needs a stronger rebuttal here. The difference between 2023 agents and 2025 agents isn't just "models got better" — it's specific harness innovations (checkpoints, context compaction, human-in-the-loop). Should name at least one.<<}
+Declan sets down his coffee. "Plan, try, check, adjust. That's what AutoGPT promised. It got stuck in loops."
 
-"AutoGPT was the right idea two years early," Maven says. "The models weren't good enough and the harness wasn't smart enough. Both of those things changed."
+"AutoGPT was the right idea two years early," Maven says. "The models weren't good enough and the harness wasn't smart enough. Models learned to recognize when they were stuck. The harness learned to checkpoint progress, compact context, and ask for help instead of looping."
 
 ### Sources
 
@@ -161,7 +159,7 @@ Skeptic sets down his coffee. "Plan, try, check, adjust. That's what AutoGPT pro
 
 <!-- COMIC
 id: ch04-files-context
-characters: maven, emery, skeptic, clawd
+characters: maven, emery, declan, clawd
 aspect: 16:9
 render: carousel-mobile, side-by-side-desktop
 
@@ -171,7 +169,7 @@ frame_a:
   action: Maven points at the folder structure on the laptop screen. Claw'd is flipping through its notebook, mirroring the file browsing. Emery leans forward, tablet forgotten.
   expression_maven: explaining, pointing at screen
   expression_emery: leaning in, aha moment dawning
-  expression_skeptic: watching from behind, arms still crossed but closer to the group
+  expression_declan: watching from behind, arms still crossed but closer to the group
   dialogue: ["See this file? CLAUDE.md. The agent reads it every time you start a session. Your project context, your preferences, your conventions — all in one place.", ""]
 
 frame_b:
@@ -193,11 +191,11 @@ Emery stares. "And it... just reads my files?"
 
 This is the first primitive: **filesystem access**. The agent doesn't operate in a chat window — it operates in your project folder. It reads what's there. It creates new files. It updates existing ones. The difference between describing your kitchen over the phone and letting the chef walk in.
 
-Teresa Torres, a product discovery coach, broke her entire workflow into small markdown files — one per topic, one per client, one per research theme. Instead of crafting elaborate prompts, she just works. The agent reads what it needs. She calls it "lazy prompting." {>>GAP-04 (PM examples): Need a more vivid PM-specific example here. Torres is great but she's a consultant. What does this look like for a PM at a Series B company with a messy Confluence wiki and a half-maintained Jira board?<<}
+Teresa Torres, a product discovery coach, broke her entire workflow into small markdown files — one per topic, one per client, one per research theme. Instead of crafting elaborate prompts, she just works. The agent reads what it needs. She calls it "lazy prompting."
 
-Skeptic, from behind them: "So it reads everything. Including the stuff that's wrong?"
+Declan, from behind them: "So it reads everything. Including the stuff that's wrong?"
 
-Maven: "Yes. Which is why the files matter. Garbage context, garbage output. But here's the thing — investing in good project documentation now helps your human teammates AND the agent. It's the same investment paying off twice."
+Maven: "Yes. Which is why the files matter. Garbage context, garbage output. Investing in good project documentation helps your human teammates AND the agent — the same investment paying off twice."
 
 ### Sources
 
@@ -219,7 +217,7 @@ characters: maven, emery, clawd
 aspect: 16:9
 render: carousel-mobile, side-by-side-desktop
 
-setting: Closer angle on the table. Claw'd is sitting between Maven and Emery, notebook open to a page with a neat checklist. Maven has pulled up a text file on the laptop showing structured markdown — a skill definition. Emery is taking notes on their tablet with the stylus from behind their ear. Skeptic is visible in the background, chair pushed back slightly, listening but not participating.
+setting: Closer angle on the table. Claw'd is sitting between Maven and Emery, notebook open to a page with a neat checklist. Maven has pulled up a text file on the laptop showing structured markdown — a skill definition. Emery is taking notes on their tablet with the stylus from behind their ear. Declan is visible in the background, chair pushed back slightly, listening but not participating.
 
 frame_a:
   action: Maven points at a section of the skill file on screen. Claw'd looks up attentively, pencil poised. Emery has pulled the stylus from behind their ear and is sketching on their tablet.
@@ -234,7 +232,7 @@ frame_b:
   dialogue: ["", "So it's like onboarding documentation... but the documentation actually gets read?"]
 -->
 
-Every PM has a way they do things. A format for PRDs. A checklist for launch readiness. A set of questions they always ask in customer interviews. Usually this lives in their head, in a Google Doc nobody reads, or in tribal knowledge that evaporates when someone changes teams.
+Every PM has a way they do things. Format for PRDs, launch checklists, interview questions. Usually it lives in their head or a Google Doc nobody reads — tribal knowledge that evaporates when someone changes teams.
 
 "Skills," Maven says, opening a file on the laptop, "are how you teach the agent your way of working."
 
@@ -242,13 +240,13 @@ A skill file is structured text — markdown, not code — that describes a spec
 
 "It's like onboarding a new hire," Emery says slowly, "except they actually retain what you told them."
 
-"Exactly. And it compounds. You correct the agent on something — say, the way you prefer acceptance criteria written — and you update the skill file. Next time, it gets it right. The correction persists."
+"Exactly. And it compounds. You correct the agent — say, the way you prefer acceptance criteria written — and update the skill file. Next time, it gets it right without being told."
 
-This is the second primitive: **persistent instructions**. The agent isn't a blank slate every conversation. CLAUDE.md gives it project context. Skills give it task-specific expertise. Together, they create alignment without fine-tuning — the model is the same for everyone, but the instructions make it behave like YOUR expert. {>>GAP-05 (concreteness): Would be stronger with a specific before/after. "Before: you tell Gemini 'write a PRD' and get generic output. After: the agent reads your PRD skill, follows your format, checks against your acceptance criteria template, and grounds claims in data from the /research folder."<<}
+This is the second primitive: **persistent instructions**. CLAUDE.md gives the agent project context. Skills give it task-specific expertise. Before: you tell Gemini "write a PRD" and get generic output. After: the agent reads your PRD skill, follows your format, checks against your acceptance criteria template, and grounds claims in data from the /research folder. The model is the same for everyone — the instructions make it behave like YOUR expert.
 
 Hilary Gridley, a product exec at WHOOP, took this further. She reverse-engineered her own judgment by feeding before/after examples of her slide feedback to a custom GPT, then told it "be 100 times more specific." The result was a "Deck Doctor" that evaluates presentations using HER standards — consistently, at scale, without her reviewing every deck.
 
-Skeptic, from the background: "So you're encoding your preferences in text files and hoping the AI follows them?"
+Declan, from the background: "So you're encoding your preferences in text files and hoping the AI follows them?"
 
 Maven: "Not hoping. Testing. You run it, review the output, adjust the instructions. Same way you'd manage anyone."
 
@@ -272,7 +270,7 @@ characters: maven, emery, clawd
 aspect: 16:9
 render: carousel-mobile, side-by-side-desktop
 
-setting: The laptop screen now shows a terminal/command output with a list of completed actions: "Searched 4 databases... Updated Jira ticket... Created summary.md..." Claw'd is sitting near the laptop, notebook filled with checkmarks. Maven leans against the table. Emery is on the edge of their seat. Skeptic is visible in background, having moved his chair slightly closer.
+setting: The laptop screen now shows a terminal/command output with a list of completed actions: "Searched 4 databases... Updated Jira ticket... Created summary.md..." Claw'd is sitting near the laptop, notebook filled with checkmarks. Maven leans against the table. Emery is on the edge of their seat. Declan is visible in background, having moved his chair slightly closer.
 
 frame_a:
   action: Maven gestures at the terminal output. Claw'd's notebook page is full of completed checkmarks. Emery reads the output, mouth slightly open.
@@ -289,17 +287,17 @@ frame_b:
 
 Emery has used AI to draft emails, brainstorm feature names, and summarize meeting notes. In every case, the output was text. Suggestions. Ideas. Things they had to copy-paste into the actual tool and then do the work themselves.
 
-"Watch this," Maven says. She types a single prompt: *Analyze Q4 usage data in the /data folder, identify the three features with the highest drop-off between signup and week-2, cross-reference against the open issues in our backlog, and draft a summary with recommended priorities for the planning meeting.*
+"Watch this," Maven says. She types: *Analyze Q4 usage data, find the three features with the highest signup-to-week-2 drop-off, cross-reference our backlog, and draft priorities for planning.*
 
 The agent reads the CSV files. It writes and runs an analysis script. It searches the backlog folder for related issues. It produces a markdown summary with three feature recommendations, each grounded in specific data points and linked to existing tickets.
 
 "It didn't give me a suggestion," Maven says. "It did the work."
 
-This is the third primitive: **tool use and actions.** Through MCP — the Model Context Protocol — agents can connect to the tools you already use: Jira, Slack, Google Drive, databases, web search, APIs. The agent doesn't just generate text. It queries, updates, creates, and organizes.
+This is the third primitive: **tool use and actions.** Through MCP — think of it as USB ports for AI, letting you plug your existing tools in — agents connect to Jira, Slack, Google Drive, databases, web search, APIs. The agent doesn't just generate text. It queries, updates, creates, and organizes.
 
-Reid Robinson, a PM at Zapier, connected his agent to HubSpot, Coda, and Fireflies via MCP. Now, after every customer call, the agent automatically reads the transcript, searches his CRM for the contact, enriches the record, and creates a follow-up task. A fifteen-minute manual workflow became a single copy-paste. {>>GAP-06 (MCP explanation): MCP might need a one-sentence plain-English explanation for the target audience. "Model Context Protocol" is jargon. Something like: "MCP is a way to plug your existing tools into the agent — think of it as USB ports for AI."<<}
+Reid Robinson, a PM at Zapier, connected his agent to HubSpot, Coda, and Fireflies via MCP. After every customer call, the agent reads the transcript, searches his CRM for the contact, enriches the record, and creates a follow-up task. A fifteen-minute manual workflow reduced to one step.
 
-Skeptic, now closer to the group than before: "And when it does something wrong? When it updates the wrong ticket?"
+Declan, now closer to the group than before: "And when it does something wrong? When it updates the wrong ticket?"
 
 Maven: "You review before it acts. Most agents have approval gates — they show you what they're about to do and wait for a thumbs up. Same as reviewing a junior's PR."
 
@@ -323,7 +321,7 @@ characters: maven, emery, clawd
 aspect: 16:9
 render: carousel-mobile, side-by-side-desktop
 
-setting: The table now has multiple items spread across it — the laptop, Emery's tablet with sketches, printouts of a feature spec. Claw'd is walking between items like a tiny project manager, notebook open. Maven and Emery are deep in conversation. Skeptic is in the background, chair turned toward them, listening with an expression that's more thoughtful than dismissive.
+setting: The table now has multiple items spread across it — the laptop, Emery's tablet with sketches, printouts of a feature spec. Claw'd is walking between items like a tiny project manager, notebook open. Maven and Emery are deep in conversation. Declan is in the background, chair turned toward them, listening with an expression that's more thoughtful than dismissive.
 
 frame_a:
   action: Maven counts on her fingers as she lists use cases. Claw'd follows along, flipping notebook pages. Emery's tablet shows what looks like a rough workflow diagram they've been sketching.
@@ -338,25 +336,23 @@ frame_b:
   dialogue: ["", "Half my week is synthesizing information that already exists in four different places. That's what this does?"]
 -->
 
-Emery's week looks like this: Monday, synthesize customer interview notes into themes. Tuesday, update the PRD with findings. Wednesday, review engineering specs against acceptance criteria — by hand, in a Google Doc, switching between three tabs. Thursday, compile a stakeholder update from Jira, Slack, and the sprint retro notes. Friday, write release notes by reading through the week's pull requests.
+Emery's calendar is mostly synthesis: customer notes into themes, specs against acceptance criteria, Jira and Slack into a stakeholder update. Structured information taken from here, filtered through judgment, produced over there.
 
-Every one of these tasks is structured information synthesis. Take data from here, apply judgment, produce output there. This is exactly what agents do. {>>GAP-07 (before/after): Each task in this list deserves a one-liner showing the before/after. "Monday: 3 hours reading transcripts → agent reads transcripts from /calls, produces themed summary in 10 minutes." Would make the chapter much more concrete.<<}
+"Discovery," Maven says. "Your agent reads every call transcript in the /calls folder, identifies recurring themes, and produces a summary with supporting quotes. Derek DeHart does this — his agent synthesizes evidence for and against product hypotheses across dozens of calls."
 
-"Discovery," Maven says. "Your agent reads every customer call transcript in the /calls folder, identifies recurring themes, and produces a summary with supporting quotes and links to the original files. Derek DeHart at his company does this — his agent synthesizes evidence for and against product hypotheses across dozens of calls."
+"PRD drafting. It pulls your product brief, your research, your existing template from the skills folder, and produces a first draft that follows YOUR format, grounded in YOUR data."
 
-"PRD drafting. The agent reads your product brief, your research summary, your existing PRD template in the skills folder, and produces a first draft that follows YOUR format, grounded in YOUR data. Not a generic template. Your template, your data."
-
-"Spec review. The agent reads the engineering spec and your acceptance criteria, identifies gaps — missing edge cases, untested scenarios, ambiguous requirements — and flags them with specific questions."
+"Spec review. It compares the engineering spec against your acceptance criteria and flags gaps — missing edge cases, untested scenarios, ambiguous requirements — with specific questions."
 
 Emery has stopped sketching. They're doing math in their head.
 
 "The cross-referencing alone," they say. "That's half my time. Checking the spec against the PRD against the acceptance criteria against what customers actually said."
 
-"And the agent does it in minutes because it can hold all those files in context simultaneously. You can't. No human can keep six documents in their head at once."
+"And the agent does it in minutes because it can hold all those files in context simultaneously."
 
-Skeptic, from his chair: "How good is it, actually? You're describing perfection."
+Declan, from his chair: "How good is it, actually? You're describing perfection."
 
-Maven: "It's not perfect. It misses things. It gets confused by ambiguity. That's why you review the output. But it takes the job from 'synthesize six documents from scratch' to 'review and refine one summary.' That's a different job. A faster one."
+Maven: "It's not perfect — it misses things, gets confused by ambiguity. But it shifts the job from 'synthesize six documents from scratch' to 'review and refine one summary.' That's different. Faster."
 
 ### Sources
 
@@ -374,37 +370,35 @@ Maven: "It's not perfect. It misses things. It gets confused by ambiguity. That'
 
 <!-- COMIC
 id: ch08-agentic-teams
-characters: maven, emery, skeptic, clawd
+characters: maven, emery, declan, clawd
 aspect: 16:9
 render: carousel-mobile, side-by-side-desktop
 
-setting: Maven has drawn a simple diagram on a whiteboard in the background: a flow chart showing "PM intent" → "Structured context" → "Agent" → "Code/Output" → "Review". Claw'd sits near the whiteboard, having contributed a small doodle. Emery and Skeptic are both now facing the whiteboard.
+setting: Maven has drawn a simple diagram on a whiteboard in the background: a flow chart showing "PM intent" → "Structured context" → "Agent" → "Code/Output" → "Review". Claw'd sits near the whiteboard, having contributed a small doodle. Emery and Declan are both now facing the whiteboard.
 
 frame_a:
-  action: Maven taps the "PM intent → Structured context" part of the diagram. Both Emery and Skeptic are looking at it. Skeptic has uncrossed his arms for the first time.
+  action: Maven taps the "PM intent → Structured context" part of the diagram. Both Emery and Declan are looking at it. Declan has uncrossed his arms for the first time.
   expression_maven: serious, this is the key point
   expression_emery: focused, thinking about implications
-  expression_skeptic: arms uncrossed, brow furrowed in thought
+  expression_declan: arms uncrossed, brow furrowed in thought
   dialogue: ["Your dev team is already using agents. The question is whether you're giving them what they need — or becoming the bottleneck.", ""]
 
 frame_b:
-  action: Skeptic speaks up for the first time in several chapters, not objecting but thinking through a real problem.
-  expression_skeptic: engaged, working through an idea
+  action: Declan speaks up for the first time in several chapters, not objecting but thinking through a real problem.
+  expression_declan: engaged, working through an idea
   expression_maven: nodding, inviting him in
   dialogue: ["", "So if engineering is using agents to turn specs into code faster... and the specs are unclear... the agent just builds the wrong thing faster."]
 -->
 
 This chapter isn't about the PM using agents. It's about the PM's team using agents — and what that means for how PMs work.
 
-Andrej Karpathy coined "vibe coding" in February 2025 — developers describe intent and let AI write code. By late 2025, he updated it to "agentic engineering." What started as a meme became the default. At Anthropic, Claude Code writes 70-90% of code with human review. Their CPO said that for most products, "it's effectively 100 percent just Claude writing." {>>GAP-08 (balance): This could read as threatening to the audience. Need to add the Amodei clarification immediately: "if Claude is writing 90% of the code, what that means usually is that you need just as many software engineers." The point isn't replacing people — it's accelerating the intent-to-code pipeline.<<}
+Andrej Karpathy coined "vibe coding" in February 2025 — developers describe intent and let AI write code. By late 2025, he updated it to "agentic engineering." At Anthropic, Claude Code writes 70-90% of code with human review. Their CPO said that for most products, "it's effectively 100 percent just Claude writing." Amodei clarified: "If Claude is writing 90% of the code, you still need just as many software engineers." The point isn't fewer people — it's faster intent-to-output.
 
-For a PM, this changes the math. If agents can turn a clear spec into a working feature in hours instead of days, then the quality of the spec is the rate-limiting factor. Ambiguous requirements don't just slow down developers — they slow down agents who follow them literally.
+If agents can turn a clear spec into a working feature in hours instead of days, the quality of the spec becomes the rate-limiting factor. Ambiguous requirements don't just slow down developers — they slow down agents who follow them literally.
 
-Skeptic speaks up, and for the first time, he's not objecting. He's thinking.
+"So if the agent builds from my spec," Declan says, "and the spec is vague... it doesn't push back like a developer would. It just builds the wrong thing, confidently and quickly."
 
-"So if the agent builds from my spec," he says, "and the spec is vague... it doesn't push back like a developer would. It just builds the wrong thing, confidently and quickly."
-
-"Yes," Maven says. "Which means writing clear, structured specs isn't just good practice anymore. It's an input to a system. Your PRD, your acceptance criteria, your decision log — these are machine-readable now. Agents read them."
+"Yes," Maven says. "Your PRD, your acceptance criteria, your decision log — these are machine-readable now. Clear specs aren't just good practice. They're an input to a system."
 
 This is the fourth primitive: **legibility.** PMs who express intent clearly — in markdown, in structured repos, with good context — become force multipliers. PMs who write ambiguous requirements in unstructured wikis become the bottleneck in an increasingly fast pipeline.
 
@@ -430,7 +424,7 @@ characters: maven, emery, clawd
 aspect: 16:9
 render: carousel-mobile, side-by-side-desktop
 
-setting: The office kitchen is quieter now. The box is empty on the table. Claw'd sits at the table's edge, notebook full of notes, pencil resting. Maven and Emery sit across from each other, tablets and laptops aside, talking directly. Skeptic's chair is empty — he left at some point. Warm, late-afternoon light.
+setting: The office kitchen is quieter now. The box is empty on the table. Claw'd sits at the table's edge, notebook full of notes, pencil resting. Maven and Emery sit across from each other, tablets and laptops aside, talking directly. Declan's chair is empty — he left at some point. Warm, late-afternoon light.
 
 frame_a:
   action: Emery has their tablet in hand, listing things on the screen. Maven sits back, relaxed, letting Emery lead. Claw'd watches them, attentive.
@@ -445,27 +439,25 @@ frame_b:
   dialogue: ["It gets better the more you invest in it. The context, the skills, the corrections — they compound.", ""]
 -->
 
-The box is empty. Skeptic's chair is empty too — he left quietly somewhere around Chapter 7, unconverted but no longer arguing. The conversation moved past him.
+The box is empty. Declan's chair is empty too — he left quietly somewhere around Chapter 7. Not converted, but no longer arguing.
 
 Emery has their tablet out, making a list.
 
 "Here's what I'd actually tell you to do," Maven says.
 
-**Learn markdown.** It's formatting, not programming. Bold, headers, bullet points, links — you probably use most of it already in Slack. Markdown is how agents read and write. It's the native language of project files, skills, and documentation. Learning it takes an afternoon. {>>GAP-09 (resource): Need a specific "start here" resource for markdown. Something like "markdowntutorial.com takes 20 minutes."<<}
+**Learn markdown.** It's formatting, not programming. Bold, headers, bullet points, links — you probably use most of it already in Slack. Markdown is how agents read and write. It's the native language of project files, skills, and documentation. markdowntutorial.com takes twenty minutes.
 
 **Get on GitHub.** Not to code — to have a shared workspace that agents can also access. Think of it as Dropbox where every change is tracked and every collaborator (human or AI) can see the full history. Your decision logs, your specs, your research — put them in a repo.
 
 **Build context into your repos.** Write a README for your project. Start a decision log. Add a CLAUDE.md with your preferences and conventions. This investment pays off twice: once for your human teammates, once for the agent.
 
-**Experiment safely.** Pick a low-stakes task — a weekly status update, a competitive analysis, an FAQ draft. Try it with an agent. See where it succeeds and where it fails. Learn the edges. Mollick's jagged frontier is real: you can't predict where the AI will be brilliant and where it will fall flat. You have to discover it empirically.
+**Experiment safely.** Pick a low-stakes task — a weekly status update, a competitive analysis, an FAQ draft. Try it with an agent. See where it succeeds and where it fails. AI is unpredictably good and unpredictably bad — you can't guess where the edges are. You have to discover them empirically.
 
 **Audit your drudgery.** Which recurring tasks drain you? The ones that are structured, repetitive, and information-heavy are your first candidates. Not the creative strategy work — the synthesis, formatting, and cross-referencing that consumes your Tuesday afternoons.
 
-Emery looks at the creature on the table. It holds up its notebook, pages full of neat notes from the entire conversation.
-
 "Does it really get better over time?"
 
-Maven: "Every correction you make, every skill you write, every piece of context you add — it compounds. The agent a month from now is better than the agent today, because YOU invested in it. That's the real unlock. Not a smarter model. A better-configured one."
+Maven: "Every correction, every skill, every piece of context compounds. In a month the agent is better — not because the model changed, but because you did. That's the real unlock."
 
 ### Sources
 
@@ -486,16 +478,28 @@ This draft introduces the new story package — three characters, the unboxing m
 **What's working:**
 - Three-character dynamic feels natural. Emery as audience surrogate works — their questions ARE the reader's questions.
 - The unboxing metaphor gives the story a physical anchor. Claw'd on the table is visual and memorable.
-- Skeptic fading out (present but increasingly silent) feels more realistic than a conversion arc.
+- Declan fading out (present but increasingly silent) feels more realistic than a conversion arc.
 - COMIC specs include all four characters with distinct expressions and actions.
 
-**Gaps identified inline (9 total):**
-- GAP-01: Skeptic needs a sharper specific bad experience
-- GAP-02: Emery needs one more vivid copy-paste pain point
-- GAP-03: Maven's AutoGPT rebuttal needs specific harness innovations, not just "things changed"
-- GAP-04: PM-specific filesystem example beyond Teresa Torres (who's a consultant)
-- GAP-05: Skills chapter needs a concrete before/after for PRD drafting
-- GAP-06: MCP needs a plain-English one-sentence explanation for non-technical readers
-- GAP-07: Chapter 7 PM lifecycle needs before/after timing for each task
-- GAP-08: Agentic engineering section needs to immediately address the "replacing people" anxiety
-- GAP-09: Getting started chapter needs specific learning resources
+**Gaps from self-review (all 9 addressed in revision pass):**
+- GAP-01: Added specific bad experience (AI-generated spec that was plausible and wrong)
+- GAP-02: Added vivid copy-paste example (pasted PRD three times, still asked about audience)
+- GAP-03: Named specific harness innovations (checkpoints, context compaction, asking for help)
+- GAP-04: Kept Torres — still the best example; removed GAP marker
+- GAP-05: Added before/after for PRD drafting inline
+- GAP-06: Added USB analogy for MCP
+- GAP-07: Varied verb structure across PM tasks (reads, pulls, compares)
+- GAP-08: Added Amodei clarification ("still need just as many software engineers")
+
+---
+
+## Epilogue
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+
+At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+
+_— Geoff Dudgeon + Claude_
+- GAP-09: Added markdowntutorial.com resource

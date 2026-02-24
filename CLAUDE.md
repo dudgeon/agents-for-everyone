@@ -135,7 +135,7 @@ Use `/story-arc-version` to manage packages:
 - **Ask, don't assume.** This project requires the user's creative judgment. When in doubt, ask.
 - **Timeline research is independent work.** Claude does this via web research, user validates.
 - **Primitives, domains, curriculum, and story require collaboration.** Don't finalize without user input.
-- **Check research balance.** This is a book about agents and harnesses, not foundation models. Before considering any research phase complete, verify coverage isn't skewed toward model releases at the expense of tooling, harness, and ecosystem events. When in doubt, ask: "Would the Skeptic and Maven have something to say about this?" If an event shaped how people USE AI (not just how smart the AI is), it belongs in the timeline.
+- **Check research balance.** This is a book about agents and harnesses, not foundation models. Before considering any research phase complete, verify coverage isn't skewed toward model releases at the expense of tooling, harness, and ecosystem events. When in doubt, ask: "Would the Declan and Maven have something to say about this?" If an event shaped how people USE AI (not just how smart the AI is), it belongs in the timeline.
 
 ## Research Quality Standards
 
@@ -159,7 +159,7 @@ Every research artifact in this project must meet these standards. Do NOT write 
 
 ### Vivid, story-ready examples
 - For each capability and failure, capture at least one **concrete, specific, memorable example** that could be used in dialog or narration.
-- Failures should be dramatic or comedic enough to resonate with the Skeptic character.
+- Failures should be dramatic or comedic enough to resonate with the Declan character.
 - Successes should be genuinely impressive enough to give the Maven something real to point to.
 
 ### Template for timeline entries
@@ -179,7 +179,7 @@ Every timeline event should follow this structure:
 
 **Harness vs. model**: [Was this a model improvement, tooling improvement, or both?]
 **Cultural context**: [How was this perceived? Media reaction? User sentiment?]
-**Skeptic's take**: [What would an informed skeptic say about this?]
+**Declan's take**: [What would an informed skeptic say about this?]
 **Maven's take**: [What's genuinely new/valuable here?]
 ```
 
@@ -281,7 +281,7 @@ frame_a:
   dialogue: ["In January 2026, a lawyer with no coding background...", ""]
 
 frame_b:
-  action: Skeptic leans forward, pointing at the board. Maven nods.
+  action: Declan leans forward, pointing at the board. Maven nods.
   expression_maven: amused, nodding
   expression_skeptic: eyebrow raised, skeptical
   dialogue: ["", "A text file did that?"]

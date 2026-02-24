@@ -30,7 +30,7 @@ _This file contains the rich, source-linked detail that backs up the overview ti
 
 **Cultural context**: The announcement that started everything. Six sentences from OpenAI became the biggest technology story of the decade. The understated launch ("research preview") contrasted with the explosive adoption. Teachers panicked about cheating. Media oscillated between utopian and apocalyptic framing. The conversation about AI shifted from "interesting research" to "this changes everything."
 
-**Skeptic's take**: "It's a fancy autocomplete that confidently makes things up. People are treating it like it's intelligent because it speaks in complete sentences. This is going to end badly."
+**Declan's take**: "It's a fancy autocomplete that confidently makes things up. People are treating it like it's intelligent because it speaks in complete sentences. This is going to end badly."
 
 **Maven's take**: "The model isn't even the story — GPT-3.5 existed before ChatGPT. What changed is that someone wrapped it in a chat interface and made it free. The HARNESS is the innovation. A million people in five days. This is the moment AI became everyone's concern."
 
@@ -64,7 +64,7 @@ _This file contains the rich, source-linked detail that backs up the overview ti
 
 **Cultural context**: This was Anthropic's "tools in a loop" moment. Claude Code was the first major AI company shipping an agentic coding tool built on their own model. The Every.to Vibe Check called it "better than anything I have used on the agent front" — and crucially noted the harness advantage over competitors using the same model.
 
-**Skeptic's take**: "A coding agent that costs a quarter per problem and needs extensive babysitting on existing projects? And it hallucinates without docs? This is a tool for developers, not normal people."
+**Declan's take**: "A coding agent that costs a quarter per problem and needs extensive babysitting on existing projects? And it hallucinates without docs? This is a tool for developers, not normal people."
 
 **Maven's take**: "The Every.to finding is the whole thesis: Claude Code beats Cursor with the SAME MODEL because the harness is better. And extended thinking isn't a separate model — it's a mode. That's the right architecture. The terminal interface is limiting but it's the foundation everything else builds on."
 
@@ -102,7 +102,7 @@ _This file contains the rich, source-linked detail that backs up the overview ti
 
 **Cultural context**: The "GPT-4 moment" — when the world realized AI could pass professional exams. Triggered both excitement and fear. Led directly to the Italian ban, the open letter calling for a 6-month pause, and the beginning of AI regulation discussions.
 
-**Skeptic's take**: "It passes the Bar Exam but can't reliably code a FizzBuzz without introducing security vulnerabilities. It's confidently wrong and they admit the safety training made it worse at knowing when it's wrong. And they won't even show us the images feature yet."
+**Declan's take**: "It passes the Bar Exam but can't reliably code a FizzBuzz without introducing security vulnerabilities. It's confidently wrong and they admit the safety training made it worse at knowing when it's wrong. And they won't even show us the images feature yet."
 
 **Maven's take**: "The exam scores are impressive but the real story is predictable scaling — they predicted performance from 10,000x smaller models. That means they know what's coming next. And putting it behind a waitlist was responsible, even if frustrating."
 
@@ -130,7 +130,7 @@ _This file contains the rich, source-linked detail that backs up the overview ti
 
 **Cultural context**: Quietly revolutionary. Less viral than ChatGPT launch or GPT-4, but arguably more consequential. This is where "chatbot" started becoming "tool user." ChatGPT Plugins had launched in March but were limited to OpenAI's ecosystem; function calling democratized tool use to any developer.
 
-**Skeptic's take**: "Great, so now the AI can call functions. And they're already admitting there's a proof-of-concept exploit for it. We're giving AI the ability to act in the world before we've solved the trust problem."
+**Declan's take**: "Great, so now the AI can call functions. And they're already admitting there's a proof-of-concept exploit for it. We're giving AI the ability to act in the world before we've solved the trust problem."
 
 **Maven's take**: "This is THE turning point. Before function calling, AI could only generate text. After function calling, AI can DO things — check weather, query databases, send emails. Every agent framework, every tool-using AI, everything we're building now traces back to this moment. The security concern they flagged is real, but the capability unlock is enormous."
 
@@ -160,7 +160,7 @@ _This file contains the rich, source-linked detail that backs up the overview ti
 
 **Cultural context**: Anthropic's coming-out party as a serious competitor. The three-tier model structure (Haiku/Sonnet/Opus) gave developers real choice. The 159-country API launch was a distribution moment.
 
-**Skeptic's take**: "Another model that beats benchmarks. But can I trust it more than the others? They say it refuses less — is that actually better for safety?"
+**Declan's take**: "Another model that beats benchmarks. But can I trust it more than the others? They say it refuses less — is that actually better for safety?"
 
 **Maven's take**: "The three-tier structure is smart engineering — Haiku for speed, Opus for quality, Sonnet for balance. The near-perfect needle-in-haystack recall at 200K context is quietly game-changing for document analysis. And reduced refusals means the model is actually more useful, not less safe."
 
@@ -189,7 +189,7 @@ _This file contains the rich, source-linked detail that backs up the overview ti
 
 **Cultural context**: This was the moment Claude became a serious daily-driver for developers. A mid-tier model beating the top-tier model at 1/5th the price is the kind of value proposition that changes adoption patterns. The Artifacts feature hinted at Anthropic's vision for AI as collaborator, not just chatbot.
 
-**Skeptic's take**: "OK, the smaller model is now better than the bigger model? That's either impressive engineering or it means the bigger model was never that good. And they're charging me 5x less? Something doesn't add up."
+**Declan's take**: "OK, the smaller model is now better than the bigger model? That's either impressive engineering or it means the bigger model was never that good. And they're charging me 5x less? Something doesn't add up."
 
 **Maven's take**: "This is the price/performance inflection point. When the mid-tier model beats everyone including your own top tier, and costs 1/5th as much, adoption explodes. Artifacts is also interesting — it's the first time a major AI company said 'the chat interface isn't enough, let's build a workspace.' That's a harness insight."
 
@@ -205,7 +205,7 @@ _This file contains the rich, source-linked detail that backs up the overview ti
 
 **Outcome**: Both lawyers were sanctioned with $5,000 fines. The case became the leading precedent on AI misuse in legal filings: Mata v. Avianca, Inc., 678 F. Supp. 3d 443 (S.D.N.Y. 2023).
 
-**Story value**: Perfect Skeptic moment. Demonstrates confident hallucination, the trust problem, and real-world consequences. The lawyer's quote — "I didn't think it could be fabricating cases on its own" — captures exactly the kind of naive trust the story warns about.
+**Story value**: Perfect Declan moment. Demonstrates confident hallucination, the trust problem, and real-world consequences. The lawyer's quote — "I didn't think it could be fabricating cases on its own" — captures exactly the kind of naive trust the story warns about.
 
 **Sources**:
 - [CNN: Lawyer apologizes for fake court citations from ChatGPT](https://www.cnn.com/2023/05/27/business/chat-gpt-avianca-mata-lawyers)
@@ -221,7 +221,7 @@ _This file contains the rich, source-linked detail that backs up the overview ti
 
 **OpenAI's response**: Will Depue from OpenAI confirmed awareness (Dec 1). Said GPT-4 Turbo hadn't been updated since Nov 11 and the issue was "unintentional." Fix came with `gpt-4-0125-preview` on Jan 25, 2024.
 
-**Story value**: Intelligence ≠ reliability. The model got a bigger context window, got cheaper, got parallel function calling — and also got lazier. Perfect illustration of unpredictable regressions. The Skeptic would say: "Great, so it's smarter AND less willing to do its job?"
+**Story value**: Intelligence ≠ reliability. The model got a bigger context window, got cheaper, got parallel function calling — and also got lazier. Perfect illustration of unpredictable regressions. The Declan would say: "Great, so it's smarter AND less willing to do its job?"
 
 **Sources**:
 - [OpenAI Community: ChatGPT-4 defaults to lazy](https://community.openai.com/t/chatgpt-4-defaults-to-lazy/560886)
@@ -243,9 +243,9 @@ _This file contains the rich, source-linked detail that backs up the overview ti
 
 **Cultural significance**: This was the moment the word **"agent"** entered mainstream AI discourse. Fortune called BabyAGI "taking Silicon Valley by storm." Karpathy called it "the next frontier of prompt engineering." The concepts of AI planning, tool use, and autonomous execution became tangible to millions — even though the implementations were fragile. AutoGPT set the template every subsequent coding agent would follow: give an LLM tools, let it plan, let it act.
 
-**Story value**: The first "agent hype cycle." Promise was real but execution was years premature. Sets up the Maven's argument: "The vision was right, the tooling wasn't ready." The Skeptic: "I saw this movie before. It didn't work." The 18-month gap between AutoGPT's hype (Mar 2023) and working agents (late 2024-2025) is the central tension of the book.
+**Story value**: The first "agent hype cycle." Promise was real but execution was years premature. Sets up the Maven's argument: "The vision was right, the tooling wasn't ready." The Declan: "I saw this movie before. It didn't work." The 18-month gap between AutoGPT's hype (Mar 2023) and working agents (late 2024-2025) is the central tension of the book.
 
-**Skeptic's take**: "174,000 stars for software that gets stuck in infinite loops all night. The GitHub star count IS the product. Nobody is actually using this to do real work."
+**Declan's take**: "174,000 stars for software that gets stuck in infinite loops all night. The GitHub star count IS the product. Nobody is actually using this to do real work."
 
 **Maven's take**: "AutoGPT was right about everything except timing. Tools in a loop, autonomous execution, goal decomposition — that's exactly what Claude Code and Cursor do now. The difference is the models got good enough and the harnesses got smart enough. AutoGPT was a prophecy, not a product."
 
@@ -290,7 +290,7 @@ _This file contains the rich, source-linked detail that backs up the overview ti
 - **Centaurs**: Clear division of labor. Delegate AI-suitable tasks, keep human-suitable tasks. Strategic switching.
 - **Cyborgs**: Deep integration. Constant back-and-forth over the frontier. Intertwined workflow.
 
-**Story value**: This IS the intellectual framework for the Skeptic's position. The frontier is jagged. Trust is dangerous when you don't know where the edges are. But it also gives the Maven something: the edges can be learned, and the two collaboration patterns are both valid.
+**Story value**: This IS the intellectual framework for the Declan's position. The frontier is jagged. Trust is dangerous when you don't know where the edges are. But it also gives the Maven something: the edges can be learned, and the two collaboration patterns are both valid.
 
 **Sources**:
 - [Mollick: Centaurs and Cyborgs on the Jagged Frontier](https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged)
@@ -470,7 +470,7 @@ All Vibe Checks from the series, in chronological order:
 
 **Cultural context**: DevDay was OpenAI's first developer conference. Sam Altman was fired by the board 11 days later (Nov 17). The entire event was overshadowed by the boardroom drama within weeks.
 
-**Skeptic's take**: "They gave us a bigger context window, cheaper prices, and a bunch of beta APIs — then the CEO got fired. And the model got lazier. Cool."
+**Declan's take**: "They gave us a bigger context window, cheaper prices, and a bunch of beta APIs — then the CEO got fired. And the model got lazier. Cool."
 
 **Maven's take**: "This is where OpenAI stopped just making models and started building infrastructure. Assistants API with persistent threads, Code Interpreter, Retrieval — these are harness primitives. The model improvements were table stakes; the tooling was the real story."
 
@@ -499,7 +499,7 @@ All Vibe Checks from the series, in chronological order:
 
 **Cultural context**: The live demo went viral — the model flirting, singing, being sarcastic in real-time. Media compared it to the movie "Her." Then the Scarlett Johansson voice controversy erupted. This was OpenAI at peak cultural relevance.
 
-**Skeptic's take**: "They did a flashy demo where the AI flirts and sings, then it turns out the voice mode isn't actually shipping yet, and they may have stolen someone's voice. Style over substance."
+**Declan's take**: "They did a flashy demo where the AI flirts and sings, then it turns out the voice mode isn't actually shipping yet, and they may have stolen someone's voice. Style over substance."
 
 **Maven's take**: "Underneath the controversy, this was genuinely important: end-to-end multimodal processing means the model doesn't lose information between modalities anymore. And putting GPT-4-class intelligence in the free tier changed who could access this technology."
 
@@ -529,7 +529,7 @@ All Vibe Checks from the series, in chronological order:
 
 **Cultural context**: Paradigm shift from "predict next token faster" to "think longer before answering." OpenAI splitting into two model families: GPT (fast, multimodal) and o-series (slow, reasoning). The STRAWBERRY cipher demo went viral.
 
-**Skeptic's take**: "So now it thinks for 5 seconds before answering, and they won't show me what it's thinking? And it's worse at normal conversation? I'm paying for a model that's slower AND they're hiding its work?"
+**Declan's take**: "So now it thinks for 5 seconds before answering, and they won't show me what it's thinking? And it's worse at normal conversation? I'm paying for a model that's slower AND they're hiding its work?"
 
 **Maven's take**: "This is the most important paradigm shift since transformers. The model doesn't just pattern-match anymore — it reasons through problems step by step. AIME going from 12% to 74% isn't an incremental improvement, it's a category change. And the safety implications of reasoning about rules are huge."
 
@@ -558,7 +558,7 @@ All Vibe Checks from the series, in chronological order:
 
 **Cultural context**: This was the "agents actually work now" moment for OpenAI. The o-series went from "good at math puzzles" to "can actually do multi-step work." Codex CLI was OpenAI's response to Claude Code. Dan Shipper (Every.to) called o3 "the biggest wow moment since GPT-4."
 
-**Skeptic's take**: "They gave reasoning models tools and suddenly they work better? Isn't that what everyone's been saying — it's not the model, it's what you plug into it?"
+**Declan's take**: "They gave reasoning models tools and suddenly they work better? Isn't that what everyone's been saying — it's not the model, it's what you plug into it?"
 
 **Maven's take**: "This is the convergence point. Reasoning + tools + vision in one model. The SWE-bench result without custom scaffolding is significant — the model itself learned when and how to use tools. And they open-sourced Codex CLI, which is a real concession that the harness matters."
 
@@ -592,7 +592,7 @@ All Vibe Checks from the series, in chronological order:
 
 **Cultural context**: OpenAI ended the GPT/o-series split. Sam Altman framed it as AI that "feels less like talking to AI and more like chatting with a helpful friend with PhD-level intelligence." The sycophancy fix was an explicit response to the GPT-4o update controversy from earlier in 2025.
 
-**Skeptic's take**: "They merged everything into one model and it still has four variants? And a hidden router decides when it thinks hard? I liked knowing which model I was using. Now it's a black box that sometimes thinks and sometimes doesn't."
+**Declan's take**: "They merged everything into one model and it still has four variants? And a hidden router decides when it thinks hard? I liked knowing which model I was using. Now it's a black box that sometimes thinks and sometimes doesn't."
 
 **Maven's take**: "The hallucination and deception numbers are the real story. Going from 86.7% confident wrong answers on impossible tasks to 9% is transformative. Safe completions training — teaching partial answers instead of binary refuse/comply — is exactly the nuanced approach AI safety needed. And unifying everything under one model is the right UX even if the implementation still has variants."
 
@@ -630,7 +630,7 @@ All Vibe Checks from the series, in chronological order:
 
 **Harness vs. model**: HARNESS — Copilot is the canonical example of harness evolution. The underlying models changed (Codex → GPT-3.5 → GPT-4 → multi-model), but the product evolution was about HOW the model was deployed: autocomplete → chat → agent. Same models, radically different user experience.
 
-**Skeptic's take**: "Copilot proved that autocomplete is useful, but that's table stakes now. They're racing to add agent mode two years after Claude Code and Cursor already defined what coding agents look like. Microsoft's advantage is distribution, not innovation."
+**Declan's take**: "Copilot proved that autocomplete is useful, but that's table stakes now. They're racing to add agent mode two years after Claude Code and Cursor already defined what coding agents look like. Microsoft's advantage is distribution, not innovation."
 
 **Maven's take**: "The Copilot arc IS the book's thesis in miniature. Same models, but the harness evolved from autocomplete to chat to agent, and each step unlocked dramatically more capability. And the multi-model announcement — letting users choose Claude or Gemini as the backend — proves the harness is model-agnostic. The wrapper matters more than what's inside."
 
@@ -666,7 +666,7 @@ All Vibe Checks from the series, in chronological order:
 
 **Cultural context**: The "platform play" dream. Everyone compared it to Apple's App Store. But plugins proved that tool use for LLMs requires deeper architectural thinking than bolting on API calls. A key failure that directly informed later successes.
 
-**Skeptic's take**: "They launched a plugin store, it flopped, they killed it, and now they're trying GPTs instead. How many times do they need to fail at this before admitting that 'ChatGPT as platform' doesn't work?"
+**Declan's take**: "They launched a plugin store, it flopped, they killed it, and now they're trying GPTs instead. How many times do they need to fail at this before admitting that 'ChatGPT as platform' doesn't work?"
 
 **Maven's take**: "Plugins failed for the right reasons — they taught the industry that AI tool use needs to be open (not proprietary), embedded (not bolted on), and standardized (not ad hoc). MCP succeeded everywhere plugins failed. The failure was necessary."
 
@@ -700,7 +700,7 @@ All Vibe Checks from the series, in chronological order:
 
 **Harness vs. model**: HARNESS — GPTs were a harness innovation (no-code AI customization). The model didn't change; the question was whether wrapping it in a "store" metaphor would create an ecosystem. It didn't.
 
-**Skeptic's take**: "3 million GPTs created, 97% of them can have their secrets stolen, the store is full of IP-infringing spam, and the revenue sharing they promised never materialized. This is what happens when you try to build an App Store out of saved prompts."
+**Declan's take**: "3 million GPTs created, 97% of them can have their secrets stolen, the store is full of IP-infringing spam, and the revenue sharing they promised never materialized. This is what happens when you try to build an App Store out of saved prompts."
 
 **Maven's take**: "GPTs proved two things: (1) people desperately want to customize AI, and (2) a centralized store is the wrong distribution model. The GPT Store tried to be the App Store for AI and failed. MCP later succeeded by being the opposite — not a store, but a protocol. Not proprietary, but open."
 
@@ -725,7 +725,7 @@ All Vibe Checks from the series, in chronological order:
 
 **Cultural context**: Google learned from OpenAI's GPT Store struggles. Rather than trying to build a marketplace, they built a personal customization tool deeply integrated with the Google ecosystem people already use. Less ambitious, more practical.
 
-**Skeptic's take**: "At least Google was honest about what this is — a way to save your favorite prompts. No marketplace, no revenue sharing promises, no delusions of grandeur."
+**Declan's take**: "At least Google was honest about what this is — a way to save your favorite prompts. No marketplace, no revenue sharing promises, no delusions of grandeur."
 
 **Maven's take**: "Gems are boring in the best way. They solve a real problem — reducing repetitive prompting in daily work tools — without pretending to be a platform. The Workspace integration is the differentiator GPTs never had."
 
@@ -767,7 +767,7 @@ All Vibe Checks from the series, in chronological order:
 
 **Harness vs. model**: HARNESS — All three iterations were about how developers build with models, not about the models themselves. The progression from managed state to developer-owned state is a pure harness lesson.
 
-**Skeptic's take**: "Three tries to get developer APIs right, and the third one basically admits the first two were wrong. The Assistants API was in beta for two years and never made it out. That's not iteration, that's flailing."
+**Declan's take**: "Three tries to get developer APIs right, and the third one basically admits the first two were wrong. The Assistants API was in beta for two years and never made it out. That's not iteration, that's flailing."
 
 **Maven's take**: "The arc is instructive. OpenAI learned that developers want primitives, not platforms. They want to own their state, not hand it to a vendor. And they learned that open standards (MCP) beat proprietary protocols. Every failure taught them something, and the Responses API is genuinely well-designed."
 
@@ -802,7 +802,7 @@ All Vibe Checks from the series, in chronological order:
 
 **Story value**: The ultimate "hype vs. reality" cautionary tale. The vision was right (autonomous coding agents), the timing was wrong (models and harnesses weren't ready), and the claims were inflated. But the funding and eventual recovery show the market believed in the direction even when the product wasn't there yet.
 
-**Skeptic's take**: "First AI software engineer? It fails 85% of the time, the demo was debunked, and they went from $350M to $2B in a month on a product that didn't work. This is peak AI hype — the valuation is the product."
+**Declan's take**: "First AI software engineer? It fails 85% of the time, the demo was debunked, and they went from $350M to $2B in a month on a product that didn't work. This is peak AI hype — the valuation is the product."
 
 **Maven's take**: "Devin's failure is the most instructive story in AI agents. The vision was 100% correct — a fully autonomous coding agent that plans, codes, debugs, and deploys. The execution was premature. But SWE-bench went from 1.96% to 13.86% to 50%+ in 18 months. Devin was right about the destination, just too early to the party."
 
@@ -843,7 +843,7 @@ All Vibe Checks from the series, in chronological order:
 
 **Cultural context**: Andrej Karpathy coined "vibe coding" in February 2025 specifically referencing Cursor + Claude Sonnet — describing a style where developers describe intent and let AI write code. By late 2025 he updated the term to "agentic engineering," acknowledging it had become the professional default.
 
-**Skeptic's take**: "$29.3B for a VS Code fork? With zero marketing spend? Either this is the most capital-efficient company ever built or we're in another bubble. And they use other companies' models — what happens when OpenAI or Anthropic build the same thing?"
+**Declan's take**: "$29.3B for a VS Code fork? With zero marketing spend? Either this is the most capital-efficient company ever built or we're in another bubble. And they use other companies' models — what happens when OpenAI or Anthropic build the same thing?"
 
 **Maven's take**: "Cursor is the single strongest proof that the harness matters more than the model. They use Claude, GPT-4, whatever — and they're worth $29.3B. Not because of a proprietary model, but because of how they wrap models in an IDE. $1B ARR with zero marketing. The product is so good it sells itself."
 
@@ -873,7 +873,7 @@ All Vibe Checks from the series, in chronological order:
 
 **Story value**: The Windsurf saga is a microcosm of the AI coding agent market: three tech giants fighting over one startup's technology and talent in 72 hours. It illustrates the frenzy around AI harness innovation.
 
-**Skeptic's take**: "Three companies fought over a VS Code fork in a weekend. OpenAI offered $3 billion, Google poached the founders, and Cognition — whose own product fails 85% of the time — bought the leftovers. This is peak bubble behavior."
+**Declan's take**: "Three companies fought over a VS Code fork in a weekend. OpenAI offered $3 billion, Google poached the founders, and Cognition — whose own product fails 85% of the time — bought the leftovers. This is peak bubble behavior."
 
 **Maven's take**: "The Windsurf saga proves that AI coding tools aren't about the model — they're about the harness. Google didn't hire the Windsurf team for their model; they hired them for their understanding of how to wrap models in an IDE. And Cognition didn't buy Windsurf for the brand; they bought the harness architecture and the enterprise customers."
 
@@ -909,7 +909,7 @@ All Vibe Checks from the series, in chronological order:
 
 **Harness vs. model**: BOTH — codex-1 is a model fine-tuned specifically for agentic coding (MODEL), but the cloud sandbox architecture, parallel execution, and CLI tooling are HARNESS innovations.
 
-**Skeptic's take**: "OpenAI's answer to Claude Code is a cloud sandbox where the AI can't access the internet. So it's more isolated, more opaque, and you can't watch it work? How is this better than a terminal agent I can see?"
+**Declan's take**: "OpenAI's answer to Claude Code is a cloud sandbox where the AI can't access the internet. So it's more isolated, more opaque, and you can't watch it work? How is this better than a terminal agent I can see?"
 
 **Maven's take**: "The sandbox architecture is the interesting bet. By isolating Codex from the internet, OpenAI is solving the security problem differently than Claude Code. And parallel execution — spinning up multiple Codex agents on independent tasks — is genuinely powerful for large codebases. The CLI being open-source and Rust-based is also a good sign."
 
@@ -1045,7 +1045,7 @@ _Note: This entry supplements the Claude Code evolution entry above, focusing sp
 
 **Cultural context**: This blog post was significant because it was Anthropic eating its own dog food — showing that Claude Code isn't just a coding tool. The legal team's transformation from "the department of no" into proactive partners was a vivid narrative of harness-enabled change.
 
-**Skeptic's take**: "Okay, so Anthropic's own employees use their own product. Surprise. And they can still only fully delegate 0-20% of their work? That's not the revolution people are selling."
+**Declan's take**: "Okay, so Anthropic's own employees use their own product. Surprise. And they can still only fully delegate 0-20% of their work? That's not the revolution people are selling."
 
 **Maven's take**: "The real story is Mark Pike. A lawyer with no coding background built legal review tools, contract redlining systems, and conflict-of-interest workflows — all in Claude Code. He's not coding. He's describing problems in natural language and the harness turns it into working systems. THAT is the paradigm shift."
 
@@ -1136,7 +1136,7 @@ The legal plugin was the trigger. It contained ~200 lines of structured markdown
 
 **Cultural context**: The $285B selloff was the market's "oh shit" moment about AI's impact on SaaS. It wasn't about AI being smarter — it was about AI workflows being packaged in markdown files that anyone could customize. The per-seat SaaS model, the business model that built a $1T+ software industry over two decades, suddenly looked vulnerable to structured text files.
 
-**Skeptic's take**: "Hold on — a markdown file with law school content and workflow logic cratered $285 billion in market cap? Either the market overreacted massively, or every SaaS company's moat was always thinner than they claimed. Probably both. And let's be honest — that plugin has a disclaimer saying 'this should be reviewed by qualified legal counsel.' It's not replacing lawyers. It's replacing the software lawyers use."
+**Declan's take**: "Hold on — a markdown file with law school content and workflow logic cratered $285 billion in market cap? Either the market overreacted massively, or every SaaS company's moat was always thinner than they claimed. Probably both. And let's be honest — that plugin has a disclaimer saying 'this should be reviewed by qualified legal counsel.' It's not replacing lawyers. It's replacing the software lawyers use."
 
 **Maven's take**: "THIS. This is the entire thesis of the book. The model is the horse. The plugin is the harness. The harness is 200 lines of markdown. It connects to Box and Egnyte via MCP. It uses skills to encode legal domain expertise. It exposes slash commands that structure workflows. And it caused a $285 billion selloff. The harness. Matters. More. Than. The. Model."
 
@@ -1194,6 +1194,6 @@ _Aggregated from multiple sources documenting Claude Code usage outside traditio
 
 **Harness vs. model**: HARNESS — In every case, the value comes from what Claude Code provides that the chat interface doesn't: persistent file system access, ability to execute code locally, MCP integrations with existing tools, skills for domain expertise, subagents for specialized tasks. The model is the same in chat and in Claude Code. The harness makes the difference.
 
-**Skeptic's take**: "Most of these 'use cases' are still technically coding — Claude is writing Python scripts, building React apps, running FFmpeg commands. The user isn't coding, sure, but the AI is. Is this really 'non-SWE' or is it 'SWE with extra steps'?"
+**Declan's take**: "Most of these 'use cases' are still technically coding — Claude is writing Python scripts, building React apps, running FFmpeg commands. The user isn't coding, sure, but the AI is. Is this really 'non-SWE' or is it 'SWE with extra steps'?"
 
 **Maven's take**: "That's exactly the point! The user describes a PROBLEM ('analyze this CSV,' 'organize my notes,' 'triage this NDA') and Claude Code figures out the technical implementation. The harness translates intent into action. Whether code is involved under the hood is irrelevant to the user. From the plumber's perspective, she asked for her files organized and it happened. That's the paradigm shift."

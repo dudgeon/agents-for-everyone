@@ -105,10 +105,20 @@ Map the seed's Presentation fields:
 - **Meta description** → `metaDescription`
 - **Footer quote** → `footerQuote`
 
+### 4b. Parse epilogue (if present)
+
+If the draft contains a `## Epilogue` section after the last chapter:
+
+- Set `id: "epilogue"`, `number: 10`, `title: "Epilogue"`, `navLabel: "Epilogue"`, `variant: "epilogue"`
+- Extract body paragraphs as strings (excluding the `_— ..._` byline line)
+- Extract byline from the `_— ..._` line at the end of the section (strip leading `— ` and surrounding underscores)
+- Set `panels: []` and `sources: []`
+
 ### 5. Write chapters.ts
 
 Write the full `site/src/data/chapters.ts` file with:
 - All interfaces preserved exactly (copy from the current file if they haven't changed)
+- `ChapterData` interface includes optional fields: `variant?: "standard" | "epilogue"` and `byline?: string`
 - `export const chapters: ChapterData[] = [...]` with the parsed data
 
 Only include chapters that exist in the draft. Chapters without generated images render with gradient fallbacks — this is intentional so partial builds work.

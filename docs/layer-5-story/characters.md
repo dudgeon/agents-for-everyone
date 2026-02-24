@@ -1,7 +1,5 @@
 # Characters
 
-_Profiles to be developed in Phase 1. Placeholders below._
-
 ## The Maven
 
 **Name**: TBD
@@ -11,20 +9,22 @@ _Profiles to be developed in Phase 1. Placeholders below._
 **Core trait**: Enthusiastic about agentic AI but intellectually honest. Not a hype person — genuinely believes in this because they've done the work to understand it.
 
 **Voice notes**:
-- Has to earn the Skeptic's trust — can't just assert things
+- Has to earn the Declan's trust — can't just assert things
 - Acknowledges real problems with each era
 - Gets excited when showing what's genuinely new and different
-- Never dismissive of the Skeptic's concerns
+- Never dismissive of the Declan's concerns
 
-**Arc**: Starts confident but is forced by the Skeptic to really defend their position. This makes their eventual argument stronger.
+**Arc**: Starts confident but is forced by the Declan to really defend their position. This makes their eventual argument stronger.
 
 ### Character Bible (Visual — locked 2026-02-21)
 
 ```
 MAVEN
-IMMUTABLE TRAITS: Warm medium-brown skin. Black hair, shoulder-length, usually
-  tucked behind one ear. Dark brown eyes. Round wire-frame glasses. Slight build,
-  average height. Resting expression: attentive and slightly amused.
+IMMUTABLE TRAITS: Warm medium-brown skin (NOT light, NOT dark). Black hair,
+  shoulder-length (NOT short, NOT long), usually tucked behind one ear (NOT
+  ponytail, NOT loose on both sides). Dark brown eyes. Round wire-frame glasses
+  (NOT rectangular, NOT thick-framed, NOT cat-eye). Slight build, average height.
+  Resting expression: attentive and slightly amused.
 DEFAULT OUTFIT: Sage-green button-up shirt, high-waisted charcoal trousers,
   simple gold stud earrings.
 ART STYLE: Studio Ghibli-inspired illustration. Clean expressive linework, warm
@@ -36,7 +36,7 @@ CONSTRAINTS: Do not change face, facial features, skin tone, body shape, or iden
 **Reference sheet**: `assets/characters/maven-ref-sheet.png`
 **Expressions locked**: neutral (attentive, slight smile), excited (eyes bright, leaning forward), skeptical (one eyebrow raised, listening carefully)
 
-## The Skeptic
+## The Declan
 
 **Name**: TBD
 **Age**: TBD
@@ -56,10 +56,11 @@ CONSTRAINTS: Do not change face, facial features, skin tone, body shape, or iden
 
 ```
 SKEPTIC
-IMMUTABLE TRAITS: Light olive skin. Dark brown hair, short, slightly unkempt
-  (not messy — just not trying). Hazel eyes. No glasses. Medium build, slightly
-  taller than Maven. Resting expression: thoughtful, guarded, arms often crossed
-  or hands in pockets.
+IMMUTABLE TRAITS: Light olive skin (NOT pale, NOT tan). Dark brown hair, short,
+  slightly unkempt — not messy, just not trying (NOT styled, NOT slicked, NOT
+  long). Hazel eyes. No glasses (NEVER add glasses). Medium build, slightly
+  taller than Maven (NOT same height, NOT much taller). Resting expression:
+  thoughtful, guarded, arms often crossed or hands in pockets.
 DEFAULT OUTFIT: Plain navy crew-neck sweater, dark jeans, simple sneakers.
   Smart casual — someone who stopped dressing up for meetings.
 ART STYLE: Studio Ghibli-inspired illustration. Clean expressive linework, warm
@@ -67,7 +68,7 @@ ART STYLE: Studio Ghibli-inspired illustration. Clean expressive linework, warm
 CONSTRAINTS: Do not change face, facial features, skin tone, body shape, or identity.
 ```
 
-**Reference sheet**: `assets/characters/skeptic-ref-sheet.png`
+**Reference sheet**: `assets/characters/declan-ref-sheet.png`
 **Expressions locked**: neutral (guarded, arms crossed), skeptical (eyebrow raised, unconvinced), surprised (eyes wide, caught off guard)
 
 ## Claw'd (Claude Code embodiment)
@@ -75,7 +76,7 @@ CONSTRAINTS: Do not change face, facial features, skin tone, body shape, or iden
 **Name**: Claw'd
 **Personality**: Curious, earnest, quietly helpful. Observes more than it speaks. Carries a small notebook everywhere and takes diligent notes. Not a showoff — it earns trust through steady, reliable presence.
 
-**Role in story**: Appears in the present-day framing. Is the thing the Maven is trying to show the Skeptic. May or may not be present during the "time travel" through eras.
+**Role in story**: Appears in the present-day framing. Is the thing the Maven is trying to show the Declan. May or may not be present during the "time travel" through eras.
 
 **Key quality**: Something you nurture and develop. Not a finished product — a relationship.
 
@@ -83,11 +84,13 @@ CONSTRAINTS: Do not change face, facial features, skin tone, body shape, or iden
 
 ```
 CLAW'D
-IMMUTABLE TRAITS: Small (knee-height), boxy terracotta/coral-orange body with
-  soft rounded corners. Wider than tall — like a slightly squished box. Four
-  short stubby legs. Two small dark square eyes set close together — simple and
-  minimal, like pixel art rendered in warm hand-drawn style. No mouth. Small
-  leaf-shaped sprout on top of its head. Friendly, curious, non-threatening.
+IMMUTABLE TRAITS: Small (knee-height), BOXY (NOT rounded, NOT egg-shaped, NOT
+  spherical) terracotta/coral-orange body with soft rounded corners. Wider than
+  tall — like a slightly squished box. Four short STUBBY legs (NOT long, NOT
+  thin, NOT wheels). Two small dark SQUARE eyes set close together — simple and
+  minimal, like pixel art (NOT large, NOT round, NOT anime-style). No mouth
+  (NEVER add a mouth). Small leaf-shaped sprout on top of its head (NOT a
+  flower, NOT antennae). Friendly, curious, non-threatening.
 DEFAULT OUTFIT: Carries a small leather-bound notebook and tiny pencil.
   No clothing — the terracotta body IS the character.
 ART STYLE: Studio Ghibli-inspired illustration. Clean expressive linework, warm
@@ -119,25 +122,27 @@ CONSTRAINTS: Do not change body shape, proportions, eye style, or color palette.
 
 **Relationship to others**:
 - With Maven: collaborative, receptive. Maven affirms Emery's existing experiments rather than dismissing them.
-- With Skeptic: sympathetic but not aligned. Emery understands Skeptic's hesitation but isn't interested in debating whether AI is real — they want to know how to use it better.
+- With Declan: sympathetic but not aligned. Emery understands Declan's hesitation but isn't interested in debating whether AI is real — they want to know how to use it better.
 - With Claw'd: curious, a little delighted. The first to interact with Claw'd directly.
 
 ### Character Bible (Visual — locked 2026-02-23)
 
 ```
 EMERY
-IMMUTABLE TRAITS: Warm golden-brown skin. Dark brown hair in a short undercut —
-  buzzed on the sides with longer wavy texture on top that falls slightly to one
-  side. Brown eyes. No glasses. Lean build, average height (between Maven and
-  Skeptic). Resting expression: attentive, open, slightly curious. Nonbinary
-  presentation — androgynous but natural, not stylized.
+IMMUTABLE TRAITS: Warm golden-brown skin (NOT light, NOT dark brown). Dark brown
+  hair in a short undercut — buzzed on sides with longer wavy texture on top
+  (NOT fully short, NOT long hair, NOT buzz cut all over). Brown eyes. No
+  glasses (NEVER add glasses). Lean build, average height (between Maven and
+  Declan). Resting expression: attentive, open, slightly curious. Nonbinary
+  presentation — androgynous but natural, not stylized (NOT hyper-masculine,
+  NOT hyper-feminine).
 DEFAULT OUTFIT: Fitted heather-gray crewneck tee under an open muted-teal cardigan
   with small lightning bolt logo on left chest. Dark chinos, clean white sneakers.
   Carries a plain digital tablet (dark case, no pen attached). Stylus tucked behind
   right ear — signature accessory.
 ART STYLE: Studio Ghibli-inspired illustration. Clean expressive linework, warm
   color wash. Fully saturated — muted teal/gray palette sits between Maven's warm
-  sage-green and Skeptic's cool navy for visual contrast.
+  sage-green and Declan's cool navy for visual contrast.
 CONSTRAINTS: Do not change face, facial features, skin tone, body shape, or identity.
   The tablet, stylus-behind-ear, and lightning bolt logo are identity markers —
   always include them.
@@ -148,7 +153,7 @@ CONSTRAINTS: Do not change face, facial features, skin tone, body shape, or iden
 
 ## Open Character Questions
 
-- Relationship between Maven and Skeptic (friends? colleagues? acquaintances?)
+- Relationship between Maven and Declan (friends? colleagues? acquaintances?)
 - Ages — peers or mentor/mentee?
 - Emery's visual design — what should they look like? (see character sheet steps below)
-- Does the Skeptic-fading-into-background dynamic work visually in comics? May need to test.
+- Does the Declan-fading-into-background dynamic work visually in comics? May need to test.

@@ -10,22 +10,22 @@ _Trial run: 2026-02-21. Purpose: validate COMIC spec format with locked characte
 
 <!-- COMIC
 id: ch01-bold-claim
-characters: maven, skeptic
+characters: maven, declan
 aspect: 16:9
 render: carousel-mobile, side-by-side-desktop
 
-setting: Modern open-plan office, arched windows letting in soft afternoon light. Near-monochromatic background — warm greys and muted beiges — with a wooden desk and low bookshelf behind the characters. One fiddle-leaf fig in the far corner. Maven stands near a laptop on the desk, mid-explanation. Skeptic sits in a fabric chair across from her, arms crossed. Studio Ghibli-inspired illustration, painterly, watercolor-wash background.
+setting: Modern open-plan office, arched windows letting in soft afternoon light. Near-monochromatic background — warm greys and muted beiges — with a wooden desk and low bookshelf behind the characters. One fiddle-leaf fig in the far corner. Maven stands near a laptop on the desk, mid-explanation. Declan sits in a fabric chair across from her, arms crossed. Studio Ghibli-inspired illustration, painterly, watercolor-wash background.
 
 frame_a:
-  action: Maven opens a laptop screen toward the Skeptic, pointing to something on it. She's leaning forward, eager to show rather than tell.
+  action: Maven opens a laptop screen toward the Declan, pointing to something on it. She's leaning forward, eager to show rather than tell.
   expression_maven: animated, leaning-forward
-  expression_skeptic: guarded, arms-crossed
+  expression_declan: guarded, arms-crossed
   dialogue: ["Let me show you something a lawyer built in a weekend. No coding.", ""]
 
 frame_b:
-  action: Skeptic leans slightly forward — still guarded, but pulled in by what they just saw. His arms shift from fully crossed to one hand on his chin.
+  action: Declan leans slightly forward — still guarded, but pulled in by what they just saw. His arms shift from fully crossed to one hand on his chin.
   expression_maven: attentive, watching
-  expression_skeptic: pulled-in, reluctant-curiosity
+  expression_declan: pulled-in, reluctant-curiosity
   dialogue: ["", "That's... just a text file?"]
 -->
 
@@ -54,22 +54,22 @@ This book is short, evidence-based, and specific. It will not ask you to suspend
 
 <!-- COMIC
 id: ch02-earned-skepticism
-characters: maven, skeptic
+characters: maven, declan
 aspect: 16:9
 render: carousel-mobile, side-by-side-desktop
 
-setting: Same office, same arched windows. Both characters are seated across from each other at a low coffee table. A tablet between them, face down — as if it's been set aside after a bad experience. The Skeptic leans forward this time, hands gesturing. Maven sits back, listening. Studio Ghibli-inspired, muted warm background.
+setting: Same office, same arched windows. Both characters are seated across from each other at a low coffee table. A tablet between them, face down — as if it's been set aside after a bad experience. The Declan leans forward this time, hands gesturing. Maven sits back, listening. Studio Ghibli-inspired, muted warm background.
 
 frame_a:
-  action: Skeptic leans forward, hands open, recounting something that happened to him. He's not angry — he's making a point he's made before, to someone who usually argues back.
+  action: Declan leans forward, hands open, recounting something that happened to him. He's not angry — he's making a point he's made before, to someone who usually argues back.
   expression_maven: attentive, open
-  expression_skeptic: emphatic, pointing
+  expression_declan: emphatic, pointing
   dialogue: ["", "A lawyer submitted AI-generated fake cases to a federal judge. ChatGPT invented them. With full citations."]
 
 frame_b:
-  action: Maven nods, not defending, not qualifying. Just agreeing. This is the moment Skeptic hasn't seen before — someone on the AI side who doesn't argue.
+  action: Maven nods, not defending, not qualifying. Just agreeing. This is the moment Declan hasn't seen before — someone on the AI side who doesn't argue.
   expression_maven: acknowledging, direct
-  expression_skeptic: caught-off-guard, waiting
+  expression_declan: caught-off-guard, waiting
   dialogue: ["You're right. That was bad. And it wasn't a fluke.", ""]
 -->
 
@@ -100,22 +100,22 @@ Your skepticism from that era isn't wrong. It's just aimed at a target that has 
 
 <!-- COMIC
 id: ch03-hype-graveyard
-characters: maven, skeptic
+characters: maven, declan
 aspect: 16:9
 render: carousel-mobile, side-by-side-desktop
 
-setting: Same office. The Skeptic is now standing beside a whiteboard they've clearly been using — a list visible in marker: AutoGPT, BabyAGI, Devin, ChatGPT Plugins. Each with a large X beside it. Maven sits in a chair across from the board, elbows on knees. Studio Ghibli-inspired, slightly wider shot to show the full whiteboard.
+setting: Same office. The Declan is now standing beside a whiteboard they've clearly been using — a list visible in marker: AutoGPT, BabyAGI, Devin, ChatGPT Plugins. Each with a large X beside it. Maven sits in a chair across from the board, elbows on knees. Studio Ghibli-inspired, slightly wider shot to show the full whiteboard.
 
 frame_a:
-  action: Skeptic gestures toward the whiteboard list, looking at Maven with an expression that says "you know I'm right." Not triumphant — making a fair point.
+  action: Declan gestures toward the whiteboard list, looking at Maven with an expression that says "you know I'm right." Not triumphant — making a fair point.
   expression_maven: attentive, nodding-slowly
-  expression_skeptic: matter-of-fact, making-a-point
+  expression_declan: matter-of-fact, making-a-point
   dialogue: ["", "AutoGPT. 174,000 GitHub stars. Infinite loops all night. Then Devin — the 'first AI software engineer' — 85% failure rate."]
 
 frame_b:
-  action: Maven spreads her hands, making no attempt to defend any of it. Honest concession. She's not looking at the whiteboard — she's looking at the Skeptic.
+  action: Maven spreads her hands, making no attempt to defend any of it. Honest concession. She's not looking at the whiteboard — she's looking at the Declan.
   expression_maven: candid, direct
-  expression_skeptic: surprised-by-concession, still-guarded
+  expression_declan: surprised-by-concession, still-guarded
   dialogue: ["I'm not going to defend any of that. The vision was right. The execution was a disaster. Here's what changed.", ""]
 -->
 
@@ -147,22 +147,22 @@ So when someone says "AI agents are different now," your skepticism isn't cynici
 
 <!-- COMIC
 id: ch04-the-loop
-characters: maven, skeptic
+characters: maven, declan
 aspect: 16:9
 render: carousel-mobile, side-by-side-desktop
 
-setting: Same office. Maven has moved to the whiteboard and drawn a simple loop diagram: PLAN → ACT → OBSERVE → ADJUST → back to PLAN. Skeptic sits in the chair, leaning forward now — genuinely curious rather than defensive. The whiteboard diagram is visible between them. Studio Ghibli-inspired, warm afternoon light.
+setting: Same office. Maven has moved to the whiteboard and drawn a simple loop diagram: PLAN → ACT → OBSERVE → ADJUST → back to PLAN. Declan sits in the chair, leaning forward now — genuinely curious rather than defensive. The whiteboard diagram is visible between them. Studio Ghibli-inspired, warm afternoon light.
 
 frame_a:
-  action: Skeptic points at the loop diagram on the whiteboard with a skeptical finger. Maven holds the marker, having just drawn it, and turns to face him.
+  action: Declan points at the loop diagram on the whiteboard with a skeptical finger. Maven holds the marker, having just drawn it, and turns to face him.
   expression_maven: attentive, ready
-  expression_skeptic: skeptical, leaning-forward
+  expression_declan: skeptical, leaning-forward
   dialogue: ["", "Okay. But what happens when it gets the first step wrong?"]
 
 frame_b:
   action: Maven taps the OBSERVE box on the whiteboard. She's not explaining so much as demonstrating — this is the key point, and she knows it.
   expression_maven: confident, direct
-  expression_skeptic: processing, arms-uncrossing
+  expression_declan: processing, arms-uncrossing
   dialogue: ["It reads the error. Then tries a different approach. Like you would.", ""]
 -->
 
@@ -193,22 +193,22 @@ The loop also explains the AutoGPT failure. AutoGPT had the right idea. The prob
 
 <!-- COMIC
 id: ch05-memory
-characters: maven, skeptic
+characters: maven, declan
 aspect: 16:9
 render: carousel-mobile, side-by-side-desktop
 
-setting: Same office. Maven has rotated a laptop screen toward the Skeptic, showing a text document — visible enough to read as a plain-English list of rules and preferences. The Skeptic leans in to read it, brow slightly furrowed. The laptop is the focal point of the frame. Studio Ghibli-inspired, intimate mid-shot.
+setting: Same office. Maven has rotated a laptop screen toward the Declan, showing a text document — visible enough to read as a plain-English list of rules and preferences. The Declan leans in to read it, brow slightly furrowed. The laptop is the focal point of the frame. Studio Ghibli-inspired, intimate mid-shot.
 
 frame_a:
-  action: Skeptic squints at the laptop screen, reading. His posture has opened up slightly — arms no longer fully crossed, one hand on his knee.
+  action: Declan squints at the laptop screen, reading. His posture has opened up slightly — arms no longer fully crossed, one hand on his knee.
   expression_maven: calm, attentive
-  expression_skeptic: reading, slightly-surprised
+  expression_declan: reading, slightly-surprised
   dialogue: ["", "Wait — I'd have to explain my whole job to it?"]
 
 frame_b:
   action: Maven closes the laptop gently, making eye contact. This is the key point and she's delivering it simply.
   expression_maven: direct, warm
-  expression_skeptic: considering, hands-on-knees
+  expression_declan: considering, hands-on-knees
   dialogue: ["Once. Then it remembers. Session ten is different from session one.", ""]
 -->
 
@@ -239,22 +239,22 @@ This is the compounding effect: every correction, every preference, every conven
 
 <!-- COMIC
 id: ch06-grounding
-characters: maven, skeptic
+characters: maven, declan
 aspect: 16:9
 render: carousel-mobile, side-by-side-desktop
 
 setting: Same office. Maven has set two printed pages on the coffee table between them — one labeled "2023" showing a person laboriously copy-pasting text between windows; one labeled "Now" showing the agent directly reading from a folder of documents. She points to the contrast. Studio Ghibli-inspired, warm afternoon light.
 
 frame_a:
-  action: Skeptic glances at the two-page comparison on the table, then back at Maven. One eyebrow raised — the question forming.
+  action: Declan glances at the two-page comparison on the table, then back at Maven. One eyebrow raised — the question forming.
   expression_maven: steady, waiting-for-the-question
-  expression_skeptic: skeptical, arms-recrossing
+  expression_declan: skeptical, arms-recrossing
   dialogue: ["", "How do I know it's not just making things up again?"]
 
 frame_b:
   action: Maven points to the "Now" page — specifically to the arrow showing the agent reading directly from files. Her gesture is precise, not theatrical.
   expression_maven: direct, measured
-  expression_skeptic: processing, leaning-in
+  expression_declan: processing, leaning-in
   dialogue: ["Because this time it's reading your actual documents. Not guessing from memory.", ""]
 -->
 
@@ -283,22 +283,22 @@ The hallucination problem isn't fixed because the model got smarter at guessing.
 
 <!-- COMIC
 id: ch07-controls
-characters: maven, skeptic
+characters: maven, declan
 aspect: 16:9
 render: carousel-mobile, side-by-side-desktop
 
-setting: Same office. Maven holds up a printed document — a rules list visible in large text: "Always check with me before sending externally." "Flag any contract over $50K." "Use AP style for all public content." The Skeptic squints at it from across the coffee table, genuinely puzzled. Studio Ghibli-inspired, warm light.
+setting: Same office. Maven holds up a printed document — a rules list visible in large text: "Always check with me before sending externally." "Flag any contract over $50K." "Use AP style for all public content." The Declan squints at it from across the coffee table, genuinely puzzled. Studio Ghibli-inspired, warm light.
 
 frame_a:
-  action: Skeptic leans in to read the document Maven is holding, glasses-check instinct without glasses — tilting his head slightly. The rules are readable but he's still processing what he's looking at.
+  action: Declan leans in to read the document Maven is holding, glasses-check instinct without glasses — tilting his head slightly. The rules are readable but he's still processing what he's looking at.
   expression_maven: presenting, attentive
-  expression_skeptic: reading, puzzled
+  expression_declan: reading, puzzled
   dialogue: ["", "That's just... English?"]
 
 frame_b:
   action: Maven sets the document down on the table between them, tapping it once. The gesture conveys: yes, that's the point, and that's why it works.
   expression_maven: direct, satisfied
-  expression_skeptic: processing, arms-slowly-uncrossing
+  expression_declan: processing, arms-slowly-uncrossing
   dialogue: ["That's the point. You're not programming — you're setting expectations. Like you would with a smart new hire.", ""]
 -->
 
@@ -331,22 +331,22 @@ Hilary Gridley, VP at WHOOP, built a "Deck Doctor" by teaching the AI her implic
 
 <!-- COMIC
 id: ch08-architect
-characters: maven, skeptic
+characters: maven, declan
 aspect: 16:9
 render: carousel-mobile, side-by-side-desktop
 
-setting: Same office. Now the Skeptic is standing beside the whiteboard — Maven is in the chair watching. The Skeptic is sketching something himself: a simple workflow diagram. The role has reversed. Studio Ghibli-inspired, late afternoon light, slightly warmer than earlier chapters.
+setting: Same office. Now the Declan is standing beside the whiteboard — Maven is in the chair watching. The Declan is sketching something himself: a simple workflow diagram. The role has reversed. Studio Ghibli-inspired, late afternoon light, slightly warmer than earlier chapters.
 
 frame_a:
-  action: Skeptic is at the whiteboard, drawing boxes and arrows — a rough workflow diagram of what his own system might look like. He's thinking out loud, not asking for permission.
+  action: Declan is at the whiteboard, drawing boxes and arrows — a rough workflow diagram of what his own system might look like. He's thinking out loud, not asking for permission.
   expression_maven: watching, quietly-pleased
-  expression_skeptic: engaged, problem-solving
+  expression_declan: engaged, problem-solving
   dialogue: ["", "So I'd define the criteria upfront — the rules. Then review what it produces. Like managing a team."]
 
 frame_b:
   action: Maven leans back in the chair, hands clasped. She's watching him work it out — not explaining anymore, just confirming.
   expression_maven: satisfied, leaning-back
-  expression_skeptic: nodding-to-himself, connecting-dots
+  expression_declan: nodding-to-himself, connecting-dots
   dialogue: ["Exactly. Your job becomes designing the system and reviewing the work. Not doing it.", ""]
 -->
 
@@ -375,22 +375,22 @@ Ethan Mollick, a Wharton professor studying human-AI collaboration, calls this s
 
 <!-- COMIC
 id: ch09-harness
-characters: maven, skeptic
+characters: maven, declan
 aspect: 16:9
 render: carousel-mobile, side-by-side-desktop
 
-setting: Same office, same whiteboard. The Skeptic has drawn a diagram of their own: a circle labeled MODEL in the center, with surrounding labels: MEMORY, TOOLS, RULES, LOOP, FILES. Maven stands slightly to one side, watching. The Skeptic is teaching now. Studio Ghibli-inspired, warm late-afternoon light — the room has softened.
+setting: Same office, same whiteboard. The Declan has drawn a diagram of their own: a circle labeled MODEL in the center, with surrounding labels: MEMORY, TOOLS, RULES, LOOP, FILES. Maven stands slightly to one side, watching. The Declan is teaching now. Studio Ghibli-inspired, warm late-afternoon light — the room has softened.
 
 frame_a:
-  action: Skeptic taps the MODEL circle on the whiteboard, then sweeps his hand outward to gesture at all the surrounding components. He's arrived somewhere — working it out as he speaks.
+  action: Declan taps the MODEL circle on the whiteboard, then sweeps his hand outward to gesture at all the surrounding components. He's arrived somewhere — working it out as he speaks.
   expression_maven: watching, quietly-proud
-  expression_skeptic: engaged, realizing
+  expression_declan: engaged, realizing
   dialogue: ["", "So the model is like the engine. But what makes it actually useful is... all the other stuff. The steering wheel, the GPS, the road."]
 
 frame_b:
   action: Maven smiles — the first full smile of the book. She's not explaining anymore. She's just confirming what he figured out himself.
   expression_maven: warm, genuinely-pleased
-  expression_skeptic: nodding, settled
+  expression_declan: nodding, settled
   dialogue: ["Now you're getting it.", ""]
 -->
 

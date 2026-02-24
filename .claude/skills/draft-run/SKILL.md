@@ -51,7 +51,7 @@ frame_b:
   action: [What changed from frame A — what shifted in the scene or between characters]
   expression_maven: [adjective, adjective]
   expression_skeptic: [adjective, adjective]
-  dialogue: ["", "Skeptic's line"]
+  dialogue: ["", "Declan's line"]
 -->
 ```
 
@@ -60,7 +60,7 @@ frame_b:
 - `frame_a` / `frame_b` — differ only in `action`, `expression_*`, and `dialogue`. The two frames form a single moment in two beats.
 - `dialogue` — metadata only (for reference). Not rendered as text overlay in the image.
 - `expression_*` — two comma-separated adjectives per character per frame (e.g., `skeptical, arms-crossed`).
-- One dialogue slot is always empty (`""`) — Maven speaks in frame A, Skeptic in frame B, or vice versa.
+- One dialogue slot is always empty (`""`) — Maven speaks in frame A, Declan in frame B, or vice versa.
 - `id` — unique per comic. Convention: `ch{number}-{slug}` (e.g., `ch03-tool-call`).
 
 ### 2. Self-Review

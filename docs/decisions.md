@@ -34,8 +34,8 @@ Each decision follows this structure:
 - **Alternatives considered**:
   1. **Syllabus/curriculum approach**: Ordered learning goals, task designs, "hello world" exercises. Too pedagogical for the audience — they don't think they need to learn, they think AI is overhyped.
   2. **Long-form narrative**: YA novel with the curriculum embedded in plot. Too long, too much story infrastructure for what's essentially a concise argument.
-  3. **Persuasive arc with illustrated chapters** (chosen): Short, dense, each chapter makes one point. The Skeptic/Maven panel mechanic makes doubt-and-resolution structural.
-- **Rationale**: The audience isn't students — they're skeptics. Persuasion, not pedagogy, is the right frame. The short chapter format (headline + panel + ~400 words + sources) forces discipline and respects the reader's time. The graphic novel panel makes the Skeptic/Maven dynamic visible in every chapter.
+  3. **Persuasive arc with illustrated chapters** (chosen): Short, dense, each chapter makes one point. The Declan/Maven panel mechanic makes doubt-and-resolution structural.
+- **Rationale**: The audience isn't students — they're skeptics. Persuasion, not pedagogy, is the right frame. The short chapter format (headline + panel + ~400 words + sources) forces discipline and respects the reader's time. The graphic novel panel makes the Declan/Maven dynamic visible in every chapter.
 - **Impact on layer stack**: Layers 2 (Primitives) and 3 (Domain Translation) fold into the chapter content rather than existing as standalone deliverables. Layer 1 (Timeline) feeds the evidence base. The layer stack remains valid as an intellectual framework but the deliverable is organized by persuasive arc. Timeline research also stands as a potential independent artifact.
 
 ---
@@ -70,8 +70,8 @@ Each decision follows this structure:
   1. **Speech bubbles in-image**: Dialogue should be rendered as speech bubbles inside generated frames, not as overlaid HTML text. The `IllustrationPanels.astro` component hides text overlay when an image is present.
   2. **Frame composition**: Frame A = wider two-shot (both characters, establishing). Frame B = closer shot (medium close-up on the reacting character). This creates visual beat-to-beat contrast.
   3. **Style consistency anchor**: When generating ch02–ch09, pass ch01-frame-a as an additional `--ref` alongside the character sheets. This gives the model a canonical visual baseline showing both characters in the established style, reducing cross-comic drift.
-  4. **Skeptic Ghibli alignment**: Skeptic character brief updated to more explicitly emphasize Ghibli-style rounded features and expressive eyes — must match Maven's art style exactly.
-- **Context**: User review of draft-002 panels found: (a) text overlay shows description rather than dialogue, (b) both frames too similar in composition, (c) Skeptic looks less Ghibli than Maven — "from different universes," (d) visual style drifts noticeably from ch01 to ch09.
+  4. **Declan Ghibli alignment**: Declan character brief updated to more explicitly emphasize Ghibli-style rounded features and expressive eyes — must match Maven's art style exactly.
+- **Context**: User review of draft-002 panels found: (a) text overlay shows description rather than dialogue, (b) both frames too similar in composition, (c) Declan looks less Ghibli than Maven — "from different universes," (d) visual style drifts noticeably from ch01 to ch09.
 - **Rationale**: Style anchor approach (canonical frame as additional ref) is the most direct fix for cross-comic drift without requiring a dedicated "in-scene reference sheet" generation step. Frame composition variation (wide→close) creates emotional rhythm and makes the two-frame format feel like a panel sequence rather than two similar shots.
 
 ---

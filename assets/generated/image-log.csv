@@ -190,3 +190,47 @@ MAVEN: Warm medium-brown skin. Black hair, shoulder-length, tucked ",16:9,ch09-g
 2026-02-23T17:45:50+00:00,pro,gemini,ch09-getting-started,b,"Studio Ghibli-inspired illustration. Clean expressive linework, warm color wash. Fully saturated. Warm late-afternoon golden light.
 
 MAVEN: Warm medium-brown skin. Black hair, shoulder-length, tucked ",16:9,ch09-getting-started-frame-b-20260223-124510.png,0.1340,11.8580,20.3,ok
+2026-02-23T23:58:34+00:00,pro,gemini,ch01-the-box,a,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel with detailed backgrounds. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hou",16:9,ch01-the-box-frame-a-20260223-185816.png,0.1340,11.9920,17.5,ok
+2026-02-23T23:58:52+00:00,pro,gemini,ch01-the-box,b,"Now generate Frame B of 2, continuing directly from Frame A.
+Use the SAME characters — identical appearance, identical clothing, identical art style.
+Do not re-interpret any character designs from the",16:9,ch01-the-box-frame-b-20260223-185816.png,0.1340,12.1260,18.3,ok
+2026-02-23T23:59:38+00:00,pro,gemini,ch02-emery-enters,a,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel with detailed backgrounds. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hou",16:9,ch02-emery-enters-frame-a-20260223-185918.png,0.1340,12.2600,19.8,ok
+2026-02-23T23:59:58+00:00,pro,gemini,ch02-emery-enters,b,"Now generate Frame B of 2, continuing directly from Frame A.
+Use the SAME characters — identical appearance, identical clothing, identical art style.
+Do not re-interpret any character designs from the",16:9,ch02-emery-enters-frame-b-20260223-185918.png,0.1340,12.3940,19.7,ok
+2026-02-24T00:00:41+00:00,pro,gemini,ch03-the-unboxing,a,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel with detailed backgrounds. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hou",16:9,ch03-the-unboxing-frame-a-20260223-190023.png,0.1340,12.5280,18.1,ok
+2026-02-24T00:00:58+00:00,pro,gemini,ch03-the-unboxing,b,"Now generate Frame B of 2, continuing directly from Frame A.
+Use the SAME characters — identical appearance, identical clothing, identical art style.
+Do not re-interpret any character designs from the",16:9,ch03-the-unboxing-frame-b-20260223-190023.png,0.1340,12.6620,17.0,ok
+2026-02-24T00:04:13+00:00,pro,gemini,ch04-files-context,a,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel with detailed backgrounds. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hou",16:9,ch04-files-context-frame-a-20260223-190354.png,0.1340,12.7960,18.9,ok
+2026-02-24T00:04:32+00:00,pro,gemini,ch04-files-context,b,"Now generate Frame B of 2, continuing directly from Frame A.
+Use the SAME characters — identical appearance, identical clothing, identical art style.
+Do not re-interpret any character designs from the",16:9,ch04-files-context-frame-b-20260223-190354.png,0.1340,12.9300,18.7,ok
+2026-02-24T00:05:15+00:00,pro,gemini,ch05-rules-skills,a,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel with detailed backgrounds. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hou",16:9,ch05-rules-skills-frame-a-20260223-190456.png,0.1340,13.0640,18.4,ok
+2026-02-24T00:05:33+00:00,pro,gemini,ch05-rules-skills,b,"Now generate Frame B of 2, continuing directly from Frame A.
+Use the SAME characters — identical appearance, identical clothing, identical art style.
+Do not re-interpret any character designs from the",16:9,ch05-rules-skills-frame-b-20260223-190456.png,0.1340,13.1980,17.8,ok
+2026-02-24T00:06:15+00:00,pro,gemini,ch06-tools-actions,a,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel with detailed backgrounds. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hou",16:9,ch06-tools-actions-frame-a-20260223-190558.png,0.1340,13.3320,17.1,ok
+2026-02-24T00:06:30+00:00,pro,gemini,ch06-tools-actions,b,"Now generate Frame B of 2, continuing directly from Frame A.
+Use the SAME characters — identical appearance, identical clothing, identical art style.
+Do not re-interpret any character designs from the",16:9,ch06-tools-actions-frame-b-20260223-190558.png,0.1340,13.4660,15.0,ok
+2026-02-24T00:07:14+00:00,pro,gemini,ch07-pm-lifecycle,a,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel with detailed backgrounds. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hou",16:9,ch07-pm-lifecycle-frame-a-20260223-190655.png,0.1340,13.6000,19.0,ok
+2026-02-24T00:07:37+00:00,pro,gemini,ch07-pm-lifecycle,b,"Now generate Frame B of 2, continuing directly from Frame A.
+Use the SAME characters — identical appearance, identical clothing, identical art style.
+Do not re-interpret any character designs from the",16:9,ch07-pm-lifecycle-frame-b-20260223-190655.png,0.1340,13.7340,23.1,ok
+2026-02-24T00:08:27+00:00,pro,gemini,ch08-agentic-teams,a,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel with detailed backgrounds. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hou",16:9,ch08-agentic-teams-frame-a-20260223-190808.png,0.1340,13.8680,18.5,ok
+2026-02-24T00:08:49+00:00,pro,gemini,ch08-agentic-teams,b,"Now generate Frame B of 2, continuing directly from Frame A.
+Use the SAME characters — identical appearance, identical clothing, identical art style.
+Do not re-interpret any character designs from the",16:9,ch08-agentic-teams-frame-b-20260223-190808.png,0.1340,14.0020,22.2,ok
+2026-02-24T00:09:37+00:00,pro,gemini,ch09-getting-started,a,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel with detailed backgrounds. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hou",16:9,ch09-getting-started-frame-a-20260223-190916.png,0.1340,14.1360,20.9,ok
+2026-02-24T00:09:53+00:00,pro,gemini,ch09-getting-started,b,"Now generate Frame B of 2, continuing directly from Frame A.
+Use the SAME characters — identical appearance, identical clothing, identical art style.
+Do not re-interpret any character designs from the",16:9,ch09-getting-started-frame-b-20260223-190916.png,0.1340,14.2700,15.9,ok
+2026-02-24T00:10:44+00:00,pro,gemini,ch05-rules-skills,a,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel with detailed backgrounds. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hou",16:9,ch05-rules-skills-frame-a-20260223-191027.png,0.1340,14.4040,16.7,ok
+2026-02-24T00:11:01+00:00,pro,gemini,ch05-rules-skills,b,"Now generate Frame B of 2, continuing directly from Frame A.
+Use the SAME characters — identical appearance, identical clothing, identical art style.
+Do not re-interpret any character designs from the",16:9,ch05-rules-skills-frame-b-20260223-191027.png,0.1340,14.5380,17.5,ok
+2026-02-24T00:11:49+00:00,pro,gemini,ch09-getting-started,a,"Art style: Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel with detailed backgrounds. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hou",16:9,ch09-getting-started-frame-a-20260223-191127.png,0.1340,14.6720,22.1,ok
+2026-02-24T00:12:11+00:00,pro,gemini,ch09-getting-started,b,"Now generate Frame B of 2, continuing directly from Frame A.
+Use the SAME characters — identical appearance, identical clothing, identical art style.
+Do not re-interpret any character designs from the",16:9,ch09-getting-started-frame-b-20260223-191127.png,0.1340,14.8060,21.2,ok

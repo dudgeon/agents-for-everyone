@@ -92,22 +92,22 @@ Each chapter: headline sentence + graphic novel panel + 3-4 paragraphs + 3-4 sou
 
 **Status**: Not started
 **Mode**: Collaborative
-**Goal**: Design the Skeptic and Maven characters, panel art direction, and visual style for the illustrated chapter format.
+**Goal**: Design the Declan and Maven characters, panel art direction, and visual style for the illustrated chapter format.
 
 ### What this produces
-- `docs/layer-5-story/characters.md` — Skeptic and Maven profiles, voice, visual design
+- `docs/layer-5-story/characters.md` — Declan and Maven profiles, voice, visual design
 - `docs/layer-5-story/tone-guide.md` — Writing voice and visual style guide
 - Character reference sheets for image generation pipeline
 
 ### Approach
 - Characters serve the persuasive arc (defined in Phase 4 structure doc)
-- Skeptic/Maven dynamic evolves through the arc: doubt → curiosity → engagement → ownership
+- Declan/Maven dynamic evolves through the arc: doubt → curiosity → engagement → ownership
 - Format is locked: illustrated chapters with graphic novel panels (see Decision 002)
 - Many original Layer 5 questions (time travel mechanic, length, prose vs. graphic novel) are now resolved by the structure decision
 - Remaining questions: character ages, visual design, tone calibration, brand names vs. abstracted
 
 ### Definition of done
-- Skeptic and Maven characters fully designed (personality, visual, voice)
+- Declan and Maven characters fully designed (personality, visual, voice)
 - Art style locked with reference images
 - User approves before drafting begins
 
@@ -191,7 +191,7 @@ Each chapter: headline sentence + graphic novel panel + 3-4 paragraphs + 3-4 sou
 - Defined 4-section structure: Bold Claim → Skepticism → What's Different → The Ask
 - Locked chapter format: headline sentence + graphic novel panel + 3-4 paragraphs + 3-4 sourced quotes
 - Mapped 10 chapters with working headlines across all sections
-- Defined Skeptic/Maven character evolution through the arc
+- Defined Declan/Maven character evolution through the arc
 - Section 4 designed as asks/offers: starter videos, markdown/Git/GitHub, SWE-tool accessibility (spreadsheet analogy)
 - Decision 003: Section 4 asks/offers structure
 - Layers 2 (Primitives) and 3 (Domain Translation) folded into chapter content — no longer standalone phases

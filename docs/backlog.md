@@ -39,14 +39,14 @@ _Persuasive arc structure drafted (see `docs/layer-4-curriculum/structure.md` an
 - [x] ~~What's the right "hello world" for agentic AI for a non-developer?~~ → Resolved: the book persuades, not teaches. The appendix handles practical getting-started.
 - [x] ~~How much can be taught through plot vs. explicit instruction?~~ → Resolved: each chapter has one concept, one panel, short body text. The panel IS the "plot."
 - [x] ~~Should the curriculum use a single sustained project or multiple smaller tasks?~~ → Resolved: not applicable — chapters are self-contained arguments, not project steps.
-- [x] ~~What's the emotional arc of learning?~~ → Resolved: doubt → curiosity → understanding → ownership, embodied by the Skeptic's evolution.
+- [x] ~~What's the emotional arc of learning?~~ → Resolved: doubt → curiosity → understanding → ownership, embodied by the Declan's evolution.
 
 ## Layer 5 — Character & Visual Design (Phase 5)
 
 _Many original questions resolved by the persuasive arc structure (Decision 002)._
 
 - [ ] Character ages and relationship dynamic (peers? mentor/mentee?)
-- [ ] Nature of the Skeptic's skepticism (burned by AI specifically? broader tech skeptic?)
+- [ ] Nature of the Declan's skepticism (burned by AI specifically? broader tech skeptic?)
 - [ ] Tone calibration (The Martian ↔ Percy Jackson spectrum)
 - [ ] Visual style for panels (realistic? stylized? what art pipeline?)
 - [ ] Distribution intent (open publish / sell / conference)

@@ -59,7 +59,7 @@ _Status: candidate_
 
 ## Character Dynamic
 
-[How Maven and Skeptic interact in THIS version. What's their relationship? How does it evolve?]
+[How Maven and Declan interact in THIS version. What's their relationship? How does it evolve?]
 
 ## Thematic Threads
 
