@@ -56,6 +56,14 @@ _Many original questions resolved by the persuasive arc structure (Decision 002)
 - [x] ~~Length target~~ → Resolved: ~10 short chapters (300-500 words each) + panels + appendix. Short and dense.
 - [x] ~~Format~~ → Resolved: illustrated chapters with graphic novel panels (Decision 002).
 
+## Defects
+
+- [ ] **[DEFECT] Character consistency — massive issues across all chapters.** Characters (Maven, Declan, Emery, Claw'd) look different panel-to-panel and chapter-to-chapter. Root cause under investigation (separate research agent assigned). Likely culprits: reference sheet quality, character bible completeness, prompt engineering in the frozen preamble. Block on next art pass until resolved.
+
+## Pre-Run Checklist
+
+- [ ] **Remove footer quote before next draft run / build-site.** The current quote — _"The question is not whether machines can think, but what we mean when we say we do."_ — is a placeholder and needs to be replaced with something that fits the agent-unboxing story arc. Remove from `story-seed.md` (Presentation → Footer quote) and `site/src/data/site-meta.ts` (footerQuote). Either write a new one or leave blank until the right line surfaces from the story.
+
 ## Parked Ideas
 
 _Ideas that came up but we're not ready to evaluate yet._
