@@ -331,3 +331,62 @@ FRAME B: Declan speaks up — not objectin",16:9,ch08-agentic-teams-frame-b-2026
 Use the SAME characters — identical appearance, identical clothing, identical art style. Do not re-interpret any character designs.
 
 FRAME B: Claw'd hops closer to Emery alo",16:9,ch09-getting-started-frame-b-20260224-074116.png,0.1340,20.5680,19.4,ok
+2026-02-24T23:03:10+00:00,pro,gemini,,,"Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hour warmth. Watercolor-adjacent color w",4:3,maven-ref-new-20260224-180310.png,0.1340,20.7020,15.7,ok
+2026-02-24T23:03:29+00:00,pro,gemini,,,"Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hour warmth. Watercolor-adjacent color w",4:3,declan-ref-new-20260224-180329.png,0.1340,20.8360,18.0,ok
+2026-02-24T23:03:47+00:00,pro,gemini,,,"Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hour warmth. Watercolor-adjacent color w",4:3,emery-ref-new-20260224-180347.png,0.1340,20.9700,16.6,ok
+2026-02-24T23:04:08+00:00,pro,gemini,,,"Studio Ghibli-inspired illustration. Warm, painterly, hand-drawn feel. Clean character linework with expressive faces. Soft natural lighting — diffused, golden-hour warmth. Watercolor-adjacent color w",4:3,clawd-ref-new-20260224-180408.png,0.1340,21.1040,20.8,ok
+2026-02-24T23:08:03+00:00,pro,gemini,ch01-the-box,a,SETTING (identical in both frames): Modern open-plan office kitchen/lounge. A communal table with laptops and coffee mugs. Warm pendant lights overhead. Maven has just set a sleek white box on the tab,16:9,ch01-the-box-frame-a-20260224-180641.png,0.1340,21.2380,25.8,ok
+2026-02-24T23:08:30+00:00,pro,gemini,ch01-the-box,b,"Now generate Frame B of 2 for chapter ch01-the-box.
+Use the SAME characters with IDENTICAL appearance, clothing, and art style as Frame A.
+
+FRAME B: Maven has set the box on the table, lid still close",16:9,ch01-the-box-frame-b-20260224-180641.png,0.1340,21.3720,26.6,ok
+2026-02-24T23:09:40+00:00,pro,gemini,ch02-emery-enters,a,"SETTING (identical in both frames): Same office kitchen/lounge. The ""Agents"" box sits on the table, lid closed, boxy robot mascot visible on the front panel. Maven stands beside the table. Declan stil",16:9,ch02-emery-enters-frame-a-20260224-180641.png,0.1340,21.5060,25.5,ok
+2026-02-24T23:10:11+00:00,pro,gemini,ch02-emery-enters,b,"Now generate Frame B of 2 for chapter ch02-emery-enters.
+Use the SAME characters with IDENTICAL appearance, clothing, and art style as Frame A.
+
+FRAME B: Emery shrugs casually, one hand resting on the",16:9,ch02-emery-enters-frame-b-20260224-180641.png,0.1340,21.6400,31.3,ok
+2026-02-24T23:11:41+00:00,pro,gemini,ch03-the-unboxing,a,"SETTING (identical in both frames): Same office kitchen/lounge. The ""Agents"" box is fully open on the table, lid folded back. Claw'd — a small, boxy terracotta creature with dark square pixel-art eyes",16:9,ch03-the-unboxing-frame-a-20260224-180641.png,0.1340,21.7740,32.1,ok
+2026-02-24T23:12:24+00:00,pro,gemini,ch01-the-box,a,SETTING (identical in both frames): Modern open-plan office kitchen/lounge. A communal table with laptops and coffee mugs. Warm pendant lights overhead. Maven has just set a sleek white box on the tab,16:9,ch01-the-box-frame-a-20260224-181152.png,0.1340,21.9080,17.3,ok
+2026-02-24T23:12:27+00:00,pro,gemini,ch03-the-unboxing,b,"Now generate Frame B of 2 for chapter ch03-the-unboxing.
+Use the SAME characters with IDENTICAL appearance, clothing, and art style as Frame A.
+
+FRAME B: Claw'd has moved to the center of the table, n",16:9,ch03-the-unboxing-frame-b-20260224-180641.png,0.1340,22.0420,46.3,ok
+2026-02-24T23:12:41+00:00,pro,gemini,ch01-the-box,b,"Now generate Frame B of 2 for chapter ch01-the-box.
+Use the SAME characters with IDENTICAL appearance, clothing, and art style as Frame A.
+
+FRAME B: Maven has set the box on the table, lid still close",16:9,ch01-the-box-frame-b-20260224-181152.png,0.1340,22.1760,16.7,ok
+2026-02-24T23:13:19+00:00,pro,gemini,ch02-emery-enters,a,"SETTING (identical in both frames): Same office kitchen/lounge. The ""Agents"" box sits on the table, lid closed, boxy robot mascot visible on the front panel. Maven stands beside the table. Declan stil",16:9,ch02-emery-enters-frame-a-20260224-181152.png,0.1340,22.3100,19.5,ok
+2026-02-24T23:13:38+00:00,pro,gemini,ch02-emery-enters,b,"Now generate Frame B of 2 for chapter ch02-emery-enters.
+Use the SAME characters with IDENTICAL appearance, clothing, and art style as Frame A.
+
+FRAME B: Emery shrugs casually, one hand resting on the",16:9,ch02-emery-enters-frame-b-20260224-181152.png,0.1340,22.4440,19.3,ok
+2026-02-24T23:14:04+00:00,pro,gemini,ch04-files-context,a,"SETTING (identical in both frames): Same office area. Someone has pulled up a laptop screen showing a file explorer with folders: docs/, specs/, research/, decisions/ — each with a trailing slash visi",16:9,ch04-files-context-frame-a-20260224-180641.png,0.1340,22.5780,41.1,ok
+2026-02-24T23:14:38+00:00,pro,gemini,ch04-files-context,b,"Now generate Frame B of 2 for chapter ch04-files-context.
+Use the SAME characters with IDENTICAL appearance, clothing, and art style as Frame A.
+
+FRAME B: Emery looks down at their tablet (showing the",16:9,ch04-files-context-frame-b-20260224-180641.png,0.1340,22.7120,33.7,ok
+2026-02-24T23:16:25+00:00,pro,gemini,ch05-rules-skills,a,"SETTING (identical in both frames): Closer angle on the same table. Claw'd sits between Maven and Emery, notebook open to a page with a neat checklist. Maven has pulled up a text file on the laptop sh",16:9,ch05-rules-skills-frame-a-20260224-180641.png,0.1340,22.8460,36.8,ok
+2026-02-24T23:17:04+00:00,pro,gemini,ch05-rules-skills,b,"Now generate Frame B of 2 for chapter ch05-rules-skills.
+Use the SAME characters with IDENTICAL appearance, clothing, and art style as Frame A.
+
+FRAME B: Emery looks up from their tablet, stylus hover",16:9,ch05-rules-skills-frame-b-20260224-180641.png,0.1340,22.9800,38.7,ok
+2026-02-24T23:18:41+00:00,pro,gemini,ch06-tools-actions,a,"SETTING (identical in both frames): The laptop screen now shows a terminal/command output with a list of completed actions: ""Searched 4 databases... Updated Jira ticket... Created summary.md..."" Claw'",16:9,ch06-tools-actions-frame-a-20260224-180641.png,0.1340,23.1140,44.9,ok
+2026-02-24T23:19:18+00:00,pro,gemini,ch06-tools-actions,b,"Now generate Frame B of 2 for chapter ch06-tools-actions.
+Use the SAME characters with IDENTICAL appearance, clothing, and art style as Frame A.
+
+FRAME B: Emery turns away from the screen to look dire",16:9,ch06-tools-actions-frame-b-20260224-180641.png,0.1340,23.2480,36.3,ok
+2026-02-24T23:21:27+00:00,pro,gemini,ch07-pm-lifecycle,a,"SETTING (identical in both frames): The table now has multiple items spread across it — the laptop showing a discovery research summary on screen, Emery's tablet flat on the table with a rough workflo",16:9,ch07-pm-lifecycle-frame-a-20260224-180641.png,0.1340,23.3820,44.8,ok
+2026-02-24T23:22:16+00:00,pro,gemini,ch07-pm-lifecycle,b,"Now generate Frame B of 2 for chapter ch07-pm-lifecycle.
+Use the SAME characters with IDENTICAL appearance, clothing, and art style as Frame A.
+
+FRAME B: Emery stops sketching and looks up, stylus fro",16:9,ch07-pm-lifecycle-frame-b-20260224-180641.png,0.1340,23.5160,48.3,ok
+2026-02-24T23:24:06+00:00,pro,gemini,ch08-agentic-teams,a,"SETTING (identical in both frames): Maven has drawn a diagram on a whiteboard: a horizontal flow ""PM intent → Structured context → Agent → Code/Output → Review"". Below it, a second line with an upward",16:9,ch08-agentic-teams-frame-a-20260224-180641.png,0.1340,23.6500,43.5,ok
+2026-02-24T23:24:49+00:00,pro,gemini,ch08-agentic-teams,b,"Now generate Frame B of 2 for chapter ch08-agentic-teams.
+Use the SAME characters with IDENTICAL appearance, clothing, and art style as Frame A.
+
+FRAME B: Declan speaks up — not objecting, but working",16:9,ch08-agentic-teams-frame-b-20260224-180641.png,0.1340,23.7840,43.5,ok
+2026-02-24T23:26:51+00:00,pro,gemini,ch09-getting-started,a,"SETTING (identical in both frames): The office kitchen is quieter now. The white ""Agents"" box sits empty and open on the table, lid folded back, the boxy terracotta robot mascot illustration visible o",16:9,ch09-getting-started-frame-a-20260224-180641.png,0.1340,23.9180,50.3,ok
+2026-02-24T23:27:46+00:00,pro,gemini,ch09-getting-started,b,"Now generate Frame B of 2 for chapter ch09-getting-started.
+Use the SAME characters with IDENTICAL appearance, clothing, and art style as Frame A.
+
+FRAME B: Claw'd hops closer to Emery along the table",16:9,ch09-getting-started-frame-b-20260224-180641.png,0.1340,24.0520,54.9,ok

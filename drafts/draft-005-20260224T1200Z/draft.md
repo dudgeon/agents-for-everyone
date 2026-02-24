@@ -133,7 +133,7 @@ An agent is different. It reads your project folder. It connects to your tools �
 
 "So there's the AI — the model itself," Declan says. "And then there's all the stuff around it. The files it reads, the tools it connects to, the rules it follows."
 
-"That's the harness," Maven says. "The model is the engine. The harness is everything else — the file access, the instruction set, the tool connections, the context. A chatbot is an engine in a bare chassis. An agent has a full harness."
+"That's the harness," Maven says. "The model is the engine. The harness is everything else — file access, instruction sets, tool connections. Claude Code and Windsurf are harnesses: they take a model and connect it to your codebase, your tools, your data. Without a harness, it's just a chat window."
 
 "Like AutoGPT," Declan says. "Plan, try, check, adjust — that was the pitch. And it spent the whole night in an infinite loop."
 
