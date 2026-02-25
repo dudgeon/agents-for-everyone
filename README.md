@@ -23,9 +23,17 @@ The zip is self-contained and pre-configured for GitHub Pages deployment under a
 1. **Create a new repository** on your GitHub instance (any name works)
 2. On the repo page, click **"uploading an existing file"** (or **Add file → Upload files**)
 3. **Drag all the contents** of the unzipped folder into the upload area
-   - You should see `index.html`, `favicon.svg`, `.nojekyll`, and the `_astro/` and `images/` folders
+   - You should see `index.html`, `favicon.svg`, and the `_astro/` and `images/` folders
    - Upload the files and folders themselves — not the outer zip folder
+   - **`.nojekyll` is a hidden file and will NOT be included in a macOS drag-and-drop** — add it separately in step 4a
 4. Click **Commit changes**
+
+4a. **Add `.nojekyll` manually** (required — hidden files are skipped by Finder):
+   - Click **Add file → Create new file**
+   - Name: `.nojekyll` (dot included, no extension)
+   - Leave the contents blank → **Commit changes**
+   - Without this file, GitHub Pages attempts a Jekyll build. On instances where Actions is disabled this shows as: _"Actions is currently unavailable for your repository, and your Pages site requires a Jekyll build step."_
+
 5. Go to **Settings → Pages**
 6. Under "Build and deployment", set Source to **Deploy from a branch**
 7. Branch: **main**, folder: **/ (root)** → click **Save**
@@ -39,10 +47,10 @@ Unzip and serve the contents from any static file host (Nginx, S3, Netlify, Verc
 
 | Symptom | Fix |
 |---|---|
+| "Actions unavailable / requires Jekyll build step" | `.nojekyll` is missing — add it via **Add file → Create new file** (step 4a above) |
 | Images not loading | Make sure the `images/` folder was uploaded with its contents |
-| Fonts look wrong | Make sure the `_astro/` folder was uploaded (starts with underscore — may be hidden) |
+| Fonts look wrong | Make sure the `_astro/` folder was uploaded (starts with underscore) |
 | 404 on the index | Check that Pages is enabled and pointing to the `main` branch root |
-| Still broken | Verify `.nojekyll` is present (hidden file — check "Show hidden files" if using the GitHub web UI) |
 
 ---
 
