@@ -58,13 +58,13 @@ _Many original questions resolved by the persuasive arc structure (Decision 002)
 
 ## Defects
 
-- [ ] **[DEFECT] Character consistency — massive issues across all chapters.** Characters (Maven, Declan, Emery, Claw'd) look different panel-to-panel and chapter-to-chapter. Specific failures observed in draft-004: Maven appears with wrong skin tone (looks Asian, not medium-brown), Maven's glasses disappear between frames, Claw'd rendered as a kitten rather than a boxy terracotta creature, Emery drifts visually. Additional artifact: frame_b Ch3 contained two images. Root cause under investigation (separate research agent assigned). Likely culprits: reference sheet quality, character bible completeness, prompt engineering in the frozen preamble. Block on next art pass until resolved.
+- [x] **[RESOLVED 2026-02-24] Character consistency — massive issues across all chapters.** Fixed in draft-005 via two changes: (1) new canonical character refs generated in matching Ghibli painterly style (`assets/characters/*-ref-new.png`), and (2) `tools/generate_story.py` generates all 18 frames in a single persistent Gemini chat session (model retains visual memory of every character across all chapters). See Decision 008 for full root cause and fix rationale.
 
 - [ ] **[DEFECT] Ch1 frame_b COMIC spec issue — box shows Maven not Claw'd.** The Ch1 frame_b spec says "Maven has set the box on the table" but the image generated showed Maven on the box rather than Claw'd. The spec needs to explicitly state that the box face panel shows Claw'd (not Maven). Fix in COMIC spec for next image generation pass.
 
-- [ ] **[SITE BUG] Title cut off by top nav bar on desktop.** The page title ("Agents for Everyone") is being clipped by the sticky nav at the top of the page. Needs CSS fix in the hero section to account for nav height.
+- [ ] **[SITE BUG] Sticky nav occludes chapter title on desktop.** On desktop, the sticky top nav bar sits on top of the chapter title when scrolling. The chapter title (the large h2 at the top of each chapter section) is hidden behind the nav when that section is in view. Separately, the hero page title ("Agents for Everyone") may also be clipped by nav height. Needs CSS fix — likely `scroll-margin-top` on section elements to account for nav height, plus review of hero section padding. Reported 2026-02-24.
 
-- [ ] **[SITE BUG] Subtitle needs rewriting.** Current subtitle "what's in the box — and what you need to know about it" no longer makes sense given the direction of draft-004 (agents, not the box, are the focus). Replace with an optimistic call to action.
+- [x] **[RESOLVED 2026-02-24] Subtitle needs rewriting.** Updated to "The agents are here — and they're not just for developers." in `site/src/data/site-meta.ts`. MetaDescription also updated to remove "a box" reference.
 
 ## Pre-Run Checklist
 

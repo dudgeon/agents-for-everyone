@@ -91,6 +91,27 @@ Each decision follows this structure:
 
 ---
 
+## 008 — Character consistency: single-session generation + canonical in-style refs (2026-02-24)
+
+- **Date**: 2026-02-24
+- **Decision**: Character consistency across chapters is solved at the pipeline level via two changes: (1) all 18 frames are generated in ONE persistent Gemini chat session, and (2) character reference sheets are regenerated in the same Ghibli painterly style as the story art.
+- **Context**: After draft-004 and draft-005, characters (Maven, Declan, Emery, Claw'd) looked visually inconsistent chapter-to-chapter and sometimes frame-to-frame. Maven appeared with wrong skin tone, glasses disappeared, Claw'd was rendered as a kitten. Diagnosis found two root causes: (a) `generate_image.py` opened a new Gemini chat session per chapter — the model re-invented characters from scratch each time, and (b) the legacy reference sheets (`assets/characters/`) were in three different art styles (flat cartoon, semi-realistic, watercolor Ghibli-adjacent), so the model got inconsistent guidance about what each character looked like.
+- **Alternatives considered**:
+  1. **Patch the prompts**: Add more detailed character descriptions per chapter. Dismissed — this fights the symptom, not the cause. Character descriptions were already detailed.
+  2. **Better refs + same per-chapter session**: Regenerate refs in the correct style but keep `generate_image.py`. Partial fix — style consistency improves but inter-chapter drift remains because each chapter session has no memory of the prior chapter.
+  3. **Single-session generator + canonical refs** (chosen): Build `tools/generate_story.py` that uses one `client.chats.create()` session for all 18 frames. Gemini's chat session preserves visual memory across all turns — by the time it reaches Ch9, it has seen and drawn all four characters 8+ times.
+- **Rationale**: The Gemini chat session is the correct unit for visual continuity. Starting a new session per chapter is like asking a different artist for every chapter and handing them only a text description. One session = one artist working the whole project in sequence. The canonical ref regeneration (new `*-ref-new.png` files in Ghibli style) solves the guidance inconsistency; the single-session approach solves the memory problem.
+- **Implementation**:
+  - New tool: `tools/generate_story.py` — self-contained script, uses `google-genai` SDK directly
+  - Warmup step: first message primes the session with ALL four character refs + style block + character bibles
+  - Loop: for each chapter, sends a scene-transition message, then Frame A prompt, then Frame B prompt in the same session
+  - Character ref strategy: prefers `*-ref-new.png` in `assets/characters/`; falls back to legacy refs capped at 2 if no new ref found
+  - Python 3.9 note: uses `Optional[str]` from `typing` (not `str | None` which requires Python 3.10+)
+- **Canonical refs generated**: `maven-ref-new.png`, `declan-ref-new.png`, `emery-ref-new.png`, `clawd-ref-new.png` — all in Ghibli painterly style, each showing character from multiple views with labeled anatomy
+- **Cost**: ~$2.41 per full 18-frame run (18 × $0.134 pro model)
+
+---
+
 ## 007 — Story arc versioning via git branches + story-seed.md (2026-02-23)
 
 - **Date**: 2026-02-23
